@@ -116,6 +116,9 @@ dependencies {
     implementation 'curse.maven:lost-magic-337000:3171243'
     implementation 'curse.maven:psi-241665:3085917'
     implementation 'curse.maven:autoreglib-250363:2746011'
+    implementation 'curse.maven:blood-magic-224791:2822288'
+    implementation 'curse.maven:thaumicaugmentation-319441:3819917'
+
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

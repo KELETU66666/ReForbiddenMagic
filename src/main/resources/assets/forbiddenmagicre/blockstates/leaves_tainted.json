@@ -1,0 +1,36 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "all":"forbiddenmagicre:blocks/taint_leaves"
+    },
+    "model":"leaves",
+    "transform":"forge:default-block",
+    "uvlock": true
+  },
+  "variants": {
+    "inventory": [{}],
+    "growth":{
+      "fresh":{
+        "textures": {
+          "all":"forbiddenmagicre:blocks/taint_leaves"
+        }
+      },
+      "growing":{
+        "textures": {
+          "all":"forbiddenmagicre:blocks/taint_leaves"
+        }
+      },
+      "ready":{
+        "textures": {
+          "all":"forbiddenmagicre:blocks/taint_leaves"
+        }
+      },
+      "matured":{
+        "textures": {
+          "all":"forbiddenmagicre:blocks/taint_leaves"
+        }
+      }
+    }
+  }
+}

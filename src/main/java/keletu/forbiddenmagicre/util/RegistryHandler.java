@@ -80,6 +80,7 @@ public class RegistryHandler {
         proxy.registerComplexObjectTag(new ItemStack(ModItems.ResourceNS, 1, 4), new AspectList().add(NETHER, 2).add(SLOTH, 2).add(Aspect.CRYSTAL, 2));
         proxy.registerComplexObjectTag(new ItemStack(ModItems.ResourceNS, 1, 5), new AspectList().add(NETHER, 2).add(Aspect.DESIRE, 2).add(Aspect.CRYSTAL, 2));
         proxy.registerComplexObjectTag(new ItemStack(ModItems.GluttonyShard), new AspectList().add(NETHER, 2).add(GLUTTONY, 2).add(Aspect.CRYSTAL, 2));
+        proxy.registerComplexObjectTag(new ItemStack(ModItems.TAINTED_FRUIT), new AspectList().add(Aspect.PLANT, 5).add(Aspect.FLUX, 5));
 
 
 

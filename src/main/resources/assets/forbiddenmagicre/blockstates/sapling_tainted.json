@@ -1,0 +1,14 @@
+{
+  "forge_marker": 1,
+  "defaults":
+  {
+    "transform": "forge:default-block",
+    "model": "cross",
+    "textures": { "cross": "forbiddenmagicre:blocks/sapling_taint" }
+  },
+  "variants": {
+    "normal": [{}], "inventory": [{"model": "forge:item-layer", "transform": "forge:default-item",
+      "textures": { "layer0": "forbiddenmagicre:blocks/sapling_taint" }}],
+    "stage": { "0":{}, "1":{} }
+  }
+}

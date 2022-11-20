@@ -3,6 +3,7 @@ package keletu.forbiddenmagicre;
 import keletu.forbiddenmagicre.compat.botania.flowers.*;
 import keletu.forbiddenmagicre.init.InitRecipes;
 import keletu.forbiddenmagicre.init.InitResearch;
+import keletu.forbiddenmagicre.init.InitVanillaRecipes;
 import keletu.forbiddenmagicre.proxy.CommonProxy;
 import keletu.forbiddenmagicre.util.Reference;
 import net.minecraft.block.Block;
@@ -55,6 +56,7 @@ public class forbiddenmagicre {
     public void init(FMLInitializationEvent event) {
         InitRecipes.initRecipes();
         InitResearch.registerResearch();
+        InitVanillaRecipes.init();
     proxy.registerDisplayInformationInit();
     }
 

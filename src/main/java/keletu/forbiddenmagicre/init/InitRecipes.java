@@ -43,7 +43,7 @@ public class InitRecipes {
         ((ItemCrystalEssence) ItemsTC.crystalEssence).setAspects(crystal, new AspectList().add(asp, 100));
         return crystal;
     }
-    
+
 private static void initArcaneRecipes() {
 }
 
@@ -139,15 +139,15 @@ private static void initInfusionRecipes() {
             1,
             new AspectList().add(Aspect.AVERSION, 60).add(RegistryHandler.NETHER, 30).add(RegistryHandler.WRATH, 30),
             new ItemStack(ItemsTC.thaumiumAxe),
-            ThaumcraftApiHelper.makeCrystal(Aspect.AVERSION),
-            ThaumcraftApiHelper.makeCrystal(Aspect.AVERSION),
+            new ItemStack(ModItems.ResourceNS, 1, 0),
+            new ItemStack(ModItems.ResourceNS, 1, 0),
             "gemDiamond",
             new ItemStack(Items.SKULL, 1, 1)));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "arcane_cake"), new InfusionRecipe(
             "ARCANECAKE",
             new ItemStack(ModBlocks.BLOCK_ARCANE_CAKE),
             3,
-            new AspectList().add(Aspect.DESIRE, 30).add(RegistryHandler.GLUTTONY, 20).add(Aspect.CRAFT, 45),
+             new AspectList().add(Aspect.DESIRE, 30).add(RegistryHandler.GLUTTONY, 20).add(Aspect.CRAFT, 45),
             new ItemStack(Items.CAKE),
             new ItemStack(ItemsTC.salisMundus),
             new ItemStack(Items.EGG),

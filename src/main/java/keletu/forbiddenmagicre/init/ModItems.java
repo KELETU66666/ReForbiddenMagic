@@ -1,8 +1,10 @@
 package keletu.forbiddenmagicre.init;
 
 import keletu.forbiddenmagicre.items.food.ItemGluttonyShard;
+import keletu.forbiddenmagicre.items.food.ItemTaintFurit;
 import keletu.forbiddenmagicre.items.resources.ResourceFM;
 import keletu.forbiddenmagicre.items.resources.ResourceNS;
+import keletu.forbiddenmagicre.items.resources.ResourceTaintCharcoal;
 import keletu.forbiddenmagicre.items.tools.*;
 import net.minecraft.item.*;
 import net.minecraftforge.common.util.EnumHelper;
@@ -25,4 +27,6 @@ public static final ItemSpade MorphShovel = new MorphShovel("morph_shovel", tab,
     public static final Item ResourceFM = new ResourceFM();
     public static final Item ResourceNS = new ResourceNS();
     public static final ItemFood GluttonyShard = new ItemGluttonyShard();
+    public static final ItemFood TAINTED_FRUIT = new ItemTaintFurit();
+    public static final Item TAINTCHARCOAL = new ResourceTaintCharcoal();
 }

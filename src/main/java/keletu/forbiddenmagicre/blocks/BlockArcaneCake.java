@@ -3,6 +3,7 @@ package keletu.forbiddenmagicre.blocks;
 
 import java.util.Random;
 
+import fox.spiteful.lostmagic.LostMagic;
 import keletu.forbiddenmagicre.forbiddenmagicre;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
@@ -36,6 +37,7 @@ public class BlockArcaneCake extends Block implements IHasModel {
         super(Material.CAKE);
         setTickRandomly(true);
         setHardness(0.5F);
+        setCreativeTab(LostMagic.tab);
         this.setUnlocalizedName("arcane_cake");
         this.setRegistryName("arcane_cake");
         setDefaultState(getDefaultState().withProperty((IProperty)CAKE_STATE, Integer.valueOf(0)));

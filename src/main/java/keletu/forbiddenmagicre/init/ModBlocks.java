@@ -13,4 +13,7 @@ public class ModBlocks {
     public static final Block BLACK_FLOWER = new BlockBlackFlower();
     public static final Block BLACK_FLOWER_BUSH = new BlockRoseBush();
     public static final Block BLOCK_ARCANE_CAKE = new BlockArcaneCake();
+    public static final Block BLOCK_SAPLING_TAINTED = new BlockSaplingTainted();
+    public static final Block BLOCK_LEAVES_TAINTED = new BlockLeavesTainted();
+    public static final Block BLOCK_LOG_TAINTED = new BlockLogTainted();
 }
