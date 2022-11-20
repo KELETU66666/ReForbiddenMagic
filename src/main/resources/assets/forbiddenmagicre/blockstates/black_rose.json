@@ -1,0 +1,12 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cross",
+        "textures": { "cross": "forbiddenmagicre:blocks/black_rose" },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}], "inventory": [{"model": "forge:item-layer", "transform": "forge:default-item",
+            "textures": { "layer0": "forbiddenmagicre:blocks/black_rose" }}]
+    }
+}

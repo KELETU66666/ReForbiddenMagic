@@ -1,0 +1,38 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "forbiddenmagicre:items/wrath_shard"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "meta": 1
+            },
+            "model": "forbiddenmagicre:item/shard_envy"
+        },
+        {
+            "predicate": {
+                "meta": 2
+            },
+            "model": "forbiddenmagicre:item/shard_pride"
+        },
+        {
+            "predicate": {
+                "meta": 3
+            },
+            "model": "forbiddenmagicre:item/shard_lust"
+        },
+        {
+            "predicate": {
+                "meta": 4
+            },
+            "model": "forbiddenmagicre:item/shard_sloth"
+        },
+        {
+            "predicate": {
+                "meta": 5
+            },
+            "model": "forbiddenmagicre:item/shard_greed"
+        }
+    ]
+}

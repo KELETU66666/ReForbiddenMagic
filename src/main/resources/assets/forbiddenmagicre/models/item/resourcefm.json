@@ -1,0 +1,20 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "forbiddenmagicre:items/emerald_nugget"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "meta": 1
+            },
+            "model": "forbiddenmagicre:item/dye_powder_black"
+        },
+        {
+            "predicate": {
+                "meta": 2
+            },
+            "model": "forbiddenmagicre:item/taint_shard"
+        }
+    ]
+}

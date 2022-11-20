@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " d ",
+    "gsg",
+    " i "
+  ],
+  "key": {
+    "d": {
+      "type": "forge:ore_dict",
+      "ore": "dustPsi"
+    },
+    "g": {
+      "type": "forge:ore_dict",
+	  "ore": "blockGlass"
+    },
+    "s": {
+    "item": "minecraft:blaze_powder"
+    },
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    }
+  },
+  "result": {
+    "item": "forbiddenmagicre:cadcolorizer",
+    "data": 1
+  },
+  "conditions": [
+	{
+		"type" : "mod_exists",
+		"mod": "psi"
+	}
+  ]
+}

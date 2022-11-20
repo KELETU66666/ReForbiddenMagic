@@ -1,0 +1,6 @@
+{
+	"parent": "psi:item/_standard_colorizer",
+	"textures": { 
+        "layer1": "forbiddenmagicre:items/thaumic_colorizer"
+    }
+}

@@ -1,0 +1,60 @@
+language.region=CN
+language.code=zh_CN
+
+item.morph_sword.name=避役剑
+item.morph_pick.name=避役镐
+item.morph_axe.name=避役斧
+item.morph_shovel.name=避役锹
+item.skull_axe.name=啄颅斧
+item.distortion_pick.name=畸变镐
+
+
+schoolflower.euclidaisy.name=欧氏菊
+tile.botania:flower.euclidaisy.name=欧氏菊
+schoolflower.astralbloom.name=星域花
+tile.botania:flower.astralbloom.name=星域花
+schoolflower.mindlotus.name=心灵之莲
+tile.botania:flower.mindlotus.name=心灵之莲
+tile.botania:flower.whisperweed.name=细语草
+
+item.cadcolorizerThaumic.name=神秘使 CAD着色器
+item.cadcolorizerFlame.name=烈焰 CAD着色器
+item.amuletmentalagony.name=心智紊乱吊坠
+
+psi.spellparam.stability=稳定性
+psi.spellpiece.trick_deathgaze=启动式：死亡凝视
+psi.spellpiece.trick_deathgaze.desc=施加死亡凝视效果
+psi.spellpiece.trick_fluxflu=启动式：咒流
+psi.spellpiece.trick_fluxflu.desc=施加咒流效果
+psi.spellpiece.trick_fluxtaint=启动式：腐毒
+psi.spellpiece.trick_fluxtaint.desc=施加腐毒效果
+psi.spellpiece.trick_warpward=启动式：扭曲守护
+psi.spellpiece.trick_warpward.desc=施加扭曲守护效果
+psi.spellpiece.trick_soulcross=Trick: Soul Cross
+psi.spellpiece.trick_soulcross.desc=Applies a Soul Cross effect
+psi.spellpiece.trick_allure=Trick: Allure
+psi.spellpiece.trick_allure.desc=Applies an Allure effect
+psi.spellpiece.trick_emptiness=Trick: Emptiness
+psi.spellpiece.trick_emptiness.desc=Applies an Emptiness effect
+psi.spellpiece.trick_siphonaura=启动式：灵气虹吸
+psi.spellpiece.trick_siphonaura.desc=吸收灵气，回复Psi能量
+psi.spellpiece.trick_genmana=启动式：魔力生产
+psi.spellpiece.trick_genmana.desc=让目标位置的心灵之莲产生魔力
+psi.piecegroup.thaumic=神秘学
+psi.piecegroup.thaumic.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Thaumaturgy.<br><br>The red piece of this group.
+psi.piecegroup.botany=植物学
+psi.piecegroup.botany.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Botany.<br><br>The red piece of this group, "Trick: Generate Mana", allows you to generate mana at a targetted Mind Lotus flower. Higher Stability increases the cost of the spell, but lower Stability induces more stress in the flower, hastening its decay.item.riding_crop.name
+
+
+item.riding_crop.name=Riding Crop
+item.resourcefm.0.name=Emerald Nugget
+item.resourcefm.1.name=Shadow Ink
+item.resourcefm.2.name=Taint Blood Shard
+tile.black_rose_bush.name=Shadow Rose Bush
+tile.black_rose.name=Shadow Rose
+forbiddenmagicre.research.morph_tools.title=Chamelic Tools
+forbiddenmagicre.research.morph_tools.text=Scraps of Forbidden Research from the Fourth Age speak of Tools which could shift between Enchantments at the whim of the wielder, it may be possible to replicate these Tools.
+forbiddenmagicre.research.morph_tools.complete.text=Success!... Mostly. It's not a perfect replica, as whatever material was used to Infuse the Enchantment-Shifting properties in the past seems to no longer exist, but Permutatio Crystals seem to be a sufficient substitute.<BR>Either way, the properties seem to mirror those Tools i heard about, so it is sufficient for now.<BR>They can store three different sets of Enchantments, which can be cycled by Sneak-Right-clicking with the tool in hand, provided it is actually Enchanted at all, the current set is indicated by the color of the Gems on the tool. It takes a bit of Durability to switch the set away, but it is fairly neglegible.
+forbiddenmagicre.research.distortionpick.title=Pickaxe of Distortion
+forbiddenmagicre.research.distortionpick.text=Scraps of Forbidden Research from the Fourth Age speak of a Pickaxe which could mine the toughest of materials in mere moments, perhaps it is possible to replicate?
+forbiddenmagicre.research.distortionpick.complete.text=I believe i have figured out how it was done by experimenting on some Obsidian, by simply corrupting the weak points of the material with a twisted form of Magic, it could be tainted with traces of some strange, twisted biomass, Though this biomass quickly dies out when the pickaxe stops striking the material.<BR>It also seems to be horribly ineffective against weaker materials, such as Stone, breaking them almost as slowly as one's hands against Obsidian. But it still has some merit for tearing through tough.

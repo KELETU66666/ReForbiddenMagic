@@ -1,0 +1,20 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "forbiddenmagicre:items/morph_sword"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "morphsword": 1
+      },
+      "model": "forbiddenmagicre:item/morph_sword1"
+    },
+    {
+      "predicate": {
+        "morphsword": 2
+      },
+      "model": "forbiddenmagicre:item/morph_sword2"
+    }
+  ]
+}

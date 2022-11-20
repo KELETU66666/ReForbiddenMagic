@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "inventory": { "model": "forbiddenmagicre:arcane_cake", "transform": "forge:default-block" },
+    "cake_state=0": { "model": "forbiddenmagicre:arcane_cake/cake_uneaten" },
+    "cake_state=1": { "model": "forbiddenmagicre:arcane_cake/cake_slice1" },
+    "cake_state=2": { "model": "forbiddenmagicre:arcane_cake/cake_slice1" },
+    "cake_state=3": { "model": "forbiddenmagicre:arcane_cake/cake_slice2" },
+    "cake_state=4": { "model": "forbiddenmagicre:arcane_cake/cake_slice2" },
+    "cake_state=5": { "model": "forbiddenmagicre:arcane_cake/cake_slice3" },
+    "cake_state=6": { "model": "forbiddenmagicre:arcane_cake/cake_slice3" },
+    "cake_state=7": { "model": "forbiddenmagicre:arcane_cake/cake_slice4" },
+    "cake_state=8": { "model": "forbiddenmagicre:arcane_cake/cake_slice4" },
+    "cake_state=9": { "model": "forbiddenmagicre:arcane_cake/cake_slice5" },
+    "cake_state=10": { "model": "forbiddenmagicre:arcane_cake/cake_slice5" },
+    "cake_state=11": { "model": "forbiddenmagicre:arcane_cake/cake_slice6" },
+    "cake_state=12": { "model": "forbiddenmagicre:arcane_cake/cake_slice6" }
+  }
+}

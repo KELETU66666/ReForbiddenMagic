@@ -1,0 +1,22 @@
+{
+  "entries": [
+    { "key": "MAGICAL_FLOWER",
+    "name": "forbiddenmagicre.research.magical_flower.title",
+    "icons": ["botania:specialflower;1;0;{type: \"whisperweed\"}", "botania:specialflower;1;0;{type: \"euclidaisy\"}", "botania:specialflower;1;0;{type: \"astralbloom\"}"],
+    "category": "APOCRYPHA",
+    "location": [-3, 0],
+    "parents": ["LOSTMAGIC"],
+    "stages": [
+      {
+        "text": "forbiddenmagicre.research.magical_flower.text",
+        "required_knowledge":["OBSERVATION;INFUSION;1", "THEORY;ARTIFICE;1", "THEORY;INFUSION;1"]
+
+      },
+      {
+        "text": "forbiddenmagicre.research.magical_flower.complete.text",
+        "recipes": ["forbiddenmagicre:whisper_weed", "forbiddenmagicre:astral_bloom", "forbiddenmagicre:euclidaisy"]
+      }
+    ]
+  }
+    ]
+  }

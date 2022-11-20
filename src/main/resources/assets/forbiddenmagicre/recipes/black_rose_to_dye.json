@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "forbiddenmagicre:black_rose"
+    }
+  ],
+  "result": {
+    "item": "forbiddenmagicre:resourcefm",
+    "count": 2,
+    "data": 1
+  }
+}

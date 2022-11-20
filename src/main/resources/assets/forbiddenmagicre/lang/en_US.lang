@@ -1,0 +1,129 @@
+language.region=US
+language.code=en_US
+
+#aspects
+tc.aspect.infernus=The Nether, Demons, Hellfire
+tc.aspect.ira=Wrath, Anger, Rage
+tc.aspect.gula=Gluttony, Consumption, Indulgence
+tc.aspect.invidia=Envy, Jealousy, Insecurity
+tc.aspect.superbia=Pride, Arrogance, Disdain
+tc.aspect.desidia=Sloth, Laziness, Procrastination
+tc.aspect.luxuria=Lust, Desire, Excess
+
+#item
+item.morph_sword.name=Chamelic Sword
+item.morph_pick.name=Chamelic Pickaxe
+item.morph_axe.name=Chamelic Axe
+item.morph_shovel.name=Chamelic Shovel
+item.skull_axe.name=Axe of SkullTaker
+item.distortion_pick.name=Pickaxe of Distortion
+item.riding_crop.name=Riding Crop
+item.resourcefm.0.name=Emerald Nugget
+item.resourcefm.1.name=Shadow Ink
+item.resourcefm.2.name=Taint Blood Shard
+
+item.resourcenethershard.0.name=Wrath Shard
+item.resourcenethershard.1.name=Envy Shard
+item.resourcenethershard.2.name=Pride Shard
+item.resourcenethershard.3.name=Lust Shard
+item.resourcenethershard.4.name=Sloth Shard
+item.resourcenethershard.5.name=Greed Shard
+item.gluttony_shard.name=Gluttony Shard
+#block
+tile.black_rose_bush.name=Shadow Rose Bush
+tile.black_rose.name=Shadow Rose
+#Botania
+
+schoolflower.euclidaisy.name=Euclidaisy
+tile.botania:flower.euclidaisy.name=Euclidaisy
+schoolflower.astralbloom.name=Astral Bloom
+tile.botania:flower.astralbloom.name=Astral Bloom
+schoolflower.mindlotus.name=Mind Lotus
+tile.botania:flower.mindlotus.name=Mind Lotus
+tile.botania:flower.whisperweed.name=Whisper Weed
+#Psi
+item.cadcolorizerThaumic.name=Thaumic CAD Colorizer
+item.cadcolorizerFlame.name=Incendiary CAD Colorizer
+item.amuletmentalagony.name=Amulet of Mental Anguish
+
+# Spells
+psi.spellparam.stability=Stability
+psi.spellpiece.trick_deathgaze=Trick: Death Gaze
+psi.spellpiece.trick_deathgaze.desc=Applies a Death Gaze effect
+psi.spellpiece.trick_fluxflu=Trick: Flux Flu
+psi.spellpiece.trick_fluxflu.desc=Applies a Flux Flu effect
+psi.spellpiece.trick_fluxtaint=Trick: Flux Taint
+psi.spellpiece.trick_fluxtaint.desc=Applies a Flux Taint effect
+psi.spellpiece.trick_warpward=Trick: Warp Ward
+psi.spellpiece.trick_warpward.desc=Applies a Warp Ward effect
+psi.spellpiece.trick_soulcross=Trick: Soul Cross
+psi.spellpiece.trick_soulcross.desc=Applies a Soul Cross effect
+psi.spellpiece.trick_allure=Trick: Allure
+psi.spellpiece.trick_allure.desc=Applies an Allure effect
+psi.spellpiece.trick_emptiness=Trick: Emptiness
+psi.spellpiece.trick_emptiness.desc=Applies an Emptiness effect
+psi.spellpiece.trick_siphonaura=Trick: Siphon Aura
+psi.spellpiece.trick_siphonaura.desc=Drains Vis from the aura to replenish Psi
+psi.spellpiece.trick_genmana=Trick: Generate Mana
+psi.spellpiece.trick_genmana.desc=Causes a Mind Lotus at the target position to generate mana
+psi.piecegroup.thaumic=Thaumaturgy
+psi.piecegroup.thaumic.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Thaumaturgy.<br><br>The red piece of this group.
+psi.piecegroup.botany=Botany
+psi.piecegroup.botany.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Botany.<br><br>The red piece of this group, "Trick: Generate Mana", allows you to generate mana at a targetted Mind Lotus flower. Higher Stability increases the cost of the spell, but lower Stability induces more stress in the flower, hastening its decay.
+
+#Enchantment
+
+enchantment.wrath=Wrath
+
+enchantment.infusion.GREEDY=Greedy
+enchantment.infusion.EDUCATIONAL=Educational
+enchantment.infusion.CONSUMING=Consuming
+enchantment.infusion.VOIDTOUCHED=Void Touched
+
+
+#Research ForbiddenMagic
+forbiddenmagicre.research.morph_tools.title=Chamelic Tools
+forbiddenmagicre.research.morph_tools.text=Scraps of Forbidden Research from the Fourth Age speak of Tools which could shift between Enchantments at the whim of the wielder, it may be possible to replicate these Tools.
+forbiddenmagicre.research.morph_tools.complete.text=Success!... Mostly. It's not a perfect replica, as whatever material was used to Infuse the Enchantment-Shifting properties in the past seems to no longer exist, but Permutatio Crystals seem to be a sufficient substitute.<BR>Either way, the properties seem to mirror those Tools i heard about, so it is sufficient for now.<BR>They can store three different sets of Enchantments, which can be cycled by Sneak-Right-clicking with the tool in hand, provided it is actually Enchanted at all, the current set is indicated by the color of the Gems on the tool. It takes a bit of Durability to switch the set away, but it is fairly neglegible.
+forbiddenmagicre.research.morph_tools.void=additions
+
+forbiddenmagicre.research.distortionpick.title=Pickaxe of Distortion
+forbiddenmagicre.research.distortionpick.text=Scraps of Forbidden Research from the Fourth Age speak of a Pickaxe which could mine the toughest of materials in mere moments, perhaps it is possible to replicate?
+forbiddenmagicre.research.distortionpick.complete.text=I believe i have figured out how it was done by experimenting on some Obsidian, by simply corrupting the weak points of the material with a twisted form of Magic, it could be tainted with traces of some strange, twisted biomass, Though this biomass quickly dies out when the pickaxe stops striking the material.<BR>It also seems to be horribly ineffective against weaker materials, such as Stone, breaking them almost as slowly as one's hands against Obsidian. But it still has some merit for tearing through tough materials.
+
+forbiddenmagic.research.infusonenchantmentfm.title=Forbidden Infusion Enchantments
+forbiddenmagicre.research.infusonenchantmentfm.text=text
+forbiddenmagicre.research.infusonenchantmentfm.complete.text=text.complete
+
+research.EMERALDDUMP.title=Emerald Duplication
+research.EMERALDDUMP.text.stage.1=text
+research.EMERALDDUMP.text.stage.2=complete
+
+research.BLACKROSE.title=Save The Squid
+research.BLACKROSE.text.stage.1=text
+research.BLACKROSE.text.stage.2=complete
+
+research.SKULLAXE.title=Axe of the SkullTaker
+research.SKULLAXE.text.stage.1=text
+research.SKULLAXE.text.stage.2=complete
+
+forbiddenmagic.research.arcane_cake.title=Arcane Cake
+forbiddenmagicre.research.arcane_cake.text=text
+forbiddenmagicre.research.arcane_cake.complete.text=text.complete
+
+forbiddenmagic.research.crystalshard.title=Nether Shards
+forbiddenmagicre.research.crystalshard.text=text
+forbiddenmagicre.research.crystalshard.complete.text=text.complete
+
+#Research Botany
+forbiddenmagicre.research.magical_flower.title=Magical Flower
+forbiddenmagicre.research.magical_flower.text=text
+forbiddenmagicre.research.magical_flower.complete.text=complete
+
+#Research Psionics
+forbiddenmagicre.research.psi_amulet.title=Amulet of the Mentalagony
+forbiddenmagicre.research.psi_amulet.text=text
+forbiddenmagicre.research.psi_amulet.complete.text=complete
+
+research.f_overloaddamage_complete.text=text
+overloaddamage.complete.text=text

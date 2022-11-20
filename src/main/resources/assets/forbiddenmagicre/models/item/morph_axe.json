@@ -1,0 +1,20 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "forbiddenmagicre:items/morph_axe"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "morphaxe": 1
+      },
+      "model": "forbiddenmagicre:item/morph_axe1"
+    },
+    {
+      "predicate": {
+        "morphaxe": 2
+      },
+      "model": "forbiddenmagicre:item/morph_axe2"
+    }
+  ]
+}
