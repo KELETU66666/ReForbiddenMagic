@@ -1,14 +1,11 @@
 package keletu.forbiddenmagicre.util;
 
-import keletu.forbiddenmagicre.compat.botania.flowers.SubTileFlower;
 import keletu.forbiddenmagicre.compat.psi.ItemAmuletPsi;
 import keletu.forbiddenmagicre.compat.psi.ItemExtraColorizer;
 import keletu.forbiddenmagicre.enchantments.EnchantmentsFM;
-import keletu.forbiddenmagicre.forbiddenmagicre;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -17,13 +14,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.*;
-import vazkii.botania.api.BotaniaAPI;
-import vazkii.botania.api.BotaniaAPIClient;
 
 @Mod.EventBusSubscriber
 
@@ -31,12 +27,9 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void onItemRegister( RegistryEvent.Register<Item> event ) {
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
-        event.getRegistry().registerAll(new ItemExtraColorizer());
-        event.getRegistry().registerAll(new ItemAmuletPsi());
-        for (SubTileFlower subTileFlower : forbiddenmagicre.subTiles) {
-            BotaniaAPI.registerSubTile(subTileFlower.getKey(), subTileFlower.getSubTileClass());
-            BotaniaAPI.addSubTileToCreativeMenu(subTileFlower.getKey());
-            System.out.println("REGISTER FLOWER : " + subTileFlower.getKey());
+        if(Loader.isModLoaded("psi")) {
+            event.getRegistry().registerAll(new ItemExtraColorizer());
+            event.getRegistry().registerAll(new ItemAmuletPsi());
         }
     }
     @SubscribeEvent
@@ -45,28 +38,17 @@ public class RegistryHandler {
     }
 
     @SubscribeEvent
-    public static void onModelRegister( ModelRegistryEvent event )
-    {
-        for ( Item item : ModItems.ITEMS ) {
+    public static void onModelRegister( ModelRegistryEvent event ) {
+        for (Item item : ModItems.ITEMS) {
             if (item instanceof IHasModel) {
                 ((IHasModel) item).registerModels();
             }
         }
-        for (Block block: ModBlocks.BLOCKS)
-        {
-            if (block instanceof IHasModel)
-            {
-                ((IHasModel)block).registerModels();
+        for (Block block : ModBlocks.BLOCKS) {
+            if (block instanceof IHasModel) {
+                ((IHasModel) block).registerModels();
             }
         }
-        for (SubTileFlower subTileFlower : forbiddenmagicre.subTiles) {
-            BotaniaAPIClient.registerSubtileModel(subTileFlower.getKey(), new ModelResourceLocation("botania:" + subTileFlower.getKey()));
-        }
-
-    }
-
-    private static void addAspects(ItemStack stack, AspectList aspects) {
-        ThaumcraftApi.registerObjectTag(stack, AspectHelper.getObjectAspects(stack).add(aspects));
     }
 
     @SubscribeEvent

@@ -45,6 +45,17 @@ public class InitRecipes {
     }
 
 private static void initArcaneRecipes() {
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "arcane_to_tainted_stone"), new ShapedArcaneRecipe(
+            defaultGroup,
+            "TAINTED_BLOCKS",
+            50,
+            new AspectList(),
+            new ItemStack(ModBlocks.BLOCKSTONETAINTED, 9, 0),
+            "AAA",
+            "ATA",
+            "AAA",
+            'T', ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
+            'A', new ItemStack(BlocksTC.stoneArcane)));
 }
 
 private static void initCrucibleRecipes() {
@@ -62,6 +73,13 @@ private static void initCrucibleRecipes() {
                 new ItemStack(ModItems.ResourceFM, 1, 0),
             new AspectList().add(Aspect.CRYSTAL, 8).add(Aspect.DESIRE, 8)
         ));
+
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "fm_tainted_sapling"), new CrucibleRecipe(
+            "TAINTED_BLOCKS",
+            new ItemStack(ModBlocks.BLOCK_SAPLING_TAINTED),
+            new ItemStack(Blocks.SAPLING, 1, 0),
+            new AspectList().add(Aspect.DEATH, 30).add(Aspect.FLUX, 30)
+    ));
 }
 private static void initInfusionRecipes() {
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_shovel"), new InfusionRecipe(

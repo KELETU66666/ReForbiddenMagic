@@ -36,4 +36,8 @@ public class SubTileMindLotus extends SubTileGenerating {
         return true;
     }
 
+    @Override
+    public LexiconEntry getEntry() {
+        return lexicon;
+    }
 }

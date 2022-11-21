@@ -21,6 +21,8 @@ item.riding_crop.name=Riding Crop
 item.resourcefm.0.name=Emerald Nugget
 item.resourcefm.1.name=Shadow Ink
 item.resourcefm.2.name=Taint Blood Shard
+item.taint_fruit.name=Tainted Fruit
+item.taint_charcoal.name=Hexcoal
 
 item.resourcenethershard.0.name=Wrath Shard
 item.resourcenethershard.1.name=Envy Shard
@@ -32,15 +34,29 @@ item.gluttony_shard.name=Gluttony Shard
 #block
 tile.black_rose_bush.name=Shadow Rose Bush
 tile.black_rose.name=Shadow Rose
+tile.arcane_cake.name=Arcane Cake
+tile.leaves_tainted.name=Tainted Leaves
+tile.log_tainted.name=Tainted Log
+tile.taint_planks.name=Tainted Plank
+tile.tainted_stone.name=Tainted Stone
+tile.tainted_brick.name=Tainted Brick
+
 #Botania
 
-schoolflower.euclidaisy.name=Euclidaisy
 tile.botania:flower.euclidaisy.name=Euclidaisy
-schoolflower.astralbloom.name=Astral Bloom
 tile.botania:flower.astralbloom.name=Astral Bloom
-schoolflower.mindlotus.name=Mind Lotus
 tile.botania:flower.mindlotus.name=Mind Lotus
 tile.botania:flower.whisperweed.name=Whisper Weed
+forbidden.lexicon.whisperweed=Whisperweed
+forbidden.lexicon.whisperweed.0=The &1Whisperweed&0 is an unpleasant plant that whispers secrets into the ears of anyone who'll listen. There doesn't seem to be much point to the plant, since the secrets aren't even relevant to botany.<br>&oMore secrets than Wan Shi Tong&r
+forbidden.lexicon.euclidaisy=Euclidaisy
+forbidden.lexicon.euclidaisy.0=The eerie, pink &1Euclidaisy&0 is an oddity. It uses large amounts of mana to conjure some sort of wispy substance that only seems useful to thaumaturges.<br>&oIt doesn't combustion bend.&r
+forbidden.lexicon.astralbloom=Astral Bloom
+forbidden.lexicon.astralbloom.0=The strange &1Astral Blooms&0 seem to devour exhorbitant amounts of mana to do nothing at all.<br>Thaumaturges insist that the flowers purify harmful taint from an invisible aura that only they can see. What will those charlatans do next? Try and sell you magical crystals?
+forbidden.lexicon.mindlotus=Mind Lotus
+forbidden.lexicon.mindlotus.0=The &1Mind Lotus&0 causes mental unease just by being nearby, as if it were prying into your mind.<br>In spite of this, it doesn't seem to generate any mana on its own. Maybe it needs some sort of push?<br>The flower seems oddly frail, decaying even in situations where other flowers would survive.
+forbidden.lexicon.mindlotus.1=Don't eat it!
+
 #Psi
 item.cadcolorizerThaumic.name=Thaumic CAD Colorizer
 item.cadcolorizerFlame.name=Incendiary CAD Colorizer
@@ -67,7 +83,7 @@ psi.spellpiece.trick_siphonaura.desc=Drains Vis from the aura to replenish Psi
 psi.spellpiece.trick_genmana=Trick: Generate Mana
 psi.spellpiece.trick_genmana.desc=Causes a Mind Lotus at the target position to generate mana
 psi.piecegroup.thaumic=Thaumaturgy
-psi.piecegroup.thaumic.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Thaumaturgy.<br><br>The red piece of this group.
+psi.piecegroup.thaumic.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Thaumaturgy.
 psi.piecegroup.botany=Botany
 psi.piecegroup.botany.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Botany.<br><br>The red piece of this group, "Trick: Generate Mana", allows you to generate mana at a targetted Mind Lotus flower. Higher Stability increases the cost of the spell, but lower Stability induces more stress in the flower, hastening its decay.
 
@@ -107,14 +123,15 @@ research.SKULLAXE.title=Axe of the SkullTaker
 research.SKULLAXE.text.stage.1=text
 research.SKULLAXE.text.stage.2=complete
 
-forbiddenmagic.research.arcane_cake.title=Arcane Cake
+forbiddenmagicre.research.arcane_cake.title=Arcane Cake
 forbiddenmagicre.research.arcane_cake.text=text
 forbiddenmagicre.research.arcane_cake.complete.text=text.complete
 
-forbiddenmagic.research.crystalshard.title=Nether Shards
-forbiddenmagicre.research.crystalshard.text=text
-forbiddenmagicre.research.crystalshard.complete.text=text.complete
+forbiddenmagicre.research.lostmagic.text=text
 
+forbiddenmagicre.research.tainted_blocks.title=Tainted Blocks
+forbiddenmagicre.research.tainted_blocks.text=text
+forbiddenmagicre.research.tainted_blocks.complete.text=text.complete
 #Research Botany
 forbiddenmagicre.research.magical_flower.title=Magical Flower
 forbiddenmagicre.research.magical_flower.text=text

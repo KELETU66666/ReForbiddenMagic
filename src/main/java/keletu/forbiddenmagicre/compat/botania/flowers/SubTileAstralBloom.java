@@ -19,6 +19,8 @@ import static vazkii.botania.common.lexicon.LexiconData.lexicon;
 public class SubTileAstralBloom extends SubTileFunctional {
     private World world;
 
+    public static LexiconEntry lexicon;
+
     private BlockPos pos;
 
     private static final int cost = 50000;

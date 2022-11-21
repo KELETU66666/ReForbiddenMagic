@@ -1,8 +1,26 @@
 {
   "entries": [
-      {
-        "key": "MORPH_TOOLS",
-        "name": "forbiddenmagicre.research.morph_tools.title",
+    {
+      "key": "LOSTMAGIC",
+      "name": "research.lostmagic.LOSTMAGIC.title",
+      "icons": ["lostmagic:textures/misc/forbidden.png"],
+      "category": "APOCRYPHA",
+      "location": [0, 0],
+      "meta": ["ROUND"],
+      "parents": [ "FIRSTSTEPS" ],
+      "stages": [
+        {
+          "text": "forbiddenmagicre.research.lostmagic.text",
+          "required_research": ["m_hellandback"]
+        },
+        {
+          "text": "research.lostmagic.LOSTMAGIC.text.stage.1"
+        }
+      ]
+    },
+    {
+      "key": "MORPH_TOOLS",
+      "name": "forbiddenmagicre.research.morph_tools.title",
         "category": "APOCRYPHA",
         "icons": [
           "forbiddenmagicre:morph_sword", "forbiddenmagicre:morph_pick", "forbiddenmagicre:morph_axe", "forbiddenmagicre:morph_shovel"
@@ -25,7 +43,8 @@
           },
           {
             "text": "forbiddenmagicre.research.morph_tools.complete.text",
-            "recipes": ["forbiddenmagicre:morph_sword", "forbiddenmagicre:morph_pick", "forbiddenmagicre:morph_axe", "forbiddenmagicre:morph_shovel", "forbiddenmagicre:IECVOIDFAKE"]
+            "recipes": ["forbiddenmagicre:morph_sword", "forbiddenmagicre:morph_pick", "forbiddenmagicre:morph_axe", "forbiddenmagicre:morph_shovel", "forbiddenmagicre:IECVOIDFAKE"],
+            "warp": 2
           }
         ],
         "addenda": [
@@ -115,6 +134,42 @@
         {
           "text": "research.lostmagic.RINGNUTRITION.text.stage.2",
           "recipes": ["lostmagic:RingNutrition"]
+        }
+      ]
+    },
+    { "key": "ARCANECAKE",
+      "name": "forbiddenmagicre.research.arcane_cake.title",
+      "icons": ["forbiddenmagicre:arcane_cake"],
+      "category": "APOCRYPHA",
+      "location": [7, 0],
+      "parents": ["RINGNUTRITION"],
+      "stages": [
+        {
+          "text": "forbiddenmagicre.research.arcane_cake.text",
+          "required_item":["minecraft:cake"]
+
+        },
+        {
+          "text": "forbiddenmagicre.research.arcane_cake.complete.text",
+          "recipes": ["forbiddenmagicre:arcane_cake"]
+        }
+      ]
+    },
+    { "key": "TAINTED_BLOCKS",
+      "name": "forbiddenmagicre.research.tainted_blocks.title",
+      "icons": ["forbiddenmagicre:sapling_tainted"],
+      "category": "APOCRYPHA",
+      "location": [6, 2],
+      "parents": ["PURESHOVEL"],
+      "stages": [
+        {
+          "text": "forbiddenmagicre.research.tainted_blocks.text",
+          "required_item":["thaumcraft:taint_log", "thaumcraft:taint_soil", "thaumcraft:taint_rock"],
+"warp": 1
+        },
+        {
+          "text": "forbiddenmagicre.research.tainted_blocks.complete.text",
+          "recipes": ["forbiddenmagicre:fm_tainted_sapling", "forbiddenmagicre:taint_wood_to_plank", "forbiddenmagicre:arcane_to_tainted_stone", "forbiddenmagicre:tainted_stone_to_brick"]
         }
       ]
     },
