@@ -16,4 +16,7 @@ public class ModBlocks {
     public static final Block BLOCK_SAPLING_TAINTED = new BlockSaplingTainted();
     public static final Block BLOCK_LEAVES_TAINTED = new BlockLeavesTainted();
     public static final Block BLOCK_LOG_TAINTED = new BlockLogTainted();
+    public static final Block BLOCKSTONETAINTED = new BlockStoneTainted();
+    public static final Block BLOCKSTONEBRICK = new BlockBrickTainted();
+    public static final Block BLOCK_PLANK_TAINTED = new BlockTaintPlank();
 }

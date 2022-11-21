@@ -81,9 +81,10 @@ public class RegistryHandler {
         proxy.registerComplexObjectTag(new ItemStack(ModItems.ResourceNS, 1, 5), new AspectList().add(NETHER, 2).add(Aspect.DESIRE, 2).add(Aspect.CRYSTAL, 2));
         proxy.registerComplexObjectTag(new ItemStack(ModItems.GluttonyShard), new AspectList().add(NETHER, 2).add(GLUTTONY, 2).add(Aspect.CRYSTAL, 2));
         proxy.registerComplexObjectTag(new ItemStack(ModItems.TAINTED_FRUIT), new AspectList().add(Aspect.PLANT, 5).add(Aspect.FLUX, 5));
-
-
-
+        proxy.registerComplexObjectTag(new ItemStack(ModBlocks.BLOCK_LOG_TAINTED), new AspectList().add(Aspect.PLANT, 20).add(Aspect.FLUX, 5));
+        proxy.registerComplexObjectTag(new ItemStack(ModBlocks.BLOCK_LEAVES_TAINTED), new AspectList().add(Aspect.PLANT, 3).add(Aspect.FLUX, 1));
+        proxy.registerComplexObjectTag(new ItemStack(ModItems.TAINTCHARCOAL), new AspectList().add(Aspect.FIRE, 5).add(Aspect.ENERGY, 5).add(Aspect.FLUX, 3));
+        proxy.registerComplexObjectTag(new ItemStack(ModItems.ResourceFM, 1, 1), new AspectList().add(Aspect.DARKNESS, 2).add(Aspect.SENSES, 2));
 
 
 
@@ -127,6 +128,10 @@ public class RegistryHandler {
     {
         OreDictionary.registerOre("dyeBlack", new ItemStack(ModItems.ResourceFM, 1, 1));
         OreDictionary.registerOre("nuggetEmerald", new ItemStack(ModItems.ResourceFM, 1, 0));
+        OreDictionary.registerOre("plankWood", new ItemStack(ModBlocks.BLOCK_PLANK_TAINTED, 1, 0));
+        OreDictionary.registerOre("logWood", new ItemStack(ModBlocks.BLOCK_LOG_TAINTED, 1, 0));
+        OreDictionary.registerOre("treeSapling", new ItemStack(ModBlocks.BLOCK_SAPLING_TAINTED, 1, 0));
+        OreDictionary.registerOre("treeLeaves", new ItemStack(ModBlocks.BLOCK_LEAVES_TAINTED, 1, 0));
     }
 
     public static final Aspect ENVY = new Aspect("invidia", 47616, new Aspect[] { Aspect.SENSES, Aspect.DESIRE }, new ResourceLocation("forbiddenmagicre", "textures/aspects/invidia.png"), 1);

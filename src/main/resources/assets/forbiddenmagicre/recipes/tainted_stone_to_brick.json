@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "NN",
+    "NN"
+  ],
+  "key": {
+    "N": {
+      "item": "forbiddenmagicre:tainted_stone"
+    }
+  },
+    "result": {
+      "item": "forbiddenmagicre:tainted_brick"
+    }
+}

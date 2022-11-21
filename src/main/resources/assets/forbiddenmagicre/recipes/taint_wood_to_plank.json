@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "forbiddenmagicre:log_tainted"
+    }
+  ],
+  "result": {
+    "item": "forbiddenmagicre:taint_planks",
+    "count": 4
+  }
+}
