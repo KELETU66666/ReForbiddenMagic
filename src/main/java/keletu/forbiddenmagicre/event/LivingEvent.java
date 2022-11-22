@@ -2,16 +2,22 @@ package keletu.forbiddenmagicre.event;
 
 import com.google.common.collect.Multimap;
 import keletu.forbiddenmagicre.ConfigFM;
+import keletu.forbiddenmagicre.LogHandler;
+import keletu.forbiddenmagicre.XPReflectionHelper;
 import keletu.forbiddenmagicre.enchantments.inchantment.EnumInfusionEnchantmentFM;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.items.tools.DistortionPick;
 import keletu.forbiddenmagicre.util.Reference;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -36,6 +42,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+import org.apache.logging.log4j.Level;
 
 import java.util.Collection;
 import java.util.Random;
@@ -108,7 +115,7 @@ public class LivingEvent {
         if ((event.getEntityLiving() instanceof EntityVillager || event.getEntityLiving() instanceof IMob) && event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
             ItemStack equip = player.getHeldItem(EnumHand.MAIN_HAND);
-            if (equip != null && EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.CONSUMING) > 0 && event.getLootingLevel() <= 0) {
+            if (equip != null && EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.GREEDY) > 0 && event.getLootingLevel() <= 0) {
                 if (event.getEntityLiving() instanceof EntityVillager) {
                     addDrop(event, new ItemStack(Items.EMERALD, 1, 0));
                 } else if (rand.nextInt(35) < 3)
@@ -284,6 +291,27 @@ public class LivingEvent {
                     ent.motionY += randy.nextFloat() * 0.05F;
                     ent.motionX += (randy.nextFloat() - randy.nextFloat()) * 0.1F;
                     ent.motionZ += (randy.nextFloat() - randy.nextFloat()) * 0.1F;
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onDeath(LivingDeathEvent event) {
+        if (event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityLivingBase) {
+            ((EntityLivingBase) event.getSource().getTrueSource()).getHeldItemMainhand();
+            ItemStack equip = ((EntityLivingBase) event.getSource().getTrueSource()).getHeldItemMainhand();
+
+            if (EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.EDUCATIONAL) > 0 && event.getEntityLiving() instanceof EntityLiving && EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, equip) == 0) {
+                try {
+                    int learning = 3 * XPReflectionHelper.getXP(((EntityLiving) event.getEntityLiving())) * EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.EDUCATIONAL);
+                    while (learning > 0) {
+                        int xp = EntityXPOrb.getXPSplit(learning);
+                        learning -= xp;
+                        event.getEntityLiving().world.spawnEntity(new EntityXPOrb(event.getEntityLiving().world, event.getEntityLiving().posX, event.getEntityLiving().posY, event.getEntityLiving().posZ, xp));
+                    }
+                } catch (Throwable e) {
+                    LogHandler.log(Level.ERROR, "Failed to educate!");
                 }
             }
         }

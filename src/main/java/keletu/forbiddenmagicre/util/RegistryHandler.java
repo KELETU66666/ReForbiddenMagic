@@ -116,18 +116,18 @@ public class RegistryHandler {
         OreDictionary.registerOre("treeLeaves", new ItemStack(ModBlocks.BLOCK_LEAVES_TAINTED, 1, 0));
     }
 
-    public static final Aspect ENVY = new Aspect("invidia", 47616, new Aspect[] { Aspect.SENSES, Aspect.DESIRE }, new ResourceLocation("forbiddenmagicre", "textures/aspects/invidia.png"), 1);
+    public static final Aspect ENVY = new Aspect("invidia", 0x00ba00, new Aspect[] { Aspect.SENSES, Aspect.DESIRE }, new ResourceLocation("forbiddenmagicre", "textures/aspects/invidia.png"), 1);
 
-    public static final Aspect GLUTTONY = new Aspect("gula", 13999174, new Aspect[] { Aspect.DESIRE, Aspect.VOID }, new ResourceLocation("forbiddenmagicre", "textures/aspects/gula.png"), 1);
+    public static final Aspect GLUTTONY = new Aspect("gula", 0xd59c46, new Aspect[] { Aspect.DESIRE, Aspect.VOID }, new ResourceLocation("forbiddenmagicre", "textures/aspects/gula.png"), 1);
 
-    public static final Aspect LUST = new Aspect("luxuria", 16761294, new Aspect[] { Aspect.BEAST, Aspect.DESIRE }, new ResourceLocation("forbiddenmagicre", "textures/aspects/luxuria.png"), 1);
+    public static final Aspect LUST = new Aspect("luxuria", 0xffc1ce, new Aspect[] { Aspect.BEAST, Aspect.DESIRE }, new ResourceLocation("forbiddenmagicre", "textures/aspects/luxuria.png"), 1);
 
-    public static final Aspect NETHER = new Aspect("infernus", 16711680, new Aspect[] { Aspect.FIRE, Aspect.MAGIC }, new ResourceLocation("forbiddenmagicre", "textures/aspects/infernus.png"), 771);
+    public static final Aspect NETHER = new Aspect("infernus", 0xff0000, new Aspect[] { Aspect.FIRE, Aspect.MAGIC }, new ResourceLocation("forbiddenmagicre", "textures/aspects/infernus.png"), 771);
 
-    public static final Aspect PRIDE = new Aspect("superbia", 9845247, new Aspect[] { Aspect.FLIGHT, Aspect.VOID }, new ResourceLocation("forbiddenmagicre", "textures/aspects/superbia.png"), 1);
+    public static final Aspect PRIDE = new Aspect("superbia", 0x9639ff, new Aspect[] { Aspect.FLIGHT, Aspect.VOID }, new ResourceLocation("forbiddenmagicre", "textures/aspects/superbia.png"), 1);
 
-    public static final Aspect SLOTH = new Aspect("desidia", 7237230, new Aspect[] { Aspect.TRAP, Aspect.SOUL }, new ResourceLocation("forbiddenmagicre", "textures/aspects/desidia.png"), 771);
+    public static final Aspect SLOTH = new Aspect("desidia", 0x6e6e6e, new Aspect[] { Aspect.TRAP, Aspect.SOUL }, new ResourceLocation("forbiddenmagicre", "textures/aspects/desidia.png"), 771);
 
-    public static final Aspect WRATH = new Aspect("ira", 8848388, new Aspect[] { Aspect.AVERSION, Aspect.FIRE }, new ResourceLocation("forbiddenmagicre", "textures/aspects/ira.png"), 771);
+    public static final Aspect WRATH = new Aspect("ira", 0x870404, new Aspect[] { Aspect.AVERSION, Aspect.FIRE }, new ResourceLocation("forbiddenmagicre", "textures/aspects/ira.png"), 771);
 
 }
