@@ -9,41 +9,16 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.ArrayList;
 
-@Config(modid = Reference.MOD_ID, category = "")
+@Config(modid = Reference.MOD_ID, category = "ReForbiddenMagic")
 public class ConfigFM {
 
 
-    @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
-    private static class EventHandler {
+        @Config.LangKey("forbiddenmagic.configfm.trashlist")
+        @Config.Comment("forbiddenmagic.configfm.trashlist.comment")
+        public static String trashlist = "dirt;sand;gravel;cobblestone;netherrack";
+        public static String[] trashpile = trashlist.split(";");
 
-        private EventHandler() {
-        }
-
-        public static ArrayList<String> trash = new ArrayList<String>();
-
-        String trashlist = "dirt;sand;gravel;cobblestone;netherrack";
-        String[] trashpile = trashlist.split(";");{
-            for(String garbage : trashpile) {
-                trash.add(garbage);
-            }
-        }
-
-        @SubscribeEvent
-        public static void onConfigChanged(final ConfigChangedEvent.OnConfigChangedEvent event) {
-            if (event.getModID().equals(Reference.MOD_ID)) {
-                ConfigManager.sync(Reference.MOD_ID, Config.Type.INSTANCE);
-            }
-        }
-    }
-
-    @Config.LangKey("forbiddenmagic.configfm.langkey")
-    @Config.Comment("forbiddenmagic.configfm.comment")
-    public static final configfm configfm = new configfm();
-
-    public static class configfm {
-        @Config.LangKey("forbiddenmagic.configfm.enablecrystalcaster")
-        @Config.Comment("forbiddenmagic.configfm.enablecrystalcaster.comment")
-        public String trashlist = "dirt;sand;gravel;cobblestone;netherrack";
-        public String[] trashpile = trashlist.split(";");
-    }
+        @Config.LangKey("Heretic Villager's ID")
+        @Config.Comment("forbiddenmagic.configfm.hereticid.comment")
+        public static int hereticID = 666;
 }

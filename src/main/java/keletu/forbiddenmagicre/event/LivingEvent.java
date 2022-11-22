@@ -90,7 +90,7 @@ public class LivingEvent {
 
     private boolean isGarbage(ItemStack drop) {
         for (int id : OreDictionary.getOreIDs(drop)) {
-            for (String ore : ConfigFM.configfm.trashpile) {
+            for (String ore : ConfigFM.trashpile) {
                 if (OreDictionary.getOreName(id).equals(ore))
                     return true;
             }
