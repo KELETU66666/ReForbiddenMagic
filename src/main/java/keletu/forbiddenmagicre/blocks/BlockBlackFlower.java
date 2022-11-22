@@ -7,8 +7,6 @@ import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockFlower;
-import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
@@ -22,7 +20,6 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 import static fox.spiteful.lostmagic.LostMagic.tab;
-import static net.minecraft.item.EnumDyeColor.BLUE;
 
 public class BlockBlackFlower extends BlockBush implements IHasModel {
     public BlockBlackFlower() {

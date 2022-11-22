@@ -23,7 +23,8 @@ import static keletu.forbiddenmagicre.compat.botania.RegisterHandlerBota.registe
 @Mod(
         modid = Reference.MOD_ID,
         name = Reference.NAME,
-        version = Reference.VERSION
+        version = Reference.VERSION,
+         dependencies = "required-after:thaumcraft"
 )
 public class forbiddenmagicre {
 

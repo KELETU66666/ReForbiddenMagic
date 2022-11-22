@@ -2,12 +2,6 @@ package keletu.forbiddenmagicre;
 
 import keletu.forbiddenmagicre.util.Reference;
 import net.minecraftforge.common.config.Config;
-import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import java.util.ArrayList;
 
 @Config(modid = Reference.MOD_ID, category = "ReForbiddenMagic")
 public class ConfigFM {

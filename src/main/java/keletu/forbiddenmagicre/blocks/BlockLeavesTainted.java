@@ -1,6 +1,5 @@
 package keletu.forbiddenmagicre.blocks;
 
-import fox.spiteful.lostmagic.LostMagic;
 import keletu.forbiddenmagicre.forbiddenmagicre;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
@@ -17,7 +16,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;

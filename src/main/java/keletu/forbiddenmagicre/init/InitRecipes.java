@@ -1,19 +1,15 @@
 package keletu.forbiddenmagicre.init;
 
 
-import keletu.forbiddenmagicre.compat.psi.ItemAmuletPsi;
 import keletu.forbiddenmagicre.enchantments.inchantment.EnumInfusionEnchantmentFM;
 import keletu.forbiddenmagicre.enchantments.inchantment.InfusionEnchantmentRecipeFM;
-import keletu.forbiddenmagicre.items.resources.ResourceNS;
 import keletu.forbiddenmagicre.util.Reference;
 import keletu.forbiddenmagicre.util.RegistryHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.Mod;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;

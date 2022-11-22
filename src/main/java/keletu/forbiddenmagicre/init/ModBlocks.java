@@ -2,8 +2,6 @@ package keletu.forbiddenmagicre.init;
 
 import keletu.forbiddenmagicre.blocks.*;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockFlower;
 
 import java.util.ArrayList;
 import java.util.List;

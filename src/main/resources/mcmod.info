@@ -12,6 +12,6 @@
             " keletu > \"Code Carrier\", Azanor > Thaumcraft creator , KingLemming and The CoFH Team > Thaumcraft maintainers, SpitefulFox > Forbidden Magic's creator, Fang_Orange/GameR > Contributors",
         "logoFile": "",
         "screenshots": [],
-        "dependencies": []
+        "dependencies": ["thaumcraft"]
     }
 ]

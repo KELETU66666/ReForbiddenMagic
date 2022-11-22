@@ -1,8 +1,8 @@
 package keletu.forbiddenmagicre.blocks;
 
+import keletu.forbiddenmagicre.forbiddenmagicre;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
-import keletu.forbiddenmagicre.forbiddenmagicre;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

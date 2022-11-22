@@ -1,10 +1,10 @@
 package keletu.forbiddenmagicre;
 
-import java.lang.reflect.Field;
-
 import net.minecraft.entity.EntityLiving;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import org.apache.logging.log4j.Level;
+
+import java.lang.reflect.Field;
 
 public class XPReflectionHelper {
     public static Field stupidMojangProtectedVariable;

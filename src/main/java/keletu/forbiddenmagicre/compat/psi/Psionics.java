@@ -1,7 +1,6 @@
 package keletu.forbiddenmagicre.compat.psi;
 
 import fox.spiteful.lostmagic.Lumberjack;
-import net.minecraftforge.event.world.ChunkEvent;
 import net.minecraftforge.fml.common.Loader;
 import org.apache.logging.log4j.Level;
 import vazkii.psi.api.PsiAPI;

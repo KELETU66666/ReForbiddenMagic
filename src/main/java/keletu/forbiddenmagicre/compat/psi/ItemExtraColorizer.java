@@ -1,6 +1,5 @@
 package keletu.forbiddenmagicre.compat.psi;
 
-import keletu.forbiddenmagicre.forbiddenmagicre;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;

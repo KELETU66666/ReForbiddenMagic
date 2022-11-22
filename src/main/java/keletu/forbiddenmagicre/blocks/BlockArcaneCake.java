@@ -1,8 +1,6 @@
 package keletu.forbiddenmagicre.blocks;
 
 
-import java.util.Random;
-
 import fox.spiteful.lostmagic.LostMagic;
 import keletu.forbiddenmagicre.forbiddenmagicre;
 import keletu.forbiddenmagicre.init.ModBlocks;
@@ -27,6 +25,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.Random;
 
 public class BlockArcaneCake extends Block implements IHasModel {
     public static final PropertyInteger CAKE_STATE = PropertyInteger.create("cake_state", 0, 12);

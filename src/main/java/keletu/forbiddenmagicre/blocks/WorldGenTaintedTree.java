@@ -1,16 +1,14 @@
 package keletu.forbiddenmagicre.blocks;
 
 
-import java.util.Random;
-
 import keletu.forbiddenmagicre.init.ModBlocks;
-import net.minecraft.block.BlockOldLog;
-import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+
+import java.util.Random;
 
 public class WorldGenTaintedTree extends WorldGenAbstractTree {
 

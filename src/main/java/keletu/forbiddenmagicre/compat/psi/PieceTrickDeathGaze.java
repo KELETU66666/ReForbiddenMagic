@@ -3,7 +3,6 @@ package keletu.forbiddenmagicre.compat.psi;
 import net.minecraft.potion.Potion;
 import thaumcraft.common.lib.potions.PotionDeathGaze;
 import vazkii.psi.api.spell.Spell;
-import vazkii.psi.api.spell.SpellCompilationException;
 import vazkii.psi.common.spell.trick.potion.PieceTrickPotionBase;
 
 public class PieceTrickDeathGaze extends PieceTrickPotionBase {
