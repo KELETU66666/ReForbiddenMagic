@@ -63,8 +63,8 @@ private static void initCrucibleRecipes() {
 
         ));
 
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "fm_emerald_dump"), new CrucibleRecipe(
-            "EMERALD_DUMP",
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "fm_emerald_DUPE"), new CrucibleRecipe(
+            "EMERALD_DUPE",
             new ItemStack(ModItems.ResourceFM, 4, 0),
                 new ItemStack(ModItems.ResourceFM, 1, 0),
             new AspectList().add(Aspect.CRYSTAL, 8).add(Aspect.DESIRE, 8)

@@ -11,18 +11,18 @@ tc.aspect.desidia=Sloth, Laziness, Procrastination
 tc.aspect.luxuria=Lust, Desire, Excess
 
 #item
-item.morph_sword.name=Chamelic Sword
-item.morph_pick.name=Chamelic Pickaxe
-item.morph_axe.name=Chamelic Axe
-item.morph_shovel.name=Chamelic Shovel
-item.skull_axe.name=Axe of SkullTaker
+item.morph_sword.name=Chameleon Sword
+item.morph_pick.name=Chameleon Pickaxe
+item.morph_axe.name=Chameleon Axe
+item.morph_shovel.name=Chameleon Shovel
+item.skull_axe.name=Axe of the Skulltaker
 item.distortion_pick.name=Pickaxe of Distortion
 item.riding_crop.name=Riding Crop
-item.resourcefm.0.name=Emerald Nugget
-item.resourcefm.1.name=Shadow Ink
-item.resourcefm.2.name=Taint Blood Shard
-item.taint_fruit.name=Tainted Fruit
+item.taint_fruit.name=Vintenfruit
 item.taint_charcoal.name=Hexcoal
+item.resourcefm.0.name=Emerald Fragment
+item.resourcefm.1.name=Umbral Dye
+item.resourcefm.2.name=Taint Blood Shard
 
 item.resourcenethershard.0.name=Wrath Shard
 item.resourcenethershard.1.name=Envy Shard
@@ -31,10 +31,12 @@ item.resourcenethershard.3.name=Lust Shard
 item.resourcenethershard.4.name=Sloth Shard
 item.resourcenethershard.5.name=Greed Shard
 item.gluttony_shard.name=Gluttony Shard
+
 #block
-tile.black_rose_bush.name=Shadow Rose Bush
-tile.black_rose.name=Shadow Rose
+tile.black_rose_bush.name=Umbral Rosebush
+tile.black_rose.name=Umbral Rose
 tile.arcane_cake.name=Arcane Cake
+tile.sapling_tainted.name=Tainted Sapling
 tile.leaves_tainted.name=Tainted Leaves
 tile.log_tainted.name=Tainted Log
 tile.taint_planks.name=Tainted Plank
@@ -42,20 +44,22 @@ tile.tainted_stone.name=Tainted Stone
 tile.tainted_brick.name=Tainted Brick
 
 #Botania
-
 tile.botania:flower.euclidaisy.name=Euclidaisy
-tile.botania:flower.astralbloom.name=Astral Bloom
-tile.botania:flower.mindlotus.name=Mind Lotus
-tile.botania:flower.whisperweed.name=Whisper Weed
-forbidden.lexicon.whisperweed=Whisperweed
-forbidden.lexicon.whisperweed.0=The &1Whisperweed&0 is an unpleasant plant that whispers secrets into the ears of anyone who'll listen. There doesn't seem to be much point to the plant, since the secrets aren't even relevant to botany.<br>&oMore secrets than Wan Shi Tong&r
 forbidden.lexicon.euclidaisy=Euclidaisy
-forbidden.lexicon.euclidaisy.0=The eerie, pink &1Euclidaisy&0 is an oddity. It uses large amounts of mana to conjure some sort of wispy substance that only seems useful to thaumaturges.<br>&oIt doesn't combustion bend.&r
+forbidden.lexicon.euclidaisy.0=The eerie, pink &1Euclidaisy&0 is an oddity. It uses large amounts of mana to conjure some sort of strange, crystallized substance that only seems useful to Thaumaturges.<br>&oIt doesn't combustion bend.&r
+
+tile.botania:flower.astralbloom.name=Astral Bloom
 forbidden.lexicon.astralbloom=Astral Bloom
 forbidden.lexicon.astralbloom.0=The strange &1Astral Blooms&0 seem to devour exhorbitant amounts of mana to do nothing at all.<br>Thaumaturges insist that the flowers purify harmful taint from an invisible aura that only they can see. What will those charlatans do next? Try and sell you magical crystals?
+
+tile.botania:flower.mindlotus.name=Mind Lotus
 forbidden.lexicon.mindlotus=Mind Lotus
 forbidden.lexicon.mindlotus.0=The &1Mind Lotus&0 causes mental unease just by being nearby, as if it were prying into your mind.<br>In spite of this, it doesn't seem to generate any mana on its own. Maybe it needs some sort of push?<br>The flower seems oddly frail, decaying even in situations where other flowers would survive.
 forbidden.lexicon.mindlotus.1=Don't eat it!
+
+tile.botania:flower.whisperweed.name=Whisperweed
+forbidden.lexicon.whisperweed=Whisperweed
+forbidden.lexicon.whisperweed.0=The &1Whisperweed&0 is an unpleasant plant that whispers secrets into the ears of anyone who'll listen. There doesn't seem to be much point to the plant, since the secrets aren't even relevant to Botany. Bringing one to a Thaumaturge seems to be the only relevance it has.<br>&oMore secrets than Wan Shi Tong&r
 
 #Psi
 item.cadcolorizerThaumic.name=Thaumic CAD Colorizer
@@ -88,9 +92,7 @@ psi.piecegroup.botany=Botany
 psi.piecegroup.botany.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Botany.<br><br>The red piece of this group, "Trick: Generate Mana", allows you to generate mana at a targetted Mind Lotus flower. Higher Stability increases the cost of the spell, but lower Stability induces more stress in the flower, hastening its decay.
 
 #Enchantment
-
 enchantment.wrath=Wrath
-
 enchantment.infusion.GREEDY=Greedy
 enchantment.infusion.EDUCATIONAL=Educational
 enchantment.infusion.CONSUMING=Consuming
@@ -98,49 +100,48 @@ enchantment.infusion.VOIDTOUCHED=Void Touched
 
 
 #Research ForbiddenMagic
-forbiddenmagicre.research.morph_tools.title=Chamelic Tools
-forbiddenmagicre.research.morph_tools.text=Scraps of Forbidden Research from the Fourth Age speak of Tools which could shift between Enchantments at the whim of the wielder, it may be possible to replicate these Tools.
-forbiddenmagicre.research.morph_tools.complete.text=Success!... Mostly. It's not a perfect replica, as whatever material was used to Infuse the Enchantment-Shifting properties in the past seems to no longer exist, but Permutatio Crystals seem to be a sufficient substitute.<BR>Either way, the properties seem to mirror those Tools i heard about, so it is sufficient for now.<BR>They can store three different sets of Enchantments, which can be cycled by Sneak-Right-clicking with the tool in hand, provided it is actually Enchanted at all, the current set is indicated by the color of the Gems on the tool. It takes a bit of Durability to switch the set away, but it is fairly neglegible.
-forbiddenmagicre.research.morph_tools.void=additions
+forbiddenmagic.research.morph_tools.title=Multitools
+forbiddenmagic.research.morph_tools.text=As a person who tends to use my tools for nearly everything, it would be nice to have more inventory space that's not cluttered with my multiple tools. Unfortunately, I can't just add multiple of these enchantments to the same tool... or can I? Something worth experimenting is the idea of perhaps having a tool in which I can switch out enchantments without having to disenchant it and reenchant it. Thankfully, I might have something that could mimic the idea rather well.
+forbiddenmagic.research.morph_tools.complete.text=Before I pay myself on the back, I should note that this idea wasn't without its downsides. The tools I've created can only go up to 3 different mirrors of itself and each different mirror cannot support any conflicting enchantments. With that being said, I came up with the idea of the Chameleon tools while observing wildlife in the swamp. The chameleon was something that fascinated me with its color-changing abilities, and its unusual nature to seem completely different with each iteration it comes around with. Reflecting upon the way these creatures work, I made a decision to copy the idea of the chameleon to base these tools onto it. Allow me to explain this in a further, more sensical manner. The Chameleon Tools have 3 different mirrors to their design, allowing them to have 3 different sets of enchantments with each mirror that they have. If I wanted to have Silk Touch and Fortune on the same pickaxe, I could do so by simply switching the head of the pickaxe to a different mirror, allowing me to access that specific pickaxe mirror and giving me the ability to silk touch an ore, and also gain extra items with a different mirror containing Fortune. I can have Sharpness, Bane of Athropods, and Smite on the same sword with different mirrors on the sword. To switch between mirrors, I simply need to crouch and right click with a mirror that's been enchanted. Note, the tool needs to be enchanted in order for the tool to be able to switch.
+forbiddenmagic.research.morph_tools.void=§oVoidtouched§r<DIV>Weapons, tools, and armors enchanted with this enchantment will repair themselves using vis. However with the use of Void Metal, it does warp my mind when holding it in my hands too.<DIV>§oRanks:§r none<BR>§oTarget:§r tools, weapons, armor
 
-forbiddenmagicre.research.distortionpick.title=Pickaxe of Distortion
-forbiddenmagicre.research.distortionpick.text=Scraps of Forbidden Research from the Fourth Age speak of a Pickaxe which could mine the toughest of materials in mere moments, perhaps it is possible to replicate?
-forbiddenmagicre.research.distortionpick.complete.text=I believe i have figured out how it was done by experimenting on some Obsidian, by simply corrupting the weak points of the material with a twisted form of Magic, it could be tainted with traces of some strange, twisted biomass, Though this biomass quickly dies out when the pickaxe stops striking the material.<BR>It also seems to be horribly ineffective against weaker materials, such as Stone, breaking them almost as slowly as one's hands against Obsidian. But it still has some merit for tearing through tough materials.
+forbiddenmagic.research.distortionpick.title=Pickaxe of Distortion
+forbiddenmagic.research.distortionpick.text=Obsidian is a hassle to mine, and unfortunately efficiency isn't cutting it anymore, I need something to bring about a faster way of breaking this sturdy block. Perhaps I should observe the atomic structure of Obsidian, maybe I'll yield some results from it.
+forbiddenmagic.research.distortionpick.complete.text=Obsidian is a particularly interesting object, the internal particles that make it up are a lot more contradictive than normal. I've observed the interaction with Obsidian atoms and the matter contained within a Vitium Vis Crystal... and seemingly, the atoms repel from the matter as if it were matching magnets! This gave me a grand idea for a tool that should allow me to harvest Obsidian far faster than a normal Diamond Pickaxe could, I deem this unusual pickaxe to be the Pickaxe of Distortion! This pickaxe should allow me to harvest the sturdy obsidian a lot faster... however upon testing it, it appears that this pickaxe also creates a problem when extracting softer materials. It takes as long as it would to mine Obsidian when I mine dirt, sand, and softer materials similar to that.
 
-forbiddenmagic.research.infusonenchantmentfm.title=Forbidden Infusion Enchantments
-forbiddenmagicre.research.infusonenchantmentfm.text=text
-forbiddenmagicre.research.infusonenchantmentfm.complete.text=text.complete
+forbiddenmagic.research.infusionenchantmentfm.title=Forbidden Infusion Enchantments
+forbiddenmagic.research.infusionenchantmentfm.text=I need some new enchantments to emboss my tools with, while my ideas are rather vague, I'm sure I can think of something at the least. 
+forbiddenmagic.research.infusionenchantmentfm.complete.text=With the rather few ideas I've come up with, I have come up with a few ideas, with that being said the ideas for these enchantments are as follows.<PAGE>§oGreedy§r<DIV>(to be added)<DIV>§oRanks:§r none<BR>§oTarget:§r weapon<PAGE>§oConsuming§r<DIV>Tools enchanted with this enchantment voids certain clutter blocks. Such as dirt, netherrack, gravel, and stone/cobblestone.<DIV>§oRanks:§r none<BR>§oTarget:§r shovels, pickaxes<PAGE>§oEducational§r<DIV>Whenever you slay a mob with this weapon, additional experience will drop upon their death.<DIV>§oRanks:§r 1-5<BR>§oTarget:§r weapon
 
-research.EMERALDDUMP.title=Emerald Duplication
-research.EMERALDDUMP.text.stage.1=text
-research.EMERALDDUMP.text.stage.2=complete
+forbiddenmagic.research.emeralddupe.title=Emerald Duplication
+forbiddenmagic.research.emeralddupe.text.stage.1=Emeralds seem to be a rare resource, I say this mockingly as villagers are nearly too easy to exploit for their emeralds at times, to the point where they are essentially being robbed of their favorite glimmering gemstones. However, if I don't want to go to hell when my life inevitably decays and removes itself from my current physical vessel, I should find a bit of a morally good way to make more emeralds. Considering the fine nature of their seperated variant, I should be able to come up with something using that as a reference.
+forbiddenmagic.research.emeralddupe.text.stage.2=Thankfully with a little bit of elbow-grease, I've conceptualized a method of creating more of what I need. Firstly it starts with a simple Emerald Nugget, and with the right essentia... I should be able to duplicate them by fours. Odd trade off, but what am I to do?
 
-research.BLACKROSE.title=Save The Squid
-research.BLACKROSE.text.stage.1=text
-research.BLACKROSE.text.stage.2=complete
+forbiddenmagic.research.blackrose.title=Victorian
+forbiddenmagic.research.blackrose.text.stage.1=As much as I don't mind a bit of calamari, my massacre of squids has made me wonder if it's worth it all. It makes me wonder if there's a less... psychotic way of getting the ink I need to refill my illustrious Scribing Tools. I've heard of ways to replicate ink using flowers... it may seem worth a shot to study the matter of plant life and ink.
+forbiddenmagic.research.blackrose.text.stage.2=Black as night and gothic as the Victorian, I've created a rosebush that will bud with pitch black roses! In order to obtain these beautifully black flowers, simply sprinkle bonemeal onto the roots of the flower, and it will launch its rapidly growing seeds to nearby grass blocks!<BR>§oA note to add onto this, this flower seems to also flourish on Podzol, Coarse Dirt, and regular Dirt as well, further experimentation may be necessary.§r
 
-research.SKULLAXE.title=Axe of the SkullTaker
-research.SKULLAXE.text.stage.1=text
-research.SKULLAXE.text.stage.2=complete
+forbiddenmagic.research.skullaxe.title=Thaumic Revolution
+forbiddenmagic.research.skullaxe.text.stage.1=Recent issues arise with the matter of obtaining skulls. While I don't have quite a clear theory as to how this would go about and work, I do have something to look at when it comes to obtaining the Wither Skeleton Skulls. An observation I've noticed with it is that it tends to be a rather steady process of gathering their skulls. Smashing nearly tens of thousands of wither skeletons to obtain their darkened and sooty skulls, perhaps smashing them to bits won't help me all that much.
+forbiddenmagic.research.skullaxe.text.stage.2=Results have yielded that this tool certainly beats the norm when it comes to obtaining skulls. I've designed this axe to be a true killing tool, being capable of doing the same damage as my Sword of the Zephyr. However, unlike the Sword of the Zephyr and some of the other swords around its power level, this fabled axe has the capacity of extracting the heads of enemies I decapitate, ranging from undead to even players!<BR>However when trying to use this axe against trees, it seems to leave not even a dent despite being indisputably sharp, perhaps the sheer ire of the axe has made it dullen when put against trees? Nevertheless, it serves its intended purpose of being a decapitating weapon.<BR>§oSide-Note: Enchanting this weapon with looting will increase the chance of obtaining a skull from a monster.§r
 
-forbiddenmagicre.research.arcane_cake.title=Arcane Cake
-forbiddenmagicre.research.arcane_cake.text=text
-forbiddenmagicre.research.arcane_cake.complete.text=text.complete
+forbiddenmagic.research.arcane_cake.title=Arcane Cake
+forbiddenmagic.research.arcane_cake.text=Food is a grand issue, and I need to acknowledge that as I sit at my desk for hours at a time, writing theories and then get up and scramble about, gathering materials and making hard work of a full day's work of a Thaumaturge. Infusions, Alchemy, maintaining my Golems, it's all for hassle and sometimes no reward. I wish I could make something to keep me fed and replenish itself in the meanwhile, some Cake would be nice right about now.
+forbiddenmagic.research.arcane_cake.complete.text=While baking, I had the thought of observing it rather than digging into it like a savage to study my delicate baked pastry. Taking into consideration the various materials I've used to concoct this marvelous marble, it ultimately yellowed out as a nonce at first. By the Devil's Food, did I find something interesting with it! Studying the way that it is cut, I've determined that it brings about a gradual 7 slices worth of cake, why I do this is rather unknown but that's a mystery for another day. Using this idea with its decent potential, I've created a solution to the current standing problem of needing a constant food source that won't require excess force to prepare, my idea being a Cake that replenishes itself. 
 
-forbiddenmagicre.research.lostmagic.text=text
+forbiddenmagic.research.tainted_blocks.title=Tainted Blocks
+forbiddenmagic.research.tainted_blocks.text=Not sure where this idea came from, but something tells me that the putrid, infectious nature of Taint has a little more to it than being sickly and gross. I should observe the horrid nature of the Taint, despite every warning sign pointing to it being the shittiest idea I've had yet. Perhaps something could come of it.
+forbiddenmagic.research.tainted_blocks.complete.text=Well, it's been looked into, and needless to say, it is disgusting. I suppose if I were to be crazy enough to be able to want to build in the Taint, I have materials to do so, and a replicatable tree that can make more of the material I would use to make such a thing.<BR>These logs also seem to bear the property of being able to be turned into a coal that I am deeming §5Hexcoal§r, the coal itself is weaker than coal, and rather potent in stench when used to cook something. I don't feel hungry anymore after one whiff of this horrendous coal.<BR>I've also taken observation that this horrid tree also drops a peculiar fruit from its branches when the leaves decay, I'm deeming this fruit to be called the "§5Vintenfruit§r". The fruit itself tastes absolutely awful, and bears no use to anything other than making me nauseous and making my veins feel dreadful... almost like a poison.<BR>This research may be considered nearly worthless for some, considering a lot of the downsides it brings to the table thus far. On a brightside however, these might also act as good sources to Vitium since they do hail from the Taint within their nature after all!
 
-forbiddenmagicre.research.tainted_blocks.title=Tainted Blocks
-forbiddenmagicre.research.tainted_blocks.text=text
-forbiddenmagicre.research.tainted_blocks.complete.text=text.complete
-#Research Botany
-forbiddenmagicre.research.magical_flower.title=Magical Flower
-forbiddenmagicre.research.magical_flower.text=text
-forbiddenmagicre.research.magical_flower.complete.text=complete
+#Research Botania
+forbiddenmagic.research.magical_flower.title=Magical Flower
+forbiddenmagic.research.magical_flower.text=Many Thaumaturges tend to scoff and turn a blind eye to polymagical studies, I am not one to turn a blind eye to new opportunities. Botany has been something that many disregard, except their own subdivision of magicians, and while those Botanical Mages who disregard Thaumaturgy as something to not study... I need not to pay attention to their pretensiousness. Using some of their own materials, I am able to manipulate and use their botanical materials and use them to make vantage of my own Thaumibotanical wonders! However... what could I do?
+forbiddenmagic.research.magical_flower.complete.text=From my studies, I have created 3 beautiful flowers that do wonders for me!<BR>The elusive §l§n§dWhisperweed§r has some interesting properties to it, and while it remains useless to Botanical Mages, often seen being mocked in their tomes containing their Floral Knowledge Magic. The Whisperweed will tell a Thaumaturge the wonders of the world and the dark secrets of the never ending void, quite the wondrous plant and better friend than the Brain in a Jar!<BR>The §l§n§bAstral Bloom§r, despite the disgruntled comments of the Botania Warlocks, is an immensely powerful plant! The plant wards away the dangerous Taint from the vicinity, as well as consume the flux within the air! A staple for the Thaumaturge's base for sure, I just wish our Herbamagicia Counterparts would be less malcontent with the things we Thaumaturges help provide.<BR>The subsidary §l§n§dEuclidaisy§r provides an incredible benefit to my arsenal as a plant! Turning mana into Vis Crystals of multiple types, while not only being a useful source of Aurum essentia, but also an incredible Vis Crystal generator! I don't get why Botanists are so uneasy around this particular plant.
 
-#Research Psionics
-forbiddenmagicre.research.psi_amulet.title=Amulet of the Mentalagony
-forbiddenmagicre.research.psi_amulet.text=text
-forbiddenmagicre.research.psi_amulet.complete.text=complete
+#Research Psi
+forbiddenmagic.research.psi_amulet.title=Amulet of Mental Agony
+forbiddenmagic.research.psi_amulet.text=Many Thaumaturges tend to scoff and turn a blind eye to polymagical studies, I am not one to turn a blind eye to new opportunities. I don't particularly understand Psionic Magic all that well, but I'm sure I can do something with it.
+forbiddenmagic.research.psi_amulet.complete.text=I don't normally meddle with Psionics, as its already too much for my mind to handle, but I created an amulet to prevent Psionic Overload from killing me. Though the amulet will consume durability and will break, giving those who wear it Warp. A warning to those who meddle with Psionics and Thaumaturgy
 
-research.f_overloaddamage_complete.text=text
-overloaddamage.complete.text=text
+research.f_overloaddamage_complete.text=You experienced a painful psionic sensation
+overloaddamage.complete.text=Experience Psionic Overload

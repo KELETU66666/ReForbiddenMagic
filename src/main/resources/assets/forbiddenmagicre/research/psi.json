@@ -1,21 +1,21 @@
 {
   "entries": [
     { "key": "AMULET_PSI",
-    "name": "forbiddenmagicre.research.psi_amulet.title",
+    "name": "forbiddenmagic.research.psi_amulet.title",
     "icons": ["forbiddenmagicre:amuletmentalagony"],
     "category": "APOCRYPHA",
     "location": [-2, -2],
     "parents": ["LOSTMAGIC", "BASEELDRITCH"],
     "stages": [
       {
-        "text": "forbiddenmagicre.research.psi_amulet.text",
+        "text": "forbiddenmagic.research.psi_amulet.text",
         "required_knowledge":["THEORY;INFUSION;1", "THEORY;ELDRITCH;1"],
         "required_research":["f_overloaddamage_complete"],
         "required_item":["minecraft:ender_eye", "thaumcraft:ingot;1;1"],"warp": 1
 
       },
       {
-        "text": "forbiddenmagicre.research.psi_amulet.complete.text",
+        "text": "forbiddenmagic.research.psi_amulet.complete.text",
         "recipes": ["forbiddenmagicre:fm_amulet_psi"]
       }
     ]
