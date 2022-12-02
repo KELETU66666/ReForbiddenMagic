@@ -2,6 +2,7 @@ package keletu.forbiddenmagicre.util.handler;
 
 import keletu.forbiddenmagicre.compat.botania.RegisterHandlerBota;
 import keletu.forbiddenmagicre.event.LivingEvent;
+import keletu.forbiddenmagicre.util.CompatIsorropia;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 
@@ -11,5 +12,7 @@ public class EventHandler {
         MinecraftForge.EVENT_BUS.register(new LivingEvent());
         if(Loader.isModLoaded("botania"))
             MinecraftForge.EVENT_BUS.register(RegisterHandlerBota.class);
+        if(Loader.isModLoaded("isorropia"))
+            MinecraftForge.EVENT_BUS.register(CompatIsorropia.class);
     }
 }

@@ -3,6 +3,7 @@ package keletu.forbiddenmagicre.init;
 
 import keletu.forbiddenmagicre.enchantments.inchantment.EnumInfusionEnchantmentFM;
 import keletu.forbiddenmagicre.enchantments.inchantment.InfusionEnchantmentRecipeFM;
+import keletu.forbiddenmagicre.util.CompatIsorropia;
 import keletu.forbiddenmagicre.util.Reference;
 import keletu.forbiddenmagicre.util.RegistryHandler;
 import net.minecraft.init.Blocks;
@@ -23,7 +24,36 @@ import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.items.resources.ItemCrystalEssence;
 import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
+import static fr.wind_blade.isorropia.common.IsorropiaAPI.ENVY;
+
 public class InitRecipes {
+    public static final Aspect ENVY;
+    public static final Aspect GLUTTONY;
+    public static final Aspect LUST;
+    public static final Aspect NETHER;
+    public static final Aspect PRIDE;
+    public static final Aspect SLOTH;
+    public static final Aspect WRATH;
+
+    static {
+        if(Loader.isModLoaded("isorropia")) {
+            WRATH = CompatIsorropia.WRATH;
+            ENVY = CompatIsorropia.ENVY;
+            GLUTTONY = CompatIsorropia.GLUTTONY;
+            LUST = CompatIsorropia.LUST;
+            NETHER = CompatIsorropia.NETHER;
+            PRIDE = CompatIsorropia.PRIDE;
+            SLOTH = CompatIsorropia.SLOTH;
+        }else {
+            WRATH = RegistryHandler.WRATH;
+            ENVY = RegistryHandler.ENVY;
+            GLUTTONY = RegistryHandler.GLUTTONY;
+            LUST = RegistryHandler.LUST;
+            NETHER = RegistryHandler.NETHER;
+            PRIDE = RegistryHandler.PRIDE;
+            SLOTH = RegistryHandler.SLOTH;
+        }
+    }
     private static ResourceLocation defaultGroup = new ResourceLocation("");
 
     public static void initRecipes() {
@@ -82,7 +112,7 @@ private static void initInfusionRecipes() {
             "MORPH_TOOLS",
             new ItemStack(ModItems.MorphShovel),
             1,
-            new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(RegistryHandler.ENVY, 30),
+            new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
             new ItemStack(ItemsTC.thaumiumShovel),
             new Object[]{
                     new ItemStack(ItemsTC.quicksilver),
@@ -96,7 +126,7 @@ private static void initInfusionRecipes() {
             "MORPH_TOOLS",
             new ItemStack(ModItems.MorphAxe),
             1,
-            new AspectList().add(Aspect.TOOL, 15).add(Aspect.SENSES, 30).add(RegistryHandler.ENVY, 30).add(Aspect.AVERSION, 15),
+            new AspectList().add(Aspect.TOOL, 15).add(Aspect.SENSES, 30).add(ENVY, 30).add(Aspect.AVERSION, 15),
             new ItemStack(ItemsTC.thaumiumAxe),
             new Object[]{
                     new ItemStack(ItemsTC.quicksilver),
@@ -110,7 +140,7 @@ private static void initInfusionRecipes() {
             "MORPH_TOOLS",
             new ItemStack(ModItems.MorphPickaxe),
             1,
-            new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(RegistryHandler.ENVY, 30),
+            new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
             new ItemStack(ItemsTC.thaumiumPick),
             new Object[]{
                     new ItemStack(ItemsTC.quicksilver),
@@ -124,34 +154,28 @@ private static void initInfusionRecipes() {
             "MORPH_TOOLS",
             new ItemStack(ModItems.MorphSword),
             1,
-            new AspectList().add(Aspect.AVERSION, 30).add(Aspect.SENSES, 30).add(RegistryHandler.ENVY, 30),
+            new AspectList().add(Aspect.AVERSION, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
             new ItemStack(ItemsTC.thaumiumSword),
-            new Object[]{
-                    new ItemStack(ItemsTC.quicksilver),
-                    new ItemStack(ItemsTC.nuggets, 1, 10),
-                    new ItemStack(ModItems.ResourceNS, 1, 1),
-                    new ItemStack(ModItems.ResourceNS, 1, 1),
-                    new ItemStack(BlocksTC.logSilverwood)
-            }
-    ));
+            new ItemStack(ItemsTC.quicksilver),
+            new ItemStack(ItemsTC.nuggets, 1, 10),
+            new ItemStack(ModItems.ResourceNS, 1, 1),
+            new ItemStack(ModItems.ResourceNS, 1, 1),
+            new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "distortion_pick"), new InfusionRecipe(
             "DISTORTION_PICK",
             new ItemStack(ModItems.DISTORTIONPICK),
             1,
             new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.TOOL, 30).add(Aspect.FLUX, 45),
             new ItemStack(ItemsTC.thaumiumPick),
-            new Object[]{
-                    new ItemStack(ItemsTC.nuggets,1 ,10),
-                    taintCrystal(Aspect.FLUX, 1),
-                    ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY),
-                    new ItemStack(BlocksTC.logGreatwood)
-            }
-    ));
+            new ItemStack(ItemsTC.nuggets,1 ,10),
+            taintCrystal(Aspect.FLUX, 1),
+            ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY),
+            new ItemStack(BlocksTC.logGreatwood)));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "skull_axe"), new InfusionRecipe(
             "SKULLAXE",
             new ItemStack(ModItems.SkullAxe),
             1,
-            new AspectList().add(Aspect.AVERSION, 60).add(RegistryHandler.NETHER, 30).add(RegistryHandler.WRATH, 30),
+            new AspectList().add(Aspect.AVERSION, 60).add(NETHER, 30).add(WRATH, 30),
             new ItemStack(ItemsTC.thaumiumAxe),
             new ItemStack(ModItems.ResourceNS, 1, 0),
             new ItemStack(ModItems.ResourceNS, 1, 0),
@@ -161,7 +185,7 @@ private static void initInfusionRecipes() {
             "ARCANECAKE",
             new ItemStack(ModBlocks.BLOCK_ARCANE_CAKE),
             3,
-             new AspectList().add(Aspect.DESIRE, 30).add(RegistryHandler.GLUTTONY, 20).add(Aspect.CRAFT, 45),
+             new AspectList().add(Aspect.DESIRE, 30).add(GLUTTONY, 20).add(Aspect.CRAFT, 45),
             new ItemStack(Items.CAKE),
             new ItemStack(ItemsTC.salisMundus),
             new ItemStack(Items.EGG),
@@ -190,7 +214,7 @@ private static void initInfusionRecipes() {
 
     ItemStack voidtouched = new ItemStack(ModItems.MorphPickaxe);
     EnumInfusionEnchantmentFM.addInfusionEnchantment(voidtouched, EnumInfusionEnchantmentFM.VOIDTOUCHED, 1);
-    InfusionEnchantmentRecipeFM IECVOID = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.VOIDTOUCHED, (new AspectList()).add(Aspect.ELDRITCH, 50).add(RegistryHandler.ENVY, 30).add(Aspect.DARKNESS, 50).add(Aspect.VOID, 50), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), "ingotVoid", "ingotVoid", "ingotVoid", "ingotVoid", new ItemStack(ModItems.ResourceNS, 1, 1), new ItemStack(ModItems.ResourceNS, 1, 1), new ItemStack(ModItems.ResourceNS, 1, 1));
+    InfusionEnchantmentRecipeFM IECVOID = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.VOIDTOUCHED, (new AspectList()).add(Aspect.ELDRITCH, 50).add(ENVY, 30).add(Aspect.DARKNESS, 50).add(Aspect.VOID, 50), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), "ingotVoid", "ingotVoid", "ingotVoid", "ingotVoid", new ItemStack(ModItems.ResourceNS, 1, 1), new ItemStack(ModItems.ResourceNS, 1, 1), new ItemStack(ModItems.ResourceNS, 1, 1));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECVOID"), (InfusionRecipe)IECVOID);
     ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECVOIDFAKE"), new InfusionEnchantmentRecipeFM(IECVOID, voidtouched));
 
