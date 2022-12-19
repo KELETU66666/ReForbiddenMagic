@@ -48,7 +48,6 @@ public class ItemAmuletPsi extends Item implements IBauble, IWarpingGear, ICosme
         setMaxStackSize(1);
         setUnlocalizedName("amuletmentalagony").setRegistryName("amuletmentalagony");
         setCreativeTab(tab);
-        MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.ITEMS.add(this);
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "fm_amulet_psi"), new InfusionRecipe(
