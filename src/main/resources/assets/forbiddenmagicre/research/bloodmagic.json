@@ -1,0 +1,41 @@
+{
+  "entries": [
+    { "key": "BLOOD_RAPIER",
+      "name": "forbiddenmagic.research.blood_rapier.title",
+      "icons": ["forbiddenmagicre:blood_rapier"],
+      "category": "APOCRYPHA",
+      "location": [-1, 4],
+      "parents": ["BLOODSCRIBE", "BASEELDRITCH"],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.blood_rapier.text",
+          "required_knowledge":["OBSERVATION;INFUSION;1", "THEORY;INFUSION;1"],
+          "required_item": ["thaumcraft:ingot;1;1"],
+          "warp": 2
+        },
+        {
+          "text": "forbiddenmagic.research.blood_rapier.complete.text",
+          "recipes": ["forbiddenmagicre:fm_blood_rapier"]
+        }
+      ]
+    },
+    { "key": "DIVINE_ORB",
+      "name": "forbiddenmagic.research.divine_orb.title",
+      "icons": ["forbiddenmagicre:eldritch_orb"],
+      "category": "APOCRYPHA",
+      "location": [-3, 4],
+      "parents": ["BLOODSCRIBE", "BASEELDRITCH"],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.divine_orb.text",
+          "required_knowledge":["THEORY;ELDRITCH;1", "THEORY;INFUSION;1"],
+          "warp": 3
+        },
+        {
+          "text": "forbiddenmagic.research.divine_orb.complete.text",
+          "recipes": ["forbiddenmagicre:fm_divine_orb"]
+        }
+      ]
+    }
+  ]
+}

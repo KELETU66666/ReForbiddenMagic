@@ -8,6 +8,7 @@ import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -47,6 +48,11 @@ public class BlockRoseBush extends BlockBush implements IGrowable, IHasModel
 
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+    }
+
+    @Override
+    public SoundType getSoundType() {
+        return SoundType.PLANT;
     }
 
     /**

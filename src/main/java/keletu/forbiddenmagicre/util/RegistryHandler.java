@@ -1,16 +1,20 @@
 package keletu.forbiddenmagicre.util;
 
+import keletu.forbiddenmagicre.compat.bloodmagic.ItemBloodRapier;
+import keletu.forbiddenmagicre.compat.bloodmagic.ItemDivineOrb;
 import keletu.forbiddenmagicre.compat.psi.ItemAmuletPsi;
 import keletu.forbiddenmagicre.compat.psi.ItemExtraColorizer;
 import keletu.forbiddenmagicre.enchantments.EnchantmentsFM;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
+import keletu.forbiddenmagicre.potions.PotionBloodSeal;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -40,6 +44,10 @@ public class RegistryHandler {
             event.getRegistry().registerAll(new ItemExtraColorizer());
             event.getRegistry().registerAll(new ItemAmuletPsi());
         }
+        if(Loader.isModLoaded("bloodmagic")) {
+            event.getRegistry().registerAll(new ItemDivineOrb());
+            event.getRegistry().registerAll(new ItemBloodRapier());
+        }
     }
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
@@ -58,6 +66,11 @@ public class RegistryHandler {
                 ((IHasModel) block).registerModels();
             }
         }
+    }
+    @SubscribeEvent
+    public static void registerPotions(RegistryEvent.Register<Potion> event)
+    {
+        event.getRegistry().registerAll(bloodSeal);
     }
 
     static {
@@ -144,4 +157,6 @@ public class RegistryHandler {
         OreDictionary.registerOre("treeSapling", new ItemStack(ModBlocks.BLOCK_SAPLING_TAINTED, 1, 0));
         OreDictionary.registerOre("treeLeaves", new ItemStack(ModBlocks.BLOCK_LEAVES_TAINTED, 1, 0));
     }
+
+    public static final PotionBloodSeal bloodSeal = new PotionBloodSeal();
 }

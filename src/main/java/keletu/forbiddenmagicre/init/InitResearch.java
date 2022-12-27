@@ -1,5 +1,6 @@
 package keletu.forbiddenmagicre.init;
 
+import fox.spiteful.lostmagic.compat.Compat;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
 import thaumcraft.api.ThaumcraftApi;
@@ -13,5 +14,7 @@ public class InitResearch {
             ThaumcraftApi.registerResearchLocation(new ResourceLocation("forbiddenmagicre", "research/bota.json"));
         if(Loader.isModLoaded("psi"))
             ThaumcraftApi.registerResearchLocation(new ResourceLocation("forbiddenmagicre", "research/psi.json"));
+        if(Loader.isModLoaded("bloodmagic") && Compat.bloodMagic)
+            ThaumcraftApi.registerResearchLocation(new ResourceLocation("forbiddenmagicre", "research/bloodmagic.json"));
     }
 }

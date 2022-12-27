@@ -24,8 +24,6 @@ import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.items.resources.ItemCrystalEssence;
 import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
-import static fr.wind_blade.isorropia.common.IsorropiaAPI.ENVY;
-
 public class InitRecipes {
     public static final Aspect ENVY;
     public static final Aspect GLUTTONY;
@@ -114,42 +112,33 @@ private static void initInfusionRecipes() {
             1,
             new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
             new ItemStack(ItemsTC.thaumiumShovel),
-            new Object[]{
-                    new ItemStack(ItemsTC.quicksilver),
-                    new ItemStack(ItemsTC.nuggets, 1, 10),
-                    new ItemStack(ModItems.ResourceNS, 1, 1),
-                    new ItemStack(ModItems.ResourceNS, 1, 1),
-                    new ItemStack(BlocksTC.logSilverwood)
-            }
-    ));
+            new ItemStack(ItemsTC.quicksilver),
+            new ItemStack(ItemsTC.nuggets, 1, 10),
+            new ItemStack(ModItems.ResourceNS, 1, 1),
+            new ItemStack(ModItems.ResourceNS, 1, 1),
+            new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_axe"), new InfusionRecipe(
             "MORPH_TOOLS",
             new ItemStack(ModItems.MorphAxe),
             1,
             new AspectList().add(Aspect.TOOL, 15).add(Aspect.SENSES, 30).add(ENVY, 30).add(Aspect.AVERSION, 15),
             new ItemStack(ItemsTC.thaumiumAxe),
-            new Object[]{
-                    new ItemStack(ItemsTC.quicksilver),
-                    new ItemStack(ItemsTC.nuggets, 1, 10),
-                    new ItemStack(ModItems.ResourceNS, 1, 1),
-                    new ItemStack(ModItems.ResourceNS, 1, 1),
-                    new ItemStack(BlocksTC.logSilverwood)
-            }
-    ));
+            new ItemStack(ItemsTC.quicksilver),
+            new ItemStack(ItemsTC.nuggets, 1, 10),
+            new ItemStack(ModItems.ResourceNS, 1, 1),
+            new ItemStack(ModItems.ResourceNS, 1, 1),
+            new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_pick"), new InfusionRecipe(
             "MORPH_TOOLS",
             new ItemStack(ModItems.MorphPickaxe),
             1,
             new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
             new ItemStack(ItemsTC.thaumiumPick),
-            new Object[]{
-                    new ItemStack(ItemsTC.quicksilver),
-                    new ItemStack(ItemsTC.nuggets, 1, 10),
-                    new ItemStack(ModItems.ResourceNS, 1, 1),
-                    new ItemStack(ModItems.ResourceNS, 1, 1),
-                    new ItemStack(BlocksTC.logSilverwood)
-            }
-    ));
+            new ItemStack(ItemsTC.quicksilver),
+            new ItemStack(ItemsTC.nuggets, 1, 10),
+            new ItemStack(ModItems.ResourceNS, 1, 1),
+            new ItemStack(ModItems.ResourceNS, 1, 1),
+            new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_sword"), new InfusionRecipe(
             "MORPH_TOOLS",
             new ItemStack(ModItems.MorphSword),

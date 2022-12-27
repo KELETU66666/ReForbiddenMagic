@@ -55,6 +55,7 @@ import java.util.Random;
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class LivingEvent {
     Random randy = new Random();
+
     @SubscribeEvent
     public static void onPlayerBreaking(PlayerEvent.BreakSpeed event) {
         BlockPos pos = event.getPos();

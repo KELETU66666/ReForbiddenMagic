@@ -15,4 +15,8 @@ public class ConfigFM {
         @Config.LangKey("Heretic Villager's ID")
         @Config.Comment("forbiddenmagic.configfm.hereticid.comment")
         public static int hereticID = 666;
+
+        @Config.LangKey("BloodSeal's Potion ID")
+        @Config.Comment("forbiddenmagic.configfm.bloodsealid.comment")
+        public static int BloodSealID = 70;
 }

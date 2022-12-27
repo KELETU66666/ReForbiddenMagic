@@ -24,7 +24,7 @@ import static keletu.forbiddenmagicre.compat.botania.RegisterHandlerBota.registe
         modid = Reference.MOD_ID,
         name = Reference.NAME,
         version = Reference.VERSION,
-         dependencies = "required-after:thaumcraft"
+         dependencies = "required-after:lostmagic"
 )
 public class forbiddenmagicre {
 
