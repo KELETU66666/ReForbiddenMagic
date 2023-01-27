@@ -7,6 +7,7 @@ import keletu.forbiddenmagicre.init.InitVanillaRecipes;
 import keletu.forbiddenmagicre.proxy.CommonProxy;
 import keletu.forbiddenmagicre.util.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
@@ -28,6 +29,7 @@ import static keletu.forbiddenmagicre.compat.botania.RegisterHandlerBota.registe
 )
 public class forbiddenmagicre {
 
+    public static CreativeTabs TabCrystal = new ItemTabCrystal();
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
     /** This is the instance of your mod as created by Forge. It will never be null. */

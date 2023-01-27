@@ -21,12 +21,6 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void registerRenderInfo() {
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWrathCage.class, new TileEntityWrathCageRenderer());
-
-        if (ModItems.MOB_CRYSTAL.getDefaultInstance().getTagCompound() == null)
-            ModelLoader.setCustomModelResourceLocation(ModItems.MOB_CRYSTAL, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + "empty_crystal", "inventory"));
-        else
-            ModelLoader.setCustomModelResourceLocation(ModItems.MOB_CRYSTAL, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + "mob_crystal", "inventory"));
-
     }
 
     public void registerDisplayInformationInit() {

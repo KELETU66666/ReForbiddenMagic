@@ -103,6 +103,12 @@ private static void initCrucibleRecipes() {
             new ItemStack(ModBlocks.BLOCK_SAPLING_TAINTED),
             new ItemStack(Blocks.SAPLING, 1, 0),
             new AspectList().add(Aspect.DEATH, 30).add(Aspect.FLUX, 30)
+        ));
+    ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "fm_mob_crystal"), new CrucibleRecipe(
+            "WRATH_CAGE@1",
+            new ItemStack(ModItems.MOB_CRYSTAL),
+            new ItemStack(Items.DIAMOND),
+            new AspectList().add(Aspect.MIND, 20).add(Aspect.ENERGY, 20)
     ));
 }
 private static void initInfusionRecipes() {
@@ -171,7 +177,7 @@ private static void initInfusionRecipes() {
             "gemDiamond",
             new ItemStack(Items.SKULL, 1, 1)));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "arcane_cake"), new InfusionRecipe(
-            "ARCANECAKE",
+            "FM_ARCANECAKE",
             new ItemStack(ModBlocks.BLOCK_ARCANE_CAKE),
             3,
              new AspectList().add(Aspect.DESIRE, 30).add(GLUTTONY, 20).add(Aspect.CRAFT, 45),
@@ -182,6 +188,34 @@ private static void initInfusionRecipes() {
             new ItemStack(Items.MILK_BUCKET),
             new ItemStack(Items.EGG),
             new ItemStack(ModItems.GluttonyShard)));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "wrath_cage"), new InfusionRecipe(
+            "WRATH_CAGE",
+            new ItemStack(ModBlocks.WRATH_CAGE),
+            10,
+            new AspectList().add(RegistryHandler.WRATH, 125).add(Aspect.MAGIC, 125).add(Aspect.BEAST, 125).add(Aspect.MECHANISM, 75),
+            new ItemStack(BlocksTC.metalBlockThaumium),
+            new ItemStack(Items.DIAMOND),
+            new ItemStack(ModItems.ResourceNS, 1, 0),
+            new ItemStack(BlocksTC.jarNormal),
+            new ItemStack(Items.DIAMOND),
+            new ItemStack(ModItems.ResourceNS, 1, 0),
+            new ItemStack(BlocksTC.jarNormal),
+            new ItemStack(Items.DIAMOND),
+            new ItemStack(BlocksTC.jarNormal),
+            new ItemStack(ModItems.ResourceNS, 1, 0),
+            new ItemStack(Items.DIAMOND),
+            new ItemStack(BlocksTC.jarNormal),
+            new ItemStack(ModItems.ResourceNS, 1, 0)));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "diabolist_fork"), new InfusionRecipe(
+            "DIABOLIST_FORK",
+            new ItemStack(ModItems.DIABOLISTFORK),
+            1,
+            new AspectList().add(RegistryHandler.NETHER, 15).add(Aspect.MECHANISM, 15).add(Aspect.ENERGY, 15),
+            new ItemStack(ItemsTC.thaumiumSword),
+            new ItemStack(Items.REDSTONE),
+            new ItemStack(Items.QUARTZ),
+            new ItemStack(Items.QUARTZ),
+            new ItemStack(Items.QUARTZ)));
 
     ItemStack greedy = new ItemStack(Items.GOLDEN_SWORD);
     EnumInfusionEnchantmentFM.addInfusionEnchantment(greedy, EnumInfusionEnchantmentFM.GREEDY, 1);

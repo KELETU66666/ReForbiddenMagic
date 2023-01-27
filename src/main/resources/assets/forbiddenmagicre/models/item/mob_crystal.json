@@ -1,6 +1,14 @@
 {
-  "parent": "item/handheld",
+  "parent": "item/generated",
   "textures": {
-    "layer0": "forbiddenmagicre:items/mobcrystal"
-  }
+    "layer0": "forbiddenmagicre:items/emptycrystal"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tag": 1
+      },
+      "model": "forbiddenmagicre:item/full_crystal"
+    }
+  ]
 }

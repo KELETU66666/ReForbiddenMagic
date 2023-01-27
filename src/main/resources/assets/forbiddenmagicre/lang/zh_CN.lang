@@ -24,7 +24,8 @@ item.resourcefm.0.name=绿宝石碎片
 item.resourcefm.1.name=暗影染料
 item.resourcefm.2.name=腐血碎片
 item.diabolist_fork.name=妖魔之叉
-item.MobCrystal.name=留影水晶
+item.mobcrystalempty.name=空白留影水晶
+item.mobcrystal.name=留影水晶
 item.resourcenethershard.0.name=暴怒碎片
 item.resourcenethershard.1.name=嫉妒碎片
 item.resourcenethershard.2.name=傲慢碎片
@@ -151,4 +152,5 @@ forbiddenmagic.research.psi_amulet.complete.text=I don't normally meddle with Ps
 overloaddamage.complete.text=You experienced a painful psionic sensation
 research.f_overloaddamage_complete.text=Experience Psionic Overload
 
-#Research BloodMagic
+#item tab
+itemGroup.fm_crystal=留影水晶

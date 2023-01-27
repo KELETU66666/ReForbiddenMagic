@@ -7,10 +7,13 @@ import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -20,7 +23,7 @@ import thaumcraft.api.aspects.Aspect;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemMobCrystal extends Item {
+public class ItemMobCrystal extends Item implements IHasModel{
 
     public ItemMobCrystal() {
         this.setMaxStackSize(1);
@@ -28,7 +31,17 @@ public class ItemMobCrystal extends Item {
         this.setMaxDamage(0);
         setUnlocalizedName("mob_crystal");
         setRegistryName("mob_crystal");
-        this.setCreativeTab(LostMagic.tab);
+        this.setCreativeTab(forbiddenmagicre.TabCrystal);
+        this.addPropertyOverride(new ResourceLocation("tag"), new IItemPropertyGetter() {
+            @Override
+            @SideOnly(Side.CLIENT)
+            public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn) {
+                if (stack.getTagCompound() != null) {
+                    return 1.0F;
+                }
+                return 0.0F;
+            }
+        });
 
         ModItems.ITEMS.add(this);
     }
@@ -75,10 +88,15 @@ public class ItemMobCrystal extends Item {
                 String string = nbttagcompound.getString("mob");
 
                 if (string != null)
-                    return ("" + I18n.translateToLocal("item.MobCrystal.name").replace("%s", I18n.translateToLocal("entity." + string + ".name"))).trim();
+                    return ("" + I18n.translateToLocal("item.mobcrystal.name").replace("%s", I18n.translateToLocal("entity." + string + ".name"))).trim();
             }
         }
 
-        return ("" + I18n.translateToLocal("item.MobCrystalEmpty.name")).trim();
+        return ("" + I18n.translateToLocal("item.mobcrystalempty.name")).trim();
+    }
+
+    @Override
+    public void registerModels() {
+        forbiddenmagicre.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }

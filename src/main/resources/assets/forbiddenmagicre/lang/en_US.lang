@@ -24,7 +24,8 @@ item.resourcefm.0.name=Emerald Fragment
 item.resourcefm.1.name=Umbral Dye
 item.resourcefm.2.name=Taint Blood Shard
 item.diabolist_fork.name=Diabolist Fork
-item.MobCrystal.name=Imprinting Crystals
+item.mobcrystalempty.name=Empty Imprinting Crystals
+item.mobcrystal.name=Imprinting Crystals
 item.resourcenethershard.0.name=Wrath Shard
 item.resourcenethershard.1.name=Envy Shard
 item.resourcenethershard.2.name=Pride Shard
@@ -160,3 +161,6 @@ forbiddenmagic.research.blood_rapier.complete.text=There's nothing more dangerou
 forbiddenmagic.research.divine_orb.title=Orb of Bel-Shamharoth
 forbiddenmagic.research.divine_orb.text=Strange whispers speak of power and dark energy in the spaces between the stars where even gods dare not gaze. Whether or not the whispers are telling the truth, it turns out that you can fit a lot of things in those spaces.
 forbiddenmagic.research.divine_orb.complete.text=Strange whispers speak of power and dark energy in the spaces between the stars where even gods dare not gaze. Whether or not the whispers are telling the truth, it turns out that you can fit a lot of things in those spaces.<BR><BR>By infusing a blood orb with the essence of the void and arcane geometries, you create an orb capable of storing vast amounts of life energy. 80,000,000 LP, to be exact. Storing life energy in a space not bound by Euclidean geometry can't possibly go wrong!
+
+#item tab
+itemGroup.fm_crystal=Mob Crystal
