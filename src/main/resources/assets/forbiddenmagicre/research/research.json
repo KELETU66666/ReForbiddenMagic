@@ -259,14 +259,14 @@
       "parents": ["DIABOLIST_FORK"],
       "stages": [
         {
-          "text": "forbiddenmagic.research.wrathcage.text.stage.1",
+          "text": "forbiddenmagic.research.diabolist_fork.text",
           "required_knowledge":["THEORY;INFUSION;1"],
           "required_craft":["forbiddenmagicre:mob_crystal"],
-          "recipes": ["forbiddenmagicre:mob_crystal"]
+          "recipes": ["forbiddenmagicre:fm_mob_crystal"]
         },
         {
-          "text": "forbiddenmagic.research.wrathcage.text.stage.2",
-          "recipes": ["forbiddenmagicre:mob_crystal", "forbiddenmagicre:wrath_cage"]
+          "text": "forbiddenmagic.research.wrathcage.complete.text",
+          "recipes": ["forbiddenmagicre:fm_mob_crystal", "forbiddenmagicre:wrath_cage"]
         }
       ]
     },
@@ -278,12 +278,12 @@
       "parents": ["MORPH_TOOLS"],
       "stages": [
         {
-          "text": "forbiddenmagic.research.diabolist_fork.text.stage.1",
+          "text": "forbiddenmagic.research.diabolist_fork.text",
           "required_knowledge":["THEORY;INFUSION;1"],
           "required_craft":["thaumcraft:thaumium_sword"]
         },
         {
-          "text": "forbiddenmagic.research.diabolist_fork.text.stage.2",
+          "text": "forbiddenmagic.research.diabolist_fork.complete.text",
           "recipes": ["forbiddenmagicre:diabolist_fork"]
         }
       ]

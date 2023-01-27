@@ -201,11 +201,11 @@ private static void initInfusionRecipes() {
             new ItemStack(ModItems.ResourceNS, 1, 0),
             new ItemStack(BlocksTC.jarNormal),
             new ItemStack(Items.DIAMOND),
-            new ItemStack(BlocksTC.jarNormal),
             new ItemStack(ModItems.ResourceNS, 1, 0),
-            new ItemStack(Items.DIAMOND),
             new ItemStack(BlocksTC.jarNormal),
-            new ItemStack(ModItems.ResourceNS, 1, 0)));
+            new ItemStack(Items.DIAMOND),
+            new ItemStack(ModItems.ResourceNS, 1, 0),
+            new ItemStack(BlocksTC.jarNormal)));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "diabolist_fork"), new InfusionRecipe(
             "DIABOLIST_FORK",
             new ItemStack(ModItems.DIABOLISTFORK),
