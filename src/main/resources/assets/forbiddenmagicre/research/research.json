@@ -26,12 +26,12 @@
           "forbiddenmagicre:morph_sword", "forbiddenmagicre:morph_pick", "forbiddenmagicre:morph_axe", "forbiddenmagicre:morph_shovel"
         ],
         "parents": [
-         "DISTORTION_PICK",
-         "DIABOLIST_FORK",
-         "SKULLAXE"
+         "ELEMENTALTOOLS", 
+         "INFUSION",
+         "LOSTMAGIC"
         ],
         "location": [
-          4,2
+          2,2
         ],
         "stages": [
           {
@@ -118,6 +118,25 @@
         }
       ]
     },
+    { "key": "RINGNUTRITION",
+      "name": "research.lostmagic.RINGNUTRITION.title",
+      "icons": ["lostmagic:ring_nutrition"],
+      "category": "APOCRYPHA",
+      "location": [5, 0],
+      "parents": ["INFUSIONENCHANTMENTFM"],
+      "stages": [
+        {
+          "text": "research.lostmagic.RINGNUTRITION.text.stage.1",
+          "required_knowledge":["THEORY;INFUSION;1"],
+          "required_research":["f_badfood","f_goodfood"]
+
+        },
+        {
+          "text": "research.lostmagic.RINGNUTRITION.text.stage.2",
+          "recipes": ["lostmagic:RingNutrition"]
+        }
+      ]
+    },
     { "key": "ARCANECAKE",
       "name": "forbiddenmagic.research.arcane_cake.title",
       "icons": ["forbiddenmagicre:arcane_cake"],
@@ -154,6 +173,26 @@
         }
       ]
     },
+    { "key": "PURESHOVEL",
+        "name": "research.lostmagic.PURESHOVEL.title",
+        "icons": ["lostmagic:purifying_shovel"],
+        "category": "APOCRYPHA",
+        "location": [4, 2],
+        "parents": ["MORPH_TOOLS", "f_toomuchflux",  "!vitium"],
+        "stages": [
+          {
+            "text": "research.lostmagic.PURESHOVEL.text.stage.1",
+            "required_knowledge":["THEORY;INFUSION;1"],
+            "required_craft":["thaumcraft:thaumium_shovel"],
+            "required_item":["thaumcraft:log_silverwood"]
+
+          },
+          {
+            "text": "research.lostmagic.PURESHOVEL.text.stage.2",
+            "recipes": ["lostmagic:PureShovel"]
+          }
+        ]
+      },
       { "key": "EMERALD_DUPE",
         "name": "forbiddenmagic.research.emeralddupe.title",
         "icons": ["forbiddenmagicre:resourcefm;1;0"],
@@ -197,7 +236,7 @@
         "icons": ["forbiddenmagicre:skull_axe"],
         "category": "APOCRYPHA",
         "location": [2, 4],
-        "parents": ["PURESHOVEL"],
+        "parents": ["MORPH_TOOLS"],
         "stages": [
           {
             "text": "forbiddenmagic.research.skullaxe.text.stage.1",
@@ -214,16 +253,16 @@
       },
     { "key": "WRATH_CAGE",
       "name": "forbiddenmagic.research.wrathcage.title",
-      "icons": ["forbiddenmagicre:skull_axe"],
+      "icons": ["forbiddenmagicre:wrath_cage"],
       "category": "APOCRYPHA",
-      "location": [2, 4],
+      "location": [0, 4],
       "parents": ["DIABOLIST_FORK"],
       "stages": [
         {
           "text": "forbiddenmagic.research.wrathcage.text.stage.1",
           "required_knowledge":["THEORY;INFUSION;1"],
-          "required_craft":["thaumcraft:thaumium_axe"],
-          "required_item":["minecraft:skull;1;1"]
+          "required_craft":["forbiddenmagicre:mob_crystal"],
+          "recipes": ["forbiddenmagicre:mob_crystal"]
         },
         {
           "text": "forbiddenmagic.research.wrathcage.text.stage.2",
@@ -233,16 +272,15 @@
     },
     { "key": "DIABOLIST_FORK",
       "name": "forbiddenmagic.research.diabolist_fork.title",
-      "icons": ["forbiddenmagicre:skull_axe"],
+      "icons": ["forbiddenmagicre:diabolist_fork"],
       "category": "APOCRYPHA",
-      "location": [2, 4],
-      "parents": ["PURESHOVEL"],
+      "location": [0, 2],
+      "parents": ["MORPH_TOOLS"],
       "stages": [
         {
           "text": "forbiddenmagic.research.diabolist_fork.text.stage.1",
           "required_knowledge":["THEORY;INFUSION;1"],
-          "required_craft":["thaumcraft:thaumium_sword"],
-          "required_item":["minecraft:skull;1;1"]
+          "required_craft":["thaumcraft:thaumium_sword"]
         },
         {
           "text": "forbiddenmagic.research.diabolist_fork.text.stage.2",
