@@ -1,5 +1,9 @@
 package keletu.forbiddenmagicre.proxy;
 
+import keletu.forbiddenmagicre.blocks.tiles.TileEntityWrathCage;
+import keletu.forbiddenmagicre.blocks.tiles.TileEntityWrathCageRenderer;
+import keletu.forbiddenmagicre.init.ModItems;
+import keletu.forbiddenmagicre.util.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
@@ -14,13 +18,21 @@ public class ClientProxy extends CommonProxy {
         ModelLoader.setCustomModelResourceLocation( item, meta, new ModelResourceLocation( item.getRegistryName(), id ) );
     }
 
-    private void registerTileEntitySpecialRenderer(Class tile, TileEntitySpecialRenderer renderer) {
-        ClientRegistry.bindTileEntitySpecialRenderer(tile, renderer);
+    @Override
+    public void registerRenderInfo() {
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWrathCage.class, new TileEntityWrathCageRenderer());
+
+        if (ModItems.MOB_CRYSTAL.getDefaultInstance().getTagCompound() == null)
+            ModelLoader.setCustomModelResourceLocation(ModItems.MOB_CRYSTAL, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + "empty_crystal", "inventory"));
+        else
+            ModelLoader.setCustomModelResourceLocation(ModItems.MOB_CRYSTAL, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + "mob_crystal", "inventory"));
+
     }
 
     public void registerDisplayInformationInit() {
         setupTileRenderers();
     }
+
     public void setupTileRenderers() {
     }
 

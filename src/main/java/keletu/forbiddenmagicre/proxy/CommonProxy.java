@@ -22,6 +22,6 @@ public class CommonProxy {
     {
     }
 
-    public void sparkle(float posX, float posY, float posZ, int i) {
+    public void registerRenderInfo() {
     }
 }

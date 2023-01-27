@@ -9,11 +9,9 @@ import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.items.tools.DistortionPick;
 import keletu.forbiddenmagicre.util.Reference;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
@@ -307,6 +305,24 @@ public class LivingEvent {
         if (event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityLivingBase) {
             ((EntityLivingBase) event.getSource().getTrueSource()).getHeldItemMainhand();
             ItemStack equip = ((EntityLivingBase) event.getSource().getTrueSource()).getHeldItemMainhand();
+            if (equip.getItem() == ModItems.DIABOLISTFORK) {
+                String name = null;
+                try {
+                    name = EntityList.getEntityString(event.getEntityLiving());
+                } catch (Exception e) {
+                    try {
+                        name = event.getEntityLiving().getCommandSenderEntity().getName();
+                    } catch (Exception ee) {
+                        return;
+                    }
+                } finally {
+                    if (name == null)
+                        return;
+                }
+
+                if (ConfigFM.spawnerMobs.containsKey(name) || (ConfigFM.wrathCrazy && !(event.getEntityLiving() instanceof EntityDragon)))
+                    imprintCrystal((EntityPlayer) (event.getSource().getTrueSource()), name);
+            }
 
             if (EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.EDUCATIONAL) > 0 && event.getEntityLiving() instanceof EntityLiving && EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, equip) == 0) {
                 try {
@@ -319,6 +335,18 @@ public class LivingEvent {
                 } catch (Throwable e) {
                     LogHandler.log(Level.ERROR, "Failed to educate!");
                 }
+            }
+        }
+    }
+
+    public void imprintCrystal(EntityPlayer player, String mob) {
+        for (int x = 0; x < player.inventory.getSizeInventory(); ++x) {
+            ItemStack item = player.inventory.getStackInSlot(x);
+            if (item != null && item.getItem() == ModItems.MOB_CRYSTAL && (!item.hasTagCompound() || !item.getTagCompound().hasKey("mob"))) {
+                if (!item.hasTagCompound())
+                    item.setTagCompound(new NBTTagCompound());
+                item.getTagCompound().setString("mob", mob);
+                return;
             }
         }
     }

@@ -1,5 +1,6 @@
 package keletu.forbiddenmagicre.util;
 
+import keletu.forbiddenmagicre.blocks.tiles.TileEntityWrathCage;
 import keletu.forbiddenmagicre.compat.bloodmagic.ItemBloodRapier;
 import keletu.forbiddenmagicre.compat.bloodmagic.ItemDivineOrb;
 import keletu.forbiddenmagicre.compat.psi.ItemAmuletPsi;
@@ -9,6 +10,7 @@ import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.potions.PotionBloodSeal;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -17,6 +19,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -52,10 +55,12 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
+        TileEntityWrathCage.register("wrath_cage", TileEntityWrathCage.class);
     }
 
     @SubscribeEvent
     public static void onModelRegister( ModelRegistryEvent event ) {
+
         for (Item item : ModItems.ITEMS) {
             if (item instanceof IHasModel) {
                 ((IHasModel) item).registerModels();

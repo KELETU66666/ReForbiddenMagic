@@ -1,5 +1,6 @@
 package keletu.forbiddenmagicre.init;
 
+import keletu.forbiddenmagicre.items.ItemMobCrystal;
 import keletu.forbiddenmagicre.items.food.ItemGluttonyShard;
 import keletu.forbiddenmagicre.items.food.ItemTaintFurit;
 import keletu.forbiddenmagicre.items.resources.ResourceFM;
@@ -23,10 +24,12 @@ public static final ItemSpade MorphShovel = new MorphShovel("morph_shovel", tab,
     public static final ItemAxe MorphAxe = new MorphAxe("morph_axe", tab, MATERIAL_MORPH);
     public static final ItemPickaxe DISTORTIONPICK = new DistortionPick("distortion_pick", tab, MATERIAL_MORPH);
     public static final ItemSword RIDINGCROP = new RidingCrop("riding_crop", tab, Item.ToolMaterial.WOOD);
+    public static final ItemSword DIABOLISTFORK = new ItemDiabolistFork(MATERIAL_MORPH);
     public static final ItemSword SkullAxe = new SkullAxe("skull_axe", tab, MATERIAL_MORPH);
     public static final Item ResourceFM = new ResourceFM();
     public static final Item ResourceNS = new ResourceNS();
     public static final ItemFood GluttonyShard = new ItemGluttonyShard();
     public static final ItemFood TAINTED_FRUIT = new ItemTaintFurit();
     public static final Item TAINTCHARCOAL = new ResourceTaintCharcoal();
+    public static final Item MOB_CRYSTAL = new ItemMobCrystal();
 }

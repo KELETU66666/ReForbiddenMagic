@@ -41,10 +41,12 @@ public class forbiddenmagicre {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
+        ConfigFM.spawnilify();
         if(Loader.isModLoaded("botania"))
         registerFlowers();
         if(Loader.isModLoaded("psi"))
         keletu.forbiddenmagicre.compat.psi.Psionics.oneechan();
+        proxy.registerRenderInfo();
     }
 
     /**

@@ -23,7 +23,8 @@ item.taint_charcoal.name=六重煤炭
 item.resourcefm.0.name=绿宝石碎片
 item.resourcefm.1.name=暗影染料
 item.resourcefm.2.name=腐血碎片
-
+item.diabolist_fork.name=妖魔之叉
+item.MobCrystal.name=留影水晶
 item.resourcenethershard.0.name=暴怒碎片
 item.resourcenethershard.1.name=嫉妒碎片
 item.resourcenethershard.2.name=傲慢碎片
@@ -42,7 +43,7 @@ tile.log_tainted.name=腐化原木
 tile.taint_planks.name=腐化木板
 tile.tainted_stone.name=腐化石头
 tile.tainted_brick.name=腐化石砖
-
+tile.wrath_cage.name=暴怒之笼
 #Botania
 tile.botania:flower.euclidaisy.name=欧氏菊
 forbidden.lexicon.euclidaisy=欧氏菊
