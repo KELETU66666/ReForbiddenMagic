@@ -67,7 +67,7 @@ public class BlockWrathCage extends BlockContainer implements IHasModel {
 
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        ItemStack held = player.getHeldItem(hand);
+        ItemStack held = player.getHeldItemMainhand();
         if (held != ItemStack.EMPTY && held.getItem() == ModItems.MOB_CRYSTAL) {
             NBTTagCompound nbttagcompound = held.getTagCompound();
             if (nbttagcompound == null)
