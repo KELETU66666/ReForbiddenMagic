@@ -1,24 +1,6 @@
 {
   "entries": [
     {
-      "key": "LOSTMAGIC",
-      "name": "research.lostmagic.LOSTMAGIC.title",
-      "icons": ["lostmagic:textures/misc/forbidden.png"],
-      "category": "APOCRYPHA",
-      "location": [0, 0],
-      "meta": ["ROUND"],
-      "parents": [ "FIRSTSTEPS" ],
-      "stages": [
-        {
-          "text": "forbiddenmagicre.research.lostmagic.text",
-          "required_research": ["m_hellandback"]
-        },
-        {
-          "text": "research.lostmagic.LOSTMAGIC.text.stage.1"
-        }
-      ]
-    },
-    {
       "key": "MORPH_TOOLS",
       "name": "forbiddenmagic.research.morph_tools.title",
         "category": "APOCRYPHA",

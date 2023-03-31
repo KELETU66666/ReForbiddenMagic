@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '0.3'
+version = '0.4'
 group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'forbiddenmagic'
 
@@ -113,7 +113,7 @@ dependencies {
         implementation 'curse.maven:thaumcraft-223628:2629023'
         implementation 'curse.maven:baubles-227083:2518667'
     implementation 'curse.maven:botania-225643:3330934'
-    implementation 'curse.maven:lost-magic-337000:3171243'
+    implementation 'curse.maven:lost-magic-337000:4374607'
     implementation 'curse.maven:psi-241665:3085917'
     implementation 'curse.maven:autoreglib-250363:2746011'
     implementation 'curse.maven:blood-magic-224791:2822288'
