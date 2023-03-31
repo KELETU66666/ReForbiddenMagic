@@ -1,6 +1,7 @@
 package keletu.forbiddenmagicre.compat.bloodmagic;
 
 
+import WayofTime.bloodmagic.ConfigHandler;
 import WayofTime.bloodmagic.core.data.Binding;
 import WayofTime.bloodmagic.core.data.SoulNetwork;
 import WayofTime.bloodmagic.core.data.SoulTicket;
@@ -51,7 +52,10 @@ public class ItemDivineOrb extends ItemBindableBase implements IBloodOrb, IWarpi
 
         ItemStack archOrb = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("bloodmagic", "blood_orb")));
         NBTTagCompound tag = new NBTTagCompound();
+        if(!ConfigHandler.general.enableTierSixEvenThoughThereIsNoContent)
         tag.setString("orb", "bloodmagic:archmage");
+        else
+            tag.setString("orb", "bloodmagic:transcendent");
         archOrb.setTagCompound(tag);
 
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "fm_divine_orb"), new InfusionRecipe(
