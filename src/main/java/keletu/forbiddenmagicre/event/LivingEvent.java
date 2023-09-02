@@ -1,5 +1,6 @@
 package keletu.forbiddenmagicre.event;
 
+import WayofTime.bloodmagic.core.RegistrarBloodMagic;
 import com.google.common.collect.Multimap;
 import keletu.forbiddenmagicre.ConfigFM;
 import keletu.forbiddenmagicre.LogHandler;
@@ -18,6 +19,7 @@ import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -27,6 +29,7 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
@@ -46,6 +49,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.Level;
+import thaumcraft.api.entities.ITaintedMob;
 
 import java.util.Collection;
 import java.util.Random;
@@ -57,7 +61,7 @@ public class LivingEvent {
     @SubscribeEvent
     public static void onPlayerBreaking(PlayerEvent.BreakSpeed event) {
         BlockPos pos = event.getPos();
-        if (event.getEntityPlayer().getHeldItem(EnumHand.MAIN_HAND) != null) {
+        if (!event.getEntityPlayer().getHeldItem(EnumHand.MAIN_HAND).isEmpty()) {
             ItemStack stack = event.getEntityPlayer().getHeldItem(EnumHand.MAIN_HAND);
             if (stack.getItem() instanceof DistortionPick) {
                 World world = event.getEntityPlayer().world;
@@ -84,7 +88,7 @@ public class LivingEvent {
             ItemStack equip = player.inventory.getCurrentItem();
             if (EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.CONSUMING) > 0) {
                 for (int x = 0; x < event.getDrops().size(); x++) {
-                    ItemStack drop = (ItemStack) event.getDrops().get(x);
+                    ItemStack drop = event.getDrops().get(x);
                     if (drop != null && isGarbage(drop))
                         event.getDrops().remove(x);
                 }
@@ -119,7 +123,7 @@ public class LivingEvent {
         if ((event.getEntityLiving() instanceof EntityVillager || event.getEntityLiving() instanceof IMob) && event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
             ItemStack equip = player.getHeldItem(EnumHand.MAIN_HAND);
-            if (equip != null && EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.GREEDY) > 0 && event.getLootingLevel() <= 0) {
+            if (!equip.isEmpty() && EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.GREEDY) > 0 && event.getLootingLevel() <= 0) {
                 if (event.getEntityLiving() instanceof EntityVillager) {
                     addDrop(event, new ItemStack(Items.EMERALD, 1, 0));
                 } else if (rand.nextInt(35) < 3)
@@ -127,12 +131,36 @@ public class LivingEvent {
             }
         }
 
+        if (event.getSource().getDamageType().equals("player") && event.getEntityLiving() instanceof ITaintedMob)
+        {
+            PotionEffect effect = event.getEntityLiving().getActivePotionEffect(RegistrarBloodMagic.SOUL_SNARE);
+            if (effect != null)
+            {
+                if (effect.getAmplifier() >= 2) {
+                    double rand1 = Math.random();
+                    if (rand1 < 0.50d) {
+                        addDrop(event, new ItemStack(ModItems.ResourceFM, 1, 2));
+                    }
+                }
+            }
+        }
+
+        if (ConfigFM.SilverFish && event.getEntityLiving() instanceof EntitySilverfish) {
+            if (event.getEntityLiving().world.getBiome(new BlockPos((int) event.getEntityLiving().posX, event.getEntityLiving().posY, (int) event.getEntityLiving().posZ)) == Biomes.EXTREME_HILLS) {
+                if (event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer && randy.nextInt(30) <= (2 + event.getLootingLevel() * 2))
+                    addDrop(event, new ItemStack(ModItems.ResourceFM, 1, 0));
+            } else if (event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer && !(event.getSource().getTrueSource() instanceof FakePlayer) && randy.nextInt(70) <= (1 + event.getLootingLevel() * 3)) {
+                addDrop(event, new ItemStack(ModItems.ResourceFM, 1, 0));
+            }
+
+        }
+
         if (event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer && !(event.getSource().getTrueSource() instanceof FakePlayer)) {
             if (event.getEntityLiving() instanceof IMob) {
                 int wrath = 2;
                 int greed = 0;
                 ItemStack heldItem = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
-                if (heldItem != null) {
+                if (!heldItem.isEmpty()) {
                     if (heldItem.getItem() instanceof ItemTool) {
                         Multimap map = heldItem.getItem().getAttributeModifiers(EntityEquipmentSlot.MAINHAND, heldItem);
                         Collection collect = map.get(SharedMonsterAttributes.ATTACK_DAMAGE.getName());
@@ -164,35 +192,35 @@ public class LivingEvent {
             }
             if (event.getEntityLiving().getClass() == EntitySkeleton.class && event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
                 ItemStack weap = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
-                if (weap != null && weap.getItem() == ModItems.SkullAxe && rand.nextInt(26) <= (3 + EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
+                if (!weap.isEmpty() && weap.getItem() == ModItems.SkullAxe && rand.nextInt(26) <= (3 + EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
                     addDrop(event, new ItemStack(Items.SKULL, 1, 0));
                 }
             }
 
             if (event.getEntityLiving().getClass() == EntityWitherSkeleton.class && event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
                 ItemStack weap = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
-                if (weap != null && weap.getItem() == ModItems.SkullAxe && rand.nextInt(26) <= (3 + EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
+                if (!weap.isEmpty() && weap.getItem() == ModItems.SkullAxe && rand.nextInt(26) <= (3 + EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
                     addDrop(event, new ItemStack(Items.SKULL, 1, 1));
                 }
             }
 
             if (event.getEntityLiving().getClass() == EntityZombie.class && event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
                 ItemStack weap = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
-                if (weap != null && weap.getItem() == ModItems.SkullAxe && rand.nextInt(26) <= (2 + 2 * EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
+                if (!weap.isEmpty() && weap.getItem() == ModItems.SkullAxe && rand.nextInt(26) <= (2 + 2 * EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
                     addDrop(event, new ItemStack(Items.SKULL, 1, 2));
                 }
             }
 
             if (event.getEntityLiving().getClass() == EntityCreeper.class && event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
                 ItemStack weap = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
-                if (weap != null && weap.getItem() == ModItems.SkullAxe && rand.nextInt(26) <= (2 + 2 * EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
+                if (!weap.isEmpty() && weap.getItem() == ModItems.SkullAxe && rand.nextInt(26) <= (2 + 2 * EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
                     addDrop(event, new ItemStack(Items.SKULL, 1, 4));
                 }
             }
 
             if (event.getEntityLiving() instanceof EntityPlayer && event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
                 ItemStack weap = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
-                if (weap != null && weap.getItem() == ModItems.SkullAxe && rand.nextInt(11) <= (1 + EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
+                if (!weap.isEmpty() && weap.getItem() == ModItems.SkullAxe && rand.nextInt(11) <= (1 + EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
                     ItemStack head = new ItemStack(Items.SKULL, 1, 3);
                     NBTTagCompound nametag = new NBTTagCompound();
                     nametag.setString("SkullOwner", ((EntityPlayer) event.getEntityLiving()).getName());
@@ -215,7 +243,7 @@ public class LivingEvent {
                     int wrath = 2;
                     int greed = 0;
                     ItemStack heldItem = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
-                    if (heldItem != null) {if (heldItem.getItem() instanceof ItemSword) {
+                    if (!heldItem.isEmpty()) {if (heldItem.getItem() instanceof ItemSword) {
                             wrath += (int) (((ItemSword) heldItem.getItem()).getAttackDamage() + 4.0F);
                         }
 
@@ -252,7 +280,7 @@ public class LivingEvent {
                 }
 
                 if (event.getEntityLiving() instanceof EntityPigZombie && !(event.getSource().getTrueSource() instanceof FakePlayer)) {
-                    if (event.getEntityLiving().getHeldItem(EnumHand.MAIN_HAND) != null && event.getEntityLiving().getHeldItem(EnumHand.MAIN_HAND).getItem() == ModItems.ResourceNS && event.getEntityLiving().getHeldItem(EnumHand.MAIN_HAND).getItemDamage() == 1) {
+                    if (!event.getEntityLiving().getHeldItem(EnumHand.MAIN_HAND).isEmpty() && event.getEntityLiving().getHeldItem(EnumHand.MAIN_HAND).getItem() == ModItems.ResourceNS && event.getEntityLiving().getHeldItem(EnumHand.MAIN_HAND).getItemDamage() == 1) {
                         addDrop(event, new ItemStack(ModItems.ResourceNS, 1, 1));
                     }
                 }
@@ -271,8 +299,7 @@ public class LivingEvent {
                 short l = nbttaglist.getCompoundTagAt(j).getShort("lvl");
                 if(k < 0 || k >= EnumInfusionEnchantmentFM.values().length)
                     continue;
-                String s = TextFormatting.GOLD + I18n
-                        .translateToLocal("enchantment.infusion." + EnumInfusionEnchantmentFM.values()[k].toString());
+                String s = TextFormatting.GOLD + I18n.translateToLocal("enchantment.infusion." + EnumInfusionEnchantmentFM.values()[k].toString());
                 if(EnumInfusionEnchantmentFM.values()[k].maxLevel > 1) {
                     s = s + " " + I18n.translateToLocal("enchantment.level." + l);
                 }
@@ -342,7 +369,7 @@ public class LivingEvent {
     public void imprintCrystal(EntityPlayer player, String mob) {
         for (int x = 0; x < player.inventory.getSizeInventory(); ++x) {
             ItemStack item = player.inventory.getStackInSlot(x);
-            if (item != null && item.getItem() == ModItems.MOB_CRYSTAL && (!item.hasTagCompound() || !item.getTagCompound().hasKey("mob"))) {
+            if (!item.isEmpty() && item.getItem() == ModItems.MOB_CRYSTAL && (!item.hasTagCompound() || !item.getTagCompound().hasKey("mob"))) {
                 if (!item.hasTagCompound())
                     item.setTagCompound(new NBTTagCompound());
                 item.getTagCompound().setString("mob", mob);

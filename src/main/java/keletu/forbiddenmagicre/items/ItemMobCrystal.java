@@ -1,6 +1,5 @@
 package keletu.forbiddenmagicre.items;
 
-import fox.spiteful.lostmagic.LostMagic;
 import keletu.forbiddenmagicre.ConfigFM;
 import keletu.forbiddenmagicre.forbiddenmagicre;
 import keletu.forbiddenmagicre.init.ModItems;

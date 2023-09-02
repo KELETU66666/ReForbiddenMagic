@@ -48,7 +48,7 @@ public class ItemDiabolistFork extends ItemSword implements IHasModel {
 
     @Override
     public boolean getIsRepairable(ItemStack stack, ItemStack stack2) {
-        return stack2.getItem() == Items.QUARTZ ? true : super.getIsRepairable(stack, stack2);
+        return stack2.getItem() == Items.QUARTZ || super.getIsRepairable(stack, stack2);
     }
 
     @Override

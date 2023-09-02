@@ -45,8 +45,17 @@ tile.taint_planks.name=Tainted Plank
 tile.tainted_stone.name=Tainted Stone
 tile.tainted_brick.name=Tainted Brick
 tile.wrath_cage.name=Wrath Cage
+tile.netherstar_block.name=Nether Star Block
 
 #Botania
+tile.botania:flower.tainthistle.name=Tainthistle
+forbidden.lexicon.tainthistle=Tainthistle
+forbidden.lexicon.tainthistle.0=The disgusting &1Tainthistle&0 derives sustenance from the tainted runoff of magical experiments. It'll suck up any such substance it can find and try to turn it into mana. Since Botany is an environmentally friendly practice, there doesn't seem to be much point to it.<br>&oMore intrusive than a Spirit Vine&r
+
+tile.botania:flower.bloodthorn.name=BloodThorn
+forbidden.lexicon.bloodthorn=BloodThorn
+forbidden.lexicon.bloodthorn.0=The results of some sick, twisted Blood Mage's experiments, the &1Bloodthorn&0 is a red mystical flower that has been steeped in blood until it developed a taste for the life force of all things. It uses mana to inflict an extreme level of Weakness on surrounding creatures that is unmatched by any conventional alchemy.<br>&oYakone's legacy&r
+
 tile.botania:flower.euclidaisy.name=Euclidaisy
 forbidden.lexicon.euclidaisy=Euclidaisy
 forbidden.lexicon.euclidaisy.0=The eerie, pink &1Euclidaisy&0 is an oddity. It uses large amounts of mana to conjure some sort of strange, crystallized substance that only seems useful to Thaumaturges.<br>&oIt doesn't combustion bend.&r

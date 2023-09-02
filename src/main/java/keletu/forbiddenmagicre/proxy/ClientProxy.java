@@ -2,10 +2,7 @@ package keletu.forbiddenmagicre.proxy;
 
 import keletu.forbiddenmagicre.blocks.tiles.TileEntityWrathCage;
 import keletu.forbiddenmagicre.blocks.tiles.TileEntityWrathCageRenderer;
-import keletu.forbiddenmagicre.init.ModItems;
-import keletu.forbiddenmagicre.util.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;

@@ -18,4 +18,5 @@ public class ModBlocks {
     public static final Block BLOCKSTONEBRICK = new BlockBrickTainted();
     public static final Block BLOCK_PLANK_TAINTED = new BlockTaintPlank();
     public static final Block WRATH_CAGE = new BlockWrathCage();
+    public static final Block BLOCK_NETHER_STAR = new BlockNetherStar();
 }

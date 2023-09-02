@@ -49,11 +49,14 @@ public class RegisterHandlerBota {
     }
 
     public static void registerFlowers() {
-            addSubTile("astralbloom", SubTileAstralBloom.class);
-            addSubTile("euclidaisy", SubTileEuclidaisy.class);
-            if(Loader.isModLoaded("psi"))
+        addSubTile("astralbloom", SubTileAstralBloom.class);
+        addSubTile("euclidaisy", SubTileEuclidaisy.class);
+        addSubTile("tainthistle", SubTileTainthistle.class);
+        if(Loader.isModLoaded("bloodmagic"))
+            addSubTile("bloodthorn", SubTileBloodthorn.class);
+        if(Loader.isModLoaded("psi"))
             addSubTile("mindlotus", SubTileMindLotus.class);
-            addSubTile("whisperweed", SubTileWhisperweed.class);
+        addSubTile("whisperweed", SubTileWhisperweed.class);
     }
 
     public static void lexify() {
@@ -68,6 +71,19 @@ public class RegisterHandlerBota {
                 SubTileAstralBloom.lexicon.addPage(BotaniaAPI.internalHandler.textPage("forbidden.lexicon.astralbloom.0"));
                 ItemStack astralbloom = ItemBlockSpecialFlower.ofType("astralbloom");
                 SubTileAstralBloom.lexicon.setIcon(astralbloom);
+
+                SubTileTainthistle.lexicon = new MagicLexicon("tainthistle", BotaniaAPI.categoryFunctionalFlowers, "Thaumcraft");
+                SubTileTainthistle.lexicon.addPage(BotaniaAPI.internalHandler.textPage("forbidden.lexicon.tainthistle.0"));
+                ItemStack tainthistle = ItemBlockSpecialFlower.ofType("tainthistle");
+                SubTileTainthistle.lexicon.setIcon(tainthistle);
+
+                if (Loader.isModLoaded("bloodmagic"))
+                {
+                    SubTileBloodthorn.lexicon = new MagicLexicon("bloodthorn", BotaniaAPI.categoryFunctionalFlowers, "BloodMagic");
+                    SubTileBloodthorn.lexicon.addPage(BotaniaAPI.internalHandler.textPage("forbidden.lexicon.bloodthorn.0"));
+                    ItemStack bloodThorn = ItemBlockSpecialFlower.ofType("bloodthorn");
+                    SubTileBloodthorn.lexicon.setIcon(bloodThorn);
+                }
 
                 if (Loader.isModLoaded("psi")) {
                 ItemStack lotus = ItemBlockSpecialFlower.ofType("mindlotus");

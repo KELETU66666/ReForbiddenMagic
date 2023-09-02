@@ -84,7 +84,7 @@ public class ItemBloodRapier extends ItemSword implements IWarpingGear, IHasMode
 
     @Override
     public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack) {
-        return par2ItemStack.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 1))?true:super.getIsRepairable(par1ItemStack, par2ItemStack);
+        return par2ItemStack.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 1)) || super.getIsRepairable(par1ItemStack, par2ItemStack);
     }
 
     @Override

@@ -92,7 +92,7 @@ public class MorphSword extends ItemSword implements IHasModel {
 
     @Override
     public boolean getIsRepairable(ItemStack stack, ItemStack stack2) {
-        return stack2.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 0)) ? true : super.getIsRepairable(stack, stack2);
+        return stack2.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 0)) || super.getIsRepairable(stack, stack2);
     }
     @Override
     public EnumRarity getRarity(ItemStack itemstack) {

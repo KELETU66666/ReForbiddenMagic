@@ -14,7 +14,7 @@
       },
       {
         "text": "forbiddenmagic.research.magical_flower.complete.text",
-        "recipes": ["forbiddenmagicre:whisper_weed", "forbiddenmagicre:astral_bloom", "forbiddenmagicre:euclidaisy"]
+        "recipes": ["forbiddenmagicre:whisper_weed", "forbiddenmagicre:astral_bloom", "forbiddenmagicre:euclidaisy", "forbiddenmagicre:tainthistle"]
       }
     ]
   }

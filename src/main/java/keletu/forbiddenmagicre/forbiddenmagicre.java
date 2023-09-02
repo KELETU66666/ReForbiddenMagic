@@ -45,9 +45,9 @@ public class forbiddenmagicre {
         proxy.preInit(event);
         ConfigFM.spawnilify();
         if(Loader.isModLoaded("botania"))
-        registerFlowers();
+            registerFlowers();
         if(Loader.isModLoaded("psi"))
-        keletu.forbiddenmagicre.compat.psi.Psionics.oneechan();
+            keletu.forbiddenmagicre.compat.psi.Psionics.oneechan();
         proxy.registerRenderInfo();
     }
 

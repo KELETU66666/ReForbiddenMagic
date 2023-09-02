@@ -10,7 +10,6 @@ import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.potions.PotionBloodSeal;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -19,7 +18,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -29,7 +27,6 @@ import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.*;
 
 @Mod.EventBusSubscriber
-
 public class RegistryHandler {
 
     public static final Aspect ENVY;
@@ -157,10 +154,7 @@ public class RegistryHandler {
     {
         OreDictionary.registerOre("dyeBlack", new ItemStack(ModItems.ResourceFM, 1, 1));
         OreDictionary.registerOre("nuggetEmerald", new ItemStack(ModItems.ResourceFM, 1, 0));
-        OreDictionary.registerOre("plankWood", new ItemStack(ModBlocks.BLOCK_PLANK_TAINTED, 1, 0));
-        OreDictionary.registerOre("logWood", new ItemStack(ModBlocks.BLOCK_LOG_TAINTED, 1, 0));
-        OreDictionary.registerOre("treeSapling", new ItemStack(ModBlocks.BLOCK_SAPLING_TAINTED, 1, 0));
-        OreDictionary.registerOre("treeLeaves", new ItemStack(ModBlocks.BLOCK_LEAVES_TAINTED, 1, 0));
+        OreDictionary.registerOre("blockNetherStar", new ItemStack(ModBlocks.BLOCK_NETHER_STAR, 1, 0));
     }
 
     public static final PotionBloodSeal bloodSeal = new PotionBloodSeal();

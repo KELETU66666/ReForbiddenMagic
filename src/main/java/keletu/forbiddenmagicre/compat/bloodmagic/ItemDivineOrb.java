@@ -80,7 +80,7 @@ public class ItemDivineOrb extends ItemBindableBase implements IBloodOrb, IWarpi
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
         tooltip.add(TextHelper.localizeEffect("tooltip.bloodmagic.orb.desc"));
 
-        if (flag.isAdvanced() && stack != null)
+        if (flag.isAdvanced() && !stack.isEmpty())
             tooltip.add(TextHelper.localizeEffect("tooltip.bloodmagic.orb.owner", stack.getItem().getRegistryName().toString()));
 
         super.addInformation(stack, world, tooltip, flag);
@@ -90,7 +90,7 @@ public class ItemDivineOrb extends ItemBindableBase implements IBloodOrb, IWarpi
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
         ItemStack stack = player.getHeldItem(hand);
 
-        if (stack == null)
+        if (stack.isEmpty())
             return ActionResult.newResult(EnumActionResult.FAIL, stack);
 
         if (world == null)

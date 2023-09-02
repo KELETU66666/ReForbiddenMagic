@@ -1,9 +1,7 @@
 package keletu.forbiddenmagicre;
 
 import keletu.forbiddenmagicre.util.Reference;
-import keletu.forbiddenmagicre.util.RegistryHandler;
 import net.minecraftforge.common.config.Config;
-import thaumcraft.api.aspects.Aspect;
 
 import java.util.HashMap;
 
@@ -36,6 +34,10 @@ public class ConfigFM {
         @Config.LangKey("BloodSeal's Potion ID")
         @Config.Comment("forbiddenmagic.configfm.bloodsealid.comment")
         public static int BloodSealID = 70;
+
+        @Config.LangKey("Silver Fish Drop Emerald Nuggets")
+        @Config.Comment("forbiddenmagic.configfm.silverfish.comment")
+        public static boolean SilverFish = true;
 
         public static void spawnilify() {
                 spawnerMobs.put("Zombie", "exanimis");
