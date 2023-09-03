@@ -1,10 +1,8 @@
 package keletu.forbiddenmagicre.compat.bloodmagic;
 
-import WayofTime.bloodmagic.block.BlockBloodRune;
 import WayofTime.bloodmagic.core.data.SoulNetwork;
 import WayofTime.bloodmagic.core.data.SoulTicket;
 import WayofTime.bloodmagic.ritual.*;
-import WayofTime.bloodmagic.ritual.types.RitualWellOfSuffering;
 import WayofTime.bloodmagic.util.helper.NetworkHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.PotionEffect;
