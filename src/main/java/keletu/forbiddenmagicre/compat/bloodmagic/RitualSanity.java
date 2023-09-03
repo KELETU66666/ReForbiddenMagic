@@ -1,22 +1,17 @@
 package keletu.forbiddenmagicre.compat.bloodmagic;
 
-/*import WayofTime.bloodmagic.core.data.SoulNetwork;
+import WayofTime.bloodmagic.block.BlockBloodRune;
+import WayofTime.bloodmagic.core.data.SoulNetwork;
 import WayofTime.bloodmagic.core.data.SoulTicket;
-import WayofTime.bloodmagic.demonAura.WorldDemonWillHandler;
 import WayofTime.bloodmagic.ritual.*;
 import WayofTime.bloodmagic.ritual.types.RitualWellOfSuffering;
-import WayofTime.bloodmagic.soul.EnumDemonWillType;
 import WayofTime.bloodmagic.util.helper.NetworkHelper;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.FakePlayer;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerWarp;
 import thaumcraft.common.lib.potions.PotionWarpWard;
@@ -27,68 +22,71 @@ import java.util.function.Consumer;
 @RitualRegister("Sanity")
 public class RitualSanity extends Ritual
 {
-    public static final String   ALTAR_RANGE    = "altar";
-    public static final String   EFFECT_RANGE   = "effect";
-
     public RitualSanity() {
-        super("SpiteSanity", 1, 20000, "Plea of Delayed Insanity");
-        addBlockRange(EFFECT_RANGE, new AreaDescriptor.Rectangle(new BlockPos(-10, -10, -10), 24));
-        setMaximumVolumeAndDistanceOfRange(EFFECT_RANGE, 1, 1, 1);
+        super("SpiteSanity", 1, 20000, "ritual.reforbiddenmagic.pealOfDelayedInsanity");
     }
 
     @Override
-    public void performRitual(IMasterRitualStone masterRitualStone) {
-        SoulNetwork owner = NetworkHelper.getSoulNetwork(masterRitualStone.getOwner());
+    public void performRitual(IMasterRitualStone ritualStone)
+    {
+        SoulNetwork owner        = NetworkHelper.getSoulNetwork(ritualStone.getOwner());
         if (owner == null) {
             return;
         }
 
-
-        World world = masterRitualStone.getWorldObj();
-
-        BlockPos          pos           = masterRitualStone.getBlockPos();
-
-        boolean crazy = world.getWorldTime() % (2400) == 0;
-
-        AreaDescriptor damageRange = masterRitualStone.getBlockRange(EFFECT_RANGE);
-        AxisAlignedBB  range       = damageRange.getAABB(pos);
-
-        List<EntityPlayer> list = world.getEntitiesWithinAABB(EntityPlayer.class, range);
-
-        int    entityCount = 0;
         int currentEssence = owner.getCurrentEssence();
+        World world = ritualStone.getWorldObj();
+        BlockPos pos = ritualStone.getBlockPos();
+
+        boolean crazy = world.getWorldTime() % (600 * 4) == 0;
+
+        int range = 15;
+        int vertRange = 15;
+
+        float posX = pos.getX() + 0.5f;
+        float posY = pos.getY() + 0.5f;
+        float posZ = pos.getZ() + 0.5f;
+        List<EntityPlayer> list = world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(posX - 0.5f, posY - 0.5f, posZ - 0.5f, posX + 0.5f, posY + 0.5f, posZ + 0.5f).expand(range, vertRange, range).expand(-range, vertRange, -range));
+        int entityCount = 0;
+
         int cost = this.getRefreshCost();
 
         if (currentEssence < cost)
         {
             owner.causeNausea();
 
-        } else {
-            for (EntityPlayer livingEntity : list) {
-                entityCount++;
-                PotionEffect ward = new PotionEffect(PotionWarpWard.instance, 600 + 2, 0);
-                livingEntity.addPotionEffect(ward);
-
-                if (crazy && world.rand.nextInt(35) <= 3)
-                    ThaumcraftApi.internalMethods.addWarpToPlayer(livingEntity, 1 + world.rand.nextInt(3), IPlayerWarp.EnumWarpType.TEMPORARY);
-
+        } else
+        {
+            for (EntityPlayer player : list)
+            {
+                PotionEffect effect = player.getActivePotionEffect(PotionWarpWard.instance);
+                if (effect == null || effect.getDuration() <= 600)
+                {
+                    PotionEffect ward = new PotionEffect(PotionWarpWard.instance, 600 + 2, 0);
+                    ward.getCurativeItems().clear();
+                    player.addPotionEffect(ward);
+                    entityCount++;
+                    if(crazy && world.rand.nextInt(35) <= 3)
+                        ThaumcraftApi.internalMethods.addWarpToPlayer(player, 1 + world.rand.nextInt(3), IPlayerWarp.EnumWarpType.TEMPORARY);
+                }
             }
 
-            owner.syphon(new SoulTicket(new TextComponentTranslation("soultick.ritual_sanity"), getRefreshCost() * entityCount));
-
+            if (entityCount > 0)
+            {
+                owner.syphon(new SoulTicket(new TextComponentTranslation("soultick.ritual_sanity"), cost * entityCount));
+            }
         }
-
     }
 
     @Override
     public int getRefreshCost() {
-        return 0;
+        return 500;
     }
 
     @Override
     public int getRefreshTime()
     {
-        return 15000;
+        return 20;
     }
 
     @Override
@@ -128,5 +126,3 @@ public class RitualSanity extends Ritual
         return new RitualSanity();
     }
 }
-*\
- */

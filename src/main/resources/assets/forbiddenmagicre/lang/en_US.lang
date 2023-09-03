@@ -82,6 +82,8 @@ item.amuletmentalagony.name=Amulet of Mental Anguish
 item.blood_rapier.name=Rapier of the Strix
 item.eldritch_orb.name=Eldritch Blood Orb
 
+ritual.reforbiddenmagic.pealOfDelayedInsanity=Plea of Delayed Insanity
+soultick.ritual_sanity=Ritual Sanity upkeep cost
 # Spells
 psi.spellparam.stability=Stability
 psi.spellpiece.trick_deathgaze=Trick: Death Gaze
