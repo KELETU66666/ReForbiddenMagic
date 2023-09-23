@@ -6,9 +6,11 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.Level;
 import vazkii.botania.api.BotaniaAPI;
@@ -27,20 +29,20 @@ public class RegisterHandlerBota {
     @SubscribeEvent
     public static void onItemRegister(RegistryEvent.Register<Item> event) {
         if(Loader.isModLoaded("botania"))
-        for (SubTileFlower subTileFlower : subTiles) {
-            BotaniaAPI.registerSubTile(subTileFlower.getKey(), subTileFlower.getSubTileClass());
-            BotaniaAPI.addSubTileToCreativeMenu(subTileFlower.getKey());
-            System.out.println("REGISTER FLOWER : " + subTileFlower.getKey());
-        }
+            for (SubTileFlower subTileFlower : subTiles) {
+                BotaniaAPI.registerSubTile(subTileFlower.getKey(), subTileFlower.getSubTileClass());
+                BotaniaAPI.addSubTileToCreativeMenu(subTileFlower.getKey());
+                System.out.println("REGISTER FLOWER : " + subTileFlower.getKey());
+            }
     }
 
     @SubscribeEvent
     public static void onModelRegister( ModelRegistryEvent event )
     {
         if(Loader.isModLoaded("botania"))
-        for (SubTileFlower subTileFlower : subTiles) {
-            BotaniaAPIClient.registerSubtileModel(subTileFlower.getKey(), new ModelResourceLocation("botania:" + subTileFlower.getKey()));
-        }
+            for (SubTileFlower subTileFlower : subTiles) {
+                BotaniaAPIClient.registerSubtileModel(subTileFlower.getKey(), new ModelResourceLocation("botania:" + subTileFlower.getKey()));
+            }
 
     }
 
@@ -87,9 +89,6 @@ public class RegisterHandlerBota {
 
                 if (Loader.isModLoaded("psi")) {
                     ItemStack lotus = ItemBlockSpecialFlower.ofType("mindlotus");
-                    BotaniaAPI.registerRuneAltarRecipe(lotus, 600, "petalLightBlue", "petalBlue", new ItemStack(Items.WHEAT_SEEDS, 1), "gemPsi", "ingotPsi");
-
-
                     SubTileMindLotus.lexicon = new MagicLexicon("mindlotus", BotaniaAPI.categoryGenerationFlowers, "Psi");
                     SubTileMindLotus.lexicon.addPage(BotaniaAPI.internalHandler.textPage("forbidden.lexicon.mindlotus.0"));
                     SubTileMindLotus.lexicon.addPage(BotaniaAPI.internalHandler.runeRecipePage("forbidden.lexicon.mindlotus.1", new RecipeRuneAltar(lotus, 600, "petalLightBlue", "petalBlue", new ItemStack(Items.WHEAT_SEEDS, 1), "gemPsi", "ingotPsi")));
@@ -104,5 +103,13 @@ public class RegisterHandlerBota {
                 Lumberjack.log(Level.ERROR, e, "Schools of Magic decayed like a Daybloom.");
             }
         }
+    }
+
+    @SubscribeEvent
+    @Optional.Method(modid = "psi")
+    public static void registerRecipes(RegistryEvent.Register<IRecipe> evt) {
+        ItemStack lotus = ItemBlockSpecialFlower.ofType("mindlotus");
+        BotaniaAPI.registerRuneAltarRecipe(lotus, 600, "petalLightBlue", "petalBlue", new ItemStack(Items.WHEAT_SEEDS), "gemPsi", "ingotPsi");
+
     }
 }
