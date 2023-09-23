@@ -11,5 +11,5 @@ import java.util.List;
 public class EnchantmentsFM {
 
     public static final List<Enchantment> ENCHANTNENTS = new ArrayList<Enchantment>();
-    public static final Enchantment wrath = new EnchantmentWrath(233);
+    public static final Enchantment wrath = new EnchantmentWrath();
 }

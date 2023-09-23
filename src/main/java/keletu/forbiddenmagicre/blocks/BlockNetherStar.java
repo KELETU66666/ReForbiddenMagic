@@ -8,6 +8,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 
 import static fox.spiteful.lostmagic.LostMagic.tab;
 
@@ -23,6 +25,11 @@ public class BlockNetherStar extends Block implements IHasModel {
 
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+    }
+
+    public boolean isBeaconBase(IBlockAccess worldObj, BlockPos pos, BlockPos beacon)
+    {
+        return true;
     }
 
     @Override

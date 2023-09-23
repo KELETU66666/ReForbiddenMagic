@@ -21,7 +21,6 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.capabilities.ThaumcraftCapabilities;
 import thaumcraft.api.crafting.InfusionRecipe;
-import thaumcraft.api.items.IRechargable;
 
 import java.util.List;
 import java.util.Random;
@@ -63,9 +62,6 @@ public class InfusionEnchantmentRecipeFM extends InfusionRecipe{
                     cool = true;
                 }
             }
-            if(!cool && central.getItem() instanceof IRechargable && this.enchantment.toolClasses.contains("chargable")){
-                cool = true;
-            }
             if(!cool){ return false; }
         }
         return (this.getRecipeInput() == Ingredient.EMPTY || this.getRecipeInput().apply(central)) && RecipeMatcher.findMatches(input, this.getComponents()) != null;
@@ -87,7 +83,7 @@ public class InfusionEnchantmentRecipeFM extends InfusionRecipe{
                 assert input.getTagCompound() != null;
                 base += input.getTagCompound().getByte("TC.WARP");
             }
-            out.setTagInfo("TC.WARP", (NBTBase)new NBTTagByte((byte)base));
+            out.setTagInfo("TC.WARP", new NBTTagByte((byte)base));
         }
         EnumInfusionEnchantmentFM.addInfusionEnchantment(out, this.enchantment, cl + 1);
         return out;

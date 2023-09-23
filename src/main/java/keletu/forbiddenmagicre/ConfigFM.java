@@ -69,7 +69,7 @@ public class ConfigFM {
                 spawnerMobs.put("Thaumcraft:ThaumSlime", "vitium");
                 spawnerMobs.put("Thaumcraft:BrainyZombie", "cognitio");
                 spawnerMobs.put("Thaumcraft:GiantBrainyZombie", "cognitio");
-                spawnerMobs.put("Thaumcraft:TaintSpider", "vitium");
+                spawnerMobs.put("Thaumcraft:taintCrawler", "vitium");
                 spawnerMobs.put("Thaumcraft:TaintSwarm", "vitium");
                 spawnerMobs.put("Thaumcraft:CultistKnight", "alienis");
                 spawnerMobs.put("Thaumcraft:CultistCleric", "alienis");

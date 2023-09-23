@@ -291,7 +291,6 @@ public class LivingEvent {
     @SideOnly(value = Side.CLIENT)
     @SubscribeEvent
     public void tooltipEvent(ItemTooltipEvent event) {
-        event.getItemStack();
         NBTTagList nbttaglist = EnumInfusionEnchantmentFM.getInfusionEnchantmentTagList(event.getItemStack());
         if(nbttaglist != null) {
             for(int j = 0; j < nbttaglist.tagCount(); ++j) {

@@ -10,7 +10,6 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -35,7 +34,7 @@ public class BlockRoseBush extends BlockBush implements IGrowable, IHasModel
 {
     protected static final AxisAlignedBB AABB = new AxisAlignedBB(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
 
-    public static final PropertyEnum<BlockRoseBush.EnumBlockHalf> HALF = PropertyEnum.<BlockRoseBush.EnumBlockHalf>create("half", BlockRoseBush.EnumBlockHalf.class);
+    public static final PropertyEnum<BlockRoseBush.EnumBlockHalf> HALF = PropertyEnum.create("half", BlockRoseBush.EnumBlockHalf.class);
 
     public BlockRoseBush()
     {
@@ -96,8 +95,8 @@ public class BlockRoseBush extends BlockBush implements IGrowable, IHasModel
             boolean flag = state.getValue(HALF) == BlockRoseBush.EnumBlockHalf.UPPER;
             BlockPos blockpos = flag ? pos : pos.up();
             BlockPos blockpos1 = flag ? pos.down() : pos;
-            Block block = (Block)(flag ? this : worldIn.getBlockState(blockpos).getBlock());
-            Block block1 = (Block)(flag ? worldIn.getBlockState(blockpos1).getBlock() : this);
+            Block block = flag ? this : worldIn.getBlockState(blockpos).getBlock();
+            Block block1 = flag ? worldIn.getBlockState(blockpos1).getBlock() : this;
 
             if (!flag) this.dropBlockAsItem(worldIn, pos, state, 0); //Forge move above the setting to air.
 
@@ -155,7 +154,7 @@ public class BlockRoseBush extends BlockBush implements IGrowable, IHasModel
         return meta > 0 ? this.getDefaultState().withProperty(HALF, BlockRoseBush.EnumBlockHalf.UPPER) : this.getDefaultState().withProperty(HALF, BlockRoseBush.EnumBlockHalf.LOWER);
     }
 
-    public static enum EnumBlockHalf implements IStringSerializable
+    public enum EnumBlockHalf implements IStringSerializable
     {
         UPPER,
         LOWER;
@@ -193,7 +192,7 @@ public class BlockRoseBush extends BlockBush implements IGrowable, IHasModel
 
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] {HALF});
+        return new BlockStateContainer(this, HALF);
     }
     
     public void spreadFlowers(World world, int x, int y, int z, Random rand) {

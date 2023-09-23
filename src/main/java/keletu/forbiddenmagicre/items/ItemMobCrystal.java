@@ -53,7 +53,7 @@ public class ItemMobCrystal extends Item implements IHasModel{
             if(nbttagcompound.hasKey("mob")) {
                 String string = nbttagcompound.getString("mob");
 
-                if (string != null) {
+                if (!string.isEmpty()) {
                     Aspect mobAspect = Aspect.getAspect(ConfigFM.spawnerMobs.get(string));
                     if (mobAspect != null)
                         tooltip.add(mobAspect.getName());
@@ -86,7 +86,7 @@ public class ItemMobCrystal extends Item implements IHasModel{
             if(nbttagcompound.hasKey("mob")) {
                 String string = nbttagcompound.getString("mob");
 
-                if (string != null)
+                if (!string.isEmpty())
                     return ("" + I18n.translateToLocal("item.mobcrystal.name").replace("%s", I18n.translateToLocal("entity." + string + ".name"))).trim();
             }
         }

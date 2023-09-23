@@ -11,7 +11,7 @@ import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 
 public class EnchantmentWrath extends Enchantment {
-    public EnchantmentWrath(int id) {
+    public EnchantmentWrath() {
         super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
         this.setRegistryName("wrath");
         this.setName("wrath");

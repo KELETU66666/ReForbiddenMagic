@@ -60,8 +60,8 @@ public class forbiddenmagicre {
         InitResearch.registerResearch();
         InitVanillaRecipes.init();
         if(Loader.isModLoaded("botania"))
-        RegisterHandlerBota.lexify();
-    proxy.registerDisplayInformationInit();
+            RegisterHandlerBota.lexify();
+        proxy.registerDisplayInformationInit();
     }
 
     /**

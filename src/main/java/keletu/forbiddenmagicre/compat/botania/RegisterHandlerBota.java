@@ -86,12 +86,13 @@ public class RegisterHandlerBota {
                 }
 
                 if (Loader.isModLoaded("psi")) {
-                ItemStack lotus = ItemBlockSpecialFlower.ofType("mindlotus");
-                RecipeRuneAltar lotus_recipe = BotaniaAPI.registerRuneAltarRecipe(lotus, 600, "petalLightBlue", "petalBlue", new ItemStack(Items.WHEAT_SEEDS, 1), "gemPsi", "ingotPsi");
+                    ItemStack lotus = ItemBlockSpecialFlower.ofType("mindlotus");
+                    BotaniaAPI.registerRuneAltarRecipe(lotus, 600, "petalLightBlue", "petalBlue", new ItemStack(Items.WHEAT_SEEDS, 1), "gemPsi", "ingotPsi");
+
 
                     SubTileMindLotus.lexicon = new MagicLexicon("mindlotus", BotaniaAPI.categoryGenerationFlowers, "Psi");
                     SubTileMindLotus.lexicon.addPage(BotaniaAPI.internalHandler.textPage("forbidden.lexicon.mindlotus.0"));
-                    SubTileMindLotus.lexicon.addPage(BotaniaAPI.internalHandler.runeRecipePage("forbidden.lexicon.mindlotus.1", lotus_recipe));
+                    SubTileMindLotus.lexicon.addPage(BotaniaAPI.internalHandler.runeRecipePage("forbidden.lexicon.mindlotus.1", new RecipeRuneAltar(lotus, 600, "petalLightBlue", "petalBlue", new ItemStack(Items.WHEAT_SEEDS, 1), "gemPsi", "ingotPsi")));
                     SubTileMindLotus.lexicon.setIcon(lotus);
                 }
 
