@@ -77,6 +77,7 @@ public class ConfigFM {
                 spawnerMobs.put("Thaumcraft:InhabitedZombie", "alienis");
                 spawnerMobs.put("Thaumcraft:Pech", "desiderium");
                 spawnerMobs.put("Thaumcraft:EldritchGuardian", "alienis");
+                spawnerMobs.put("Wither_Skeleton", "mortuus");
                 // spawnerMobs.put("Taintacle", DarkAspects.LUST);
         }
 }
