@@ -79,7 +79,7 @@ public class BlockWrathCage extends BlockContainer implements IHasModel {
                 if (!world.isRemote) {
                     TileEntityWrathCage spawner = (TileEntityWrathCage) world.getTileEntity(pos);
                     String mob = null;
-                    ItemStack crystal = null;
+                    ItemStack crystal = ItemStack.EMPTY;
                     if (spawner.getSpawnerLogic().isMobSet()) {
                         mob = spawner.getSpawnerLogic().getEntityNameToSpawn();
                         crystal = new ItemStack(ModItems.MOB_CRYSTAL, 1);

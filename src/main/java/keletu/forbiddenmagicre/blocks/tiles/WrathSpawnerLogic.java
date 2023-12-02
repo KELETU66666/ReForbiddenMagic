@@ -30,16 +30,16 @@ public class WrathSpawnerLogic {
 
     public double mobRotation;
     public double prevMobRotation;
-    private int minSpawnDelay = 200;
-    private int maxSpawnDelay = 300;
+    private final int minSpawnDelay = 200;
+    private final int maxSpawnDelay = 300;
 
     /** A counter for spawn tries. */
-    private int spawnCount = 3;
+    private final int spawnCount = 3;
     private Entity renderEntity;
     private int maxNearbyEntities = 6;
 
     /** The distance from which a player activates the spawner. */
-    private int activatingRangeFromPlayer = 16;
+    private final int activatingRangeFromPlayer = 16;
 
     /** The range coefficient for spawning entities around. */
     private int spawnRange = 4;
@@ -103,9 +103,9 @@ public class WrathSpawnerLogic {
         double d0;
 
         if (this.getSpawnerWorld().isRemote && (fuel > 0 || ConfigFM.wrathCost <= 0)) {
-            double d1 = (double) ((float) this.getSpawnerX() + this.getSpawnerWorld().rand.nextFloat());
-            double d2 = (double) ((float) this.getSpawnerY() + this.getSpawnerWorld().rand.nextFloat());
-            d0 = (double) ((float) this.getSpawnerZ() + this.getSpawnerWorld().rand.nextFloat());
+            double d1 = (float) this.getSpawnerX() + this.getSpawnerWorld().rand.nextFloat();
+            double d2 = (float) this.getSpawnerY() + this.getSpawnerWorld().rand.nextFloat();
+            d0 = (float) this.getSpawnerZ() + this.getSpawnerWorld().rand.nextFloat();
             // this.getSpawnerWorld().spawnParticle("smoke", d1, d2, d0, 0.0D,
             // 0.0D, 0.0D);
             // this.getSpawnerWorld().spawnParticle("flame", d1, d2, d0, 0.0D,
@@ -157,7 +157,7 @@ public class WrathSpawnerLogic {
                 }
 
                 //int j = this.getSpawnerWorld().getEntitiesWithinAABB(entity.getClass(), AxisAlignedBB.getAABBPool().getAABB((double) this.getSpawnerX(), (double) this.getSpawnerY(), (double) this.getSpawnerZ(), (double) (this.getSpawnerX() + 1), (double) (this.getSpawnerY() + 1), (double) (this.getSpawnerZ() + 1)).expand((double) (this.spawnRange * 2), 4.0D, (double) (this.spawnRange * 2))).size();
-                int j = this.getSpawnerWorld().getEntitiesWithinAABB(entity.getClass(), new AxisAlignedBB((double)this.getSpawnerX(), (double)this.getSpawnerY(), (double)this.getSpawnerZ(), (double)(this.getSpawnerX() + 1), (double)(this.getSpawnerY() + 1), (double)(this.getSpawnerZ() + 1)).expand((double)(this.spawnRange * 2), 4.0D, (double)(this.spawnRange * 2))).size();
+                int j = this.getSpawnerWorld().getEntitiesWithinAABB(entity.getClass(), new AxisAlignedBB(this.getSpawnerX(), this.getSpawnerY(), this.getSpawnerZ(), this.getSpawnerX() + 1, this.getSpawnerY() + 1, this.getSpawnerZ() + 1).expand(this.spawnRange * 2, 4.0D, this.spawnRange * 2)).size();
 
                 if (j >= this.maxNearbyEntities) {
                     this.updateDelay();
@@ -165,7 +165,7 @@ public class WrathSpawnerLogic {
                 }
 
                 d0 = (double) this.getSpawnerX() + (this.getSpawnerWorld().rand.nextDouble() - this.getSpawnerWorld().rand.nextDouble()) * (double) this.spawnRange;
-                double d3 = (double) (this.getSpawnerY() + this.getSpawnerWorld().rand.nextInt(3) - 1);
+                double d3 = this.getSpawnerY() + this.getSpawnerWorld().rand.nextInt(3) - 1;
                 double d4 = (double) this.getSpawnerZ() + (this.getSpawnerWorld().rand.nextDouble() - this.getSpawnerWorld().rand.nextDouble()) * (double) this.spawnRange;
                 EntityLiving entityliving = entity instanceof EntityLiving ? (EntityLiving) entity : null;
                 entity.setLocationAndAngles(d0, d3, d4, this.getSpawnerWorld().rand.nextFloat() * 360.0F, 0.0F);
@@ -261,7 +261,7 @@ public class WrathSpawnerLogic {
 
     public Entity spawnMob(Entity par1Entity) {
         if (par1Entity instanceof EntityLivingBase && par1Entity.world != null) {
-            ((EntityLiving) par1Entity).onInitialSpawn(getSpawnerWorld().getDifficultyForLocation(par1Entity.getPosition()), (IEntityLivingData) null);
+            ((EntityLiving) par1Entity).onInitialSpawn(getSpawnerWorld().getDifficultyForLocation(par1Entity.getPosition()), null);
             AnvilChunkLoader.spawnEntity(par1Entity, this.getSpawnerWorld());
         }
 
@@ -283,7 +283,7 @@ public class WrathSpawnerLogic {
     @SideOnly(Side.CLIENT)
     public Entity getEntityForRender() {
         if (this.renderEntity == null) {
-            Entity entity = EntityList.createEntityByIDFromName(new ResourceLocation(this.getEntityNameToSpawn()), (World) null);
+            Entity entity = EntityList.createEntityByIDFromName(new ResourceLocation(this.getEntityNameToSpawn()), null);
             entity = this.spawnMob(entity);
             this.renderEntity = entity;
         }
