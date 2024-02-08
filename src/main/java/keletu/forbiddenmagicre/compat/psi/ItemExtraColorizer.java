@@ -31,7 +31,7 @@ public class ItemExtraColorizer extends Item implements ICADColorizer, IHasModel
         super();
         setMaxStackSize(1);
         setMaxDamage(0);
-        setUnlocalizedName("cadcolorizer").setRegistryName("cadcolorizer");
+        setTranslationKey("cadcolorizer").setRegistryName("cadcolorizer");
         setCreativeTab(tab);
         setHasSubtypes(true);
 
@@ -70,7 +70,7 @@ public class ItemExtraColorizer extends Item implements ICADColorizer, IHasModel
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack stack) {
+    public String getTranslationKey(ItemStack stack) {
         int meta = stack.getItemDamage();
         return "item.cadcolorizer" + types[meta % types.length];
     }

@@ -28,7 +28,7 @@ public class MorphPick extends ItemPickaxe implements IHasModel {
     public MorphPick(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material);
-        setUnlocalizedName(name);
+        setTranslationKey(name);
         setRegistryName(name);
         setCreativeTab(tab);
         this.addPropertyOverride(new ResourceLocation("morphpick"), new IItemPropertyGetter() {

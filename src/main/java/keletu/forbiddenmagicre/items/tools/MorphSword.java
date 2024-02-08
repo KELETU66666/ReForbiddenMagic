@@ -28,7 +28,7 @@ public class MorphSword extends ItemSword implements IHasModel {
     public MorphSword(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material);
-        setUnlocalizedName(name);
+        setTranslationKey(name);
         setRegistryName(name);
         setCreativeTab(tab);
         this.addPropertyOverride(new ResourceLocation("morphsword"), new IItemPropertyGetter() {

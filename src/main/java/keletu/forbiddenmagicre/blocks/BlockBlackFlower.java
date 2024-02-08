@@ -26,7 +26,7 @@ public class BlockBlackFlower extends BlockBush implements IHasModel {
     public BlockBlackFlower() {
         super(Material.PLANTS);
         this.setCreativeTab(tab);
-        this.setRegistryName("black_rose").setUnlocalizedName("black_rose");
+        this.setRegistryName("black_rose").setTranslationKey("black_rose");
 
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));

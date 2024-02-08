@@ -20,7 +20,7 @@ public class BlockNetherStar extends Block implements IHasModel {
         setHardness(5.0F);
         setCreativeTab(tab);
         this.setHarvestLevel("pickaxe", 3);
-        setUnlocalizedName("netherstar_block");
+        setTranslationKey("netherstar_block");
         setRegistryName("netherstar_block");
 
         ModBlocks.BLOCKS.add(this);

@@ -11,7 +11,7 @@ public class ItemTabCrystal extends CreativeTabs {
     }
 
     @Override
-    public ItemStack getTabIconItem() {
+    public ItemStack createIcon() {
         return new ItemStack(ModItems.MOB_CRYSTAL);
     }
 }

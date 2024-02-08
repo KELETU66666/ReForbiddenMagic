@@ -1,83 +1,50 @@
 buildscript {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net/' }
-        mavenCentral()
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+        maven { url = "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'com.wynprice.cursemaven:CurseMaven:2.1.1'
     }
 }
-        
 apply plugin: 'net.minecraftforge.gradle.forge'
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
+apply plugin: 'com.wynprice.cursemaven'
 
-version = '0.5.2.1'
-group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'forbiddenmagic'
+version = "1.12.2-v0.6"
+group = "com.keletu.forbiddenmagicre"
+archivesBaseName = "ReForbidden Magic"
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
-
-repositories {
-    mavenCentral()
-
-    maven {
-        name = "buildcraft"
-        url = "https://mod-buildcraft.com/maven"
-    }
-    maven {
-        url "https://maven.cleanroommc.com"
-    }
-    maven {
-        name = "blamejared"
-        url = "https://maven.blamejared.com"
-    }
-    maven {
-        name = "CoFH Maven"
-        url = "https://maven.covers1624.net"
-    }
-    maven {
-        name = "thiakil"
-        url = "http://maven.thiakil.com"
-    }
-    maven {
-        name = "Progwml6 maven"
-        url = "https://dvs1.progwml6.com/files/maven/"
-    }
-    maven { url "https://maven.hellfiredev.net" }
-    maven {
-        name = "ModMaven"
-        url = "https://modmaven.k-4u.nl"
-    }
-    maven {
-        name = "ChickenBones Maven"
-        url = "http://chickenbones.net/maven/"
-    }
-    maven {
-        name 'DVS1 Maven FS'
-        url 'http://dvs1.progwml6.com/files/maven'
-    }
-    maven { url = "http://maven.cil.li/" }
-    maven { url = "https://maven.ellpeck.de/" }
-    maven { url "https://www.cursemaven.com"}
-    maven {
-        name = 'GitHub Maven'
-        url = "https://jitpack.io"
-    }
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
 }
 
 minecraft {
     version = "1.12.2-14.23.5.2847"
     runDir = "run"
 
-    mappings = "snapshot_20171003"
+    mappings = "stable_39"
+    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+}
+
+repositories {
+    maven {
+        url 'http://dvs1.progwml6.com/files/maven'
+    }
+    maven {
+        url "http://maven.blamejared.com"
+    }
+    maven {
+        url "http://www.cursemaven.com"
+    }
 }
 
 dependencies {
-        implementation 'org.jetbrains:annotations:20.1.0'
-        implementation 'curse.maven:thaumcraft-223628:2629023'
-        implementation 'curse.maven:baubles-227083:2518667'
+    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'curse.maven:thaumcraft-223628:2629023'
+    implementation 'curse.maven:baubles-227083:2518667'
     implementation 'curse.maven:botania-225643:3330934'
     implementation 'curse.maven:lost-magic-337000:4374607'
     implementation 'curse.maven:psi-241665:3085917'
@@ -103,3 +70,4 @@ processResources {
         exclude 'mcmod.info'
     }
 }
+

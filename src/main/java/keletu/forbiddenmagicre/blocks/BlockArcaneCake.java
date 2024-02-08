@@ -38,7 +38,7 @@ public class BlockArcaneCake extends Block implements IHasModel {
         setTickRandomly(true);
         setHardness(0.5F);
         setCreativeTab(LostMagic.tab);
-        this.setUnlocalizedName("arcane_cake");
+        this.setTranslationKey("arcane_cake");
         this.setRegistryName("arcane_cake");
         setDefaultState(getDefaultState().withProperty((IProperty)CAKE_STATE, Integer.valueOf(0)));
 

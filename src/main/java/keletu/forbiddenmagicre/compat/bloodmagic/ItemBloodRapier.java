@@ -32,7 +32,7 @@ public class ItemBloodRapier extends ItemSword implements IWarpingGear, IHasMode
     public ItemBloodRapier(){
         super(bloodsucker);
         setRegistryName("blood_rapier");
-        setUnlocalizedName("blood_rapier");
+        setTranslationKey("blood_rapier");
 
         ModItems.ITEMS.add(this);
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "fm_blood_rapier"), new InfusionRecipe(

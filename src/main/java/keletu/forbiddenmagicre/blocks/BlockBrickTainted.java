@@ -19,7 +19,7 @@ public class BlockBrickTainted extends Block implements IHasModel {
         setResistance(10.0F);
         setCreativeTab(tab);
         this.setHarvestLevel("pickaxe", 0);
-        setUnlocalizedName("tainted_brick");
+        setTranslationKey("tainted_brick");
         setRegistryName("tainted_brick");
 
         ModBlocks.BLOCKS.add(this);

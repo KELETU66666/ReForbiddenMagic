@@ -19,7 +19,7 @@ public class ItemDiabolistFork extends ItemSword implements IHasModel {
 
     public ItemDiabolistFork(ToolMaterial mat) {
         super(mat);
-        setUnlocalizedName("diabolist_fork");
+        setTranslationKey("diabolist_fork");
         setRegistryName("diabolist_fork");
         this.setCreativeTab(LostMagic.tab);
 

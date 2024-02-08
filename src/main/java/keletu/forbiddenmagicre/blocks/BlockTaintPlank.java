@@ -17,7 +17,7 @@ public class BlockTaintPlank extends Block implements IHasModel {
         setHardness(2.0F);
         setResistance(5.0F);
         setHarvestLevel("axe", 0);
-        setUnlocalizedName("taint_planks").setRegistryName("taint_planks").setCreativeTab(tab);
+        setTranslationKey("taint_planks").setRegistryName("taint_planks").setCreativeTab(tab);
 
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));

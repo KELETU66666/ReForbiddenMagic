@@ -26,7 +26,7 @@ public class ResourceFM extends Item implements IHasModel {
         super();
         setRegistryName("resourcefm");
         setCreativeTab(tab);
-        setUnlocalizedName(Objects.requireNonNull(this.getRegistryName()).getResourcePath());
+        setTranslationKey(Objects.requireNonNull(this.getRegistryName()).getPath());
         setHasSubtypes(true);
         this.addPropertyOverride(new ResourceLocation("meta"), new IItemPropertyGetter() {
             @Override
@@ -62,8 +62,8 @@ public class ResourceFM extends Item implements IHasModel {
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack item) {
-        return super.getUnlocalizedName() + "." + item.getItemDamage();
+    public String getTranslationKey(ItemStack item) {
+        return super.getTranslationKey() + "." + item.getItemDamage();
     }
 
     @Override

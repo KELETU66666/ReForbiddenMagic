@@ -18,7 +18,7 @@ import static fox.spiteful.lostmagic.LostMagic.tab;
 public class ModItems {
     public static final List<Item> ITEMS = new ArrayList<Item>();
     public static final Item.ToolMaterial MATERIAL_MORPH = EnumHelper.addToolMaterial("morph", 3, 1500, 10.0F, 3.0F, 18);
-public static final ItemSpade MorphShovel = new MorphShovel("morph_shovel", tab, MATERIAL_MORPH);
+    public static final ItemSpade MorphShovel = new MorphShovel("morph_shovel", tab, MATERIAL_MORPH);
     public static final ItemSword MorphSword = new MorphSword("morph_sword", tab, MATERIAL_MORPH);
     public static final ItemPickaxe MorphPickaxe = new MorphPick("morph_pick", tab, MATERIAL_MORPH);
     public static final ItemAxe MorphAxe = new MorphAxe("morph_axe", tab, MATERIAL_MORPH);

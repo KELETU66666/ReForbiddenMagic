@@ -23,7 +23,7 @@ public class ItemTaintFurit extends ItemFood implements IHasModel {
     public ItemTaintFurit(){
         super(4, 0.8F, false);
         setCreativeTab(tab);
-        setUnlocalizedName("taint_fruit");
+        setTranslationKey("taint_fruit");
         setRegistryName("taint_fruit");
 
         ModItems.ITEMS.add(this);

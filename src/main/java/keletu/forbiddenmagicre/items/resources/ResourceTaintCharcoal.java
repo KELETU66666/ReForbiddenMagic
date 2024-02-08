@@ -15,7 +15,7 @@ public class ResourceTaintCharcoal extends Item implements IHasModel {
         this.setCreativeTab(tab);
         setRegistryName("taint_charcoal");
         setCreativeTab(tab);
-        setUnlocalizedName(Objects.requireNonNull(this.getRegistryName()).getResourcePath());
+        setTranslationKey(Objects.requireNonNull(this.getRegistryName()).getPath());
 
         ModItems.ITEMS.add(this);
     }

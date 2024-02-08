@@ -45,7 +45,7 @@ public class ItemAmuletPsi extends Item implements IBauble, IWarpingGear, ICosme
         super();
         setMaxDamage(60);
         setMaxStackSize(1);
-        setUnlocalizedName("amuletmentalagony").setRegistryName("amuletmentalagony");
+        setTranslationKey("amuletmentalagony").setRegistryName("amuletmentalagony");
         setCreativeTab(tab);
 
         ModItems.ITEMS.add(this);

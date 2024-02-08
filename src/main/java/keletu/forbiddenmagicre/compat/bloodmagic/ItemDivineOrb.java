@@ -45,7 +45,7 @@ public class ItemDivineOrb extends ItemBindableBase implements IBloodOrb, IWarpi
         setMaxStackSize(1);
         setMaxDamage(0);
         setCreativeTab(tab);
-        setUnlocalizedName("eldritch_orb");
+        setTranslationKey("eldritch_orb");
         setRegistryName("eldritch_orb");
 
         ModItems.ITEMS.add(this);

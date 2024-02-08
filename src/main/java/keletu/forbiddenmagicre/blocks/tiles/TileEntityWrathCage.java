@@ -86,8 +86,8 @@ public class TileEntityWrathCage extends TileEntity implements IAspectContainer,
     void drawEssentia()
     {
         IBlockState iblockstate = world.getBlockState(pos);
-        for(int x = 0; x < EnumFacing.getFront(x).getIndex(); x++){
-            EnumFacing current = EnumFacing.getFront(x);
+        for(int x = 0; x < EnumFacing.byIndex(x).getIndex(); x++){
+            EnumFacing current = EnumFacing.byIndex(x);
             TileEntity te = ThaumcraftApiHelper.getConnectableTile(world, pos, current);
             if(te != null) {
                 IEssentiaTransport ic = (IEssentiaTransport)te;
@@ -267,10 +267,7 @@ public class TileEntityWrathCage extends TileEntity implements IAspectContainer,
      */
     public boolean isConnectable(EnumFacing face)
     {
-        if(ConfigFM.wrathCost > 0)
-            return true;
-        else
-            return false;
+        return ConfigFM.wrathCost > 0;
     }
 
     /**

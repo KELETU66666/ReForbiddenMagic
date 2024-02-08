@@ -5,7 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class LogHandler {
-    public static final Logger logger = LogManager.getLogger("Forbidden Magic");
+    public static final Logger logger = LogManager.getLogger("ReForbidden Magic");
 
     public static void log(Level level, Throwable e, String message) {
         log(level, message);

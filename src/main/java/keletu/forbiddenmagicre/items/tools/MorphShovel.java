@@ -25,7 +25,7 @@ public class MorphShovel extends ItemSpade implements IHasModel {
     public MorphShovel(String name, CreativeTabs tab, Item.ToolMaterial material) {
 
         super(material);
-        setUnlocalizedName(name);
+        setTranslationKey(name);
         setRegistryName(name);
         setCreativeTab(tab);
         this.addPropertyOverride(new ResourceLocation("morphshovel"), new IItemPropertyGetter() {

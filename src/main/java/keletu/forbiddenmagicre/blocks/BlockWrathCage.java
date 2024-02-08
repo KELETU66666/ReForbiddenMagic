@@ -35,7 +35,7 @@ import java.util.Random;
 public class BlockWrathCage extends BlockContainer implements IHasModel {
     public BlockWrathCage() {
         super(Material.IRON);
-        setUnlocalizedName("wrath_cage").setRegistryName("wrath_cage");
+        setTranslationKey("wrath_cage").setRegistryName("wrath_cage");
         this.setCreativeTab(LostMagic.tab);
         setHardness(5.0F);
         setResistance(2000.0F);

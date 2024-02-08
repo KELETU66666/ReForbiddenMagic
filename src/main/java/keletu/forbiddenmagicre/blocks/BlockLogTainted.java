@@ -30,7 +30,7 @@ public class BlockLogTainted extends BlockLog implements IHasModel {
         setHarvestLevel("axe", 0);
         setHardness(0.7F);
         setCreativeTab(LostMagic.tab);
-        this.setUnlocalizedName("log_tainted");
+        this.setTranslationKey("log_tainted");
         this.setRegistryName("log_tainted");
         this.setDefaultState(this.blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
 

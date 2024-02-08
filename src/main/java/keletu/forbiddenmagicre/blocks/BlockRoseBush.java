@@ -40,7 +40,7 @@ public class BlockRoseBush extends BlockBush implements IGrowable, IHasModel
     {
         super(Material.PLANTS);
         this.setHardness(0.0F);
-        this.setUnlocalizedName("black_rose_bush");
+        this.setTranslationKey("black_rose_bush");
         this.setRegistryName("black_rose_bush");
         this.setCreativeTab(tab);
         this.setTickRandomly(true);

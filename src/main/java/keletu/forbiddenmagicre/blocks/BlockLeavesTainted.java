@@ -75,7 +75,7 @@ public class BlockLeavesTainted extends BlockLeaves implements IShearable, IHasM
         setTickRandomly(true);
         setHardness(0.2F);
         this.setCreativeTab(tab);
-        this.setUnlocalizedName("leaves_tainted");
+        this.setTranslationKey("leaves_tainted");
         this.setRegistryName("leaves_tainted");
         setSoundType(SoundType.PLANT);
         this.setDefaultState(this.blockState.getBaseState().withProperty(GROWTH, LeafGrowth.FRESH));
@@ -323,7 +323,7 @@ public class BlockLeavesTainted extends BlockLeaves implements IShearable, IHasM
 
     @Nonnull
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return Minecraft.isFancyGraphicsEnabled() ? BlockRenderLayer.CUTOUT_MIPPED : BlockRenderLayer.SOLID;
     }
 

@@ -28,7 +28,7 @@ public class ItemMobCrystal extends Item implements IHasModel{
         this.setMaxStackSize(1);
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
-        setUnlocalizedName("mob_crystal");
+        setTranslationKey("mob_crystal");
         setRegistryName("mob_crystal");
         this.setCreativeTab(forbiddenmagicre.TabCrystal);
         this.addPropertyOverride(new ResourceLocation("tag"), new IItemPropertyGetter() {

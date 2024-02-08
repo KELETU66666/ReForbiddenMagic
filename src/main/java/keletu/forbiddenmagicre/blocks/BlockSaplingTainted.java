@@ -45,7 +45,7 @@ public class BlockSaplingTainted extends BlockBush implements IGrowable, IHasMod
     public BlockSaplingTainted() {
         super();
         setRegistryName("sapling_tainted");
-        setUnlocalizedName("sapling_tainted");
+        setTranslationKey("sapling_tainted");
         setCreativeTab(tab);
         setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
         setHardness(0.0F);

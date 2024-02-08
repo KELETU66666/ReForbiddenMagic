@@ -12,7 +12,7 @@ import static fox.spiteful.lostmagic.LostMagic.tab;
 public class ItemGluttonyShard extends ItemFood implements IHasModel {
     public ItemGluttonyShard () {
         super(2, 0.1F, false);
-        setUnlocalizedName("gluttony_shard");
+        setTranslationKey("gluttony_shard");
         setRegistryName("gluttony_shard");
         setCreativeTab(tab);
         ModItems.ITEMS.add(this);

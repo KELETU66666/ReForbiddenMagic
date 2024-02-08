@@ -12,7 +12,7 @@ import thaumcraft.api.items.ItemsTC;
 public class SkullAxe extends ItemSword implements IHasModel {
     public SkullAxe(String name, CreativeTabs tab, ToolMaterial material) {
         super(material);
-        setUnlocalizedName(name);
+        setTranslationKey(name);
         setRegistryName(name);
         setCreativeTab(tab);
 
