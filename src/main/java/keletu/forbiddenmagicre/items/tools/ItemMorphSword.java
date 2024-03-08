@@ -23,9 +23,9 @@ import thaumcraft.api.items.ItemsTC;
 
 import javax.annotation.Nullable;
 
-public class MorphSword extends ItemSword implements IHasModel {
+public class ItemMorphSword extends ItemSword implements IHasModel {
 
-    public MorphSword(String name, CreativeTabs tab, ToolMaterial material) {
+    public ItemMorphSword(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material);
         setTranslationKey(name);

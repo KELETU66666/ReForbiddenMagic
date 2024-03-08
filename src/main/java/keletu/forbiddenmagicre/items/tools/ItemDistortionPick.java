@@ -9,8 +9,8 @@ import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import thaumcraft.api.items.ItemsTC;
 
-public class DistortionPick extends ItemPickaxe implements IHasModel {
-    public DistortionPick(String name, CreativeTabs tab, ToolMaterial material) {
+public class ItemDistortionPick extends ItemPickaxe implements IHasModel {
+    public ItemDistortionPick(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material);
         setTranslationKey(name);

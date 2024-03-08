@@ -2,10 +2,10 @@ package keletu.forbiddenmagicre.enchantments.inchantment;
 
 
 import com.google.common.collect.Multimap;
-import keletu.forbiddenmagicre.items.tools.MorphAxe;
-import keletu.forbiddenmagicre.items.tools.MorphPick;
-import keletu.forbiddenmagicre.items.tools.MorphShovel;
-import keletu.forbiddenmagicre.items.tools.MorphSword;
+import keletu.forbiddenmagicre.items.tools.ItemMorphAxe;
+import keletu.forbiddenmagicre.items.tools.ItemMorphPick;
+import keletu.forbiddenmagicre.items.tools.ItemMorphShovel;
+import keletu.forbiddenmagicre.items.tools.ItemMorphSword;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
@@ -55,7 +55,7 @@ public class InfusionEnchantmentRecipeFM extends InfusionRecipe{
                     break;
                 }
             }
-            if(!cool && central.getItem() instanceof MorphPick || central.getItem() instanceof MorphAxe || central.getItem() instanceof MorphSword || central.getItem() instanceof MorphShovel){
+            if(!cool && central.getItem() instanceof ItemMorphPick || central.getItem() instanceof ItemMorphAxe || central.getItem() instanceof ItemMorphSword || central.getItem() instanceof ItemMorphShovel){
                 at = "morph_tools";
                 if(this.enchantment.toolClasses.contains(at)){
                     cool = true;

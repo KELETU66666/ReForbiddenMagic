@@ -7,7 +7,7 @@ import keletu.forbiddenmagicre.LogHandler;
 import keletu.forbiddenmagicre.XPReflectionHelper;
 import keletu.forbiddenmagicre.enchantments.inchantment.EnumInfusionEnchantmentFM;
 import keletu.forbiddenmagicre.init.ModItems;
-import keletu.forbiddenmagicre.items.tools.DistortionPick;
+import keletu.forbiddenmagicre.items.tools.ItemDistortionPick;
 import keletu.forbiddenmagicre.util.Reference;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
@@ -63,7 +63,7 @@ public class LivingEvent {
         BlockPos pos = event.getPos();
         if (!event.getEntityPlayer().getHeldItem(EnumHand.MAIN_HAND).isEmpty()) {
             ItemStack stack = event.getEntityPlayer().getHeldItem(EnumHand.MAIN_HAND);
-            if (stack.getItem() instanceof DistortionPick) {
+            if (stack.getItem() instanceof ItemDistortionPick) {
                 World world = event.getEntityPlayer().world;
                 BlockPos pos1;
                 pos1 = pos.add(0, 0, 0);

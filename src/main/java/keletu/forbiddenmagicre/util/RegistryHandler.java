@@ -9,6 +9,7 @@ import keletu.forbiddenmagicre.enchantments.EnchantmentsFM;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.potions.PotionBloodSeal;
+import keletu.forbiddenmagicre.potions.PotionDragonwrack;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
@@ -72,7 +73,7 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void registerPotions(RegistryEvent.Register<Potion> event)
     {
-        event.getRegistry().registerAll(bloodSeal);
+        event.getRegistry().registerAll(bloodSeal, dragonwrack);
     }
 
     static {
@@ -158,4 +159,5 @@ public class RegistryHandler {
     }
 
     public static final PotionBloodSeal bloodSeal = new PotionBloodSeal();
+    public static final PotionDragonwrack dragonwrack = new PotionDragonwrack();
 }

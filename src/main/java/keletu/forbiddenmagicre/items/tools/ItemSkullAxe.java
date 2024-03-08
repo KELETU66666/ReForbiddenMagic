@@ -9,8 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import thaumcraft.api.items.ItemsTC;
 
-public class SkullAxe extends ItemSword implements IHasModel {
-    public SkullAxe(String name, CreativeTabs tab, ToolMaterial material) {
+public class ItemSkullAxe extends ItemSword implements IHasModel {
+    public ItemSkullAxe(String name, CreativeTabs tab, ToolMaterial material) {
         super(material);
         setTranslationKey(name);
         setRegistryName(name);

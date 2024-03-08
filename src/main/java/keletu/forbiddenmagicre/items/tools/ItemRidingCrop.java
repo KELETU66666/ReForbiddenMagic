@@ -23,9 +23,9 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
 
-public class RidingCrop extends ItemSword implements IHasModel {
+public class ItemRidingCrop extends ItemSword implements IHasModel {
 
-    public RidingCrop(String name, CreativeTabs tab, ToolMaterial material) {
+    public ItemRidingCrop(String name, CreativeTabs tab, ToolMaterial material) {
         super(material);
         setTranslationKey(name);
         setRegistryName(name);

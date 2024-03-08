@@ -33,6 +33,7 @@ item.resourcenethershard.3.name=Lust Shard
 item.resourcenethershard.4.name=Sloth Shard
 item.resourcenethershard.5.name=Greed Shard
 item.gluttony_shard.name=Gluttony Shard
+item.sword_dragon_slayer.name=Sword of the Dragonslayer
 
 #block
 tile.black_rose_bush.name=Umbral Rosebush
@@ -46,6 +47,10 @@ tile.tainted_stone.name=Tainted Stone
 tile.tainted_brick.name=Tainted Brick
 tile.wrath_cage.name=Wrath Cage
 tile.netherstar_block.name=Nether Star Block
+
+# Potions
+potion.blood_seal=Blood Seal
+potion.dragonwrack=Dragonwrack
 
 #Botania
 tile.botania:flower.tainthistle.name=Tainthistle

@@ -20,9 +20,9 @@ import thaumcraft.api.items.ItemsTC;
 
 import javax.annotation.Nullable;
 
-public class MorphShovel extends ItemSpade implements IHasModel {
+public class ItemMorphShovel extends ItemSpade implements IHasModel {
 
-    public MorphShovel(String name, CreativeTabs tab, Item.ToolMaterial material) {
+    public ItemMorphShovel(String name, CreativeTabs tab, Item.ToolMaterial material) {
 
         super(material);
         setTranslationKey(name);

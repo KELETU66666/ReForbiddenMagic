@@ -23,9 +23,9 @@ import thaumcraft.api.items.ItemsTC;
 
 import javax.annotation.Nullable;
 
-public class MorphPick extends ItemPickaxe implements IHasModel {
+public class ItemMorphPick extends ItemPickaxe implements IHasModel {
 
-    public MorphPick(String name, CreativeTabs tab, ToolMaterial material) {
+    public ItemMorphPick(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material);
         setTranslationKey(name);
