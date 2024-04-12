@@ -233,6 +233,25 @@
           }
         ]
       },
+    { "key": "DRAGONSLAYER",
+      "name": "forbiddenmagic.research.dragonslayer.title",
+      "icons": ["forbiddenmagicre:dragon_slayer"],
+      "category": "APOCRYPHA",
+      "location": [0, -2],
+      "parents": ["LOSTMAGIC", "ELEMENTALTOOLS"],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.dragonslayer.text.stage.1",
+          "required_knowledge":["THEORY;INFUSION;3"],
+          "required_craft":["minecraft:iron_sword"]
+
+        },
+        {
+          "text": "forbiddenmagic.research.dragonslayer.text.stage.2",
+          "recipes": ["forbiddenmagicre:dragon_slayer"]
+        }
+      ]
+    },
     { "key": "WRATH_CAGE",
       "name": "forbiddenmagic.research.wrathcage.title",
       "icons": ["forbiddenmagicre:wrath_cage"],
@@ -271,4 +290,4 @@
       ]
     }
     ]
-  }
+}

@@ -55,7 +55,39 @@ public class WrathSpawnerLogic {
      * Gets the entity name that should be spawned.
      */
     public String getEntityNameToSpawn() {
-        return this.mobID;
+        //Forgive me, this method are toooo stupid, but only this can let wrath cage works.
+        switch (this.mobID) {
+            case "Ozelot":
+                return "Ocelot";
+            case "WitherSkeleton":
+                return "Wither_Skeleton";
+            case "MushroomCow":
+                return "Mooshroom";
+            case "PigZombie":
+                return "ZombiePigman";
+            case "MagmaCubeLavaSlime":
+                return "MagmaCube";
+            case "Wisp":
+                return "Thaumcraft.Wisp";
+            case "Pech":
+                return "Thaumcraft.Pech";
+            case "ThaumSlime":
+                return "Thaumcraft.ThaumSlime";
+            case "BrainyZombie":
+                return "Thaumcraft.BrainyZombie";
+            case "GiantBrainyZombie":
+                return "Thaumcraft.GiantBrainyZombie";
+            case "CultistKnight":
+                return "Thaumcraft.CultistKnight";
+            case "CultistCleric":
+                return "Thaumcraft.CultistCleric";
+            case "EldritchCrab":
+                return "Thaumcraft.EldritchCrab";
+            case "InhabitedZombie":
+                return "Thaumcraft.InhabitedZombie";
+            default:
+                return this.mobID;
+        }
     }
 
     public Aspect getAspect() {

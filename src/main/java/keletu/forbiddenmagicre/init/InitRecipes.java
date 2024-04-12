@@ -1,16 +1,21 @@
 package keletu.forbiddenmagicre.init;
 
 
+import static fox.spiteful.lostmagic.compat.Compat.getItem;
+import keletu.forbiddenmagicre.LogHandler;
 import keletu.forbiddenmagicre.enchantments.inchantment.EnumInfusionEnchantmentFM;
 import keletu.forbiddenmagicre.enchantments.inchantment.InfusionEnchantmentRecipeFM;
+import keletu.forbiddenmagicre.items.tools.ItemDragonslayer;
 import keletu.forbiddenmagicre.util.CompatIsorropia;
 import keletu.forbiddenmagicre.util.Reference;
 import keletu.forbiddenmagicre.util.RegistryHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
+import org.apache.logging.log4j.Level;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
@@ -216,6 +221,32 @@ private static void initInfusionRecipes() {
             new ItemStack(Items.QUARTZ),
             new ItemStack(Items.QUARTZ),
             new ItemStack(Items.QUARTZ)));
+        try {
+
+            Item ingot = Items.IRON_INGOT;
+            Item sword = Items.IRON_SWORD;
+            if (Loader.isModLoaded("twilightforest")) {
+                try {
+                    ingot = getItem("twilightforest", "knightmetal_ingot");
+                    sword = getItem("twilightforest", "knightmetal_sword");
+                } catch (Exception e) {
+                    LogHandler.log(Level.INFO, e, "Forbidden Magic couldn't figure out Twilight Forest's progression.");
+                }
+            }
+            ((ItemDragonslayer) ModItems.DRAGONSLAYER).repair = ingot;
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "dragon_slayer"), new InfusionRecipe(
+            "DRAGONSLAYER",
+            new ItemStack(ModItems.DRAGONSLAYER, 1),
+            6,
+            new AspectList().add(Aspect.LIGHT, 60).add(Aspect.ORDER, 30).add(Aspect.MAN, 60).add(Aspect.METAL, 100),
+            new ItemStack(sword),
+            new ItemStack(Items.NETHER_STAR, 1),
+            new ItemStack(Items.GOLDEN_HELMET, 1, 0),
+            new ItemStack(Items.WRITABLE_BOOK, 1),
+            new ItemStack(Items.ENDER_PEARL, 1, 2)));
+        } catch (Exception e) {
+        LogHandler.log(Level.INFO, e, "Forbidden Magic wasn't unbalanced enough for Draconic Evolution.");
+    }
 
     ItemStack greedy = new ItemStack(Items.GOLDEN_SWORD);
     EnumInfusionEnchantmentFM.addInfusionEnchantment(greedy, EnumInfusionEnchantmentFM.GREEDY, 1);
