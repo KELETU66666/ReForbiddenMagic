@@ -243,7 +243,7 @@ private static void initInfusionRecipes() {
             new ItemStack(Items.NETHER_STAR, 1),
             new ItemStack(Items.GOLDEN_HELMET, 1, 0),
             new ItemStack(Items.WRITABLE_BOOK, 1),
-            new ItemStack(Items.ENDER_PEARL, 1, 2)));
+            new ItemStack(Items.ENDER_PEARL, 1)));
         } catch (Exception e) {
         LogHandler.log(Level.INFO, e, "Forbidden Magic wasn't unbalanced enough for Draconic Evolution.");
     }
