@@ -1,6 +1,5 @@
 package keletu.forbiddenmagicre.event;
 
-import WayofTime.bloodmagic.core.RegistrarBloodMagic;
 import com.google.common.collect.Multimap;
 import keletu.forbiddenmagicre.ConfigFM;
 import keletu.forbiddenmagicre.LogHandler;
@@ -29,7 +28,6 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
@@ -49,7 +47,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.Level;
-import thaumcraft.api.entities.ITaintedMob;
 
 import java.util.Collection;
 import java.util.Random;
@@ -128,20 +125,6 @@ public class LivingEvent {
                     addDrop(event, new ItemStack(Items.EMERALD, 1, 0));
                 } else if (rand.nextInt(35) < 3)
                     addDrop(event, new ItemStack(ModItems.ResourceFM, 1, 0));
-            }
-        }
-
-        if (event.getSource().getDamageType().equals("player") && event.getEntityLiving() instanceof ITaintedMob)
-        {
-            PotionEffect effect = event.getEntityLiving().getActivePotionEffect(RegistrarBloodMagic.SOUL_SNARE);
-            if (effect != null)
-            {
-                if (effect.getAmplifier() >= 2) {
-                    double rand1 = Math.random();
-                    if (rand1 < 0.50d) {
-                        addDrop(event, new ItemStack(ModItems.ResourceFM, 1, 2));
-                    }
-                }
             }
         }
 
