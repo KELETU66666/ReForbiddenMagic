@@ -5,6 +5,7 @@ import keletu.forbiddenmagicre.items.tools.ItemDragonslayer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.DamageSource;
@@ -39,9 +40,9 @@ public class PotionDragonwrack extends Potion {
         ItemDragonslayer.absoluteDamage(victim, wrack, Math.max(1F, victim.getMaxHealth() / 20F));
         if(victim instanceof EntityPlayer){
             EntityPlayer player = (EntityPlayer)victim;
-            for(int x = 0;x < 5;x++){
-                if(player.inventory.getStackInSlot(x) != ItemStack.EMPTY){
-                    ItemStack equip = player.inventory.getStackInSlot(x);
+            for(EntityEquipmentSlot x : EntityEquipmentSlot.values()){
+                if(player.getItemStackFromSlot(x) != ItemStack.EMPTY){
+                    ItemStack equip = player.getItemStackFromSlot(x);
                     if(equip.getItem() instanceof IEnergyContainerItem){
                         IEnergyContainerItem battery = (IEnergyContainerItem)equip.getItem();
                         battery.extractEnergy(equip, battery.getMaxEnergyStored(equip) / 50, false);

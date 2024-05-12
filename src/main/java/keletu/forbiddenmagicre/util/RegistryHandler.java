@@ -24,7 +24,6 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
-import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.*;
 
 @Mod.EventBusSubscriber
@@ -119,28 +118,28 @@ public class RegistryHandler {
             proxy.registerComplexObjectTag(new ItemStack(ModItems.TAINTCHARCOAL), new AspectList().add(Aspect.FIRE, 5).add(Aspect.ENERGY, 5).add(Aspect.FLUX, 3));
             proxy.registerComplexObjectTag(new ItemStack(ModItems.ResourceFM, 1, 1), new AspectList().add(Aspect.DARKNESS, 2).add(Aspect.SENSES, 2));
 
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.GHAST_TEAR), AspectHelper.getObjectAspects(new ItemStack(Items.GHAST_TEAR)).add(ENVY, 5));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Blocks.TNT), AspectHelper.getObjectAspects(new ItemStack(Blocks.TNT)).add(WRATH, 15));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.FIRE_CHARGE), AspectHelper.getObjectAspects(new ItemStack(Items.FIRE_CHARGE)).add(WRATH, 2));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.SKULL, 1, 4), AspectHelper.getObjectAspects(new ItemStack(Items.SKULL, 1, 4)).add(WRATH, 5));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.SADDLE), AspectHelper.getObjectAspects(new ItemStack(Items.SADDLE)).add(LUST, 5));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.GOLDEN_SWORD), AspectHelper.getObjectAspects(new ItemStack(Items.GOLDEN_SWORD)).add(PRIDE, 8));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.GOLDEN_HELMET), AspectHelper.getObjectAspects(new ItemStack(Items.GOLDEN_HELMET)).add(PRIDE, 8));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.GOLDEN_CHESTPLATE), AspectHelper.getObjectAspects(new ItemStack(Items.GOLDEN_CHESTPLATE)).add(PRIDE, 4));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.GOLDEN_LEGGINGS), AspectHelper.getObjectAspects(new ItemStack(Items.GOLDEN_LEGGINGS)).add(PRIDE, 4));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.GOLDEN_BOOTS), AspectHelper.getObjectAspects(new ItemStack(Items.GOLDEN_BOOTS)).add(PRIDE, 4));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.NETHER_STAR), AspectHelper.getObjectAspects(new ItemStack(Items.NETHER_STAR)).add(PRIDE, 10).add(NETHER, 20));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.LEAD), AspectHelper.getObjectAspects(new ItemStack(Items.LEAD)).add(LUST, 5));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.BED), AspectHelper.getObjectAspects(new ItemStack(Items.BED)).add(SLOTH, 10));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.ENDER_PEARL), AspectHelper.getObjectAspects(new ItemStack(Items.ENDER_PEARL)).add(ENVY, 5));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.COMPARATOR), AspectHelper.getObjectAspects(new ItemStack(Items.COMPARATOR)).add(ENVY, 10));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.CAKE), AspectHelper.getObjectAspects(new ItemStack(Items.CAKE)).add(GLUTTONY, 10));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.COOKIE), AspectHelper.getObjectAspects(new ItemStack(Items.COOKIE)).add(GLUTTONY, 1));
+            proxy.registerObjectTag(new ItemStack(Items.GHAST_TEAR), AspectHelper.getObjectAspects(new ItemStack(Items.GHAST_TEAR)).add(ENVY, 5));
+            proxy.registerObjectTag(new ItemStack(Blocks.TNT), AspectHelper.getObjectAspects(new ItemStack(Blocks.TNT)).add(WRATH, 15));
+            proxy.registerObjectTag(new ItemStack(Items.FIRE_CHARGE), AspectHelper.getObjectAspects(new ItemStack(Items.FIRE_CHARGE)).add(WRATH, 2));
+            proxy.registerObjectTag(new ItemStack(Items.SKULL, 1, 4), AspectHelper.getObjectAspects(new ItemStack(Items.SKULL, 1, 4)).add(WRATH, 5));
+            proxy.registerObjectTag(new ItemStack(Items.SADDLE), AspectHelper.getObjectAspects(new ItemStack(Items.SADDLE)).add(LUST, 5));
+            proxy.registerObjectTag(new ItemStack(Items.GOLDEN_SWORD, 1, 32767), AspectHelper.getObjectAspects(new ItemStack(Items.GOLDEN_SWORD, 1, 32767)).add(PRIDE, 8));
+            proxy.registerObjectTag(new ItemStack(Items.GOLDEN_HELMET, 1, 32767), AspectHelper.getObjectAspects(new ItemStack(Items.GOLDEN_HELMET, 1, 32767)).add(PRIDE, 8));
+            proxy.registerObjectTag(new ItemStack(Items.GOLDEN_CHESTPLATE, 1, 32767), AspectHelper.getObjectAspects(new ItemStack(Items.GOLDEN_CHESTPLATE, 1, 32767)).add(PRIDE, 4));
+            proxy.registerObjectTag(new ItemStack(Items.GOLDEN_LEGGINGS, 1, 32767), AspectHelper.getObjectAspects(new ItemStack(Items.GOLDEN_LEGGINGS, 1, 32767)).add(PRIDE, 4));
+            proxy.registerObjectTag(new ItemStack(Items.GOLDEN_BOOTS, 1, 32767), AspectHelper.getObjectAspects(new ItemStack(Items.GOLDEN_BOOTS, 1, 32767)).add(PRIDE, 4));
+            proxy.registerObjectTag(new ItemStack(Items.NETHER_STAR), AspectHelper.getObjectAspects(new ItemStack(Items.NETHER_STAR)).add(PRIDE, 10).add(NETHER, 20));
+            proxy.registerObjectTag(new ItemStack(Items.LEAD), AspectHelper.getObjectAspects(new ItemStack(Items.LEAD)).add(LUST, 5));
+            proxy.registerObjectTag(new ItemStack(Items.BED, 1, 32767), AspectHelper.getObjectAspects(new ItemStack(Items.BED, 1, 32767)).add(SLOTH, 10));
+            proxy.registerObjectTag(new ItemStack(Items.ENDER_PEARL), AspectHelper.getObjectAspects(new ItemStack(Items.ENDER_PEARL)).add(ENVY, 5));
+            proxy.registerObjectTag(new ItemStack(Items.COMPARATOR), AspectHelper.getObjectAspects(new ItemStack(Items.COMPARATOR)).add(ENVY, 10));
+            proxy.registerObjectTag(new ItemStack(Items.CAKE), AspectHelper.getObjectAspects(new ItemStack(Items.CAKE)).add(GLUTTONY, 10));
+            proxy.registerObjectTag(new ItemStack(Items.COOKIE), AspectHelper.getObjectAspects(new ItemStack(Items.COOKIE)).add(GLUTTONY, 1));
 
-            ThaumcraftApi.registerObjectTag(new ItemStack(Blocks.NETHERRACK), AspectHelper.getObjectAspects(new ItemStack(Blocks.NETHERRACK)).add(NETHER, 2));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Blocks.QUARTZ_ORE), AspectHelper.getObjectAspects(new ItemStack(Blocks.QUARTZ_ORE)).add(NETHER, 5));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.NETHER_WART), AspectHelper.getObjectAspects(new ItemStack(Items.NETHER_WART)).add(NETHER, 2));
-            ThaumcraftApi.registerObjectTag(new ItemStack(Items.SKULL, 1, 1), AspectHelper.getObjectAspects(new ItemStack(Items.SKULL, 1, 1)).add(NETHER, 10));
+            proxy.registerObjectTag(new ItemStack(Blocks.NETHERRACK), AspectHelper.getObjectAspects(new ItemStack(Blocks.NETHERRACK)).add(NETHER, 2));
+            proxy.registerObjectTag(new ItemStack(Blocks.QUARTZ_ORE), AspectHelper.getObjectAspects(new ItemStack(Blocks.QUARTZ_ORE)).add(NETHER, 5));
+            proxy.registerObjectTag(new ItemStack(Items.NETHER_WART), AspectHelper.getObjectAspects(new ItemStack(Items.NETHER_WART)).add(NETHER, 2));
+            proxy.registerObjectTag(new ItemStack(Items.SKULL, 1, 1), AspectHelper.getObjectAspects(new ItemStack(Items.SKULL, 1, 1)).add(NETHER, 10));
 
     }
 

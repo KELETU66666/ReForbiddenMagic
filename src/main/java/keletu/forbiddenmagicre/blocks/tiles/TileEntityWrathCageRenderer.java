@@ -3,13 +3,12 @@ package keletu.forbiddenmagicre.blocks.tiles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
-public class TileEntityWrathCageRenderer extends TileEntitySpecialRenderer {
+public class TileEntityWrathCageRenderer extends TileEntitySpecialRenderer<TileEntityWrathCage> {
     public void renderTileEntityWrathCage(TileEntityWrathCage wrathCage, double x, double z, double par6, float par8) {
         if (!wrathCage.getSpawnerLogic().isMobSet())
             return;
@@ -41,7 +40,7 @@ public class TileEntityWrathCageRenderer extends TileEntitySpecialRenderer {
         }
     }
 
-    public void render(TileEntity par1TileEntity, double x, double z, double par6, float par8, int destroyStage, float alpha) {
-        this.renderTileEntityWrathCage((TileEntityWrathCage) par1TileEntity, x, z, par6, par8);
+    public void render(TileEntityWrathCage par1TileEntity, double x, double z, double par6, float par8, int destroyStage, float alpha) {
+        this.renderTileEntityWrathCage(par1TileEntity, x, z, par6, par8);
     }
 }
