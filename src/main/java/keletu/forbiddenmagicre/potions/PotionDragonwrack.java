@@ -17,7 +17,7 @@ public class PotionDragonwrack extends Potion {
 
     DamageSource wrack;
 
-    public PotionDragonwrack(){
+    public PotionDragonwrack() {
         super(false, 0xFFFFAA);
         this.setPotionName("potion.dragonwrack");
         this.setRegistryName("dragonwrack");
@@ -33,18 +33,17 @@ public class PotionDragonwrack extends Potion {
     }
 
     @Override
-    public void performEffect(EntityLivingBase victim, int level)
-    {
-        if(!ItemDragonslayer.isDragon(victim) || victim.world.isRemote)
+    public void performEffect(EntityLivingBase victim, int level) {
+        if (!ItemDragonslayer.isDragon(victim) || victim.world.isRemote)
             return;
         ItemDragonslayer.absoluteDamage(victim, wrack, Math.max(1F, victim.getMaxHealth() / 20F));
-        if(victim instanceof EntityPlayer){
-            EntityPlayer player = (EntityPlayer)victim;
-            for(EntityEquipmentSlot x : EntityEquipmentSlot.values()){
-                if(player.getItemStackFromSlot(x) != ItemStack.EMPTY){
+        if (victim instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer) victim;
+            for (EntityEquipmentSlot x : EntityEquipmentSlot.values()) {
+                if (player.getItemStackFromSlot(x) != ItemStack.EMPTY) {
                     ItemStack equip = player.getItemStackFromSlot(x);
-                    if(equip.getItem() instanceof IEnergyContainerItem){
-                        IEnergyContainerItem battery = (IEnergyContainerItem)equip.getItem();
+                    if (equip.getItem() instanceof IEnergyContainerItem) {
+                        IEnergyContainerItem battery = (IEnergyContainerItem) equip.getItem();
                         battery.extractEnergy(equip, battery.getMaxEnergyStored(equip) / 50, false);
                     }
                 }
@@ -52,8 +51,7 @@ public class PotionDragonwrack extends Potion {
         }
     }
 
-    public boolean isReady(int tick, int level)
-    {
+    public boolean isReady(int tick, int level) {
         int k;
 
         k = 40 >> level;

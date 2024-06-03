@@ -26,12 +26,12 @@ item.resourcefm.2.name=腐血碎片
 item.diabolist_fork.name=妖魔之叉
 item.mobcrystalempty.name=空白留影水晶
 item.mobcrystal.name=%s 留影水晶
-item.resourcenethershard.0.name=暴怒碎片
-item.resourcenethershard.1.name=嫉妒碎片
-item.resourcenethershard.2.name=傲慢碎片
-item.resourcenethershard.3.name=欲望碎片
-item.resourcenethershard.4.name=懈怠碎片
-item.resourcenethershard.5.name=贪婪碎片
+item.resourceshard.0.name=暴怒碎片
+item.resourceshard.1.name=嫉妒碎片
+item.resourceshard.2.name=傲慢碎片
+item.resourceshard.3.name=欲望碎片
+item.resourceshard.4.name=懈怠碎片
+item.resourceshard.5.name=贪婪碎片
 item.gluttony_shard.name=暴食碎片
 
 #block

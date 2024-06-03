@@ -7,7 +7,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class PotionBloodSeal extends Potion {
-    public PotionBloodSeal(){
+    public PotionBloodSeal() {
         super(true, 0xAC1919);
         this.setPotionName("potion.blood_seal");
         this.setRegistryName("blood_seal");

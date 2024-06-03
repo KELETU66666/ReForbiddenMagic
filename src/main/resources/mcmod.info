@@ -3,7 +3,7 @@
         "modid": "forbiddenmagicre",
         "name": "ReForbiddenMagic",
         "description": "A rewrite version of ForbiddenMagic and SchoolsofMagic",
-        "version": "1.12.2-0.7",
+        "version": "1.12.2-0.7.4",
         "mcversion": "1.12.2",
         "url": "https://github.com/KELETU66666/ReForbiddenMagic",
         "updateUrl": "",
@@ -12,6 +12,6 @@
             " keletu > \"Code Carrier\", Azanor > Thaumcraft creator , KingLemming and The CoFH Team > Thaumcraft maintainers, SpitefulFox > Forbidden Magic's creator, Fang_Orange/GameR/IcarussOne > Contributors",
         "logoFile": "",
         "screenshots": [],
-        "dependencies": ["thaumcraft"]
+        "dependencies": ["thaumcraft", "lostmagic"]
     }
 ]

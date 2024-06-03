@@ -24,23 +24,23 @@ public class SubTileWhisperweed extends SubTileFunctional {
     int tProg = IPlayerKnowledge.EnumKnowledgeType.THEORY.getProgression();
 
     @Override
-    public void onUpdate(){
+    public void onUpdate() {
         super.onUpdate();
 
-        if(redstoneSignal > 0)
+        if (redstoneSignal > 0)
             return;
 
-        if(!supertile.getWorld().isRemote && mana >= cost && this.ticksExisted % 300 == 0) {
+        if (!supertile.getWorld().isRemote && mana >= cost && this.ticksExisted % 300 == 0) {
             List<EntityPlayer> players = supertile.getWorld().getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(supertile.getPos().getX() - range, supertile.getPos().getY() - range, supertile.getPos().getZ() - range, supertile.getPos().getX() + range + 1, supertile.getPos().getY() + range + 1, supertile.getPos().getZ() + range + 1));
-            if(players.size() > 0) {
+            if (players.size() > 0) {
                 EntityPlayer player = players.get(supertile.getWorld().rand.nextInt(players.size()));
                 int amt = 1 + player.world.rand.nextInt(3);
-                if(player.world.rand.nextInt(10) < 2){
+                if (player.world.rand.nextInt(10) < 2) {
                     amt += 1 + player.world.rand.nextInt(3);
                     ThaumcraftApi.internalMethods.addWarpToPlayer(player, 1 + player.world.rand.nextInt(5), IPlayerWarp.EnumWarpType.TEMPORARY);
                 }
 
-                for(int a = 0; a < amt; ++a) {
+                for (int a = 0; a < amt; ++a) {
                     ThaumcraftApi.internalMethods.addKnowledge(player, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[player.getRNG().nextInt(rc.length)], MathHelper.getInt(player.getRNG(), tProg / 12, tProg / 6));
                 }
                 mana -= cost;
@@ -50,7 +50,7 @@ public class SubTileWhisperweed extends SubTileFunctional {
     }
 
     @Override
-    public int getColor(){
+    public int getColor() {
         return 0x745380;
     }
 
@@ -65,7 +65,7 @@ public class SubTileWhisperweed extends SubTileFunctional {
     }
 
     @Override
-    public LexiconEntry getEntry(){
+    public LexiconEntry getEntry() {
         return lexicon;
     }
 }

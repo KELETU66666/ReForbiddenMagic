@@ -23,7 +23,7 @@ public class ResourceNS extends Item implements IHasModel {
 
     public ResourceNS() {
         super();
-        setRegistryName("resourcenethershard");
+        setRegistryName("resourceshard");
         setCreativeTab(tab);
         setTranslationKey(this.getRegistryName().getPath());
         setHasSubtypes(true);

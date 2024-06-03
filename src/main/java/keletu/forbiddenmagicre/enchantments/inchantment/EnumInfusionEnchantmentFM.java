@@ -27,24 +27,24 @@ public enum EnumInfusionEnchantmentFM {
     public int maxLevel;
     public String research;
 
-    EnumInfusionEnchantmentFM(Set<String> toolClasses, int ml, String research){
+    EnumInfusionEnchantmentFM(Set<String> toolClasses, int ml, String research) {
         this.toolClasses = toolClasses;
         this.maxLevel = ml;
         this.research = research;
     }
 
-    public static NBTTagList getInfusionEnchantmentTagList(ItemStack stack){
+    public static NBTTagList getInfusionEnchantmentTagList(ItemStack stack) {
         return stack == null || stack.isEmpty() || stack.getTagCompound() == null ? null : stack.getTagCompound().getTagList("infenchkp", 10);
     }
 
-    public static List<EnumInfusionEnchantmentFM> getInfusionEnchantments(ItemStack stack){
+    public static List<EnumInfusionEnchantmentFM> getInfusionEnchantments(ItemStack stack) {
         NBTTagList nbttaglist = getInfusionEnchantmentTagList(stack);
         ArrayList<EnumInfusionEnchantmentFM> list = new ArrayList<EnumInfusionEnchantmentFM>();
-        if(nbttaglist != null){
-            for(int j = 0; j < nbttaglist.tagCount(); ++j){
+        if (nbttaglist != null) {
+            for (int j = 0; j < nbttaglist.tagCount(); ++j) {
                 short k = nbttaglist.getCompoundTagAt(j).getShort("id");
                 short l = nbttaglist.getCompoundTagAt(j).getShort("lvl");
-                if(k < 0 || k >= EnumInfusionEnchantmentFM.values().length)
+                if (k < 0 || k >= EnumInfusionEnchantmentFM.values().length)
                     continue;
                 list.add(EnumInfusionEnchantmentFM.values()[k]);
             }
@@ -52,13 +52,13 @@ public enum EnumInfusionEnchantmentFM {
         return list;
     }
 
-    public static int getInfusionEnchantmentLevel(ItemStack stack, EnumInfusionEnchantmentFM enchantment){
+    public static int getInfusionEnchantmentLevel(ItemStack stack, EnumInfusionEnchantmentFM enchantment) {
         NBTTagList nbttaglist = EnumInfusionEnchantmentFM.getInfusionEnchantmentTagList(stack);
-        if(nbttaglist != null){
-            for(int j = 0; j < nbttaglist.tagCount(); ++j){
+        if (nbttaglist != null) {
+            for (int j = 0; j < nbttaglist.tagCount(); ++j) {
                 short k = nbttaglist.getCompoundTagAt(j).getShort("id");
                 short l = nbttaglist.getCompoundTagAt(j).getShort("lvl");
-                if(k < 0 || k >= EnumInfusionEnchantmentFM.values().length || EnumInfusionEnchantmentFM.values()[k] != enchantment)
+                if (k < 0 || k >= EnumInfusionEnchantmentFM.values().length || EnumInfusionEnchantmentFM.values()[k] != enchantment)
                     continue;
                 return l;
             }
@@ -66,36 +66,38 @@ public enum EnumInfusionEnchantmentFM {
         return 0;
     }
 
-    public static void addInfusionEnchantment(ItemStack stack, EnumInfusionEnchantmentFM ie, int level){
-        if(stack == null || stack.isEmpty() || level > ie.maxLevel){
+    public static void addInfusionEnchantment(ItemStack stack, EnumInfusionEnchantmentFM ie, int level) {
+        if (stack == null || stack.isEmpty() || level > ie.maxLevel) {
             System.out.println("uwu");
             return;
         }
         NBTTagList nbttaglist = EnumInfusionEnchantmentFM.getInfusionEnchantmentTagList(stack);
-        if(nbttaglist != null){
-            for(int j = 0; j < nbttaglist.tagCount(); ++j){
+        if (nbttaglist != null) {
+            for (int j = 0; j < nbttaglist.tagCount(); ++j) {
                 short k = nbttaglist.getCompoundTagAt(j).getShort("id");
                 short l = nbttaglist.getCompoundTagAt(j).getShort("lvl");
-                if(k != ie.ordinal())
+                if (k != ie.ordinal())
                     continue;
-                if(level <= l){ return; }
-                nbttaglist.getCompoundTagAt(j).setShort("lvl", (short)level);
+                if (level <= l) {
+                    return;
+                }
+                nbttaglist.getCompoundTagAt(j).setShort("lvl", (short) level);
                 stack.setTagInfo("infenchkp", nbttaglist);
                 return;
             }
-        }else{
+        } else {
             nbttaglist = new NBTTagList();
         }
         NBTTagCompound nbttagcompound = new NBTTagCompound();
-        nbttagcompound.setShort("id", (short)ie.ordinal());
-        nbttagcompound.setShort("lvl", (short)level);
+        nbttagcompound.setShort("id", (short) ie.ordinal());
+        nbttagcompound.setShort("lvl", (short) level);
         nbttaglist.appendTag(nbttagcompound);
-        if(nbttaglist.tagCount() > 0){
+        if (nbttaglist.tagCount() > 0) {
             stack.setTagInfo("infenchkp", nbttaglist);
         }
     }
 
-    private static void handleProjecting(ItemStack stack){
+    private static void handleProjecting(ItemStack stack) {
         // Add an nbt tag to give Projecting items extended reach.
         NBTTagCompound nbt = stack.getTagCompound();
 
@@ -104,17 +106,17 @@ public enum EnumInfusionEnchantmentFM {
         Collection<AttributeModifier> damageCollection = map.get(SharedMonsterAttributes.ATTACK_DAMAGE.getName());
         Collection<AttributeModifier> speedCollection = map.get(SharedMonsterAttributes.ATTACK_SPEED.getName());
         double reach;
-        try{
-            AttributeModifier reachModifier = (AttributeModifier)reachCollection.toArray()[0];
+        try {
+            AttributeModifier reachModifier = (AttributeModifier) reachCollection.toArray()[0];
             System.out.println(reachModifier.getAmount());
             reach = reachModifier.getAmount() + 2;
-        }catch(ArrayIndexOutOfBoundsException e){
+        } catch (ArrayIndexOutOfBoundsException e) {
             reach = 2;
             System.out.println("WHAT");
         }
         AttributeModifier reachDistance = new AttributeModifier("reachDistance", reach, 0);
-        AttributeModifier attackDamage = (AttributeModifier)damageCollection.toArray()[0];
-        AttributeModifier attackSpeed = (AttributeModifier)speedCollection.toArray()[0];
+        AttributeModifier attackDamage = (AttributeModifier) damageCollection.toArray()[0];
+        AttributeModifier attackSpeed = (AttributeModifier) speedCollection.toArray()[0];
         NBTTagCompound reachNBT = writeAttributeModifierToNBT(EntityPlayer.REACH_DISTANCE, reachDistance, EntityEquipmentSlot.MAINHAND);
         NBTTagCompound damageNBT = writeAttributeModifierToNBT(SharedMonsterAttributes.ATTACK_DAMAGE, attackDamage, EntityEquipmentSlot.MAINHAND);
         NBTTagCompound speedNBT = writeAttributeModifierToNBT(SharedMonsterAttributes.ATTACK_SPEED, attackSpeed, EntityEquipmentSlot.MAINHAND);
@@ -125,7 +127,7 @@ public enum EnumInfusionEnchantmentFM {
         nbt.setTag("AttributeModifiers", list);
     }
 
-    private static NBTTagCompound writeAttributeModifierToNBT(IAttribute attribute, AttributeModifier modifier, EntityEquipmentSlot slot){
+    private static NBTTagCompound writeAttributeModifierToNBT(IAttribute attribute, AttributeModifier modifier, EntityEquipmentSlot slot) {
         NBTTagCompound nbt = new NBTTagCompound();
 
         nbt.setString("AttributeName", attribute.getName());

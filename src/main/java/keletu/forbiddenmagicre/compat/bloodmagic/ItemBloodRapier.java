@@ -3,7 +3,6 @@ package keletu.forbiddenmagicre.compat.bloodmagic;
 
 import WayofTime.bloodmagic.util.helper.NetworkHelper;
 import keletu.forbiddenmagicre.forbiddenmagicre;
-import keletu.forbiddenmagicre.init.InitRecipes;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import keletu.forbiddenmagicre.util.Reference;
@@ -19,6 +18,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.InfusionRecipe;
@@ -41,7 +41,7 @@ public class ItemBloodRapier extends ItemSword implements IWarpingGear, IHasMode
                 6,
                 new AspectList().add(Aspect.DESIRE, 100).add(Aspect.LIFE, 30).add(Aspect.AVERSION, 30),
                 new ItemStack(ItemsTC.voidSword),
-                InitRecipes.taintCrystal(Aspect.FLUX, 1),
+                ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
                 new ItemStack(ModItems.ResourceNS, 1, 0),
                 new ItemStack(ModItems.GluttonyShard),
                 "feather",

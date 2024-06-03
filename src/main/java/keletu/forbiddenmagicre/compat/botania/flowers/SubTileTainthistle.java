@@ -3,11 +3,10 @@
  * It was distributed as part of the Botania Mod.
  * Get the Source Code in github:
  * https://github.com/Vazkii/Botania
- *
+ * <p>
  * Botania is Open Source and distributed under a
  * Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_GB)
- *
  */
 
 package keletu.forbiddenmagicre.compat.botania.flowers;
@@ -34,7 +33,7 @@ public class SubTileTainthistle extends SubTileGenerating {
     public void onUpdate() {
         super.onUpdate();
         boolean didSomething = false;
-        if(this.ticksExisted % 80 == 0) {
+        if (this.ticksExisted % 80 == 0) {
             if (!supertile.getWorld().isRemote) {
                 for (int ex = supertile.getPos().getX() - range; ex <= supertile.getPos().getX() + range; ex++) {
                     for (int wy = supertile.getPos().getY() - range; wy <= supertile.getPos().getY() + range; wy++) {
@@ -55,8 +54,8 @@ public class SubTileTainthistle extends SubTileGenerating {
                 }
             }
         }
-        if(burnTime > 0){
-            if(supertile.getWorld().rand.nextInt(8) == 0)
+        if (burnTime > 0) {
+            if (supertile.getWorld().rand.nextInt(8) == 0 && supertile.getWorld().isRemote)
                 doBurnParticles();
             burnTime--;
         }
@@ -77,7 +76,7 @@ public class SubTileTainthistle extends SubTileGenerating {
 
     }
 
-    public boolean isFlux(int x, int y, int z){
+    public boolean isFlux(int x, int y, int z) {
         Block target = supertile.getWorld().getBlockState(new BlockPos(x, y, z)).getBlock();
         return target == ConfigBlocks.FluidFluxGoo.instance.getBlock();
     }

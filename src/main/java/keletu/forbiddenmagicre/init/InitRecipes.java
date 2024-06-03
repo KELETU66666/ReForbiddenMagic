@@ -26,7 +26,6 @@ import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.crafting.IngredientNBTTC;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.items.ItemsTC;
-import thaumcraft.common.items.resources.ItemCrystalEssence;
 import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
 public class InitRecipes {
@@ -39,7 +38,7 @@ public class InitRecipes {
     public static final Aspect WRATH;
 
     static {
-        if(Loader.isModLoaded("isorropia")) {
+        if (Loader.isModLoaded("isorropia")) {
             WRATH = CompatIsorropia.WRATH;
             ENVY = CompatIsorropia.ENVY;
             GLUTTONY = CompatIsorropia.GLUTTONY;
@@ -47,7 +46,7 @@ public class InitRecipes {
             NETHER = CompatIsorropia.NETHER;
             PRIDE = CompatIsorropia.PRIDE;
             SLOTH = CompatIsorropia.SLOTH;
-        }else {
+        } else {
             WRATH = RegistryHandler.WRATH;
             ENVY = RegistryHandler.ENVY;
             GLUTTONY = RegistryHandler.GLUTTONY;
@@ -57,37 +56,32 @@ public class InitRecipes {
             SLOTH = RegistryHandler.SLOTH;
         }
     }
+
     private static final ResourceLocation defaultGroup = new ResourceLocation("");
 
     public static void initRecipes() {
         initArcaneRecipes();
         initCrucibleRecipes();
         initInfusionRecipes();
-        if(Loader.isModLoaded("botania"))
+        if (Loader.isModLoaded("botania"))
             initBotaniaRecipe();
     }
 
-    public static ItemStack taintCrystal(Aspect asp, int quantity){
-        ItemStack crystal = new ItemStack(ItemsTC.crystalEssence, quantity);
-        ((ItemCrystalEssence) ItemsTC.crystalEssence).setAspects(crystal, new AspectList().add(asp, 100));
-        return crystal;
+    private static void initArcaneRecipes() {
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "arcane_to_tainted_stone"), new ShapedArcaneRecipe(
+                defaultGroup,
+                "TAINTED_BLOCKS",
+                50,
+                new AspectList(),
+                new ItemStack(ModBlocks.BLOCKSTONETAINTED, 9, 0),
+                "AAA",
+                "ATA",
+                "AAA",
+                'T', ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
+                'A', new ItemStack(BlocksTC.stoneArcane)));
     }
 
-private static void initArcaneRecipes() {
-    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "arcane_to_tainted_stone"), new ShapedArcaneRecipe(
-            defaultGroup,
-            "TAINTED_BLOCKS",
-            50,
-            new AspectList(),
-            new ItemStack(ModBlocks.BLOCKSTONETAINTED, 9, 0),
-            "AAA",
-            "ATA",
-            "AAA",
-            'T', ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
-            'A', new ItemStack(BlocksTC.stoneArcane)));
-}
-
-private static void initCrucibleRecipes() {
+    private static void initCrucibleRecipes() {
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "fm_black_rose"), new CrucibleRecipe(
                 "SAVE_THE_SQUID",
                 new ItemStack(ModBlocks.BLACK_FLOWER_BUSH),
@@ -97,130 +91,131 @@ private static void initCrucibleRecipes() {
         ));
 
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "fm_emerald_DUPE"), new CrucibleRecipe(
-            "EMERALD_DUPE",
-            new ItemStack(ModItems.ResourceFM, 4, 0),
+                "EMERALD_DUPE",
+                new ItemStack(ModItems.ResourceFM, 4, 0),
                 new ItemStack(ModItems.ResourceFM, 1, 0),
-            new AspectList().add(Aspect.CRYSTAL, 8).add(Aspect.DESIRE, 8)
+                new AspectList().add(Aspect.CRYSTAL, 8).add(Aspect.DESIRE, 8)
         ));
 
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "fm_tainted_sapling"), new CrucibleRecipe(
-            "TAINTED_BLOCKS",
-            new ItemStack(ModBlocks.BLOCK_SAPLING_TAINTED),
-            new ItemStack(Blocks.SAPLING, 1, 0),
-            new AspectList().add(Aspect.DEATH, 30).add(Aspect.FLUX, 30)
+                "TAINTED_BLOCKS",
+                new ItemStack(ModBlocks.BLOCK_SAPLING_TAINTED),
+                new ItemStack(Blocks.SAPLING, 1, 0),
+                new AspectList().add(Aspect.DEATH, 30).add(Aspect.FLUX, 30)
         ));
-    ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "fm_mob_crystal"), new CrucibleRecipe(
-            "WRATH_CAGE@1",
-            new ItemStack(ModItems.MOB_CRYSTAL),
-            new ItemStack(Items.DIAMOND),
-            new AspectList().add(Aspect.MIND, 20).add(Aspect.ENERGY, 20)
-    ));
-}
-private static void initInfusionRecipes() {
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_shovel"), new InfusionRecipe(
-            "MORPH_TOOLS",
-            new ItemStack(ModItems.MorphShovel),
-            1,
-            new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
-            new ItemStack(ItemsTC.thaumiumShovel),
-            new ItemStack(ItemsTC.quicksilver),
-            new ItemStack(ItemsTC.nuggets, 1, 10),
-            new ItemStack(ModItems.ResourceNS, 1, 1),
-            new ItemStack(ModItems.ResourceNS, 1, 1),
-            new ItemStack(BlocksTC.logSilverwood)));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_axe"), new InfusionRecipe(
-            "MORPH_TOOLS",
-            new ItemStack(ModItems.MorphAxe),
-            1,
-            new AspectList().add(Aspect.TOOL, 15).add(Aspect.SENSES, 30).add(ENVY, 30).add(Aspect.AVERSION, 15),
-            new ItemStack(ItemsTC.thaumiumAxe),
-            new ItemStack(ItemsTC.quicksilver),
-            new ItemStack(ItemsTC.nuggets, 1, 10),
-            new ItemStack(ModItems.ResourceNS, 1, 1),
-            new ItemStack(ModItems.ResourceNS, 1, 1),
-            new ItemStack(BlocksTC.logSilverwood)));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_pick"), new InfusionRecipe(
-            "MORPH_TOOLS",
-            new ItemStack(ModItems.MorphPickaxe),
-            1,
-            new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
-            new ItemStack(ItemsTC.thaumiumPick),
-            new ItemStack(ItemsTC.quicksilver),
-            new ItemStack(ItemsTC.nuggets, 1, 10),
-            new ItemStack(ModItems.ResourceNS, 1, 1),
-            new ItemStack(ModItems.ResourceNS, 1, 1),
-            new ItemStack(BlocksTC.logSilverwood)));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_sword"), new InfusionRecipe(
-            "MORPH_TOOLS",
-            new ItemStack(ModItems.MorphSword),
-            1,
-            new AspectList().add(Aspect.AVERSION, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
-            new ItemStack(ItemsTC.thaumiumSword),
-            new ItemStack(ItemsTC.quicksilver),
-            new ItemStack(ItemsTC.nuggets, 1, 10),
-            new ItemStack(ModItems.ResourceNS, 1, 1),
-            new ItemStack(ModItems.ResourceNS, 1, 1),
-            new ItemStack(BlocksTC.logSilverwood)));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "distortion_pick"), new InfusionRecipe(
-            "DISTORTION_PICK",
-            new ItemStack(ModItems.DISTORTIONPICK),
-            1,
-            new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.TOOL, 30).add(Aspect.FLUX, 45),
-            new ItemStack(ItemsTC.thaumiumPick),
-            new ItemStack(ItemsTC.nuggets,1 ,10),
-            ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
-            ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY),
-            new ItemStack(BlocksTC.logGreatwood)));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "skull_axe"), new InfusionRecipe(
-            "SKULLAXE",
-            new ItemStack(ModItems.SkullAxe),
-            1,
-            new AspectList().add(Aspect.AVERSION, 60).add(NETHER, 30).add(WRATH, 30),
-            new ItemStack(ItemsTC.thaumiumAxe),
-            new ItemStack(ModItems.ResourceNS, 1, 0),
-            new ItemStack(ModItems.ResourceNS, 1, 0),
-            "gemDiamond",
-            new ItemStack(Items.SKULL, 1, 1)));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "arcane_cake"), new InfusionRecipe(
-            "FM_ARCANECAKE",
-            new ItemStack(ModBlocks.BLOCK_ARCANE_CAKE),
-            3,
-             new AspectList().add(Aspect.DESIRE, 30).add(GLUTTONY, 20).add(Aspect.CRAFT, 45),
-            new ItemStack(Items.CAKE),
-            new ItemStack(ItemsTC.salisMundus),
-            new ItemStack(Items.EGG),
-            new ItemStack(ModItems.GluttonyShard),
-            new ItemStack(Items.MILK_BUCKET),
-            new ItemStack(Items.EGG),
-            new ItemStack(ModItems.GluttonyShard)));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "wrath_cage"), new InfusionRecipe(
-            "WRATH_CAGE",
-            new ItemStack(ModBlocks.WRATH_CAGE),
-            10,
-            new AspectList().add(RegistryHandler.WRATH, 125).add(Aspect.MAGIC, 125).add(Aspect.BEAST, 125).add(Aspect.MECHANISM, 75),
-            new ItemStack(BlocksTC.metalBlockThaumium),
-            new ItemStack(Items.DIAMOND),
-            new ItemStack(ModItems.ResourceNS, 1, 0),
-            new ItemStack(BlocksTC.jarNormal),
-            new ItemStack(Items.DIAMOND),
-            new ItemStack(ModItems.ResourceNS, 1, 0),
-            new ItemStack(BlocksTC.jarNormal),
-            new ItemStack(Items.DIAMOND),
-            new ItemStack(ModItems.ResourceNS, 1, 0),
-            new ItemStack(BlocksTC.jarNormal),
-            new ItemStack(Items.DIAMOND),
-            new ItemStack(ModItems.ResourceNS, 1, 0),
-            new ItemStack(BlocksTC.jarNormal)));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "diabolist_fork"), new InfusionRecipe(
-            "DIABOLIST_FORK",
-            new ItemStack(ModItems.DIABOLISTFORK),
-            1,
-            new AspectList().add(RegistryHandler.NETHER, 15).add(Aspect.MECHANISM, 15).add(Aspect.ENERGY, 15),
-            new ItemStack(ItemsTC.thaumiumSword),
-            new ItemStack(Items.REDSTONE),
-            new ItemStack(Items.QUARTZ),
-            new ItemStack(Items.QUARTZ),
-            new ItemStack(Items.QUARTZ)));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "fm_mob_crystal"), new CrucibleRecipe(
+                "WRATH_CAGE@1",
+                new ItemStack(ModItems.MOB_CRYSTAL),
+                new ItemStack(Items.DIAMOND),
+                new AspectList().add(Aspect.MIND, 20).add(Aspect.ENERGY, 20)
+        ));
+    }
+
+    private static void initInfusionRecipes() {
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_shovel"), new InfusionRecipe(
+                "MORPH_TOOLS",
+                new ItemStack(ModItems.MorphShovel),
+                1,
+                new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
+                new ItemStack(ItemsTC.thaumiumShovel),
+                new ItemStack(ItemsTC.quicksilver),
+                new ItemStack(ItemsTC.nuggets, 1, 10),
+                new ItemStack(ModItems.ResourceNS, 1, 1),
+                new ItemStack(ModItems.ResourceNS, 1, 1),
+                new ItemStack(BlocksTC.logSilverwood)));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_axe"), new InfusionRecipe(
+                "MORPH_TOOLS",
+                new ItemStack(ModItems.MorphAxe),
+                1,
+                new AspectList().add(Aspect.TOOL, 15).add(Aspect.SENSES, 30).add(ENVY, 30).add(Aspect.AVERSION, 15),
+                new ItemStack(ItemsTC.thaumiumAxe),
+                new ItemStack(ItemsTC.quicksilver),
+                new ItemStack(ItemsTC.nuggets, 1, 10),
+                new ItemStack(ModItems.ResourceNS, 1, 1),
+                new ItemStack(ModItems.ResourceNS, 1, 1),
+                new ItemStack(BlocksTC.logSilverwood)));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_pick"), new InfusionRecipe(
+                "MORPH_TOOLS",
+                new ItemStack(ModItems.MorphPickaxe),
+                1,
+                new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
+                new ItemStack(ItemsTC.thaumiumPick),
+                new ItemStack(ItemsTC.quicksilver),
+                new ItemStack(ItemsTC.nuggets, 1, 10),
+                new ItemStack(ModItems.ResourceNS, 1, 1),
+                new ItemStack(ModItems.ResourceNS, 1, 1),
+                new ItemStack(BlocksTC.logSilverwood)));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_sword"), new InfusionRecipe(
+                "MORPH_TOOLS",
+                new ItemStack(ModItems.MorphSword),
+                1,
+                new AspectList().add(Aspect.AVERSION, 30).add(Aspect.SENSES, 30).add(ENVY, 30),
+                new ItemStack(ItemsTC.thaumiumSword),
+                new ItemStack(ItemsTC.quicksilver),
+                new ItemStack(ItemsTC.nuggets, 1, 10),
+                new ItemStack(ModItems.ResourceNS, 1, 1),
+                new ItemStack(ModItems.ResourceNS, 1, 1),
+                new ItemStack(BlocksTC.logSilverwood)));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "distortion_pick"), new InfusionRecipe(
+                "DISTORTION_PICK",
+                new ItemStack(ModItems.DISTORTIONPICK),
+                1,
+                new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.TOOL, 30).add(Aspect.FLUX, 45),
+                new ItemStack(ItemsTC.thaumiumPick),
+                new ItemStack(ItemsTC.nuggets, 1, 10),
+                ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
+                ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY),
+                new ItemStack(BlocksTC.logGreatwood)));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "skull_axe"), new InfusionRecipe(
+                "SKULLAXE",
+                new ItemStack(ModItems.SkullAxe),
+                1,
+                new AspectList().add(Aspect.AVERSION, 60).add(NETHER, 30).add(WRATH, 30),
+                new ItemStack(ItemsTC.thaumiumAxe),
+                new ItemStack(ModItems.ResourceNS, 1, 0),
+                new ItemStack(ModItems.ResourceNS, 1, 0),
+                "gemDiamond",
+                new ItemStack(Items.SKULL, 1, 1)));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "arcane_cake"), new InfusionRecipe(
+                "FM_ARCANECAKE",
+                new ItemStack(ModBlocks.BLOCK_ARCANE_CAKE),
+                3,
+                new AspectList().add(Aspect.DESIRE, 30).add(GLUTTONY, 20).add(Aspect.CRAFT, 45),
+                new ItemStack(Items.CAKE),
+                new ItemStack(ItemsTC.salisMundus),
+                new ItemStack(Items.EGG),
+                new ItemStack(ModItems.GluttonyShard),
+                new ItemStack(Items.MILK_BUCKET),
+                new ItemStack(Items.EGG),
+                new ItemStack(ModItems.GluttonyShard)));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "wrath_cage"), new InfusionRecipe(
+                "WRATH_CAGE",
+                new ItemStack(ModBlocks.WRATH_CAGE),
+                10,
+                new AspectList().add(RegistryHandler.WRATH, 125).add(Aspect.MAGIC, 125).add(Aspect.BEAST, 125).add(Aspect.MECHANISM, 75),
+                new ItemStack(BlocksTC.metalBlockThaumium),
+                new ItemStack(Items.DIAMOND),
+                new ItemStack(ModItems.ResourceNS, 1, 0),
+                new ItemStack(BlocksTC.jarNormal),
+                new ItemStack(Items.DIAMOND),
+                new ItemStack(ModItems.ResourceNS, 1, 0),
+                new ItemStack(BlocksTC.jarNormal),
+                new ItemStack(Items.DIAMOND),
+                new ItemStack(ModItems.ResourceNS, 1, 0),
+                new ItemStack(BlocksTC.jarNormal),
+                new ItemStack(Items.DIAMOND),
+                new ItemStack(ModItems.ResourceNS, 1, 0),
+                new ItemStack(BlocksTC.jarNormal)));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "diabolist_fork"), new InfusionRecipe(
+                "DIABOLIST_FORK",
+                new ItemStack(ModItems.DIABOLISTFORK),
+                1,
+                new AspectList().add(RegistryHandler.NETHER, 15).add(Aspect.MECHANISM, 15).add(Aspect.ENERGY, 15),
+                new ItemStack(ItemsTC.thaumiumSword),
+                new ItemStack(Items.REDSTONE),
+                new ItemStack(Items.QUARTZ),
+                new ItemStack(Items.QUARTZ),
+                new ItemStack(Items.QUARTZ)));
         try {
 
             Item ingot = Items.IRON_INGOT;
@@ -234,45 +229,45 @@ private static void initInfusionRecipes() {
                 }
             }
             ((ItemDragonslayer) ModItems.DRAGONSLAYER).repair = ingot;
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "dragon_slayer"), new InfusionRecipe(
-            "DRAGONSLAYER",
-            new ItemStack(ModItems.DRAGONSLAYER, 1),
-            6,
-            new AspectList().add(Aspect.LIGHT, 60).add(Aspect.ORDER, 30).add(Aspect.MAN, 60).add(Aspect.METAL, 100),
-            new ItemStack(sword),
-            new ItemStack(Items.NETHER_STAR, 1),
-            new ItemStack(Items.GOLDEN_HELMET, 1, 0),
-            new ItemStack(Items.WRITABLE_BOOK, 1),
-            new ItemStack(Items.ENDER_PEARL, 1)));
+            ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "dragon_slayer"), new InfusionRecipe(
+                    "DRAGONSLAYER",
+                    new ItemStack(ModItems.DRAGONSLAYER, 1),
+                    6,
+                    new AspectList().add(Aspect.LIGHT, 60).add(Aspect.ORDER, 30).add(Aspect.MAN, 60).add(Aspect.METAL, 100),
+                    new ItemStack(sword),
+                    new ItemStack(Items.NETHER_STAR, 1),
+                    new ItemStack(Items.GOLDEN_HELMET, 1, 0),
+                    new ItemStack(Items.WRITABLE_BOOK, 1),
+                    new ItemStack(Items.ENDER_PEARL, 1)));
         } catch (Exception e) {
-        LogHandler.log(Level.INFO, e, "Forbidden Magic wasn't unbalanced enough for Draconic Evolution.");
+            LogHandler.log(Level.INFO, e, "Forbidden Magic wasn't unbalanced enough for Draconic Evolution.");
+        }
+
+        ItemStack greedy = new ItemStack(Items.GOLDEN_SWORD);
+        EnumInfusionEnchantmentFM.addInfusionEnchantment(greedy, EnumInfusionEnchantmentFM.GREEDY, 1);
+        InfusionEnchantmentRecipeFM IEGREEDY = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.GREEDY, (new AspectList()).add(Aspect.EARTH, 20).add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 50), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), new ItemStack(BlocksTC.hungryChest), new ItemStack(Items.EMERALD));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IEGREEDY"), IEGREEDY);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IEGREEDYFAKE"), new InfusionEnchantmentRecipeFM(IEGREEDY, greedy));
+
+        ItemStack consuming = new ItemStack(Items.GOLDEN_PICKAXE);
+        EnumInfusionEnchantmentFM.addInfusionEnchantment(consuming, EnumInfusionEnchantmentFM.CONSUMING, 1);
+        InfusionEnchantmentRecipeFM IECONSUMING = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.CONSUMING, (new AspectList()).add(Aspect.FIRE, 40).add(Aspect.TOOL, 40).add(Aspect.VOID, 40), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), new ItemStack(Items.IRON_PICKAXE), new ItemStack(Items.LAVA_BUCKET));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECONSUMING"), IECONSUMING);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECONSUMINGFAKE"), new InfusionEnchantmentRecipeFM(IECONSUMING, consuming));
+
+        ItemStack educational = new ItemStack(ItemsTC.voidSword);
+        EnumInfusionEnchantmentFM.addInfusionEnchantment(educational, EnumInfusionEnchantmentFM.EDUCATIONAL, 1);
+        InfusionEnchantmentRecipeFM IECEDU = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.EDUCATIONAL, (new AspectList()).add(Aspect.MIND, 30).add(Aspect.MAGIC, 20).add(Aspect.AVERSION, 20), new IngredientNBTTC(new ItemStack(Items.ENCHANTED_BOOK)), new ItemStack(ItemsTC.brain));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECEDU"), IECEDU);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECEDUFAKE"), new InfusionEnchantmentRecipeFM(IECEDU, educational));
+
+        ItemStack voidtouched = new ItemStack(ModItems.MorphPickaxe);
+        EnumInfusionEnchantmentFM.addInfusionEnchantment(voidtouched, EnumInfusionEnchantmentFM.VOIDTOUCHED, 1);
+        InfusionEnchantmentRecipeFM IECVOID = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.VOIDTOUCHED, (new AspectList()).add(Aspect.ELDRITCH, 50).add(ENVY, 30).add(Aspect.DARKNESS, 50).add(Aspect.VOID, 50), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), "ingotVoid", "ingotVoid", "ingotVoid", "ingotVoid", new ItemStack(ModItems.ResourceNS, 1, 1), new ItemStack(ModItems.ResourceNS, 1, 1), new ItemStack(ModItems.ResourceNS, 1, 1));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECVOID"), IECVOID);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECVOIDFAKE"), new InfusionEnchantmentRecipeFM(IECVOID, voidtouched));
+
     }
-
-    ItemStack greedy = new ItemStack(Items.GOLDEN_SWORD);
-    EnumInfusionEnchantmentFM.addInfusionEnchantment(greedy, EnumInfusionEnchantmentFM.GREEDY, 1);
-    InfusionEnchantmentRecipeFM IEGREEDY = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.GREEDY, (new AspectList()).add(Aspect.EARTH, 20).add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 50), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), new ItemStack(BlocksTC.hungryChest), new ItemStack(Items.EMERALD));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IEGREEDY"), IEGREEDY);
-    ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IEGREEDYFAKE"), new InfusionEnchantmentRecipeFM(IEGREEDY, greedy));
-
-    ItemStack consuming = new ItemStack(Items.GOLDEN_PICKAXE);
-    EnumInfusionEnchantmentFM.addInfusionEnchantment(consuming, EnumInfusionEnchantmentFM.CONSUMING, 1);
-    InfusionEnchantmentRecipeFM IECONSUMING = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.CONSUMING, (new AspectList()).add(Aspect.FIRE, 40).add(Aspect.TOOL, 40).add(Aspect.VOID, 40), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), new ItemStack(Items.IRON_PICKAXE), new ItemStack(Items.LAVA_BUCKET));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECONSUMING"), IECONSUMING);
-    ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECONSUMINGFAKE"), new InfusionEnchantmentRecipeFM(IECONSUMING, consuming));
-
-    ItemStack educational = new ItemStack(ItemsTC.voidSword);
-    EnumInfusionEnchantmentFM.addInfusionEnchantment(educational, EnumInfusionEnchantmentFM.EDUCATIONAL, 1);
-    InfusionEnchantmentRecipeFM IECEDU = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.EDUCATIONAL, (new AspectList()).add(Aspect.MIND, 30).add(Aspect.MAGIC, 20).add(Aspect.AVERSION, 20), new IngredientNBTTC(new ItemStack(Items.ENCHANTED_BOOK)), new ItemStack(ItemsTC.brain));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECEDU"), IECEDU);
-    ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECEDUFAKE"), new InfusionEnchantmentRecipeFM(IECEDU, educational));
-
-    ItemStack voidtouched = new ItemStack(ModItems.MorphPickaxe);
-    EnumInfusionEnchantmentFM.addInfusionEnchantment(voidtouched, EnumInfusionEnchantmentFM.VOIDTOUCHED, 1);
-    InfusionEnchantmentRecipeFM IECVOID = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.VOIDTOUCHED, (new AspectList()).add(Aspect.ELDRITCH, 50).add(ENVY, 30).add(Aspect.DARKNESS, 50).add(Aspect.VOID, 50), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), "ingotVoid", "ingotVoid", "ingotVoid", "ingotVoid", new ItemStack(ModItems.ResourceNS, 1, 1), new ItemStack(ModItems.ResourceNS, 1, 1), new ItemStack(ModItems.ResourceNS, 1, 1));
-    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECVOID"), IECVOID);
-    ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECVOIDFAKE"), new InfusionEnchantmentRecipeFM(IECVOID, voidtouched));
-
-}
 
     private static void initBotaniaRecipe() {
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "whisper_weed"), new ShapedArcaneRecipe(
