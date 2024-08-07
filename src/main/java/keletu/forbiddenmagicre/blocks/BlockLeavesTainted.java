@@ -49,7 +49,7 @@ public class BlockLeavesTainted extends BlockLeaves implements IShearable, IHasM
     public enum LeafGrowth implements IStringSerializable {
         FRESH(0), GROWING(1), READY(2), MATURED(3);
 
-        private int meta;
+        private final int meta;
 
         LeafGrowth(int meta) {
             this.meta = meta;
@@ -117,11 +117,11 @@ public class BlockLeavesTainted extends BlockLeaves implements IShearable, IHasM
 
     @SideOnly(value=Side.CLIENT)
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
-        list.add(new ItemStack((Block)this));
+        list.add(new ItemStack(this));
     }
 
     protected ItemStack getSilkTouchDrop(IBlockState state) {
-        return new ItemStack((Block)this);
+        return new ItemStack(this);
     }
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {

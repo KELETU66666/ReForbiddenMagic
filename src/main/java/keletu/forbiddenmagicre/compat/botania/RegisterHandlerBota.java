@@ -28,7 +28,7 @@ public class RegisterHandlerBota {
 
     @SubscribeEvent
     public static void onItemRegister(RegistryEvent.Register<Item> event) {
-        if(Loader.isModLoaded("botania"))
+        if (Loader.isModLoaded("botania"))
             for (SubTileFlower subTileFlower : subTiles) {
                 BotaniaAPI.registerSubTile(subTileFlower.getKey(), subTileFlower.getSubTileClass());
                 BotaniaAPI.addSubTileToCreativeMenu(subTileFlower.getKey());
@@ -37,9 +37,8 @@ public class RegisterHandlerBota {
     }
 
     @SubscribeEvent
-    public static void onModelRegister( ModelRegistryEvent event )
-    {
-        if(Loader.isModLoaded("botania"))
+    public static void onModelRegister(ModelRegistryEvent event) {
+        if (Loader.isModLoaded("botania"))
             for (SubTileFlower subTileFlower : subTiles) {
                 BotaniaAPIClient.registerSubtileModel(subTileFlower.getKey(), new ModelResourceLocation("botania:" + subTileFlower.getKey()));
             }
@@ -54,9 +53,9 @@ public class RegisterHandlerBota {
         addSubTile("astralbloom", SubTileAstralBloom.class);
         addSubTile("euclidaisy", SubTileEuclidaisy.class);
         addSubTile("tainthistle", SubTileTainthistle.class);
-        if(Loader.isModLoaded("bloodmagic"))
+        if (Loader.isModLoaded("bloodmagic"))
             addSubTile("bloodthorn", SubTileBloodthorn.class);
-        if(Loader.isModLoaded("psi"))
+        if (Loader.isModLoaded("psi"))
             addSubTile("mindlotus", SubTileMindLotus.class);
         addSubTile("whisperweed", SubTileWhisperweed.class);
     }
@@ -79,8 +78,7 @@ public class RegisterHandlerBota {
                 ItemStack tainthistle = ItemBlockSpecialFlower.ofType("tainthistle");
                 SubTileTainthistle.lexicon.setIcon(tainthistle);
 
-                if (Loader.isModLoaded("bloodmagic"))
-                {
+                if (Loader.isModLoaded("bloodmagic")) {
                     SubTileBloodthorn.lexicon = new MagicLexicon("bloodthorn", BotaniaAPI.categoryFunctionalFlowers, "BloodMagic");
                     SubTileBloodthorn.lexicon.addPage(BotaniaAPI.internalHandler.textPage("forbidden.lexicon.bloodthorn.0"));
                     ItemStack bloodThorn = ItemBlockSpecialFlower.ofType("bloodthorn");

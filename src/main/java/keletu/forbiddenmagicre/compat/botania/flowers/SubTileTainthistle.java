@@ -54,11 +54,12 @@ public class SubTileTainthistle extends SubTileGenerating {
                 }
             }
         }
-        if (burnTime > 0) {
-            if (supertile.getWorld().rand.nextInt(8) == 0 && supertile.getWorld().isRemote)
-                doBurnParticles();
+        if (burnTime > 0)
             burnTime--;
-        }
+        //if (supertile.getWorld().isRemote) {
+        //    if (supertile.getWorld().rand.nextInt(8) == 0 && burnTime > 0)
+        //        doBurnParticles();
+        //}
     }
 
     @Override
