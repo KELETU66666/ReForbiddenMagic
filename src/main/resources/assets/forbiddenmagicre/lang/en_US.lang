@@ -112,7 +112,7 @@ psi.spellpiece.trick_genmana.desc=Causes a Mind Lotus at the target position to 
 psi.piecegroup.thaumic=Thaumaturgy
 psi.piecegroup.thaumic.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Thaumaturgy.
 psi.piecegroup.botany=Botany
-psi.piecegroup.botany.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Botany.<BR><BR>The red piece of this group, "Trick: Generate Mana", allows you to generate mana at a targetted Mind Lotus flower. Higher Stability increases the cost of the spell, but lower Stability induces more stress in the flower, hastening its decay.
+psi.piecegroup.botany.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Botany.<BR>The red piece of this group, "Trick: Generate Mana", allows you to generate mana at a targetted Mind Lotus flower. Higher Stability increases the cost of the spell, but lower Stability induces more stress in the flower, hastening its decay.
 
 #Enchantment
 enchantment.wrath=Wrath
