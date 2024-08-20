@@ -89,6 +89,7 @@ item.eldritch_orb.name=Eldritch Blood Orb
 
 ritual.reforbiddenmagic.pealOfDelayedInsanity=Plea of Delayed Insanity
 soultick.ritual_sanity=Ritual Sanity upkeep cost
+
 # Spells
 psi.spellparam.stability=Stability
 psi.spellpiece.trick_deathgaze=Trick: Death Gaze
@@ -120,6 +121,8 @@ enchantment.infusion.GREEDY=Greedy
 enchantment.infusion.EDUCATIONAL=Educational
 enchantment.infusion.CONSUMING=Consuming
 enchantment.infusion.VOIDTOUCHED=Void Touched
+
+enchantment.forbiddenmagic.wrath.desc=Increases the damage of the item. Compatible with other damage increasing enchantments like Sharpness.
 
 
 #Research ForbiddenMagic
