@@ -124,7 +124,6 @@ enchantment.infusion.VOIDTOUCHED=Void Touched
 
 enchantment.forbiddenmagic.wrath.desc=Increases the damage of the item. Compatible with other damage increasing enchantments like Sharpness.
 
-
 #Research ForbiddenMagic
 forbiddenmagic.research.morph_tools.title=Multitools
 forbiddenmagic.research.morph_tools.text=As a person who tends to use my tools for nearly everything, it would be nice to have more inventory space that's not cluttered with my multiple tools. Unfortunately, I can't just add multiple of these enchantments to the same tool... or can I? Something worth experimenting is the idea of perhaps having a tool in which I can switch out enchantments without having to disenchant it and re-enchant it. Thankfully, I might have something that could mimic the idea rather well.
