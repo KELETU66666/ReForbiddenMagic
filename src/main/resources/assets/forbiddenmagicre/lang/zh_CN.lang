@@ -226,5 +226,6 @@ got.lm_badfood=你吃下了垃圾食品。
 got.lm_goodfood=你吃下了营养丰富的食物。
 research.f_badfood.text=吃些垃圾食品。
 research.f_goodfood.text=吃些富含营养的食物。
+tc.research_category.APOCRYPHA=Apocrypha
 
-tc.research_category.APOCRYPHA=Apocryphamessage.forbiddenmagic.knowledge_scribing_tools.deplete=You absorb the stored knowledge from your scribing tools.
+message.forbiddenmagic.knowledge_scribing_tools.deplete=You absorb the stored knowledge from your scribing tools.
