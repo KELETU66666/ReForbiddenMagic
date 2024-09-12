@@ -34,6 +34,7 @@ item.resourceshard.4.name=Sloth Shard
 item.resourceshard.5.name=Greed Shard
 item.gluttony_shard.name=Gluttony Shard
 item.sword_dragon_slayer.name=Sword of the Dragonslayer
+item.crystal_scribing_tools.name=Crystal Scribing Tools
 
 #block
 tile.black_rose_bush.name=Umbral Rosebush
@@ -192,6 +193,11 @@ forbiddenmagic.research.blood_rapier.complete.text=There's nothing more dangerou
 forbiddenmagic.research.divine_orb.title=Orb of Bel-Shamharoth
 forbiddenmagic.research.divine_orb.text=Strange whispers speak of power and dark energy in the spaces between the stars where even gods dare not gaze. Whether or not the whispers are telling the truth, it turns out that you can fit a lot of things in those spaces.
 forbiddenmagic.research.divine_orb.complete.text=Strange whispers speak of power and dark energy in the spaces between the stars where even gods dare not gaze. Whether or not the whispers are telling the truth, it turns out that you can fit a lot of things in those spaces.<BR>By infusing a blood orb with the essence of the void and arcane geometries, you create an orb capable of storing vast amounts of life energy. 80,000,000 LP, to be exact. Storing life energy in a space not bound by Euclidean geometry can't possibly go wrong!
+
+#Research TC4 Research Port
+forbiddenmagic.research.crystal_scribing_tools.title=Crystal Scribing Tools
+forbiddenmagic.research.crystal_scribing_tools.text=Combining elemetal shards with your inkwell results in some interesting effects.
+forbiddenmagic.research.crystal_scribing_tools.complete.text=Combining elemetal shards with your inkwell results in some interesting effects. The Crystal Scribing tools seem to absorb knowledge as I use them to write. Once the well is empty of ink, I can absorb this knowledge for a small burst of research points by holding the tools in my hand and right-clicking. Unfortunately, it burns the tool out and turns it back into mundane scribing tools again.
 
 #item tab
 itemGroup.fm_crystal=Mob Crystal

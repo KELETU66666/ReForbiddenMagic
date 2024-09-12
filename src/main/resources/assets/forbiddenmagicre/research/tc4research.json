@@ -1,0 +1,34 @@
+{
+  "entries": [
+    {
+      "key": "FM_CRYSTAL_SCRIBING_TOOLS",
+      "name": "forbiddenmagic.research.crystal_scribing_tools.title",
+      "icons": [
+        "forbiddenmagicre:crystal_scribing_tools"
+      ],
+      "category": "APOCRYPHA",
+      "location": [
+        -2,
+        0
+      ],
+      "parents": [
+        "LOSTMAGIC"
+      ],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.crystal_scribing_tools.text",
+          "required_knowledge": [
+            "THEORY;ARTIFICE;1",
+            "OBSERVATION;ARTIFICE;1"
+          ]
+        },
+        {
+          "text": "forbiddenmagic.research.crystal_scribing_tools.complete.text",
+          "recipes": [
+            "forbiddenmagicre:crystal_scribing_tools"
+          ]
+        }
+      ]
+    }
+  ]
+}

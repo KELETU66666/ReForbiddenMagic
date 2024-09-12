@@ -5,6 +5,7 @@ import keletu.forbiddenmagicre.compat.bloodmagic.ItemBloodRapier;
 import keletu.forbiddenmagicre.compat.bloodmagic.ItemDivineOrb;
 import keletu.forbiddenmagicre.compat.psi.ItemAmuletPsi;
 import keletu.forbiddenmagicre.compat.psi.ItemExtraColorizer;
+import keletu.forbiddenmagicre.compat.tc4research.ItemCrystalWell;
 import keletu.forbiddenmagicre.enchantments.EnchantmentsFM;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
@@ -47,6 +48,9 @@ public class RegistryHandler {
         if (Loader.isModLoaded("bloodmagic")) {
             event.getRegistry().registerAll(new ItemDivineOrb());
             event.getRegistry().registerAll(new ItemBloodRapier());
+        }
+        if (Loader.isModLoaded("oldresearch")) {
+        	event.getRegistry().registerAll(new ItemCrystalWell());
         }
     }
 

@@ -15,6 +15,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.oredict.OreDictionary;
+
 import org.apache.logging.log4j.Level;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
@@ -79,6 +81,16 @@ public class InitRecipes {
                 "AAA",
                 'T', ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
                 'A', new ItemStack(BlocksTC.stoneArcane)));
+        
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "crystal_scribing_tools"), new ShapedArcaneRecipe(
+                defaultGroup,
+                "FM_CRYSTAL_SCRIBING_TOOLS",
+                15,
+                new AspectList(),
+                new ItemStack(ModItems.CRYSTAL_WELL),
+                "SWW",
+                'W', ThaumcraftApiHelper.makeCrystal(Aspect.WATER),
+                'S', new ItemStack(ItemsTC.scribingTools, 1, OreDictionary.WILDCARD_VALUE)));
     }
 
     private static void initCrucibleRecipes() {
