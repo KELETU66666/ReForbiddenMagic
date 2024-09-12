@@ -16,5 +16,7 @@ public class InitResearch {
             ThaumcraftApi.registerResearchLocation(new ResourceLocation("forbiddenmagicre", "research/psi.json"));
         if(Loader.isModLoaded("bloodmagic") && Compat.bloodMagic)
             ThaumcraftApi.registerResearchLocation(new ResourceLocation("forbiddenmagicre", "research/bloodmagic.json"));
+        if(Loader.isModLoaded("oldresearch"))
+            ThaumcraftApi.registerResearchLocation(new ResourceLocation("forbiddenmagicre", "research/tc4research.json"));
     }
 }

@@ -1,5 +1,6 @@
 package keletu.forbiddenmagicre.init;
 
+import keletu.forbiddenmagicre.compat.tc4research.ItemCrystalWell;
 import keletu.forbiddenmagicre.items.ItemMobCrystal;
 import keletu.forbiddenmagicre.items.food.ItemGluttonyShard;
 import keletu.forbiddenmagicre.items.food.ItemTaintFurit;
@@ -33,4 +34,5 @@ public class ModItems {
     public static final Item TAINTCHARCOAL = new ResourceTaintCharcoal();
     public static final Item MOB_CRYSTAL = new ItemMobCrystal();
     public static final Item DRAGONSLAYER = new ItemDragonslayer();
+    public static final Item CRYSTAL_WELL = new ItemCrystalWell();
 }
