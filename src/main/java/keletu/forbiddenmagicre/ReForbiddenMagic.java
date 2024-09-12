@@ -1,14 +1,18 @@
 package keletu.forbiddenmagicre;
 
 import keletu.forbiddenmagicre.compat.botania.RegisterHandlerBota;
+import static keletu.forbiddenmagicre.compat.botania.RegisterHandlerBota.registerFlowers;
 import keletu.forbiddenmagicre.init.InitRecipes;
 import keletu.forbiddenmagicre.init.InitResearch;
 import keletu.forbiddenmagicre.init.InitVanillaRecipes;
+import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.proxy.CommonProxy;
 import keletu.forbiddenmagicre.util.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -18,23 +22,31 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
-import static keletu.forbiddenmagicre.compat.botania.RegisterHandlerBota.registerFlowers;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.research.ResearchCategories;
 
 @Mod(
         modid = Reference.MOD_ID,
         name = Reference.NAME,
         version = Reference.VERSION,
-         dependencies = "required-after:lostmagic"
+         dependencies = "required-after:thaumcraft;after:bloodmagic"
 )
-public class forbiddenmagicre {
+public class ReForbiddenMagic {
+
+    public static CreativeTabs tab = new CreativeTabs(Reference.MOD_ID) {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ModItems.ResourceNS, 1, 0);
+        }
+    };
 
     public static CreativeTabs TabCrystal = new ItemTabCrystal();
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
     /** This is the instance of your mod as created by Forge. It will never be null. */
     @Mod.Instance(Reference.MOD_ID)
-    public static forbiddenmagicre INSTANCE;
+    public static ReForbiddenMagic INSTANCE;
 
     /**
      * This is the first initialization event. Register tile entities here.
@@ -56,6 +68,8 @@ public class forbiddenmagicre {
      */
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        ResearchCategories.registerCategory("APOCRYPHA", "FIRSTSTEPS", new AspectList().add(Aspect.LIGHT, 5).add(Aspect.ELDRITCH, 5).add(Aspect.AURA, 5).add(Aspect.MAGIC, 5).add(Aspect.DARKNESS, 5).add(Aspect.FLUX, 3).add(Aspect.MIND, 5), new ResourceLocation(Reference.MOD_ID, "textures/misc/forbidden.png"), new ResourceLocation(Reference.MOD_ID, "textures/misc/runecircle.png"));
+
         InitRecipes.initRecipes();
         InitResearch.registerResearch();
         InitVanillaRecipes.init();

@@ -11,7 +11,7 @@ import WayofTime.bloodmagic.orb.IBloodOrb;
 import WayofTime.bloodmagic.util.helper.NetworkHelper;
 import WayofTime.bloodmagic.util.helper.PlayerHelper;
 import WayofTime.bloodmagic.util.helper.TextHelper;
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import keletu.forbiddenmagicre.util.Reference;
@@ -38,13 +38,12 @@ import thaumcraft.api.items.ItemsTC;
 
 import java.util.List;
 
-import static fox.spiteful.lostmagic.LostMagic.tab;
 
 public class ItemDivineOrb extends ItemBindableBase implements IBloodOrb, IWarpingGear, IHasModel {
     public ItemDivineOrb() {
         setMaxStackSize(1);
         setMaxDamage(0);
-        setCreativeTab(tab);
+        setCreativeTab(ReForbiddenMagic.tab);
         setTranslationKey("eldritch_orb");
         setRegistryName("eldritch_orb");
 
@@ -153,6 +152,6 @@ public class ItemDivineOrb extends ItemBindableBase implements IBloodOrb, IWarpi
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(this, 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }

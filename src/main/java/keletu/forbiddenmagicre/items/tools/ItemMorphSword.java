@@ -1,7 +1,7 @@
 package keletu.forbiddenmagicre.items.tools;
 
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.enchantments.inchantment.EnumInfusionEnchantmentFM;
-import keletu.forbiddenmagicre.forbiddenmagicre;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
@@ -100,7 +100,7 @@ public class ItemMorphSword extends ItemSword implements IHasModel {
     }
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(this, 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(this, 0, "inventory");
     }
     public void onUpdate(ItemStack stack, World world, Entity entity, int fuckObfuscation, boolean fuckObfuscation2) {
         super.onUpdate(stack, world, entity, fuckObfuscation, fuckObfuscation2);

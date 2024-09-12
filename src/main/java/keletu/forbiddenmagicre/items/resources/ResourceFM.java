@@ -1,6 +1,8 @@
 package keletu.forbiddenmagicre.items.resources;
 
-import keletu.forbiddenmagicre.forbiddenmagicre;
+
+import keletu.forbiddenmagicre.ReForbiddenMagic;
+import static keletu.forbiddenmagicre.ReForbiddenMagic.tab;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,8 +19,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
-
-import static fox.spiteful.lostmagic.LostMagic.tab;
 
 public class ResourceFM extends Item implements IHasModel {
 
@@ -69,7 +69,7 @@ public class ResourceFM extends Item implements IHasModel {
     @Override
     public void registerModels() {
         for (int i = 0; i < 3; i++) {
-            forbiddenmagicre.proxy.registerItemRenderer(this, i, "inventory");
+            ReForbiddenMagic.proxy.registerItemRenderer(this, i, "inventory");
         }
     }
 }

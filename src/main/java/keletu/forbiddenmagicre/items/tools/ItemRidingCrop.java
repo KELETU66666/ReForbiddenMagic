@@ -1,6 +1,6 @@
 package keletu.forbiddenmagicre.items.tools;
 
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
@@ -84,6 +84,6 @@ public class ItemRidingCrop extends ItemSword implements IHasModel {
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(this, 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }

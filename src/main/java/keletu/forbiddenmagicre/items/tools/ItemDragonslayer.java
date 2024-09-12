@@ -1,8 +1,7 @@
 package keletu.forbiddenmagicre.items.tools;
 
 import cofh.redstoneflux.api.IEnergyContainerItem;
-import fox.spiteful.lostmagic.LostMagic;
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import keletu.forbiddenmagicre.util.RegistryHandler;
@@ -31,7 +30,7 @@ public class ItemDragonslayer extends ItemSword implements IHasModel {
         super(ToolMaterial.DIAMOND);
         this.setRegistryName("dragon_slayer");
         this.setTranslationKey("sword_dragon_slayer");
-        this.setCreativeTab(LostMagic.tab);
+        this.setCreativeTab(ReForbiddenMagic.tab);
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.ITEMS.add(this);
@@ -135,6 +134,6 @@ public class ItemDragonslayer extends ItemSword implements IHasModel {
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(this, 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }

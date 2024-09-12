@@ -14,6 +14,11 @@ public class ConfigFM {
         @Config.Comment("Enable to let the Wrath Cage imprint on ANY non-boss mob.  May break your game or make your game Awesome.")
         public static boolean wrathCrazy = false;
 
+
+        @Config.LangKey("Blood Magic")
+        @Config.Comment("Disable to disable Blood Magic compatibility")
+        public static boolean bloodMagic = true;
+
         @Config.LangKey("Wrath Cage Fuel Cost")
         @Config.Comment("Cost of essentia per round of spawns in the Wrath Cage.  Raise to increase essentia costs.  Defaults to 5.  Set to 0 to remove the need to fuel the Wrath Cage.  Setting the cost above 64 is not recommended.")
         public static int wrathCost = 20;

@@ -1,6 +1,6 @@
 package keletu.forbiddenmagicre.compat.psi;
 
-import fox.spiteful.lostmagic.Lumberjack;
+import keletu.forbiddenmagicre.Lumberjack;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import org.apache.logging.log4j.Level;

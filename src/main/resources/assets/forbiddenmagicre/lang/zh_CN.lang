@@ -1,20 +1,23 @@
 language.region=CN
 language.code=zh_CN
 
-#aspects
-tc.aspect.infernus=The Nether, Demons, Hellfire
-tc.aspect.ira=Wrath, Anger, Rage
-tc.aspect.gula=Gluttony, Consumption, Indulgence
-tc.aspect.invidia=Envy, Jealousy, Insecurity
-tc.aspect.superbia=Pride, Arrogance, Disdain
-tc.aspect.desidia=Sloth, Laziness, Procrastination
-tc.aspect.luxuria=Lust, Desire, Excess
+#要素
+tc.aspect.infernus=下界, 恶魔, 地狱火
+tc.aspect.ira=暴怒,恼怒,怒火
+tc.aspect.gula=饕餮,挥霍,放纵
+tc.aspect.invidia=妒忌, 嫉妒, 不安
+tc.aspect.superbia=傲慢,自大,轻蔑
+tc.aspect.desidia=怠惰,懒散,拖延
+tc.aspect.luxuria=欲望,欲念,无度
 
-#item
+#道具
+item.purifying_shovel.name=净化铲
+item.ring_nutrition.name=滋养指环
+item.crystal_scribing_tools.name=水晶笔与墨
 item.morph_sword.name=避役剑
-item.morph_pick.name=Chameleon Pickaxe
-item.morph_axe.name=Chameleon Axe
-item.morph_shovel.name=Chameleon Shovel
+item.morph_pick.name=避役稿
+item.morph_axe.name=避役斧
+item.morph_shovel.name=避役铲
 item.skull_axe.name=啄颅斧
 item.distortion_pick.name=畸变镐
 item.riding_crop.name=马鞭
@@ -27,14 +30,15 @@ item.diabolist_fork.name=妖魔之叉
 item.mobcrystalempty.name=空白留影水晶
 item.mobcrystal.name=%s 留影水晶
 item.resourceshard.0.name=暴怒碎片
-item.resourceshard.1.name=嫉妒碎片
+item.resourceshard.1.name=妒忌碎片
 item.resourceshard.2.name=傲慢碎片
 item.resourceshard.3.name=欲望碎片
-item.resourceshard.4.name=懈怠碎片
+item.resourceshard.4.name=怠惰碎片
 item.resourceshard.5.name=贪婪碎片
 item.gluttony_shard.name=暴食碎片
+item.sword_dragon_slayer.name=屠龙者之剑
 
-#block
+#方块
 tile.black_rose_bush.name=暗影玫瑰丛
 tile.black_rose.name=暗影玫瑰
 tile.arcane_cake.name=奥术蛋糕
@@ -45,112 +49,182 @@ tile.taint_planks.name=腐化木板
 tile.tainted_stone.name=腐化石头
 tile.tainted_brick.name=腐化石砖
 tile.wrath_cage.name=暴怒之笼
-#Botania
+tile.netherstar_block.name=下界之星方块
+
+#药水效果
+potion.blood_seal=血之印记
+potion.dragonwrack=龙族杀手
+
+#植物魔法
+tile.botania:flower.tainthistle.name=腐化蓟
+forbidden.lexicon.tainthistle=它不会扫荡干净你的空百奇盒子的
+forbidden.lexicon.tainthistle.0=那令人厌恶的&1腐化蓟&0原本是生长于魔法实验后产生的腐化物质中的植物.它会消灭掉它能找到的一切物质,并试图转化为Mana.因为植物学是一项环境友好型的业务,所以这里也没什么可以多说的.<BR>&o比Spirit Vine更具有入侵性&r
+
+tile.botania:flower.bloodthorn.name=血荆棘
+forbidden.lexicon.bloodthorn=血荆棘
+forbidden.lexicon.bloodthorn.0=源自一些令人作呕并且极度扭曲的血魔法师的实验, the &1血荆棘&0 是一种神秘红色花朵,长期浸泡于血液之中,直到它发展出了吞噬一切生命力的特性.它会消耗魔力并对周围的所有与炼金术不相配的生物 施加以极高级别的虚弱.<BR>&o崖昆(Yakone) 的遗产&r
+
 tile.botania:flower.euclidaisy.name=欧氏菊
 forbidden.lexicon.euclidaisy=欧氏菊
-forbidden.lexicon.euclidaisy.0=The eerie, pink &1Euclidaisy&0 is an oddity. It uses large amounts of mana to conjure some sort of strange, crystallized substance that only seems useful to Thaumaturges.<br>&oIt doesn't combustion bend.&r
+forbidden.lexicon.euclidaisy.0=那古怪的粉色&1欧氏菊&0 十分不可思议. 它耗费大量魔力变幻出 一些看来只有神秘使用得着的结晶物质。<BR>&o It doesn't combustion bend（他不会燃烧弯曲）.&r
 
 tile.botania:flower.astralbloom.name=星域花
 forbidden.lexicon.astralbloom=星域花
-forbidden.lexicon.astralbloom.0=The strange &1Astral Blooms&0 seem to devour exhorbitant amounts of mana to do nothing at all.<br>Thaumaturges insist that the flowers purify harmful taint from an invisible aura that only they can see. What will those charlatans do next? Try and sell you magical crystals?
+forbidden.lexicon.astralbloom.0=那奇怪的 &1星域花&0似乎吞噬了大量的魔法，却什么都不做。<br>神秘使坚持认为这种花能净化只有它们才能看到的，肉眼不可见灵气场中的有害咒波。那些骗子接下来会做什么？试着卖给你魔力水晶碎片？
 
-tile.botania:flower.mindlotus.name=心灵之莲
-forbidden.lexicon.mindlotus=心灵之莲
-forbidden.lexicon.mindlotus.0=The &1Mind Lotus&0 causes mental unease just by being nearby, as if it were prying into your mind.<br>In spite of this, it doesn't seem to generate any mana on its own. Maybe it needs some sort of push?<br>The flower seems oddly frail, decaying even in situations where other flowers would survive.
-forbidden.lexicon.mindlotus.1=Don't eat it!
+tile.botania:flower.mindlotus.name=心灵莲
+forbidden.lexicon.mindlotus=心灵莲
+forbidden.lexicon.mindlotus.0=只要 &1心灵莲 &0 在附近，就会引起心灵的不安，好像它在窥探你的心<br>尽管如此，它似乎不能靠自己产生任何mana。也许它需要某种力量推动？<br>这种花看起来异常脆弱，即使在其他花能存活的情况下也会腐烂。
+forbidden.lexicon.mindlotus.1=不要拿来吃！
 
 tile.botania:flower.whisperweed.name=细语草
 forbidden.lexicon.whisperweed=细语草
-forbidden.lexicon.whisperweed.0=The &1Whisperweed&0 is an unpleasant plant that whispers secrets into the ears of anyone who'll listen. There doesn't seem to be much point to the plant, since the secrets aren't even relevant to Botany. Bringing one to a Thaumaturge seems to be the only relevance it has.<br>&oMore secrets than Wan Shi Tong&r
+forbidden.lexicon.whisperweed.0= &1细语草&0 是种不开心的植物,它 总是会向哪些愿意聆听的人倾 吐研究的奥秘.关于这个植物 似乎并没有什么要说的,因为 那些神秘研究和植物学的联系不大.把一个世俗的人领进神秘学的大门似乎是他唯一的作用.<BR>&o比万事通知道的秘密还要多&r
 
 #Psi
 item.cadcolorizerThaumic.name=神秘CAD着色器
 item.cadcolorizerFlame.name=烈焰CAD着色器
 item.amuletmentalagony.name=心智紊乱吊坠
 
-#BloodMagic
+#B血魔法
+item.scribe_blood.name=血腥之笔与墨
 item.blood_rapier.name=血鸮西洋剑
 item.eldritch_orb.name=[邪术]气血宝珠
 
-# Spells
-psi.spellparam.stability=Stability
-psi.spellpiece.trick_deathgaze=Trick: Death Gaze
-psi.spellpiece.trick_deathgaze.desc=Applies a Death Gaze effect
-psi.spellpiece.trick_fluxflu=Trick: Flux Flu
-psi.spellpiece.trick_fluxflu.desc=Applies a Flux Flu effect
-psi.spellpiece.trick_fluxtaint=Trick: Flux Taint
-psi.spellpiece.trick_fluxtaint.desc=Applies a Flux Taint effect
-psi.spellpiece.trick_warpward=Trick: Warp Ward
-psi.spellpiece.trick_warpward.desc=Applies a Warp Ward effect
-psi.spellpiece.trick_soulcross=Trick: Soul Cross
-psi.spellpiece.trick_soulcross.desc=Applies a Soul Cross effect
-psi.spellpiece.trick_allure=Trick: Allure
-psi.spellpiece.trick_allure.desc=Applies an Allure effect
-psi.spellpiece.trick_emptiness=Trick: Emptiness
-psi.spellpiece.trick_emptiness.desc=Applies an Emptiness effect
-psi.spellpiece.trick_siphonaura=Trick: Siphon Aura
-psi.spellpiece.trick_siphonaura.desc=Drains Vis from the aura to replenish Psi
-psi.spellpiece.trick_genmana=Trick: Generate Mana
-psi.spellpiece.trick_genmana.desc=Causes a Mind Lotus at the target position to generate mana
-psi.piecegroup.thaumic=Thaumaturgy
-psi.piecegroup.thaumic.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Thaumaturgy.
-psi.piecegroup.botany=Botany
-psi.piecegroup.botany.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Botany.<br><br>The red piece of this group, "Trick: Generate Mana", allows you to generate mana at a targetted Mind Lotus flower. Higher Stability increases the cost of the spell, but lower Stability induces more stress in the flower, hastening its decay.
+ritual.reforbiddenmagic.pealOfDelayedInsanity=理智之辨
+soultick.ritual_sanity=Ritual Sanity upkeep cost（仪式维持消耗（待调整））
 
-#Enchantment
-enchantment.wrath=Wrath
-enchantment.infusion.GREEDY=Greedy
-enchantment.infusion.EDUCATIONAL=Educational
-enchantment.infusion.CONSUMING=Consuming
-enchantment.infusion.VOIDTOUCHED=Void Touched
+# 魔法式（PSI）
+psi.spellparam.stability=稳定性
+psi.spellpiece.trick_deathgaze=启动式: 死亡凝视
+psi.spellpiece.trick_deathgaze.desc=应用死亡凝视效果
+psi.spellpiece.trick_fluxflu=启动式: 咒流
+psi.spellpiece.trick_fluxflu.desc=应用咒流效果
+psi.spellpiece.trick_fluxtaint=启动式: 腐毒
+psi.spellpiece.trick_fluxtaint.desc=应用腐毒效果
+psi.spellpiece.trick_warpward=启动式: 扭曲守护
+psi.spellpiece.trick_warpward.desc=应用扭曲守护效果
+psi.spellpiece.trick_soulcross=启动式: 噬魂
+psi.spellpiece.trick_soulcross.desc=应用噬魂效果
+psi.spellpiece.trick_allure=启动式: 引诱
+psi.spellpiece.trick_allure.desc=应用引诱效果
+psi.spellpiece.trick_emptiness=启动式: 空虚
+psi.spellpiece.trick_emptiness.desc=应用空虚效果
+psi.spellpiece.trick_siphonaura=启动式: 灵气场汲取
+psi.spellpiece.trick_siphonaura.desc=抽取灵气场的Vis来补充Psi
+psi.spellpiece.trick_genmana=启动式: 草本产魔
+psi.spellpiece.trick_genmana.desc=使目标位置的心灵莲生产mana
+psi.piecegroup.thaumic=神秘学
+psi.piecegroup.thaumic.desc=通过你的即兴创作, 你的CAD似乎能够再现和操纵通常与神秘学等更古老的魔法科目相联系的各种影响。
+psi.piecegroup.botany=植物魔法
+psi.piecegroup.botany.desc=这个组的红色部分，“启动式: 草本产魔”，让你以目标心灵莲生产Mana。较高的稳定性会增加法术的消耗，但较低的稳定性会给花带来更多的压力，加速它的枯萎。
+
+#附魔
+enchantment.wrath=暴怒
+enchantment.infusion.GREEDY=剥削
+enchantment.infusion.EDUCATIONAL=教育
+enchantment.infusion.CONSUMING=挥霍
+enchantment.infusion.VOIDTOUCHED=虚空之触
+
+enchantment.forbiddenmagic.wrath.desc=Increases the damage of the item. Compatible with other damage increasing enchantments like Sharpness.
+
+#禁忌魔法-研究
+
+forbiddenmagic.research.lostmagic.title=禁秘魔法
+forbiddenmagic.research.lostmagic.text=一些研究方法似乎与已经确立的类目格格不入。有时它们太过诡异，太过禁忌，太过惊悚，或者对这片甘美的大地而言太过罪恶。<BR>我也许能将不合于其他类目的研究附在魔导手册的这一部分。<PAGE><PAGE> <IMG>forbiddenmagicre:textures/misc/sigiloss2.png:0:0:128:128:.75</IMG> §o一种魔法印记§r
+
+forbiddenmagic.research.pureshovel.title=净化铲
+forbiddenmagic.research.pureshovel.text=在灵气场中释放过多的咒波有时会造成混乱。一些物态的症状似乎对寻常的移除方式具有抗性。<BR>也许我能对神秘工具进行注魔，以使其更具效力。
+forbiddenmagic.research.pureshovel.complete.text=通过将银木，灵气水晶碎片和水银与神秘锹相结合，我设计制成了一种能够挖掘腐化物的工具。它对腐化方块的挖掘效率甚至高于挖掘普通泥土的效率。如果你手持它并右击，它还能蒸发掉一定半径内的咒波黏浆。<BR>这会让那些愚蠢的紫色方块见识一下谁才是老大！
+
+forbiddenmagic.research.ringnutrition.title=滋养指环
+forbiddenmagic.research.ringnutrition.text=进食堪称一场骗局！为什么我非要吃些东西，只是为了不久后吃下更多？更别提我还不得不吃些§o有益§r的东西！吃些我从地上捡起的西瓜片已经非常健康了！<BR>或许我能找到某种方法，通过注魔来改善我获取养料的能力。
+forbiddenmagic.research.ringnutrition.complete.text=终于！我制作了一枚指环，只要我佩戴它，能够提升我吃下的大多数食物的营养价值！有些食物毒性太强，指环也无法很好的处理，而蛋糕则太太太没用了，但现在甚至是饼干和西瓜片都能让我由些许的饱腹感。
+
+forbiddenmagic.research.morph_tools.title=多合一工具
+forbiddenmagic.research.morph_tools.text=作为一个几乎在所有事上都倾向于用工具完成的人，如果不是被各种工具塞满，有更大的背包空间，那就太好了。不幸的是，我不能在同一个工具中附加不同的相冲突附魔。也许我可以试试……？ 我有个值得尝试的想法，也许有一种工具可以让我在不解除附魔的情况下切换不同的附魔。谢天谢地，也许有一些东西可以很好地模仿这个想法。
+forbiddenmagic.research.morph_tools.complete.text=在我为自己的想法买单之前，我必须认识到这个想法并不是没有缺点。我创造的工具应该最多只能有3个独立的镜像，每个镜像都不支持任何相冲突的附魔。话虽如此，我在沼泽地观察野生动物时产生了制作这种像是变色龙一样的工具的想法。变色龙的变色能力让我着迷，它不寻常的性质是每次变色之后看起来都完全不同。通过深入思考这些生物的工作方式，我决定以这些工具为基础，复现变色龙这一概念。请允许我以更深入、更合理的方式解释这一点。避役工具设计有3个不同的镜像工具，使他们能够在每个镜像承载不同的附魔。如果我想在同一把避役镐上同时拥有精准采集和时运，我可以通过简单地切换不同避役稿的镜像来实现，这样我就可以切换特定的避役镐镜像，从而获得精准采集的能力，并按需切换包含时运的不同镜像获得额外的材料。我可以在同一把避役剑的不同镜像上附魔锋利，节肢杀手和亡灵杀手。要在工具的镜像之间切换，我只需要潜行右键被附魔的工具。注意，工具需要被附魔才能被切换，。
+forbiddenmagic.research.morph_tools.void=§o虚空之触§r<DIV>武器，工具和盔甲被附魔后会在使用vis时自行修复。但是，由于虚空金属的运用，只是拿在手中也会扭曲我的思想。<DIV>§o附魔等级:§r 无<BR>§o附魔对象:§r 工具，武器，装备。
+
+forbiddenmagic.research.distortionpick.title=畸变稿
+forbiddenmagic.research.distortionpick.text=黑曜石对我来说是一个麻烦，不幸的是，效率附魔对他不起作用，我需要一件工具来更快地采掘这个异常坚固的方块。也许我应该观察黑曜石的结构，也许我会有所收获。
+forbiddenmagic.research.distortionpick.complete.text=黑曜石是一种特别有趣的物体，构成它的基本粒子比正常情况要矛盾得多。我观察了黑曜石微粒和污染魔力水晶碎片中的物质之间的相互作用…看起来，微粒收到水晶碎片的排斥，就好像磁铁一样，他们匹配那么完美!这给了我一个绝妙的启示，应该能制作一个工具，让我比钻石镐更快的挖掘黑曜石，我认为这个奇异的镐可以称作畸变镐!这把镐应该能让我更快地挖掘坚固的黑曜石……然而，经过测试，这把镐子在挖掘较软的材料时似乎会产生问题。当我挖掘泥土、沙子和类似的柔软材料时，它需要和开采黑曜石一样长的时间。
+
+forbiddenmagic.research.infusionenchantmentfm.title=注魔法附魔-禁忌之魔法
+forbiddenmagic.research.infusionenchantmentfm.text=我需要一些新的魔法来附魔我的工具，虽然我的想法相当模糊，但我相信我至少能想到一些东西。
+forbiddenmagic.research.infusionenchantmentfm.complete.text=基于我所想出的一些想法，我想出了一些关于这些魔法的想法如下.<PAGE>§o剥削§r<DIV>施加了此种附魔的武器在击杀生物时有几率掉落率宝石碎片，而击杀村民将会得到一整个绿宝石。<DIV>§o附魔等级:§r 无<BR>§o附魔对象:§r 武器<PAGE>§o挥霍§r<DIV>施加了此种附魔的工具会自动销毁寻常无用的方块。如泥土，地狱岩，沙砾，圆石/岩石<DIV>§o附魔等级：§r 无<BR>§o附魔对象::§r 铲，镐<PAGE>§o教育§r<DIV>当你用这个武器杀死怪物时，会掉落额外的经验值。<DIV>§o附魔等级:§r 1-5<BR>§o附魔对象:§r 武器
+
+forbiddenmagic.research.emeralddupe.title=绿宝石嬗变
+forbiddenmagic.research.emeralddupe.text.stage.1=绿宝石似乎是一种稀有的资源。我曾经这样讽刺道，因为有时从村民那儿榨取绿宝石太容易，以至于他们看上去就像是被抢走的。然而，如果我不想在肉体衰朽后下地狱的话，我就应该采取一种有道德的方法制造更多的绿宝石。考虑到它们各自不同的变体的本质，我应该能够想出一些东西来作为参考。
+forbiddenmagic.research.emeralddupe.text.stage.2=幸运的是，通过一点点努力，我已经发现了一种创造更多我需要的东西的方法。首先，从一个简单的翡翠碎片开始，并与正确的源质相融…我应该能把它们复制4个。奇怪的交易，但我该怎么做呢?
+
+forbiddenmagic.research.blackrose.title=维多利亚风格
+forbiddenmagic.research.blackrose.text.stage.1=尽管我不介意吃一点鱿鱼，但我对鱿鱼的屠杀让我怀疑这一切是否值得。这让我想知道是否能更少的……我正以一种血腥的捕猎方式获取我需要的墨水，以重新装填我笔墨。我听说过用花制作墨水的方法……研究植物和墨水的问题似乎值得一试。
+forbiddenmagic.research.blackrose.text.stage.2=像午夜一样漆黑，像维多利亚时代一样有着哥特风格，我创造了一棵玫瑰丛，它会与漆黑的玫瑰一起发芽！为了获得这些美丽的黑色花朵，只需在玫瑰丛的根部施加上骨粉，它就会把快速生长的种子播撒到附近的草地上！<BR>§o值得一提的是，这种花似乎也能在灰化土、砂土和普通土壤上生长，进一步的实验可能是必要的。§r
+
+forbiddenmagic.research.skullaxe.title=革命般的秘术
+forbiddenmagic.research.skullaxe.text.stage.1=最近的问题出在获得头颅的问题上。虽然关于如何开展研究目前不太清楚，但是在获取凋零骷髅头方面，我确实有一些东西要看。经过我的观察，收集他们的头颅往往是一个相当稳定的过程。通过屠杀成千上万个凋零骷髅，以获得他们惊悚和恐怖骷髅头，也许把它们碾成碎片对我也没有多大帮助。
+forbiddenmagic.research.skullaxe.text.stage.2=研究结果表明，在斩下头颅方面，这种工具完全是出类拔萃。我把这把斧头设计成一把真正的杀戮工具，能够造成和我的风雷剑一样的伤害。然而，比起风雷剑和其他的剑，这把传奇的斧头有能力确实的斩下敌人的头，从亡灵到玩家！<BR>然而，尽管它无可争议地锋利，但当试图用这把斧头砍树时，却似乎连一个凹痕都没有留下，也许斧头的纯粹愤怒使它在砍树时变得迟钝了？然而，它早已达到了其作为斩首武器的预期目的。<BR>§o旁注：用抢夺附魔这件武器会增加掉落头颅的几率。§r
+
+forbiddenmagic.research.arcane_cake.title=奥法蛋糕
+forbiddenmagic.research.arcane_cake.text=食物是一个大问题，我需要承认，我每次坐在研究台前几个小时，编写理论，然后起来为了所需材料四处奔波，努力完成神秘使一整天的工作时。注魔、炼金、修理我的傀儡，这些都是麻烦，很多时候没有回报。我希望我能做点东西来喂饱我的同时又能自我修复，蛋糕就是这么一个不错的材料。
+forbiddenmagic.research.arcane_cake.complete.text=制作过程中，我浮现了观察它的想法，而不是像凡夫俗子一样深入研究我精致的糕点的外形。考虑到我用了各种各样的材料来制作这个 神奇的大理石™ （一个游戏?），它最初的颜色是黄色的。天哪，我发现了一些有趣的东西!通过研究它的切割纹理，我确定它会切成7片蛋糕，我为什么这样做还不太清楚，但这是另一个谜。利用这个呼之欲出的想法，我创造了一个解决目前存在的问题方案，即一个不需要注入力量维持完整的，恒定的食物来源，这样一个能够自我补充的蛋糕。
+
+forbiddenmagic.research.tainted_blocks.title=腐化方块
+forbiddenmagic.research.tainted_blocks.text=不知道这个想法从何而来，但有些东西告诉我，腐化之物的侵蚀和蔓延的危害远超于他的病态和恶心。我应该研究腐化的可怕的性质，尽管所有的迹象都警告我这是迄今为止最糟糕的想法。也许会有什么收获。
+forbiddenmagic.research.tainted_blocks.complete.text=我们已经调查过了，自不必说，这非常恶心。如果我足够疯狂，能够想要在腐化之地中搭建营地，我有可以这样做的材料，还能炼制一颗腐化树苗，以制造更多腐化材料用来搭建营地。<BR>这种腐化原木似乎还保有能够变成煤炭的特性，我称之为§5六重煤炭§r,这种煤炭本身比煤炭的火力弱，而且用来做饭时恶臭难闻。闻了一口这种可怕的煤，我就不想吃饭了。<BR>我还观察到，这棵可怕的树在叶子凋落的时候，它的枝条上还会落下一种形态怪异的果子，我想这种果子应该叫做“腐化果”。其味道非常糟糕，除了让我胃袋翻腾血管阻塞§o神魂颠倒§r之外，似乎没有任何用处……就像毒药一样。<BR>考虑到迄今为止它的许多害处，这项研究对一些人来说可能几乎毫无价值。然而，从好的方面来看，这些也可能是污染元素的优质来源，因为它们毕竟来自天然形成的腐化！
+
+forbiddenmagic.research.diabolist_fork.title=妖魔之叉
+forbiddenmagic.research.diabolist_fork.text=你制造出一柄工具用以捣鼓数种炼狱装置.石英支撑的叉尖让妖魔之叉能够同奥术能量相谐振.<BR>除了能用以调整设备,妖魔之叉用来做实用武器亦不错.<BR><BR>当你解锁了更多研究后下面几页会出现更重要的信息.
+forbiddenmagic.research.diabolist_fork.complete.text=你制造出一柄工具用以捣鼓数种炼狱装置.石英支撑的叉尖让妖魔之叉能够同奥术能量相谐振.<BR>除了能用以调整设备,妖魔之叉用来做实用武器亦不错.<BR><BR>当你解锁了更多研究后下面几页会出现更重要的信息<BR>如果用妖魔之叉杀死支持的生物类型时物品栏内有空白留影水晶,那么这种生物就会被烙印到水晶中.留影水晶可以用于暴怒之笼,以绑定某种怪物.<BR>这柄叉子还能用来设置暴怒之笼使用哪种源质作为燃料.只需拿着妖魔之叉右键暴怒之笼,就能在三种不同的燃料类型中切换.
+
+forbiddenmagic.research.wrathcage.title=暴怒之笼
+forbiddenmagic.research.wrathcage.text=有时候,小打小杀就是不够.诚然,杀掉一只孤零零的怪物相当令人身通体便,但想象一下屠戮掉一大波可憎小蠢蛋的画面吧<BR>为了实现这一目标,你研究出一种方法,能够重新制造出古代废墟中的怪物.不像天然的刷怪笼,暴怒之笼由红石信号控制,因而无需感应是否有人类出现,而且这种笼子可以比刷怪笼这种古代设备运行得更快速.
+forbiddenmagic.research.wrathcage.complete.text=有时候,小打小杀就是不够.诚然,杀掉一只孤零零的怪物相当令人身通体便,但想象一下屠戮掉一大波可憎小蠢蛋的画面吧<BR>为了实现这一目标,你研究出一种方法,能够重新制造出古代废墟中的怪物.不像天然的刷怪笼,暴怒之笼由红石信号控制,因而无需感应是否有人类出现,而且这种笼子可以比刷怪笼这种古代设备运行得更快速.<BR>然而,你无法复制天然刷怪笼无限刷怪的特性.每诞下一只生物都会让暴怒笼子消耗一点点用管道导入其内的源质.<BR>要使暴怒之笼与某种指定生物绑定,可以使用留影水晶右击笼子.携带空白留影水晶用妖魔之叉杀死生物能够将生物的信息烙印到水晶之中.
+
+forbiddenmagic.research.dragonslayer.title=屠龙者之剑
+forbiddenmagic.research.dragonslayer.text.stage.1=关于骁勇的英雄与强大而狰狞的野兽斗争的神话传说比比皆是。龙族显然是最可怕的生物之一，以至于斩杀龙族的丰功伟绩将会流传于后世。也许我应该找到一种更容易方法来对付这些可怕对手？
+forbiddenmagic.research.dragonslayer.text.stage.2=通过给骑士剑注入如此神话之影响，我制造了一把能够灭杀龙族的剑。屠龙者之剑旨在杀死与龙族有关的一切，不仅能给它们造成致命的伤害，还能巧妙地偏转它们的攻击。<BR>并非所有龙形生物都是正统的龙族。但是任何使用龙之力的人却都会受到死亡威胁。
+
+forbiddenmagic.research.crystal_scribing_tools.title=Crystal Scribing Tools
+forbiddenmagic.research.crystal_scribing_tools.text=Combining elemetal shards with your inkwell results in some interesting effects.
+forbiddenmagic.research.crystal_scribing_tools.complete.text=Combining elemetal shards with your inkwell results in some interesting effects. The Crystal Scribing tools seem to absorb knowledge as I use them to write. Once the well is empty of ink, I can absorb this knowledge for a small burst of research points by holding the tools in my hand and right-clicking. Unfortunately, it burns the tool out and turns it back into mundane scribing tools again.
+
+#植物魔法联动研究
+forbiddenmagic.research.magical_flower.title=神秘学之花
+forbiddenmagic.research.magical_flower.text=许多神秘使倾向于嘲笑并且对其他魔法体系视而不见，我并非是那种对新机会视而不见的神秘使。除非神秘使的研究需求植物学内容之时，植物学一直都是一门被许多神秘使忽视的魔法体系。而那些植物学家无视神秘学，认为不值一提……我不必在意他们的装腔作势。使用植物学的一些材料，我能够操纵他们的植物花用来构建我自己的秘术奇观!然而……我该怎么样开始呢?
+forbiddenmagic.research.magical_flower.complete.text=经过我的研究，我创造了几种植物花。<BR>那难以捉摸的 §l§n§d细语草§r有一些有趣的特性,虽然它对植物学家来说仍然毫无用处，所以那本植物魔法宝典里记述的满是嘲弄。细语草将向神秘使倾诉世界的奇迹和匿于虚无之中的幽深秘密，这是一种神奇的植物，将成为你继缸中之脑更好的朋友。<BR>那§l§n§b星域花§r,尽管植物学家们对此表示不满，但它确实是一种强大的植物!这株植物将危险的腐化隔离开来，并净化灵气场中的污染!作为神秘使营地的刚需，我只是希望植物学家们向我们提供的帮助的时候不要老是那么没有耐心<BR><BR>那§l§n§d欧氏菊§r为我的施法提供了令人难以置信的好处!它将mana转化为多种魔力水晶碎片，不仅是一个魔力水晶碎片制造机，而且还个好用的灵气源质来源!我不明白为什么植物学家对这种特殊的植物如此愁眉不展。
 
 
-#Research ForbiddenMagic
-forbiddenmagic.research.morph_tools.title=Multitools
-forbiddenmagic.research.morph_tools.text=As a person who tends to use my tools for nearly everything, it would be nice to have more inventory space that's not cluttered with my multiple tools. Unfortunately, I can't just add multiple of these enchantments to the same tool... or can I? Something worth experimenting is the idea of perhaps having a tool in which I can switch out enchantments without having to disenchant it and reenchant it. Thankfully, I might have something that could mimic the idea rather well.
-forbiddenmagic.research.morph_tools.complete.text=Before I pay myself on the back, I should note that this idea wasn't without its downsides. The tools I've created can only go up to 3 different mirrors of itself and each different mirror cannot support any conflicting enchantments. With that being said, I came up with the idea of the Chameleon tools while observing wildlife in the swamp. The chameleon was something that fascinated me with its color-changing abilities, and its unusual nature to seem completely different with each iteration it comes around with. Reflecting upon the way these creatures work, I made a decision to copy the idea of the chameleon to base these tools onto it. Allow me to explain this in a further, more sensical manner. The Chameleon Tools have 3 different mirrors to their design, allowing them to have 3 different sets of enchantments with each mirror that they have. If I wanted to have Silk Touch and Fortune on the same pickaxe, I could do so by simply switching the head of the pickaxe to a different mirror, allowing me to access that specific pickaxe mirror and giving me the ability to silk touch an ore, and also gain extra items with a different mirror containing Fortune. I can have Sharpness, Bane of Athropods, and Smite on the same sword with different mirrors on the sword. To switch between mirrors, I simply need to crouch and right click with a mirror that's been enchanted. Note, the tool needs to be enchanted in order for the tool to be able to switch.
-forbiddenmagic.research.morph_tools.void=§oVoidtouched§r<DIV>Weapons, tools, and armors enchanted with this enchantment will repair themselves using vis. However with the use of Void Metal, it does warp my mind when holding it in my hands too.<DIV>§oRanks:§r none<BR>§oTarget:§r tools, weapons, armor
+#Psi联动研究
+forbiddenmagic.research.psi_amulet.title=心智紊乱吊坠
+forbiddenmagic.research.psi_amulet.text=许多神秘使倾向于嘲笑并且对其他魔法体系视而不见，我并非是那种对新机会视而不见的神秘使。我对被称为PSI魔法体系不是很了解，但我相信我能用它做点什么。
+forbiddenmagic.research.psi_amulet.complete.text=我通常不会干预灵能，因为它已经超出了我的思维能力，但我创造了一个护身符来防止Psi过载杀死我。虽然护身符会消耗耐久，最终会损坏，还附带扭曲值。这就像是给那些同时涉及灵能和神秘学的人的警告。
 
-forbiddenmagic.research.distortionpick.title=Pickaxe of Distortion
-forbiddenmagic.research.distortionpick.text=Obsidian is a hassle to mine, and unfortunately efficiency isn't cutting it anymore, I need something to bring about a faster way of breaking this sturdy block. Perhaps I should observe the atomic structure of Obsidian, maybe I'll yield some results from it.
-forbiddenmagic.research.distortionpick.complete.text=Obsidian is a particularly interesting object, the internal particles that make it up are a lot more contradictive than normal. I've observed the interaction with Obsidian atoms and the matter contained within a Vitium Vis Crystal... and seemingly, the atoms repel from the matter as if it were matching magnets! This gave me a grand idea for a tool that should allow me to harvest Obsidian far faster than a normal Diamond Pickaxe could, I deem this unusual pickaxe to be the Pickaxe of Distortion! This pickaxe should allow me to harvest the sturdy obsidian a lot faster... however upon testing it, it appears that this pickaxe also creates a problem when extracting softer materials. It takes as long as it would to mine Obsidian when I mine dirt, sand, and softer materials similar to that.
+overloaddamage.complete.text=你已体验痛苦的psi过载过程
+research.f_overloaddamage_complete.text=亲自感受psi过载
 
-forbiddenmagic.research.infusionenchantmentfm.title=Forbidden Infusion Enchantments
-forbiddenmagic.research.infusionenchantmentfm.text=I need some new enchantments to emboss my tools with, while my ideas are rather vague, I'm sure I can think of something at the least.
-forbiddenmagic.research.infusionenchantmentfm.complete.text=With the rather few ideas I've come up with, I have come up with a few ideas, with that being said the ideas for these enchantments are as follows.<PAGE>§oGreedy§r<DIV>(to be added)<DIV>§oRanks:§r none<BR>§oTarget:§r weapon<PAGE>§oConsuming§r<DIV>Tools enchanted with this enchantment voids certain clutter blocks. Such as dirt, netherrack, gravel, and stone/cobblestone.<DIV>§oRanks:§r none<BR>§oTarget:§r shovels, pickaxes<PAGE>§oEducational§r<DIV>Whenever you slay a mob with this weapon, additional experience will drop upon their death.<DIV>§oRanks:§r 1-5<BR>§oTarget:§r weapon
+#血魔法联动研究
+forbiddenmagic.research.blood_rapier.title=血鸮西洋剑
+forbiddenmagic.research.blood_rapier.text=还有何物比嗜血成性的血魔法师更加凶险? 只要对方有着充足的生命能量,就极难穿透他们的防御.
+forbiddenmagic.research.blood_rapier.complete.text=还有何物比嗜血成性的血魔法师更加凶险? 只要对方有着充足的生命能量,就极难穿透他们的防御.<BR>但现在不同了<BR>有了血鸮西洋剑,只要击打某人,就能从其灵魂网络中直接抽取LP并封存起来,使得他们一时半会儿无法回复LP.或许造成的物理伤害不高,但对血魔法师来说这却是不小的损伤.
 
-forbiddenmagic.research.emeralddupe.title=Emerald Duplication
-forbiddenmagic.research.emeralddupe.text.stage.1=Emeralds seem to be a rare resource, I say this mockingly as villagers are nearly too easy to exploit for their emeralds at times, to the point where they are essentially being robbed of their favorite glimmering gemstones. However, if I don't want to go to hell when my life inevitably decays and removes itself from my current physical vessel, I should find a bit of a morally good way to make more emeralds. Considering the fine nature of their seperated variant, I should be able to come up with something using that as a reference.
-forbiddenmagic.research.emeralddupe.text.stage.2=Thankfully with a little bit of elbow-grease, I've conceptualized a method of creating more of what I need. Firstly it starts with a simple Emerald Nugget, and with the right essentia... I should be able to duplicate them by fours. Odd trade off, but what am I to do?
+forbiddenmagic.research.divine_orb.title=邪术气血宝珠
+forbiddenmagic.research.divine_orb.text=即便是神也不敢遥望的星隙之间,奇怪的低语吐诉着黑暗之力.不管其所说是否属实,它让你清楚这些空间能被注入许多东西。.
+forbiddenmagic.research.divine_orb.complete.text=即便是神也不敢遥望的星隙之间,奇怪的低语吐诉着黑暗之力.不管其所说是否属实,它让你清楚这些空间能被注入许多东西<BR>通过给一个气血宝珠注入虚空之力,塑以奥术之形,你创造出了一个能储存巨量生命能量的宝珠.足足有80,000,000 LP的储量.将生命能量存于不受欧几里得几何所局限的空间之内是不可能出错的!
 
-forbiddenmagic.research.blackrose.title=Victorian
-forbiddenmagic.research.blackrose.text.stage.1=As much as I don't mind a bit of calamari, my massacre of squids has made me wonder if it's worth it all. It makes me wonder if there's a less... psychotic way of getting the ink I need to refill my illustrious Scribing Tools. I've heard of ways to replicate ink using flowers... it may seem worth a shot to study the matter of plant life and ink.
-forbiddenmagic.research.blackrose.text.stage.2=Black as night and gothic as the Victorian, I've created a rosebush that will bud with pitch black roses! In order to obtain these beautifully black flowers, simply sprinkle bonemeal onto the roots of the flower, and it will launch its rapidly growing seeds to nearby grass blocks!<BR>§oA note to add onto this, this flower seems to also flourish on Podzol, Coarse Dirt, and regular Dirt as well, further experimentation may be necessary.§r
+forbiddenmagic.research.bloodscribe.title=血腥之抄录用具
+forbiddenmagic.research.bloodscribe.text=在研究的中途突然给飞速前进的思维来个急刹车，仅仅是因为墨水已经耗尽，没有什么比这更令人沮丧了。我还有许多知识要去发现，根本没空去管墨水瓶这种小玩意！如果不得不如此，我干脆直接用自己的血来记录笔记！<BR>说真的，这倒是让我有了主意......
+forbiddenmagic.research.bloodscribe.complete.text=通过用血魔法加强我的墨瓶，我创制了一套抄录用具，其中充满了生命之力，而非墨水。血腥抄录用具在书写时会抽取LP而非墨水，但如果耗尽，可能需要接触人类的温暖来重新装填。<BR>右击工具使其与你的LP网络相连。每次使用会消耗25点LP。
 
-forbiddenmagic.research.skullaxe.title=Thaumic Revolution
-forbiddenmagic.research.skullaxe.text.stage.1=Recent issues arise with the matter of obtaining skulls. While I don't have quite a clear theory as to how this would go about and work, I do have something to look at when it comes to obtaining the Wither Skeleton Skulls. An observation I've noticed with it is that it tends to be a rather steady process of gathering their skulls. Smashing nearly tens of thousands of wither skeletons to obtain their darkened and sooty skulls, perhaps smashing them to bits won't help me all that much.
-forbiddenmagic.research.skullaxe.text.stage.2=Results have yielded that this tool certainly beats the norm when it comes to obtaining skulls. I've designed this axe to be a true killing tool, being capable of doing the same damage as my Sword of the Zephyr. However, unlike the Sword of the Zephyr and some of the other swords around its power level, this fabled axe has the capacity of extracting the heads of enemies I decapitate, ranging from undead to even players!<BR>However when trying to use this axe against trees, it seems to leave not even a dent despite being indisputably sharp, perhaps the sheer ire of the axe has made it dullen when put against trees? Nevertheless, it serves its intended purpose of being a decapitating weapon.<BR>§oSide-Note: Enchanting this weapon with looting will increase the chance of obtaining a skull from a monster.§r
-
-forbiddenmagic.research.arcane_cake.title=Arcane Cake
-forbiddenmagic.research.arcane_cake.text=Food is a grand issue, and I need to acknowledge that as I sit at my desk for hours at a time, writing theories and then get up and scramble about, gathering materials and making hard work of a full day's work of a Thaumaturge. Infusions, Alchemy, maintaining my Golems, it's all for hassle and sometimes no reward. I wish I could make something to keep me fed and replenish itself in the meanwhile, some Cake would be nice right about now.
-forbiddenmagic.research.arcane_cake.complete.text=While baking, I had the thought of observing it rather than digging into it like a savage to study my delicate baked pastry. Taking into consideration the various materials I've used to concoct this marvelous marble, it ultimately yellowed out as a nonce at first. By the Devil's Food, did I find something interesting with it! Studying the way that it is cut, I've determined that it brings about a gradual 7 slices worth of cake, why I do this is rather unknown but that's a mystery for another day. Using this idea with its decent potential, I've created a solution to the current standing problem of needing a constant food source that won't require excess force to prepare, my idea being a Cake that replenishes itself.
-
-forbiddenmagic.research.tainted_blocks.title=Tainted Blocks
-forbiddenmagic.research.tainted_blocks.text=Not sure where this idea came from, but something tells me that the putrid, infectious nature of Taint has a little more to it than being sickly and gross. I should observe the horrid nature of the Taint, despite every warning sign pointing to it being the shittiest idea I've had yet. Perhaps something could come of it.
-forbiddenmagic.research.tainted_blocks.complete.text=Well, it's been looked into, and needless to say, it is disgusting. I suppose if I were to be crazy enough to be able to want to build in the Taint, I have materials to do so, and a replicatable tree that can make more of the material I would use to make such a thing.<BR>These logs also seem to bear the property of being able to be turned into a coal that I am deeming §5Hexcoal§r, the coal itself is weaker than coal, and rather potent in stench when used to cook something. I don't feel hungry anymore after one whiff of this horrendous coal.<BR>I've also taken observation that this horrid tree also drops a peculiar fruit from its branches when the leaves decay, I'm deeming this fruit to be called the "§5Vintenfruit§r". The fruit itself tastes absolutely awful, and bears no use to anything other than making me nauseous and making my veins feel dreadful... almost like a poison.<BR>This research may be considered nearly worthless for some, considering a lot of the downsides it brings to the table thus far. On a brightside however, these might also act as good sources to Vitium since they do hail from the Taint within their nature after all!
-
-#Research Botania
-forbiddenmagic.research.magical_flower.title=Magical Flower
-forbiddenmagic.research.magical_flower.text=Many Thaumaturges tend to scoff and turn a blind eye to polymagical studies, I am not one to turn a blind eye to new opportunities. Botany has been something that many disregard, except their own subdivision of magicians, and while those Botanical Mages who disregard Thaumaturgy as something to not study... I need not to pay attention to their pretensiousness. Using some of their own materials, I am able to manipulate and use their botanical materials and use them to make vantage of my own Thaumibotanical wonders! However... what could I do?
-forbiddenmagic.research.magical_flower.complete.text=From my studies, I have created 3 beautiful flowers that do wonders for me!<BR>The elusive §l§n§dWhisperweed§r has some interesting properties to it, and while it remains useless to Botanical Mages, often seen being mocked in their tomes containing their Floral Knowledge Magic. The Whisperweed will tell a Thaumaturge the wonders of the world and the dark secrets of the never ending void, quite the wondrous plant and better friend than the Brain in a Jar!<BR>The §l§n§bAstral Bloom§r, despite the disgruntled comments of the Botania Warlocks, is an immensely powerful plant! The plant wards away the dangerous Taint from the vicinity, as well as consume the flux within the air! A staple for the Thaumaturge's base for sure, I just wish our Herbamagicia Counterparts would be less malcontent with the things we Thaumaturges help provide.<BR>The subsidary §l§n§dEuclidaisy§r provides an incredible benefit to my arsenal as a plant! Turning mana into Vis Crystals of multiple types, while not only being a useful source of Aurum essentia, but also an incredible Vis Crystal generator! I don't get why Botanists are so uneasy around this particular plant.
-
-#Research Psi
-forbiddenmagic.research.psi_amulet.title=Amulet of Mental Agony
-forbiddenmagic.research.psi_amulet.text=Many Thaumaturges tend to scoff and turn a blind eye to polymagical studies, I am not one to turn a blind eye to new opportunities. I don't particularly understand Psionic Magic all that well, but I'm sure I can do something with it.
-forbiddenmagic.research.psi_amulet.complete.text=I don't normally meddle with Psionics, as its already too much for my mind to handle, but I created an amulet to prevent Psionic Overload from killing me. Though the amulet will consume durability and will break, giving those who wear it Warp. A warning to those who meddle with Psionics and Thaumaturgy
-
-overloaddamage.complete.text=You experienced a painful psionic sensation
-research.f_overloaddamage_complete.text=Experience Psionic Overload
-
-#item tab
+#道具tab
+itemGroup.forbiddenmagicre=禁秘魔法
 itemGroup.fm_crystal=留影水晶
+
+# 杂项
+got.lm_badfood=你吃下了垃圾食品。
+got.lm_goodfood=你吃下了营养丰富的食物。
+research.f_badfood.text=吃些垃圾食品。
+research.f_goodfood.text=吃些富含营养的食物。
+
+tc.research_category.APOCRYPHA=Apocryphamessage.forbiddenmagic.knowledge_scribing_tools.deplete=You absorb the stored knowledge from your scribing tools.

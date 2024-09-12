@@ -1,8 +1,7 @@
 package keletu.forbiddenmagicre.blocks;
 
 
-import fox.spiteful.lostmagic.LostMagic;
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
@@ -29,7 +28,7 @@ public class BlockLogTainted extends BlockLog implements IHasModel {
 
         setHarvestLevel("axe", 0);
         setHardness(0.7F);
-        setCreativeTab(LostMagic.tab);
+        setCreativeTab(ReForbiddenMagic.tab);
         this.setTranslationKey("log_tainted");
         this.setRegistryName("log_tainted");
         this.setDefaultState(this.blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
@@ -45,7 +44,7 @@ public class BlockLogTainted extends BlockLog implements IHasModel {
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
 
     @Override

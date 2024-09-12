@@ -1,15 +1,14 @@
 package keletu.forbiddenmagicre.compat.psi;
 
-import fox.spiteful.lostmagic.Lumberjack;
+import keletu.forbiddenmagicre.Lumberjack;
 import keletu.forbiddenmagicre.util.Reference;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
 import org.apache.logging.log4j.Level;
 import vazkii.psi.api.PsiAPI;
-import vazkii.psi.api.spell.SpellPiece;
-
 import static vazkii.psi.api.PsiAPI.registerSpellPiece;
 import static vazkii.psi.api.PsiAPI.simpleSpellTextures;
+import vazkii.psi.api.spell.SpellPiece;
 
 public class Psionics {
 

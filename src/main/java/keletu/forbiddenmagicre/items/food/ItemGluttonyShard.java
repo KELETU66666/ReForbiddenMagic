@@ -1,13 +1,13 @@
 package keletu.forbiddenmagicre.items.food;
 
-import keletu.forbiddenmagicre.forbiddenmagicre;
+
+import keletu.forbiddenmagicre.ReForbiddenMagic;
+import static keletu.forbiddenmagicre.ReForbiddenMagic.tab;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-
-import static fox.spiteful.lostmagic.LostMagic.tab;
 
 public class ItemGluttonyShard extends ItemFood implements IHasModel {
     public ItemGluttonyShard () {
@@ -25,6 +25,6 @@ public class ItemGluttonyShard extends ItemFood implements IHasModel {
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(this, 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }

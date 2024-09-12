@@ -1,5 +1,6 @@
 package keletu.forbiddenmagicre.compat.psi;
 
+import static keletu.forbiddenmagicre.ReForbiddenMagic.tab;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -9,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
+import static net.minecraftforge.client.model.ModelLoader.setCustomModelResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import vazkii.psi.api.cad.EnumCADComponent;
@@ -20,15 +22,11 @@ import vazkii.psi.client.core.handler.ClientTickHandler;
 import java.awt.*;
 import java.util.List;
 
-import static fox.spiteful.lostmagic.LostMagic.tab;
-import static net.minecraftforge.client.model.ModelLoader.setCustomModelResourceLocation;
-
 public class ItemExtraColorizer extends Item implements ICADColorizer, IHasModel {
 
     private final String[] types = new String[]{"Thaumic", "Flame"};
 
     public ItemExtraColorizer(){
-        super();
         setMaxStackSize(1);
         setMaxDamage(0);
         setTranslationKey("cadcolorizer").setRegistryName("cadcolorizer");

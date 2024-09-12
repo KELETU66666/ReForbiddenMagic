@@ -1,6 +1,6 @@
 package keletu.forbiddenmagicre.blocks;
 
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
@@ -33,7 +33,7 @@ import thaumcraft.common.lib.SoundsTC;
 
 import java.util.Random;
 
-import static fox.spiteful.lostmagic.LostMagic.tab;
+
 
 public class BlockSaplingTainted extends BlockBush implements IGrowable, IHasModel {
 
@@ -46,7 +46,7 @@ public class BlockSaplingTainted extends BlockBush implements IGrowable, IHasMod
         super();
         setRegistryName("sapling_tainted");
         setTranslationKey("sapling_tainted");
-        setCreativeTab(tab);
+        setCreativeTab(ReForbiddenMagic.tab);
         setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
         setHardness(0.0F);
 
@@ -152,6 +152,6 @@ public class BlockSaplingTainted extends BlockBush implements IGrowable, IHasMod
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
 }

@@ -1,6 +1,8 @@
 package keletu.forbiddenmagicre.items.food;
 
-import keletu.forbiddenmagicre.forbiddenmagicre;
+
+import keletu.forbiddenmagicre.ReForbiddenMagic;
+import static keletu.forbiddenmagicre.ReForbiddenMagic.tab;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,8 +18,6 @@ import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerWarp;
 import thaumcraft.api.potions.PotionFluxTaint;
 import thaumcraft.common.lib.potions.PotionThaumarhia;
-
-import static fox.spiteful.lostmagic.LostMagic.tab;
 
 public class ItemTaintFurit extends ItemFood implements IHasModel {
     public ItemTaintFurit(){
@@ -43,6 +43,6 @@ public class ItemTaintFurit extends ItemFood implements IHasModel {
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(this, 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }

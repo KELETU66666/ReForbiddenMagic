@@ -1,5 +1,6 @@
 package keletu.forbiddenmagicre.event;
 
+import baubles.api.BaublesApi;
 import com.google.common.collect.Multimap;
 import keletu.forbiddenmagicre.ConfigFM;
 import keletu.forbiddenmagicre.LogHandler;
@@ -18,6 +19,7 @@ import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
@@ -30,6 +32,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
@@ -47,6 +50,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.Level;
+import thaumcraft.api.capabilities.IPlayerKnowledge;
+import thaumcraft.api.capabilities.ThaumcraftCapabilities;
 
 import java.util.Collection;
 import java.util.Random;
@@ -226,7 +231,8 @@ public class LivingEvent {
                     int wrath = 2;
                     int greed = 0;
                     ItemStack heldItem = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
-                    if (!heldItem.isEmpty()) {if (heldItem.getItem() instanceof ItemSword) {
+                    if (!heldItem.isEmpty()) {
+                        if (heldItem.getItem() instanceof ItemSword) {
                             wrath += (int) (((ItemSword) heldItem.getItem()).getAttackDamage() + 4.0F);
                         }
 
@@ -257,7 +263,7 @@ public class LivingEvent {
                         addDrop(event, new ItemStack(ModItems.ResourceNS, 2 + randy.nextInt(1 + event.getLootingLevel()), 2));
                     }
 
-                    if(greed > 0 && randy.nextInt(20) <= greed){
+                    if (greed > 0 && randy.nextInt(20) <= greed) {
                         addDrop(event, new ItemStack(ModItems.ResourceNS, 1, 5));
                     }
                 }
@@ -275,14 +281,14 @@ public class LivingEvent {
     @SubscribeEvent
     public void tooltipEvent(ItemTooltipEvent event) {
         NBTTagList nbttaglist = EnumInfusionEnchantmentFM.getInfusionEnchantmentTagList(event.getItemStack());
-        if(nbttaglist != null) {
-            for(int j = 0; j < nbttaglist.tagCount(); ++j) {
+        if (nbttaglist != null) {
+            for (int j = 0; j < nbttaglist.tagCount(); ++j) {
                 short k = nbttaglist.getCompoundTagAt(j).getShort("id");
                 short l = nbttaglist.getCompoundTagAt(j).getShort("lvl");
-                if(k < 0 || k >= EnumInfusionEnchantmentFM.values().length)
+                if (k < 0 || k >= EnumInfusionEnchantmentFM.values().length)
                     continue;
                 String s = TextFormatting.GOLD + I18n.translateToLocal("enchantment.infusion." + EnumInfusionEnchantmentFM.values()[k].toString());
-                if(EnumInfusionEnchantmentFM.values()[k].maxLevel > 1) {
+                if (EnumInfusionEnchantmentFM.values()[k].maxLevel > 1) {
                     s = s + " " + I18n.translateToLocal("enchantment.level." + l);
                 }
                 event.getToolTip().add(1, s);
@@ -291,16 +297,39 @@ public class LivingEvent {
     }
 
     @SubscribeEvent
-    public void onItemUseFinish(LivingEntityUseItemEvent.Finish event){
-        if(event.getEntityLiving().world.isRemote)
-            return;
-        if(event.getItem().getItem() instanceof ItemFood){
-            if(event.getEntityLiving().world.provider.getDimension() == -1 && event.getItem().getItem() != ModItems.GluttonyShard
-                    && randy.nextInt(10) < 2
-        ){
+    public void onItemUseFinish(LivingEntityUseItemEvent.Finish event) {
+        if (event.getEntityLiving() instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer) event.getEntityLiving();
+            if (event.getItem().getItem() instanceof ItemFood) {
+                if (player instanceof EntityPlayerMP) {
+                    ItemFood food = (ItemFood) event.getItem().getItem();
+                    IPlayerKnowledge knowledge = ThaumcraftCapabilities.getKnowledge(player);
+                    if (!knowledge.isResearchComplete("RINGNUTRITION") && knowledge.isResearchKnown("RINGNUTRITION@1")) {
+                        if (!knowledge.isResearchKnown("f_badfood") && (food.getSaturationModifier(event.getItem()) * food.getHealAmount(event.getItem()) * 2.0f) < 0.5f) {
+                            knowledge.addResearch("f_badfood");
+                            knowledge.sync((EntityPlayerMP) player);
+                            player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE + I18n.translateToLocal("got.lm_badfood")), true);
+                        }
+                        if (!knowledge.isResearchKnown("f_goodfood") && (food.getSaturationModifier(event.getItem()) * food.getHealAmount(event.getItem()) * 2.0f) > 7.0f) {
+                            knowledge.addResearch("f_goodfood");
+                            knowledge.sync((EntityPlayerMP) player);
+                            player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE + I18n.translateToLocal("got.lm_goodfood")), true);
+                        }
+                    }
+                }
 
+                int slot = BaublesApi.isBaubleEquipped(player, ModItems.ringNutrition);
+                if (slot >= 0) {
+                    player.getFoodStats().addStats(2, 1.0F);
+                }
+            }
+        }
+        if (event.getEntityLiving().world.isRemote)
+            return;
+        if (event.getItem().getItem() instanceof ItemFood) {
+            if (event.getEntityLiving().world.provider.getDimension() == -1 && event.getItem().getItem() != ModItems.GluttonyShard && randy.nextInt(10) < 2) {
                 EntityItem ent = event.getEntityLiving().entityDropItem(new ItemStack(ModItems.GluttonyShard, 1), 1.0F);
-                if(ent != null) {
+                if (ent != null) {
                     ent.motionY += randy.nextFloat() * 0.05F;
                     ent.motionX += (randy.nextFloat() - randy.nextFloat()) * 0.1F;
                     ent.motionZ += (randy.nextFloat() - randy.nextFloat()) * 0.1F;

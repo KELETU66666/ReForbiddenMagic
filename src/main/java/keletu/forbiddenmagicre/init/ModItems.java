@@ -1,7 +1,8 @@
 package keletu.forbiddenmagicre.init;
 
-import keletu.forbiddenmagicre.compat.tc4research.ItemCrystalWell;
+import static keletu.forbiddenmagicre.ReForbiddenMagic.tab;
 import keletu.forbiddenmagicre.items.ItemMobCrystal;
+import keletu.forbiddenmagicre.items.ItemRingNutrition;
 import keletu.forbiddenmagicre.items.food.ItemGluttonyShard;
 import keletu.forbiddenmagicre.items.food.ItemTaintFurit;
 import keletu.forbiddenmagicre.items.resources.ResourceFM;
@@ -14,7 +15,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-import static fox.spiteful.lostmagic.LostMagic.tab;
+
 
 public class ModItems {
     public static final List<Item> ITEMS = new ArrayList<Item>();
@@ -34,5 +35,7 @@ public class ModItems {
     public static final Item TAINTCHARCOAL = new ResourceTaintCharcoal();
     public static final Item MOB_CRYSTAL = new ItemMobCrystal();
     public static final Item DRAGONSLAYER = new ItemDragonslayer();
+    public static Item shovelPurifier = new ItemShovelPurifier();
+    public static Item ringNutrition = new ItemRingNutrition();
     public static final Item CRYSTAL_WELL = new ItemCrystalWell();
 }

@@ -3,7 +3,8 @@ package keletu.forbiddenmagicre.compat.psi;
 import baubles.api.BaubleType;
 import baubles.api.BaublesApi;
 import baubles.api.IBauble;
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
+import static keletu.forbiddenmagicre.ReForbiddenMagic.tab;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import keletu.forbiddenmagicre.util.Reference;
@@ -18,6 +19,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
+import static net.minecraft.util.text.translation.I18n.translateToLocal;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.Optional;
@@ -35,14 +37,10 @@ import vazkii.psi.common.core.handler.PlayerDataHandler;
 
 import java.util.List;
 
-import static fox.spiteful.lostmagic.LostMagic.tab;
-import static net.minecraft.util.text.translation.I18n.translateToLocal;
-
 @Optional.Interface(iface = "vazkii.botania.api.item.ICosmeticAttachable", modid = "botania")
 public class ItemAmuletPsi extends Item implements IBauble, IWarpingGear, ICosmeticAttachable, IHasModel {
 
     public ItemAmuletPsi(){
-        super();
         setMaxDamage(60);
         setMaxStackSize(1);
         setTranslationKey("amuletmentalagony").setRegistryName("amuletmentalagony");
@@ -137,7 +135,7 @@ public class ItemAmuletPsi extends Item implements IBauble, IWarpingGear, ICosme
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(this, 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(this, 0, "inventory");
     }
     
     public int getWarp(ItemStack itemStack, EntityPlayer entityPlayer){

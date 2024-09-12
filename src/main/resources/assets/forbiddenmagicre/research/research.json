@@ -1,39 +1,109 @@
 {
   "entries": [
     {
+      "key": "LOSTMAGIC",
+      "name": "forbiddenmagic.research.lostmagic.title",
+      "icons": [
+        "forbiddenmagicre:textures/misc/forbidden.png"
+      ],
+      "category": "APOCRYPHA",
+      "location": [
+        0,
+        0
+      ],
+      "meta": [
+        "ROUND"
+      ],
+      "parents": [
+        "FIRSTSTEPS"
+      ],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.lostmagic.text"
+        }
+      ]
+    },
+    {
+      "key": "FM_CRYSTAL_SCRIBING_TOOLS",
+      "name": "forbiddenmagic.research.crystal_scribing_tools.title",
+      "icons": [
+        "forbiddenmagicre:crystal_scribing_tools"
+      ],
+      "category": "APOCRYPHA",
+      "location": [ 0,
+        -2
+      ],
+      "parents": [
+        "LOSTMAGIC"
+      ],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.crystal_scribing_tools.text",
+          "required_knowledge": [
+            "THEORY;ARTIFICE;1",
+            "OBSERVATION;ARTIFICE;1"
+          ]
+        },
+        {
+          "text": "forbiddenmagic.research.crystal_scribing_tools.complete.text",
+          "recipes": [
+            "forbiddenmagicre:crystal_scribing_tools"
+          ]
+        }
+      ]
+    },
+    {
       "key": "MORPH_TOOLS",
       "name": "forbiddenmagic.research.morph_tools.title",
-        "category": "APOCRYPHA",
-        "icons": [
-          "forbiddenmagicre:morph_sword", "forbiddenmagicre:morph_pick", "forbiddenmagicre:morph_axe", "forbiddenmagicre:morph_shovel"
-        ],
-        "parents": [
-         "ELEMENTALTOOLS", 
-         "INFUSION",
-         "LOSTMAGIC"
-        ],
-        "location": [
-          2,2
-        ],
-        "stages": [
-          {
-            "text": "forbiddenmagic.research.morph_tools.text",
-            "required_knowledge": [
-              "THEORY;BASICS;1",
-              "THEORY;INFUSION;1"
-            ]
-          },
-          {
-            "text": "forbiddenmagic.research.morph_tools.complete.text",
-            "recipes": ["forbiddenmagicre:morph_sword", "forbiddenmagicre:morph_pick", "forbiddenmagicre:morph_axe", "forbiddenmagicre:morph_shovel", "forbiddenmagicre:IECVOIDFAKE"],
-            "warp": 2
-          }
-        ],
-        "addenda": [
-          {"text": "forbiddenmagic.research.morph_tools.void","required_research":["BASEELDRITCH", "INFUSIONENCHANTMENTFM"],
-          "recipes": ["forbiddenmagicre:IECVOIDFAKE"]}
-        ]
-      },
+      "category": "APOCRYPHA",
+      "icons": [
+        "forbiddenmagicre:morph_sword",
+        "forbiddenmagicre:morph_pick",
+        "forbiddenmagicre:morph_axe",
+        "forbiddenmagicre:morph_shovel"
+      ],
+      "parents": [
+        "ELEMENTALTOOLS",
+        "INFUSION",
+        "LOSTMAGIC"
+      ],
+      "location": [
+        2,
+        2
+      ],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.morph_tools.text",
+          "required_knowledge": [
+            "THEORY;BASICS;1",
+            "THEORY;INFUSION;1"
+          ]
+        },
+        {
+          "text": "forbiddenmagic.research.morph_tools.complete.text",
+          "recipes": [
+            "forbiddenmagicre:morph_sword",
+            "forbiddenmagicre:morph_pick",
+            "forbiddenmagicre:morph_axe",
+            "forbiddenmagicre:morph_shovel",
+            "forbiddenmagicre:IECVOIDFAKE"
+          ],
+          "warp": 2
+        }
+      ],
+      "addenda": [
+        {
+          "text": "forbiddenmagic.research.morph_tools.void",
+          "required_research": [
+            "BASEELDRITCH",
+            "INFUSIONENCHANTMENTFM"
+          ],
+          "recipes": [
+            "forbiddenmagicre:IECVOIDFAKE"
+          ]
+        }
+      ]
+    },
     {
       "key": "DISTORTION_PICK",
       "name": "forbiddenmagic.research.distortionpick.title",
@@ -46,7 +116,8 @@
         "PURESHOVEL"
       ],
       "location": [
-        4,4
+        4,
+        4
       ],
       "stages": [
         {
@@ -80,7 +151,8 @@
         "MORPH_TOOLS"
       ],
       "location": [
-        3,0
+        3,
+        0
       ],
       "stages": [
         {
@@ -95,199 +167,348 @@
         {
           "text": "forbiddenmagic.research.infusionenchantmentfm.complete.text",
           "recipes": [
-            "forbiddenmagicre:IEGREEDYFAKE", "forbiddenmagicre:IECONSUMINGFAKE", "forbiddenmagicre:IECEDUFAKE"
+            "forbiddenmagicre:IEGREEDYFAKE",
+            "forbiddenmagicre:IECONSUMINGFAKE",
+            "forbiddenmagicre:IECEDUFAKE"
           ]
         }
       ]
     },
-    { "key": "RINGNUTRITION",
-      "name": "research.lostmagic.RINGNUTRITION.title",
-      "icons": ["lostmagic:ring_nutrition"],
+    {
+      "key": "RINGNUTRITION",
+      "name": "forbiddenmagic.research.ringnutrition.title",
+      "icons": [
+        "forbiddenmagicre:ring_nutrition"
+      ],
       "category": "APOCRYPHA",
-      "location": [5, 0],
-      "parents": ["INFUSIONENCHANTMENTFM"],
+      "location": [
+        5,
+        0
+      ],
+      "parents": [
+        "INFUSIONENCHANTMENTFM"
+      ],
       "stages": [
         {
-          "text": "research.lostmagic.RINGNUTRITION.text.stage.1",
-          "required_knowledge":["THEORY;INFUSION;1"],
-          "required_research":["f_badfood","f_goodfood"]
-
+          "text": "forbiddenmagic.research.ringnutrition.text",
+          "required_knowledge": [
+            "THEORY;INFUSION;1"
+          ],
+          "required_research": [
+            "f_badfood",
+            "f_goodfood"
+          ]
         },
         {
-          "text": "research.lostmagic.RINGNUTRITION.text.stage.2",
-          "recipes": ["lostmagic:RingNutrition"]
+          "text": "forbiddenmagic.research.ringnutrition.complete.text",
+          "recipes": [
+            "forbiddenmagicre:RingNutrition"
+          ]
         }
       ]
     },
-    { "key": "FM_ARCANECAKE",
+    {
+      "key": "FM_ARCANECAKE",
       "name": "forbiddenmagic.research.arcane_cake.title",
-      "icons": ["forbiddenmagicre:arcane_cake"],
+      "icons": [
+        "forbiddenmagicre:arcane_cake"
+      ],
       "category": "APOCRYPHA",
-      "location": [7, 0],
-      "parents": ["RINGNUTRITION"],
+      "location": [
+        7,
+        0
+      ],
+      "parents": [
+        "RINGNUTRITION"
+      ],
       "stages": [
         {
           "text": "forbiddenmagic.research.arcane_cake.text",
-          "required_item":["minecraft:cake"]
-
+          "required_item": [
+            "minecraft:cake"
+          ]
         },
         {
           "text": "forbiddenmagic.research.arcane_cake.complete.text",
-          "recipes": ["forbiddenmagicre:arcane_cake"]
+          "recipes": [
+            "forbiddenmagicre:arcane_cake"
+          ]
         }
       ]
     },
-    { "key": "TAINTED_BLOCKS",
+    {
+      "key": "TAINTED_BLOCKS",
       "name": "forbiddenmagic.research.tainted_blocks.title",
-      "icons": ["forbiddenmagicre:sapling_tainted"],
+      "icons": [
+        "forbiddenmagicre:sapling_tainted"
+      ],
       "category": "APOCRYPHA",
-      "location": [6, 2],
-      "parents": ["PURESHOVEL"],
+      "location": [
+        6,
+        2
+      ],
+      "parents": [
+        "PURESHOVEL"
+      ],
       "stages": [
         {
           "text": "forbiddenmagic.research.tainted_blocks.text",
-          "required_item":["thaumcraft:taint_log", "thaumcraft:taint_soil", "thaumcraft:taint_rock"],
-"warp": 1
+          "required_item": [
+            "thaumcraft:taint_log",
+            "thaumcraft:taint_soil",
+            "thaumcraft:taint_rock"
+          ],
+          "warp": 1
         },
         {
           "text": "forbiddenmagic.research.tainted_blocks.complete.text",
-          "recipes": ["forbiddenmagicre:fm_tainted_sapling", "forbiddenmagicre:taint_wood_to_plank", "forbiddenmagicre:arcane_to_tainted_stone", "forbiddenmagicre:tainted_stone_to_brick"]
+          "recipes": [
+            "forbiddenmagicre:fm_tainted_sapling",
+            "forbiddenmagicre:taint_wood_to_plank",
+            "forbiddenmagicre:arcane_to_tainted_stone",
+            "forbiddenmagicre:tainted_stone_to_brick"
+          ]
         }
       ]
     },
-    { "key": "PURESHOVEL",
-        "name": "research.lostmagic.PURESHOVEL.title",
-        "icons": ["lostmagic:purifying_shovel"],
-        "category": "APOCRYPHA",
-        "location": [4, 2],
-        "parents": ["MORPH_TOOLS", "f_toomuchflux",  "!vitium"],
-        "stages": [
-          {
-            "text": "research.lostmagic.PURESHOVEL.text.stage.1",
-            "required_knowledge":["THEORY;INFUSION;1"],
-            "required_craft":["thaumcraft:thaumium_shovel"],
-            "required_item":["thaumcraft:log_silverwood"]
-
-          },
-          {
-            "text": "research.lostmagic.PURESHOVEL.text.stage.2",
-            "recipes": ["lostmagic:PureShovel"]
-          }
-        ]
-      },
-      { "key": "EMERALD_DUPE",
-        "name": "forbiddenmagic.research.emeralddupe.title",
-        "icons": ["forbiddenmagicre:resourcefm;1;0"],
-        "category": "APOCRYPHA",
-        "location": [2, -2],
-        "parents": ["LOSTMAGIC", "BASEALCHEMY"],
-        "stages": [
-          {
-            "text": "forbiddenmagic.research.emeralddupe.text.stage.1",
-            "required_knowledge":["THEORY;ALCHEMY;1"],
-            "required_item":["forbiddenmagicre:resourcefm;1;0"]
-
-          },
-          {
-            "text": "forbiddenmagic.research.emeralddupe.text.stage.2",
-            "recipes": ["forbiddenmagicre:fm_emerald_DUPE"]
-          }
-        ]
-      },
-      { "key": "SAVE_THE_SQUID",
-        "name": "forbiddenmagic.research.blackrose.title",
-        "icons": ["forbiddenmagicre:black_rose_bush"],
-        "category": "APOCRYPHA",
-        "location": [4, -2],
-        "parents": ["EMERALD_DUPE"],
-        "stages": [
-          {
-            "text": "forbiddenmagic.research.blackrose.text.stage.1",
-            "required_knowledge":["THEORY;ALCHEMY;1"],
-            "required_item":["minecraft:red_flower;1;0", "minecraft:dye;1;0"]
-
-          },
-          {
-            "text": "forbiddenmagic.research.blackrose.text.stage.2",
-            "recipes": ["forbiddenmagicre:fm_black_rose"]
-          }
-        ]
-      },
-      { "key": "SKULLAXE",
-        "name": "forbiddenmagic.research.skullaxe.title",
-        "icons": ["forbiddenmagicre:skull_axe"],
-        "category": "APOCRYPHA",
-        "location": [2, 4],
-        "parents": ["MORPH_TOOLS"],
-        "stages": [
-          {
-            "text": "forbiddenmagic.research.skullaxe.text.stage.1",
-            "required_knowledge":["THEORY;INFUSION;1"],
-            "required_craft":["thaumcraft:thaumium_axe"],
-            "required_item":["minecraft:skull;1;1"]
-
-          },
-          {
-            "text": "forbiddenmagic.research.skullaxe.text.stage.2",
-            "recipes": ["forbiddenmagicre:skull_axe"]
-          }
-        ]
-      },
-    { "key": "DRAGONSLAYER",
-      "name": "forbiddenmagic.research.dragonslayer.title",
-      "icons": ["forbiddenmagicre:dragon_slayer"],
+    {
+      "key": "PURESHOVEL",
+      "name": "forbiddenmagic.research.pureshovel.title",
+      "icons": [
+        "forbiddenmagicre:purifying_shovel"
+      ],
       "category": "APOCRYPHA",
-      "location": [0, -2],
-      "parents": ["LOSTMAGIC", "ELEMENTALTOOLS"],
+      "location": [
+        4,
+        2
+      ],
+      "parents": [
+        "MORPH_TOOLS",
+        "f_toomuchflux",
+        "!vitium"
+      ],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.pureshovel.text",
+          "required_knowledge": [
+            "THEORY;INFUSION;1"
+          ],
+          "required_craft": [
+            "thaumcraft:thaumium_shovel"
+          ],
+          "required_item": [
+            "thaumcraft:log_silverwood"
+          ]
+        },
+        {
+          "text": "forbiddenmagic.research.pureshovel.complete.text",
+          "recipes": [
+            "forbiddenmagicre:PureShovel"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "EMERALD_DUPE",
+      "name": "forbiddenmagic.research.emeralddupe.title",
+      "icons": [
+        "forbiddenmagicre:resourcefm;1;0"
+      ],
+      "category": "APOCRYPHA",
+      "location": [
+        2,
+        -2
+      ],
+      "parents": [
+        "LOSTMAGIC",
+        "BASEALCHEMY"
+      ],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.emeralddupe.text.stage.1",
+          "required_knowledge": [
+            "THEORY;ALCHEMY;1"
+          ],
+          "required_item": [
+            "forbiddenmagicre:resourcefm;1;0"
+          ]
+        },
+        {
+          "text": "forbiddenmagic.research.emeralddupe.text.stage.2",
+          "recipes": [
+            "forbiddenmagicre:fm_emerald_DUPE"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "SAVE_THE_SQUID",
+      "name": "forbiddenmagic.research.blackrose.title",
+      "icons": [
+        "forbiddenmagicre:black_rose_bush"
+      ],
+      "category": "APOCRYPHA",
+      "location": [
+        4,
+        -2
+      ],
+      "parents": [
+        "EMERALD_DUPE"
+      ],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.blackrose.text.stage.1",
+          "required_knowledge": [
+            "THEORY;ALCHEMY;1"
+          ],
+          "required_item": [
+            "minecraft:red_flower;1;0",
+            "minecraft:dye;1;0"
+          ]
+        },
+        {
+          "text": "forbiddenmagic.research.blackrose.text.stage.2",
+          "recipes": [
+            "forbiddenmagicre:fm_black_rose"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "SKULLAXE",
+      "name": "forbiddenmagic.research.skullaxe.title",
+      "icons": [
+        "forbiddenmagicre:skull_axe"
+      ],
+      "category": "APOCRYPHA",
+      "location": [
+        2,
+        4
+      ],
+      "parents": [
+        "MORPH_TOOLS"
+      ],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.skullaxe.text.stage.1",
+          "required_knowledge": [
+            "THEORY;INFUSION;1"
+          ],
+          "required_craft": [
+            "thaumcraft:thaumium_axe"
+          ],
+          "required_item": [
+            "minecraft:skull;1;1"
+          ]
+        },
+        {
+          "text": "forbiddenmagic.research.skullaxe.text.stage.2",
+          "recipes": [
+            "forbiddenmagicre:skull_axe"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "DRAGONSLAYER",
+      "name": "forbiddenmagic.research.dragonslayer.title",
+      "icons": [
+        "forbiddenmagicre:dragon_slayer"
+      ],
+      "category": "APOCRYPHA",
+      "location": [
+        1,
+        -3
+      ],
+      "parents": [
+        "LOSTMAGIC",
+        "ELEMENTALTOOLS"
+      ],
       "stages": [
         {
           "text": "forbiddenmagic.research.dragonslayer.text.stage.1",
-          "required_knowledge":["THEORY;INFUSION;3"],
-          "required_craft":["minecraft:iron_sword"]
-
+          "required_knowledge": [
+            "THEORY;INFUSION;3"
+          ],
+          "required_craft": [
+            "minecraft:iron_sword"
+          ]
         },
         {
           "text": "forbiddenmagic.research.dragonslayer.text.stage.2",
-          "recipes": ["forbiddenmagicre:dragon_slayer"]
+          "recipes": [
+            "forbiddenmagicre:dragon_slayer"
+          ]
         }
       ]
     },
-    { "key": "WRATH_CAGE",
+    {
+      "key": "WRATH_CAGE",
       "name": "forbiddenmagic.research.wrathcage.title",
-      "icons": ["forbiddenmagicre:wrath_cage"],
+      "icons": [
+        "forbiddenmagicre:wrath_cage"
+      ],
       "category": "APOCRYPHA",
-      "location": [0, 4],
-      "parents": ["DIABOLIST_FORK"],
+      "location": [
+        0,
+        5
+      ],
+      "parents": [
+        "DIABOLIST_FORK"
+      ],
       "stages": [
         {
           "text": "forbiddenmagic.research.diabolist_fork.text",
-          "required_knowledge":["THEORY;INFUSION;1"],
-          "required_craft":["forbiddenmagicre:mob_crystal"],
-          "recipes": ["forbiddenmagicre:fm_mob_crystal"]
+          "required_knowledge": [
+            "THEORY;INFUSION;1"
+          ],
+          "required_craft": [
+            "forbiddenmagicre:mob_crystal"
+          ],
+          "recipes": [
+            "forbiddenmagicre:fm_mob_crystal"
+          ]
         },
         {
           "text": "forbiddenmagic.research.wrathcage.complete.text",
-          "recipes": ["forbiddenmagicre:fm_mob_crystal", "forbiddenmagicre:wrath_cage"]
+          "recipes": [
+            "forbiddenmagicre:fm_mob_crystal",
+            "forbiddenmagicre:wrath_cage"
+          ]
         }
       ]
     },
-    { "key": "DIABOLIST_FORK",
+    {
+      "key": "DIABOLIST_FORK",
       "name": "forbiddenmagic.research.diabolist_fork.title",
-      "icons": ["forbiddenmagicre:diabolist_fork"],
+      "icons": [
+        "forbiddenmagicre:diabolist_fork"
+      ],
       "category": "APOCRYPHA",
-      "location": [0, 2],
-      "parents": ["MORPH_TOOLS"],
+      "location": [
+        0,
+        2
+      ],
+      "parents": [
+        "MORPH_TOOLS"
+      ],
       "stages": [
         {
           "text": "forbiddenmagic.research.diabolist_fork.text",
-          "required_knowledge":["THEORY;INFUSION;1"],
-          "required_craft":["thaumcraft:thaumium_sword"]
+          "required_knowledge": [
+            "THEORY;INFUSION;1"
+          ],
+          "required_craft": [
+            "thaumcraft:thaumium_sword"
+          ]
         },
         {
           "text": "forbiddenmagic.research.diabolist_fork.complete.text",
-          "recipes": ["forbiddenmagicre:diabolist_fork"]
+          "recipes": [
+            "forbiddenmagicre:diabolist_fork"
+          ]
         }
       ]
     }
-    ]
+  ]
 }

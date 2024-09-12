@@ -1,8 +1,7 @@
 package keletu.forbiddenmagicre.init;
 
-
-import static fox.spiteful.lostmagic.compat.Compat.getItem;
 import keletu.forbiddenmagicre.LogHandler;
+import static keletu.forbiddenmagicre.compat.Compat.getItem;
 import keletu.forbiddenmagicre.enchantments.inchantment.EnumInfusionEnchantmentFM;
 import keletu.forbiddenmagicre.enchantments.inchantment.InfusionEnchantmentRecipeFM;
 import keletu.forbiddenmagicre.items.tools.ItemDragonslayer;
@@ -16,17 +15,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.oredict.OreDictionary;
-
 import org.apache.logging.log4j.Level;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.blocks.BlocksTC;
-import thaumcraft.api.crafting.CrucibleRecipe;
-import thaumcraft.api.crafting.InfusionRecipe;
-import thaumcraft.api.crafting.IngredientNBTTC;
-import thaumcraft.api.crafting.ShapedArcaneRecipe;
+import thaumcraft.api.crafting.*;
 import thaumcraft.api.items.ItemsTC;
 import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
@@ -81,16 +76,19 @@ public class InitRecipes {
                 "AAA",
                 'T', ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
                 'A', new ItemStack(BlocksTC.stoneArcane)));
-        
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "crystal_scribing_tools"), new ShapedArcaneRecipe(
+
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "crystal_scribing_tools"), new ShapelessArcaneRecipe(
                 defaultGroup,
                 "FM_CRYSTAL_SCRIBING_TOOLS",
                 15,
                 new AspectList(),
                 new ItemStack(ModItems.CRYSTAL_WELL),
-                "SWW",
-                'W', ThaumcraftApiHelper.makeCrystal(Aspect.WATER),
-                'S', new ItemStack(ItemsTC.scribingTools, 1, OreDictionary.WILDCARD_VALUE)));
+                new Object[]{
+                        ThaumcraftApiHelper.makeCrystal(Aspect.MIND),
+                        ThaumcraftApiHelper.makeCrystal(Aspect.MIND),
+                        "dyeBlack",
+                        new ItemStack(ItemsTC.scribingTools, 1, OreDictionary.WILDCARD_VALUE)}
+        ));
     }
 
     private static void initCrucibleRecipes() {
@@ -228,6 +226,13 @@ public class InitRecipes {
                 new ItemStack(Items.QUARTZ),
                 new ItemStack(Items.QUARTZ),
                 new ItemStack(Items.QUARTZ)));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "PureShovel"), new InfusionRecipe(
+                "PURESHOVEL",
+                new ItemStack(ModItems.shovelPurifier),
+                2, new AspectList().add(Aspect.LIGHT, 60).add(Aspect.TOOL, 30), new ItemStack(ItemsTC.thaumiumShovel, 1, 32767), ThaumcraftApiHelper.makeCrystal(Aspect.AURA, 1), ThaumcraftApiHelper.makeCrystal(Aspect.AURA, 1), new ItemStack(ItemsTC.quicksilver), new ItemStack(BlocksTC.logSilverwood)));
+
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "RingNutrition"), new InfusionRecipe("RINGNUTRITION", new ItemStack(ModItems.ringNutrition), 1, (new AspectList()).add(Aspect.LIFE, 30).add(Aspect.ALCHEMY, 30).add(Aspect.ENERGY, 30), new ItemStack(ItemsTC.baubles, 1, 5), ThaumcraftApiHelper.makeCrystal(Aspect.ALCHEMY, 1), new ItemStack(Items.GOLDEN_APPLE), new ItemStack(Items.GOLDEN_CARROT)));
+
         try {
 
             Item ingot = Items.IRON_INGOT;
@@ -278,7 +283,6 @@ public class InitRecipes {
         InfusionEnchantmentRecipeFM IECVOID = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.VOIDTOUCHED, (new AspectList()).add(Aspect.ELDRITCH, 50).add(ENVY, 30).add(Aspect.DARKNESS, 50).add(Aspect.VOID, 50), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), "ingotVoid", "ingotVoid", "ingotVoid", "ingotVoid", new ItemStack(ModItems.ResourceNS, 1, 1), new ItemStack(ModItems.ResourceNS, 1, 1), new ItemStack(ModItems.ResourceNS, 1, 1));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECVOID"), IECVOID);
         ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECVOIDFAKE"), new InfusionEnchantmentRecipeFM(IECVOID, voidtouched));
-
     }
 
     private static void initBotaniaRecipe() {

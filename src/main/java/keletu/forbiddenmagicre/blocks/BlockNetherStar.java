@@ -1,6 +1,6 @@
 package keletu.forbiddenmagicre.blocks;
 
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
@@ -11,14 +11,14 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-import static fox.spiteful.lostmagic.LostMagic.tab;
+
 
 public class BlockNetherStar extends Block implements IHasModel {
 
     public BlockNetherStar(){
         super(Material.IRON);
         setHardness(5.0F);
-        setCreativeTab(tab);
+        setCreativeTab(ReForbiddenMagic.tab);
         this.setHarvestLevel("pickaxe", 3);
         setTranslationKey("netherstar_block");
         setRegistryName("netherstar_block");
@@ -34,6 +34,6 @@ public class BlockNetherStar extends Block implements IHasModel {
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
 }

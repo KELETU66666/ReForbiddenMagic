@@ -1,7 +1,7 @@
 package keletu.forbiddenmagicre.blocks;
 
 
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
@@ -28,7 +28,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-import static fox.spiteful.lostmagic.LostMagic.tab;
+
 
 public class BlockRoseBush extends BlockBush implements IGrowable, IHasModel
 {
@@ -42,7 +42,7 @@ public class BlockRoseBush extends BlockBush implements IGrowable, IHasModel
         this.setHardness(0.0F);
         this.setTranslationKey("black_rose_bush");
         this.setRegistryName("black_rose_bush");
-        this.setCreativeTab(tab);
+        this.setCreativeTab(ReForbiddenMagic.tab);
         this.setTickRandomly(true);
 
         ModBlocks.BLOCKS.add(this);
@@ -240,7 +240,7 @@ public class BlockRoseBush extends BlockBush implements IGrowable, IHasModel
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
-        forbiddenmagicre.proxy.registerItemRenderer(Item.getItemFromBlock(this), 1, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(Item.getItemFromBlock(this), 1, "inventory");
     }
 }

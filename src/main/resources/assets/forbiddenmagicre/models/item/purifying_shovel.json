@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "forbiddenmagicre:items/purifying_shovel"
+  }
+}

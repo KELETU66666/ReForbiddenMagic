@@ -1,7 +1,7 @@
 package keletu.forbiddenmagicre.items;
 
 import keletu.forbiddenmagicre.ConfigFM;
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.client.util.ITooltipFlag;
@@ -30,7 +30,7 @@ public class ItemMobCrystal extends Item implements IHasModel{
         this.setMaxDamage(0);
         setTranslationKey("mob_crystal");
         setRegistryName("mob_crystal");
-        this.setCreativeTab(forbiddenmagicre.TabCrystal);
+        this.setCreativeTab(ReForbiddenMagic.TabCrystal);
         this.addPropertyOverride(new ResourceLocation("tag"), new IItemPropertyGetter() {
             @Override
             @SideOnly(Side.CLIENT)
@@ -96,6 +96,6 @@ public class ItemMobCrystal extends Item implements IHasModel{
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(this, 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }

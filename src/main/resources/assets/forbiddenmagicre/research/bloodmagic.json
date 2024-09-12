@@ -36,6 +36,27 @@
           "recipes": ["forbiddenmagicre:fm_divine_orb"]
         }
       ]
+    },
+    {
+      "key": "BLOODSCRIBE",
+      "name": "forbiddenmagic.research.bloodscribe.title",
+      "icons": ["forbiddenmagicre:scribe_blood"],
+      "category": "APOCRYPHA",
+      "location": [-2, 2],
+      "parents": ["LOSTMAGIC", "THEORYRESEARCH"],
+      "stages": [
+        {
+          "text": "forbiddenmagic.research.bloodscribe.text",
+          "required_craft":["bloodmagic:sacrificial_dagger"],
+          "required_item":["bloodmagic:monster_soul"],
+          "required_knowledge":["OBSERVATION;BASICS;1"]
+        },
+        {
+          "text": "forbiddenmagic.research.bloodscribe.complete.text",
+          "recipes": ["forbiddenmagicre:BloodScribe"],
+          "warp": 1
+        }
+      ]
     }
   ]
 }

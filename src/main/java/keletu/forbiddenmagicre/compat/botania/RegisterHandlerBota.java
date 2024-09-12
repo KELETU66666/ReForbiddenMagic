@@ -1,6 +1,6 @@
 package keletu.forbiddenmagicre.compat.botania;
 
-import fox.spiteful.lostmagic.Lumberjack;
+import keletu.forbiddenmagicre.Lumberjack;
 import keletu.forbiddenmagicre.compat.botania.flowers.*;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Items;

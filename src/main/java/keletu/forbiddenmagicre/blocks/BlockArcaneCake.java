@@ -1,8 +1,6 @@
 package keletu.forbiddenmagicre.blocks;
 
-
-import fox.spiteful.lostmagic.LostMagic;
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
@@ -37,7 +35,7 @@ public class BlockArcaneCake extends Block implements IHasModel {
         super(Material.CAKE);
         setTickRandomly(true);
         setHardness(0.5F);
-        setCreativeTab(LostMagic.tab);
+        setCreativeTab(ReForbiddenMagic.tab);
         this.setTranslationKey("arcane_cake");
         this.setRegistryName("arcane_cake");
         setDefaultState(getDefaultState().withProperty((IProperty)CAKE_STATE, Integer.valueOf(0)));
@@ -119,6 +117,6 @@ public class BlockArcaneCake extends Block implements IHasModel {
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
 }

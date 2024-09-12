@@ -1,10 +1,9 @@
 package keletu.forbiddenmagicre.blocks;
 
 
-import fox.spiteful.lostmagic.LostMagic;
 import keletu.forbiddenmagicre.ConfigFM;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.blocks.tiles.TileEntityWrathCage;
-import keletu.forbiddenmagicre.forbiddenmagicre;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
@@ -36,7 +35,7 @@ public class BlockWrathCage extends BlockContainer implements IHasModel {
     public BlockWrathCage() {
         super(Material.IRON);
         setTranslationKey("wrath_cage").setRegistryName("wrath_cage");
-        this.setCreativeTab(LostMagic.tab);
+        this.setCreativeTab(ReForbiddenMagic.tab);
         setHardness(5.0F);
         setResistance(2000.0F);
         setSoundType(SoundType.METAL);
@@ -47,7 +46,7 @@ public class BlockWrathCage extends BlockContainer implements IHasModel {
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
 
     @Override

@@ -2,7 +2,7 @@ package keletu.forbiddenmagicre.compat.bloodmagic;
 
 
 import WayofTime.bloodmagic.util.helper.NetworkHelper;
-import keletu.forbiddenmagicre.forbiddenmagicre;
+import keletu.forbiddenmagicre.ReForbiddenMagic;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import keletu.forbiddenmagicre.util.Reference;
@@ -94,6 +94,6 @@ public class ItemBloodRapier extends ItemSword implements IWarpingGear, IHasMode
 
     @Override
     public void registerModels() {
-        forbiddenmagicre.proxy.registerItemRenderer(this, 0, "inventory");
+        ReForbiddenMagic.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }
