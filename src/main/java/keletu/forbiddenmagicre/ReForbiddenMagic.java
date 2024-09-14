@@ -2,6 +2,7 @@ package keletu.forbiddenmagicre;
 
 import keletu.forbiddenmagicre.compat.botania.RegisterHandlerBota;
 import static keletu.forbiddenmagicre.compat.botania.RegisterHandlerBota.registerFlowers;
+import keletu.forbiddenmagicre.compat.lostmagic.ItemIDFixer;
 import keletu.forbiddenmagicre.init.InitRecipes;
 import keletu.forbiddenmagicre.init.InitResearch;
 import keletu.forbiddenmagicre.init.InitVanillaRecipes;
@@ -13,7 +14,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.datafix.FixTypes;
+import net.minecraftforge.common.util.ModFixs;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -75,6 +79,10 @@ public class ReForbiddenMagic {
         InitVanillaRecipes.init();
         if(Loader.isModLoaded("botania"))
             RegisterHandlerBota.lexify();
+
+        ModFixs modFixer = FMLCommonHandler.instance().getDataFixer().init(Reference.MOD_ID, 1);
+        modFixer.registerFix(FixTypes.ITEM_INSTANCE, new ItemIDFixer());
+
         proxy.registerDisplayInformationInit();
     }
 
