@@ -72,7 +72,7 @@ public class ReForbiddenMagic {
      */
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        ResearchCategories.registerCategory("APOCRYPHA", "FIRSTSTEPS", new AspectList().add(Aspect.LIGHT, 5).add(Aspect.ELDRITCH, 5).add(Aspect.AURA, 5).add(Aspect.MAGIC, 5).add(Aspect.DARKNESS, 5).add(Aspect.FLUX, 3).add(Aspect.MIND, 5), new ResourceLocation(Reference.MOD_ID, "textures/misc/forbidden.png"), new ResourceLocation(Reference.MOD_ID, "textures/misc/runecircle.png"));
+        ResearchCategories.registerCategory("APOCRYPHA", "FIRSTSTEPS", new AspectList().add(Aspect.LIGHT, 5).add(Aspect.ELDRITCH, 5).add(Aspect.AURA, 5).add(Aspect.MAGIC, 5).add(Aspect.DARKNESS, 5).add(Aspect.FLUX, 3).add(Aspect.MIND, 5), new ResourceLocation(Reference.MOD_ID, "textures/misc/forbidden.png"), new ResourceLocation(Reference.MOD_ID, "textures/misc/runecircle2.png"));
 
         InitRecipes.initRecipes();
         InitResearch.registerResearch();

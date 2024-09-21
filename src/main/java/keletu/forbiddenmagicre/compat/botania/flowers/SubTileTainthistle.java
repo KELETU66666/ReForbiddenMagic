@@ -16,8 +16,6 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
-import thaumcraft.client.fx.ParticleEngine;
-import thaumcraft.client.fx.particles.FXSlimyBubble;
 import thaumcraft.common.config.ConfigBlocks;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.subtile.SubTileGenerating;
@@ -65,16 +63,6 @@ public class SubTileTainthistle extends SubTileGenerating {
     @Override
     public boolean isPassiveFlower() {
         return false;
-    }
-
-    public void doBurnParticles() {
-
-        float h = supertile.getWorld().rand.nextFloat() * 0.075f;
-        FXSlimyBubble ef = new FXSlimyBubble(supertile.getWorld(), supertile.getPos().getX() + supertile.getWorld().rand.nextFloat(), supertile.getPos().getY() + 0.1f + 0.225f * 4, supertile.getPos().getZ() + supertile.getWorld().rand.nextFloat(), 0.075f + h);
-        ef.setAlphaF(0.8f);
-        ef.setRBGColorF(0.3f - supertile.getWorld().rand.nextFloat() * 0.1f, 0.0f, 0.4f + supertile.getWorld().rand.nextFloat() * 0.1f);
-        ParticleEngine.addEffect(supertile.getWorld(), ef);
-
     }
 
     public boolean isFlux(int x, int y, int z) {
