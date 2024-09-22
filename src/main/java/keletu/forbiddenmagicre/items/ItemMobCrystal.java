@@ -6,6 +6,8 @@ import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.Item;
@@ -71,10 +73,11 @@ public class ItemMobCrystal extends Item implements IHasModel{
 
         list.add(new ItemStack(this, 1, 0));
 
-        for (String mob : ConfigFM.spawnerMobs.keySet()) {
+        for (Class<? extends Entity> mob : ConfigFM.spawnerMobs.keySet()) {
+            int id = EntityList.getID(mob);
             ItemStack crystal = new ItemStack(this, 1, 0);
             crystal.setTagCompound(new NBTTagCompound());
-            crystal.getTagCompound().setString("mob", mob);
+            crystal.getTagCompound().setInteger("mob", id);
             list.add(crystal);
         }
     }
@@ -84,10 +87,10 @@ public class ItemMobCrystal extends Item implements IHasModel{
         if (stack.hasTagCompound()) {
             NBTTagCompound nbttagcompound = stack.getTagCompound();
             if(nbttagcompound.hasKey("mob")) {
-                String string = nbttagcompound.getString("mob");
+                int nt = nbttagcompound.getInteger("mob");
 
-                if (!string.isEmpty())
-                    return ("" + I18n.translateToLocal("item.mobcrystal.name").replace("%s", I18n.translateToLocal("entity." + string + ".name"))).trim();
+                if (nt >= 0)
+                    return ("" + I18n.translateToLocal("item.mobcrystal.name").replace("%s", I18n.translateToLocal("entity." + (EntityList.getClassFromID(nt).toString()).substring(41) + ".name"))).trim();
             }
         }
 

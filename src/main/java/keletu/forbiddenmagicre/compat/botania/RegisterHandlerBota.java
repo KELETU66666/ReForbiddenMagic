@@ -53,11 +53,11 @@ public class RegisterHandlerBota {
         addSubTile("astralbloom", SubTileAstralBloom.class);
         addSubTile("euclidaisy", SubTileEuclidaisy.class);
         addSubTile("tainthistle", SubTileTainthistle.class);
+        addSubTile("whisperweed", SubTileWhisperweed.class);
         if (Loader.isModLoaded("bloodmagic"))
             addSubTile("bloodthorn", SubTileBloodthorn.class);
         if (Loader.isModLoaded("psi"))
             addSubTile("mindlotus", SubTileMindLotus.class);
-        addSubTile("whisperweed", SubTileWhisperweed.class);
     }
 
     public static void lexify() {
@@ -78,6 +78,11 @@ public class RegisterHandlerBota {
                 ItemStack tainthistle = ItemBlockSpecialFlower.ofType("tainthistle");
                 SubTileTainthistle.lexicon.setIcon(tainthistle);
 
+                SubTileWhisperweed.lexicon = new MagicLexicon("whisperweed", BotaniaAPI.categoryFunctionalFlowers, "Thaumcraft");
+                SubTileWhisperweed.lexicon.addPage(BotaniaAPI.internalHandler.textPage("forbidden.lexicon.whisperweed.0"));
+                ItemStack whisperweed = ItemBlockSpecialFlower.ofType("whisperweed");
+                SubTileWhisperweed.lexicon.setIcon(whisperweed);
+
                 if (Loader.isModLoaded("bloodmagic")) {
                     SubTileBloodthorn.lexicon = new MagicLexicon("bloodthorn", BotaniaAPI.categoryFunctionalFlowers, "BloodMagic");
                     SubTileBloodthorn.lexicon.addPage(BotaniaAPI.internalHandler.textPage("forbidden.lexicon.bloodthorn.0"));
@@ -93,10 +98,6 @@ public class RegisterHandlerBota {
                     SubTileMindLotus.lexicon.setIcon(lotus);
                 }
 
-                SubTileWhisperweed.lexicon = new MagicLexicon("whisperweed", BotaniaAPI.categoryFunctionalFlowers, "Thaumcraft");
-                SubTileWhisperweed.lexicon.addPage(BotaniaAPI.internalHandler.textPage("forbidden.lexicon.whisperweed.0"));
-                ItemStack whisperweed = ItemBlockSpecialFlower.ofType("whisperweed");
-                SubTileWhisperweed.lexicon.setIcon(whisperweed);
             } catch (Throwable e) {
                 Lumberjack.log(Level.ERROR, e, "Schools of Magic decayed like a Daybloom.");
             }

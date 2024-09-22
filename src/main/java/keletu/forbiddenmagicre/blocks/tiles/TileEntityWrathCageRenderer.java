@@ -3,6 +3,8 @@ package keletu.forbiddenmagicre.blocks.tiles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
+import net.minecraft.entity.monster.EntityGhast;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
@@ -24,12 +26,12 @@ public class TileEntityWrathCageRenderer extends TileEntitySpecialRenderer<TileE
         if (entity != null) {
             entity.setWorld(spawnLogic.getSpawnerWorld());
             float f1 = 0.4375F;
-            if (spawnLogic.getEntityNameToSpawn().equals("Ghast"))
+            if (EntityList.getClassFromID(spawnLogic.getEntityNameToSpawn()).equals(EntityGhast.class))
                 f1 = 0.1F;
-            else if (spawnLogic.getEntityNameToSpawn().equals("Slime") || spawnLogic.getEntityNameToSpawn().equals("ThaumSlime"))
-                f1 = 0.4F;
-            else if (spawnLogic.getEntityNameToSpawn().equals("Enderman"))
-                f1 = 0.3F;
+           //else if (spawnLogic.getEntityNameToSpawn().equals("Slime") || spawnLogic.getEntityNameToSpawn().equals("ThaumSlime"))
+           //    f1 = 0.4F;
+           //else if (spawnLogic.getEntityNameToSpawn().equals("Enderman"))
+           //    f1 = 0.3F;
             GL11.glTranslatef(0.0F, 0.4F, 0.0F);
             GL11.glRotatef((float) (spawnLogic.prevMobRotation + (spawnLogic.mobRotation - spawnLogic.prevMobRotation) * (double) par7) * 10.0F, 0.0F, 1.0F, 0.0F);
             GL11.glRotatef(-30.0F, 1.0F, 0.0F, 0.0F);

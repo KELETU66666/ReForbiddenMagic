@@ -12,12 +12,11 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagString;
+import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
@@ -28,8 +27,6 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.Random;
 
 public class BlockWrathCage extends BlockContainer implements IHasModel {
     public BlockWrathCage() {
@@ -60,44 +57,40 @@ public class BlockWrathCage extends BlockContainer implements IHasModel {
     }
 
     @Override
-    public int quantityDropped(Random rand) {
-        return 1;
-    }
-
-    @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         ItemStack held = player.getHeldItemMainhand();
-        if (held != ItemStack.EMPTY && held.getItem() == ModItems.MOB_CRYSTAL) {
-            NBTTagCompound nbttagcompound = held.getTagCompound();
-            if (nbttagcompound == null)
-                return false;
-            if(!nbttagcompound.hasKey("mob"))
-                return false;
-            String string = nbttagcompound.getString("mob");
-            if (string != null) {
-                if (!world.isRemote) {
-                    TileEntityWrathCage spawner = (TileEntityWrathCage) world.getTileEntity(pos);
-                    String mob = null;
-                    ItemStack crystal = ItemStack.EMPTY;
-                    if (spawner.getSpawnerLogic().isMobSet()) {
-                        mob = spawner.getSpawnerLogic().getEntityNameToSpawn();
-                        crystal = new ItemStack(ModItems.MOB_CRYSTAL, 1);
-                        NBTTagString mobTag = new NBTTagString(mob);
-                        crystal.setTagInfo("mob", mobTag);
+        TileEntityWrathCage spawner = (TileEntityWrathCage) world.getTileEntity(pos);
+        if (spawner != null)
+            if (held != ItemStack.EMPTY && held.getItem() == ModItems.MOB_CRYSTAL) {
+                NBTTagCompound nbttagcompound = held.getTagCompound();
+                if (nbttagcompound == null)
+                    return false;
+                if (!nbttagcompound.hasKey("mob"))
+                    return false;
+                int nt = nbttagcompound.getInteger("mob");
+                if (nt >= 0) {
+                    if (!world.isRemote) {
+
+                        int mob = 0;
+                        ItemStack crystal = ItemStack.EMPTY;
+                        if (spawner.getSpawnerLogic().isMobSet()) {
+                            mob = spawner.getSpawnerLogic().getEntityNameToSpawn();
+                            crystal = new ItemStack(ModItems.MOB_CRYSTAL, 1);
+                            NBTTagInt mobTag = new NBTTagInt(mob);
+                            crystal.setTagInfo("mob", mobTag);
+                        }
+                        spawner.getSpawnerLogic().setMobID(nt);
+                        spawner.getSpawnerLogic().mobIsSet(true);
+                        spawner.checkAspect();
+                        world.notifyBlockUpdate(pos, state, state, 0);
+                        //player.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, crystal);
                     }
-                    spawner.getSpawnerLogic().setMobID(string);
-                    spawner.getSpawnerLogic().mobIsSet(true);
-                    spawner.checkAspect();
-                    world.notifyBlockUpdate(pos, state, state, 0);
-                    player.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, crystal);
+                    return true;
                 }
-                return true;
+            } else if (held != ItemStack.EMPTY && held.getItem() == ModItems.DIABOLISTFORK && ConfigFM.wrathCost > 0) {
+                if (++spawner.mode > 2)
+                    spawner.mode = 0;
             }
-        } else if (held != ItemStack.EMPTY && held.getItem() == ModItems.DIABOLISTFORK && ConfigFM.wrathCost > 0) {
-            TileEntityWrathCage spawner = (TileEntityWrathCage) world.getTileEntity(pos);
-            if (++spawner.mode > 2)
-                spawner.mode = 0;
-        }
         return false;
     }
 
@@ -112,14 +105,12 @@ public class BlockWrathCage extends BlockContainer implements IHasModel {
         return getItem(world, pos, state);
     }
 
-    public EnumBlockRenderType getRenderType(IBlockState state)
-    {
+    public EnumBlockRenderType getRenderType(IBlockState state) {
         return EnumBlockRenderType.MODEL;
     }
 
     @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getRenderLayer()
-    {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 }

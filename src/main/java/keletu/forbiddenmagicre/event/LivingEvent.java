@@ -344,12 +344,12 @@ public class LivingEvent {
             ((EntityLivingBase) event.getSource().getTrueSource()).getHeldItemMainhand();
             ItemStack equip = ((EntityLivingBase) event.getSource().getTrueSource()).getHeldItemMainhand();
             if (equip.getItem() == ModItems.DIABOLISTFORK) {
-                String name = null;
+                Class<? extends Entity> name = null;
                 try {
-                    name = EntityList.getEntityString(event.getEntityLiving());
+                    name = EntityList.getClass(EntityList.getKey(event.getEntityLiving()));
                 } catch (Exception e) {
                     try {
-                        name = event.getEntityLiving().getCommandSenderEntity().getName();
+                        name = event.getEntityLiving().getCommandSenderEntity().getClass();
                     } catch (Exception ee) {
                         return;
                     }
@@ -377,13 +377,13 @@ public class LivingEvent {
         }
     }
 
-    public void imprintCrystal(EntityPlayer player, String mob) {
+    public void imprintCrystal(EntityPlayer player, Class<? extends Entity> mob) {
         for (int x = 0; x < player.inventory.getSizeInventory(); ++x) {
             ItemStack item = player.inventory.getStackInSlot(x);
             if (!item.isEmpty() && item.getItem() == ModItems.MOB_CRYSTAL && (!item.hasTagCompound() || !item.getTagCompound().hasKey("mob"))) {
                 if (!item.hasTagCompound())
                     item.setTagCompound(new NBTTagCompound());
-                item.getTagCompound().setString("mob", mob);
+                item.getTagCompound().setInteger("mob", EntityList.getID(mob));
                 return;
             }
         }

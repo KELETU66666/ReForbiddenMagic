@@ -60,7 +60,7 @@ public class TileEntityWrathCage extends TileEntity implements IAspectContainer,
     public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
         readFromNBT(pkt.getNbtCompound());
         IBlockState iblockstate = world.getBlockState(pos);
-        world.notifyBlockUpdate(pos, iblockstate, iblockstate, 0);
+        world.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
     }
 
     @Override
@@ -77,6 +77,8 @@ public class TileEntityWrathCage extends TileEntity implements IAspectContainer,
     @Override
     public void update()
     {
+        this.world.notifyBlockUpdate(this.pos, this.world.getBlockState(pos),  world.getBlockState(pos), 2);
+
         this.spawnLogic.updateSpawner();
 
         if(ConfigFM.wrathCost > 0 && spawnLogic.isMobSet() && !(special >= 64 || wrath >= 64 || sloth >= 64))
@@ -86,7 +88,7 @@ public class TileEntityWrathCage extends TileEntity implements IAspectContainer,
     void drawEssentia()
     {
         IBlockState iblockstate = world.getBlockState(pos);
-        for(int x = 0; x < EnumFacing.byIndex(x).getIndex(); x++){
+        for(int x = 0; x < EnumFacing.values().length; x++){
             EnumFacing current = EnumFacing.byIndex(x);
             TileEntity te = ThaumcraftApiHelper.getConnectableTile(world, pos, current);
             if(te != null) {
@@ -94,19 +96,19 @@ public class TileEntityWrathCage extends TileEntity implements IAspectContainer,
                 if(ic.canOutputTo(current.getOpposite()) && special < 64 //THE DIRECTION HERE MAY BE WRONG SPITEFULFOXY SO CHECK IT
                         && ic.getEssentiaType(current.getOpposite()) == aspect && ic.getEssentiaAmount(current.getOpposite()) > 0 && ic.takeEssentia(aspect, 1, current.getOpposite()) == 1) {
                     special++;
-                    world.notifyBlockUpdate(pos, iblockstate, iblockstate, 0);
+                    world.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
                     return;
                 }
                 else if(ic.canOutputTo(current.getOpposite()) && wrath < 64 && special < ConfigFM.wrathCost
                         && ic.getEssentiaType(current.getOpposite()) == RegistryHandler.WRATH && ic.getEssentiaAmount(current.getOpposite()) > 0 && ic.takeEssentia(RegistryHandler.WRATH, 1, current.getOpposite()) == 1) {
                     wrath++;
-                    world.notifyBlockUpdate(pos, iblockstate, iblockstate, 0);
+                    world.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
                     return;
                 }
                 else if(ic.canOutputTo(current.getOpposite()) && sloth < 64 && special < ConfigFM.wrathCost && wrath < ConfigFM.wrathCost
                         && ic.getEssentiaType(current.getOpposite()) == RegistryHandler.SLOTH && ic.getEssentiaAmount(current.getOpposite()) > 0 && ic.takeEssentia(RegistryHandler.SLOTH, 1, current.getOpposite()) == 1) {
                     sloth++;
-                    world.notifyBlockUpdate(pos, iblockstate, iblockstate, 0);
+                    world.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
                     return;
                 }
             }
@@ -174,18 +176,17 @@ public class TileEntityWrathCage extends TileEntity implements IAspectContainer,
             return amount;
         if(tag == RegistryHandler.WRATH){
             wrath += amount;
-            return 0;
         }
         else if(tag == RegistryHandler.SLOTH){
             sloth += amount;
-            return 0;
         }
         else if(tag == aspect){
             special += amount;
-            return 0;
         }
         else
             return amount;
+
+        return 0;
     }
 
     /**

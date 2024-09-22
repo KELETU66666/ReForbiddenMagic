@@ -1,14 +1,22 @@
 package keletu.forbiddenmagicre;
 
 import keletu.forbiddenmagicre.util.Reference;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.monster.*;
+import net.minecraft.entity.passive.*;
 import net.minecraftforge.common.config.Config;
+import thaumcraft.common.entities.monster.*;
+import thaumcraft.common.entities.monster.cult.EntityCultistCleric;
+import thaumcraft.common.entities.monster.cult.EntityCultistKnight;
+import thaumcraft.common.entities.monster.tainted.EntityTaintCrawler;
+import thaumcraft.common.entities.monster.tainted.EntityTaintSwarm;
 
 import java.util.HashMap;
 
 @Config(modid = Reference.MOD_ID, category = "ReForbiddenMagic")
 public class ConfigFM {
 
-        public static HashMap<String, String> spawnerMobs = new HashMap<String, String>();
+        public static HashMap<Class<? extends Entity>, String> spawnerMobs = new HashMap<Class<? extends Entity>, String>();
 
         @Config.LangKey("Wrath Cage Cries Havoc")
         @Config.Comment("Enable to let the Wrath Cage imprint on ANY non-boss mob.  May break your game or make your game Awesome.")
@@ -45,44 +53,44 @@ public class ConfigFM {
         public static boolean SilverFish = true;
 
         public static void spawnilify() {
-                spawnerMobs.put("Zombie", "exanimis");
-                spawnerMobs.put("Skeleton", "mortuus");
-                spawnerMobs.put("Creeper", "ignis");
-                spawnerMobs.put("Horse", "bestia");
-                spawnerMobs.put("Pig", "bestia");
-                spawnerMobs.put("Sheep", "fabrico");
-                spawnerMobs.put("Cow", "bestia");
-                spawnerMobs.put("MushroomCow", "herba");
-                spawnerMobs.put("Ozelot", "bestia");
-                spawnerMobs.put("Chicken", "volatus");
-                spawnerMobs.put("Squid", "sensus");
-                spawnerMobs.put("Wolf", "bestia");
-                spawnerMobs.put("Bat", "volatus");
-                spawnerMobs.put("Spider", "fabrico");
-                spawnerMobs.put("Slime", "alkimia");
-                spawnerMobs.put("Ghast", "infernus");
-                spawnerMobs.put("PigZombie", "desiderium");
-                spawnerMobs.put("Enderman", "alienis");
-                spawnerMobs.put("CaveSpider", "mortuus");
-                spawnerMobs.put("Silverfish", "desiderium");
-                spawnerMobs.put("Blaze", "ignis");
-                spawnerMobs.put("LavaSlime", "ignis");
-                spawnerMobs.put("Witch", "praecantatio");
-                spawnerMobs.put("Villager", "desiderium");
-                spawnerMobs.put("Firebat", "ignis");
-                spawnerMobs.put("Wisp", "auram");
-                spawnerMobs.put("ThaumSlime", "vitium");
-                spawnerMobs.put("BrainyZombie", "cognitio");
-                spawnerMobs.put("GiantBrainyZombie", "cognitio");
-                spawnerMobs.put("TaintCrawler", "vitium");
-                spawnerMobs.put("TaintSwarm", "vitium");
-                spawnerMobs.put("CultistKnight", "alienis");
-                spawnerMobs.put("CultistCleric", "alienis");
-                spawnerMobs.put("EldritchCrab", "alienis");
-                spawnerMobs.put("InhabitedZombie", "alienis");
-                spawnerMobs.put("Pech", "desiderium");
-                spawnerMobs.put("EldritchGuardian", "alienis");
-                spawnerMobs.put("WitherSkeleton", "mortuus");
-                // spawnerMobs.put("Taintacle", DarkAspects.LUST);
+                spawnerMobs.put(EntityZombie.class, "exanimis");
+                spawnerMobs.put(EntitySkeleton.class, "mortuus");
+                spawnerMobs.put(EntityCreeper.class, "ignis");
+                spawnerMobs.put(EntityHorse.class, "bestia");
+                spawnerMobs.put(EntityPig.class, "bestia");
+                spawnerMobs.put(EntitySheep.class, "fabrico");
+                spawnerMobs.put(EntityCow.class, "bestia");
+                spawnerMobs.put(EntityMooshroom.class, "herba");
+                spawnerMobs.put(EntityOcelot.class, "bestia");
+                spawnerMobs.put(EntityChicken.class, "volatus");
+                spawnerMobs.put(EntitySquid.class, "sensus");
+                spawnerMobs.put(EntityWolf.class, "bestia");
+                spawnerMobs.put(EntityBat.class, "volatus");
+                spawnerMobs.put(EntitySpider.class, "fabrico");
+                spawnerMobs.put(EntitySlime.class, "alkimia");
+                spawnerMobs.put(EntityGhast.class, "infernus");
+                spawnerMobs.put(EntityPigZombie.class, "desiderium");
+                spawnerMobs.put(EntityEnderman.class, "alienis");
+                spawnerMobs.put(EntityCaveSpider.class, "mortuus");
+                spawnerMobs.put(EntitySilverfish.class, "desiderium");
+                spawnerMobs.put(EntityBlaze.class, "ignis");
+                spawnerMobs.put(EntityMagmaCube.class, "ignis");
+                spawnerMobs.put(EntityWitch.class, "praecantatio");
+                spawnerMobs.put(EntityVillager.class, "desiderium");
+                spawnerMobs.put(EntityFireBat.class, "ignis");
+                spawnerMobs.put(EntityWisp.class, "auram");
+                spawnerMobs.put(EntityThaumicSlime.class, "vitium");
+                spawnerMobs.put(EntityBrainyZombie.class, "cognitio");
+                spawnerMobs.put(EntityGiantBrainyZombie.class, "cognitio");
+                spawnerMobs.put(EntityTaintCrawler.class, "vitium");
+                spawnerMobs.put(EntityTaintSwarm.class, "vitium");
+                spawnerMobs.put(EntityCultistKnight.class, "alienis");
+                spawnerMobs.put(EntityCultistCleric.class, "alienis");
+                spawnerMobs.put(EntityEldritchCrab.class, "alienis");
+                spawnerMobs.put(EntityInhabitedZombie.class, "alienis");
+                spawnerMobs.put(EntityPech.class, "desiderium");
+                spawnerMobs.put(EntityEldritchGuardian.class, "alienis");
+                spawnerMobs.put(EntityWitherSkeleton.class, "mortuus");
+                // spawnerMobs.put("Taintacle", DarkAspects.LUST);*/
         }
 }

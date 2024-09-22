@@ -9,7 +9,6 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -26,7 +25,7 @@ public class WrathSpawnerLogic {
 
     /** The delay to spawn. */
     public int spawnDelay = 20;
-    private String mobID = "Pig";
+    private int mobID = 0;
     Aspect aspect = Aspect.DESIRE;
     private boolean slothful = false;
     private int fuel = 0;
@@ -54,50 +53,18 @@ public class WrathSpawnerLogic {
     /**
      * Gets the entity name that should be spawned.
      */
-    public String getEntityNameToSpawn() {
-        //Forgive me, this method are toooo stupid, but only this can let wrath cage works.
-        switch (this.mobID) {
-            case "Ozelot":
-                return "Ocelot";
-            case "WitherSkeleton":
-                return "Wither_Skeleton";
-            case "MushroomCow":
-                return "Mooshroom";
-            case "PigZombie":
-                return "ZombiePigman";
-            case "MagmaCubeLavaSlime":
-                return "MagmaCube";
-            case "Wisp":
-                return "Thaumcraft.Wisp";
-            case "Pech":
-                return "Thaumcraft.Pech";
-            case "ThaumSlime":
-                return "Thaumcraft.ThaumSlime";
-            case "BrainyZombie":
-                return "Thaumcraft.BrainyZombie";
-            case "GiantBrainyZombie":
-                return "Thaumcraft.GiantBrainyZombie";
-            case "CultistKnight":
-                return "Thaumcraft.CultistKnight";
-            case "CultistCleric":
-                return "Thaumcraft.CultistCleric";
-            case "EldritchCrab":
-                return "Thaumcraft.EldritchCrab";
-            case "InhabitedZombie":
-                return "Thaumcraft.InhabitedZombie";
-            default:
-                return this.mobID;
-        }
+    public int getEntityNameToSpawn() {
+        return this.mobID;
     }
 
     public Aspect getAspect() {
         return aspect;
     }
 
-    public void setMobID(String par1Str) {
+    public void setMobID(int par1Str) {
         this.mobID = par1Str;
-        if (ConfigFM.spawnerMobs.containsKey(mobID))
-            aspect = Aspect.getAspect(ConfigFM.spawnerMobs.get(mobID));
+        if (ConfigFM.spawnerMobs.containsKey(EntityList.getClassFromID(mobID)))
+            aspect = Aspect.getAspect(ConfigFM.spawnerMobs.get(EntityList.getClassFromID(mobID)));
         else
             aspect = Aspect.DESIRE;
     }
@@ -185,7 +152,7 @@ public class WrathSpawnerLogic {
             }
 
             for (int i = 0; i < this.spawnCount && (fuel > 0 || ConfigFM.wrathCost <= 0); ++i) {
-                Entity entity = EntityList.createEntityByIDFromName(new ResourceLocation(this.getEntityNameToSpawn()), this.getSpawnerWorld());
+                Entity entity = EntityList.createEntityByID(this.getEntityNameToSpawn(), this.getSpawnerWorld());
 
                 if (entity == null) {
                     return;
@@ -248,9 +215,9 @@ public class WrathSpawnerLogic {
     }
 
     public void readFromNBT(NBTTagCompound par1NBTTagCompound) {
-        mobID = par1NBTTagCompound.getString("EntityId");
-        if (ConfigFM.spawnerMobs.containsKey(mobID))
-            aspect = Aspect.getAspect(ConfigFM.spawnerMobs.get(mobID));
+        mobID = par1NBTTagCompound.getInteger("EntityId");
+        if (ConfigFM.spawnerMobs.containsKey(EntityList.getClassFromID(mobID)))
+            aspect = Aspect.getAspect(ConfigFM.spawnerMobs.get(EntityList.getClassFromID((mobID))));
         else
             aspect = Aspect.DESIRE;
         mobSet = par1NBTTagCompound.getBoolean("MobSet");
@@ -279,7 +246,7 @@ public class WrathSpawnerLogic {
     }
 
     public void writeToNBT(NBTTagCompound par1NBTTagCompound) {
-        par1NBTTagCompound.setString("EntityId", this.getEntityNameToSpawn());
+        par1NBTTagCompound.setInteger("EntityId", this.getEntityNameToSpawn());
         par1NBTTagCompound.setBoolean("MobSet", mobSet);
         par1NBTTagCompound.setBoolean("Slothful", slothful);
         par1NBTTagCompound.setShort("Fuel", (short) this.fuel);
@@ -318,7 +285,7 @@ public class WrathSpawnerLogic {
     @SideOnly(Side.CLIENT)
     public Entity getEntityForRender() {
         if (this.renderEntity == null) {
-            Entity entity = EntityList.createEntityByIDFromName(new ResourceLocation(this.getEntityNameToSpawn()), null);
+            Entity entity = EntityList.createEntityByID(this.getEntityNameToSpawn(), null);
             entity = this.spawnMob(entity);
             this.renderEntity = entity;
         }
