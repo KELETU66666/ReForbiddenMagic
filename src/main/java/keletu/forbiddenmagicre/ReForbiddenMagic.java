@@ -34,7 +34,7 @@ import thaumcraft.api.research.ResearchCategories;
         modid = Reference.MOD_ID,
         name = Reference.NAME,
         version = Reference.VERSION,
-         dependencies = "required-after:thaumcraft;after:bloodmagic"
+         dependencies = "required-after:thaumcraft;after:bloodmagic;after:botania"
 )
 public class ReForbiddenMagic {
 

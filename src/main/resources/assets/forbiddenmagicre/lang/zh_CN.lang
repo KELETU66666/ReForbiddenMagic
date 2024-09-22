@@ -57,7 +57,7 @@ potion.dragonwrack=龙族杀手
 
 #植物魔法
 tile.botania:flower.tainthistle.name=腐化蓟
-forbidden.lexicon.tainthistle=它不会扫荡干净你的空百奇盒子的
+forbidden.lexicon.tainthistle=腐化蓟
 forbidden.lexicon.tainthistle.0=那令人厌恶的&1腐化蓟&0原本是生长于魔法实验后产生的腐化物质中的植物.它会消灭掉它能找到的一切物质,并试图转化为Mana.因为植物学是一项环境友好型的业务,所以这里也没什么可以多说的.<BR>&o比Spirit Vine更具有入侵性&r
 
 tile.botania:flower.bloodthorn.name=血荆棘
