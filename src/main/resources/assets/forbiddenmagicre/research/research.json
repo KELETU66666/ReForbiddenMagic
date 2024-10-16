@@ -284,7 +284,7 @@
       ],
       "parents": [
         "MORPH_TOOLS",
-        "f_toomuchflux",
+        "~f_toomuchflux",
         "!vitium"
       ],
       "stages": [
@@ -422,7 +422,7 @@
       ],
       "parents": [
         "LOSTMAGIC",
-        "ELEMENTALTOOLS"
+        "~ELEMENTALTOOLS"
       ],
       "stages": [
         {

@@ -130,16 +130,19 @@ enchantment.forbiddenmagic.wrath.desc=Increases the damage of the item. Compatib
 
 #Research ForbiddenMagic
 
-forbiddenmagic.research.lostmagic.title=ReForbidden Magic
-forbiddenmagic.research.lostmagic.text=Some avenues of research don't seem to fit neatly into established categories. Sometimes they're too weird, too forbidden, too spooky, or just too sinful for this sweet earth.<BR>I can probably just stick any researches that don't fit into other categories into this section of my Thaumonomicon.<PAGE><PAGE> <IMG>forbiddenmagicre:textures/misc/sigiloss2.png:0:0:128:128:.75</IMG> §oSome kind of magical sigil§r
+forbiddenmagic.research.lostmagic.title=Forbidden Knowledge
+forbiddenmagic.research.lostmagic.text=Some avenues of research don't seem to fit neatly into other established categories. Sometimes they're too weird, too forbidden, too spooky, or just too taboo for the average Thaumaturge to touch.<BR>I can probably just stick any type of research that don't fit into other categories within this section of my Thaumonomicon.<PAGE><IMG>forbiddenmagicre:textures/misc/sigiloss2.png:0:0:128:128:.75</IMG>
+
+forbiddenmagic.research.sevensins.title=The Seven Deadly Sins
+forbiddenmagic.research.sevensins.text=Strange energies swirl through the Nether. On occasion, they have been known to solidify into corrupt shards when certain sympathetic events occur.<PAGE>These shards are imbued with different vices and have many uses for more unscrupulous Thaumaturges.<BR>There are seven documented types of these shards, each attuned to a different "deadly sin".<BR><IMG>forbiddenmagicre:textures/misc/research.png:0:0:111:16:1</IMG><PAGE>Wrath Shards crystallize around acts of violence. The more excessive the physical force used, the more likely it is for a Wrath Shard to appear.<BR>Envy Shards are taken from those who have them by those that covet them.<BR>Gluttony Shards crystallize when someone feasts excessively.<BR>Pride Shards materialize when a creature of truly great power is cut down to size.<BR>Lust Shards pop up when a maniac hits stuff around with a riding crop.<BR>Sloth Shards congeal when proxies and accidents are used to collect resources without effort.<BR>Greed Shards appear when enchantment is used to turn a profit.
 
 forbiddenmagic.research.pureshovel.title=Shovel of the Purifier
-forbiddenmagic.research.pureshovel.text=Releasing too much flux into the aura sure does make a mess sometimes. Some of the more physical symptoms seem resistant to standard methods of removal.<BR>Maybe I can infuse a thaumium tool with something to make it more effective.
-forbiddenmagic.research.pureshovel.complete.text=By combining silverwood, auram shards, and quicksilver with a thaumium shovel, I've designed a tool capable of digging up taint. It is even more effective against tainted blocks than it is against regular dirt. If you press right click with it, it will also vaporize any flux goo in a small radius.<BR>That'll show those stupid purple blocks who's boss!
+forbiddenmagic.research.pureshovel.text=I have in fact underestimated the dangerous capabilities of Flux and what sort of consequences it would cause into the environment by releasing too much of it into the local aura.<BR>Some of the more physical symptoms of Flux (or Taint), seem to be highly resistant to standard methods of removal. The average tool has almost no effect against this strange substance not even the elemental tools I have recently created, I would need to somehow acquire a special tool that would particularly be effective against it. 
+forbiddenmagic.research.pureshovel.complete.text.stage.1=By infusing Auram shards with a thaumium shovel, I've designed a tool capable of being effective against all kinds of Tainted blocks.<BR>If a situation ever happens again, I can simply right click on the ground and it will vaporize any nearby Flux goo within a small radius.<BR>At the cost of durability of course.
 
 forbiddenmagic.research.ringnutrition.title=Ring of Nutrition
-forbiddenmagic.research.ringnutrition.text=Eating food is such a scam! Why do I have to eat things just to eat more things later? And don't even get me started on having to eat §ogood§r things! Eating some melon slices I picked up off the ground is perfectly healthy!<BR>Perhaps I can find a way to improve my ability to derive sustenance through infusion.
-forbiddenmagic.research.ringnutrition.complete.text=At last! I've created a ring that will improve the nutritious value of most things I eat as long as I wear it! Some foods are a bit too exotic for the ring to process, and cake is just TOO worthless, but now even cookies and melon slices will be at least a little filling.
+forbiddenmagic.research.ringnutrition.text=I should focus on making a ring that will help me eat less than I normally would. That way I wouldn't have to forage as often whenever I run out of food.<BR>I should start by observing the quality of the food I consume.
+forbiddenmagic.research.ringnutrition.complete.text=At last! I have created a ring that will help enrich most food eaten by the wearer as long as it is continued to be worn.<BR>It will always provide the same hunger and saturation boost to the affected food regardless of the quality, this will be quite useful especially on less filling foods such as cookies or beetroots.
 
 forbiddenmagic.research.morph_tools.title=Multitools
 forbiddenmagic.research.morph_tools.text=As a person who tends to use my tools for nearly everything, it would be nice to have more inventory space that's not cluttered with my multiple tools. Unfortunately, I can't just add multiple of these enchantments to the same tool... or can I? Something worth experimenting is the idea of perhaps having a tool in which I can switch out enchantments without having to disenchant it and re-enchant it. Thankfully, I might have something that could mimic the idea rather well.
@@ -223,7 +226,7 @@ itemGroup.fm_crystal=Mob Crystal
 
 # Misc
 tc.research_category.APOCRYPHA=Apocrypha
-got.lm_badfood=You have eaten garbage.
+got.lm_badfood=You have eaten some junk food.
 got.lm_goodfood=You have eaten something nourishing.
 research.f_badfood.text=Eat some junk food.
 research.f_goodfood.text=Eat something nourishing.
