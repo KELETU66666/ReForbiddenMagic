@@ -78,7 +78,7 @@ public class ItemShovelPurifier extends ItemSpade implements IHasModel {
                         float d2 = ((float) wy + world.rand.nextFloat());
                         float d0 = ((float) zee + world.rand.nextFloat());
                         //Thaumcraft.proxy.nodeBolt(world, (float)player.posX, (float)player.posY, (float)player.posZ, d1, d2, d0);
-                        PacketHandler.INSTANCE.sendToAllAround(new PacketFXZap(player.getPositionVector(), new Vec3d(d1, d2, d0), 0xFFFFFF, 0.5F * 0.66F), new NetworkRegistry.TargetPoint(world.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 64.0D));
+                        PacketHandler.INSTANCE.sendToAllAround(new PacketFXZap(player.getPositionVector(), new Vec3d(d1, d2, d0), 0xFFC0FF, 0.5F * 0.66F), new NetworkRegistry.TargetPoint(world.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 64.0D));
                     }
                 }
             }
@@ -87,7 +87,7 @@ public class ItemShovelPurifier extends ItemSpade implements IHasModel {
         if (purified > 0) {
             player.getHeldItem(hand).damageItem(Math.min(purified, 15), player);
             player.swingArm(hand);
-            world.playSound(player, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundsTC.zap, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.playSound(player, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundsTC.zap, SoundCategory.PLAYERS, 1.0F, 1.0F);
             return EnumActionResult.SUCCESS;
         }
         return EnumActionResult.PASS;
