@@ -236,7 +236,7 @@ public class InitRecipes {
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "RingNutrition"), new InfusionRecipe(
                 "RINGNUTRITION",
                 new ItemStack(ModItems.ringNutrition),
-                1, (new AspectList()).add(RegistryHandler.GLUTTONY, 20).add(Aspect.ALCHEMY, 20).add(Aspect.ENERGY, 20), new ItemStack(ItemsTC.baubles, 1, 5), new ItemStack(ModItems.GluttonyShard), bew ItemStack(ModItems.GluttonyShard), ItemStack(ModItems.GluttonyShard)));
+                1, (new AspectList()).add(RegistryHandler.GLUTTONY, 20).add(Aspect.ALCHEMY, 20).add(Aspect.ENERGY, 20), new ItemStack(ItemsTC.baubles, 1, 5), new ItemStack(ModItems.GluttonyShard), new ItemStack(ModItems.GluttonyShard), new ItemStack(ModItems.GluttonyShard)));
 
         try {
 
