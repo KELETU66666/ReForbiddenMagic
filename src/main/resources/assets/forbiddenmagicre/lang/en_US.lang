@@ -27,8 +27,8 @@ item.resourcefm.0.name=Emerald Fragment
 item.resourcefm.1.name=Umbral Dye
 item.resourcefm.2.name=Taint Blood Shard
 item.diabolist_fork.name=Diabolist Fork
-item.mobcrystalempty.name=Empty Imprinting Crystals
-item.mobcrystal.name=%s Imprinting Crystals
+item.mobcrystalempty.name=Empty Imprinting Crystal
+item.mobcrystal.name=%s Imprinting Crystal
 item.resourceshard.0.name=Wrath Shard
 item.resourceshard.1.name=Envy Shard
 item.resourceshard.2.name=Pride Shard
@@ -60,8 +60,8 @@ tile.botania:flower.tainthistle.name=Tainthistle
 forbidden.lexicon.tainthistle=Tainthistle
 forbidden.lexicon.tainthistle.0=The disgusting &1Tainthistle&0 derives sustenance from the tainted runoff of magical experiments. It'll suck up any such substance it can find and try to turn it into mana. Since Botany is an environmentally friendly practice, there doesn't seem to be much point to it. &oMore intrusive than a Spirit Vine&r
 
-tile.botania:flower.bloodthorn.name=BloodThorn
-forbidden.lexicon.bloodthorn=BloodThorn
+tile.botania:flower.bloodthorn.name=Bloodthorn
+forbidden.lexicon.bloodthorn=Bloodthorn
 forbidden.lexicon.bloodthorn.0=The results of some sick, twisted Blood Mage's experiments, the &1Bloodthorn&0 is a red mystical flower that has been steeped in blood until it developed a taste for the life force of all things. It uses mana to inflict an extreme level of Weakness on surrounding creatures that is unmatched by any conventional alchemy. &oYakone's legacy&r
 
 tile.botania:flower.euclidaisy.name=Euclidaisy
