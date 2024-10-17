@@ -29,13 +29,13 @@ item.resourcefm.2.name=Taint Blood Shard
 item.diabolist_fork.name=Diabolist Fork
 item.mobcrystalempty.name=Empty Imprinting Crystal
 item.mobcrystal.name=%s Imprinting Crystal
-item.resourceshard.0.name=Wrath Shard
-item.resourceshard.1.name=Envy Shard
-item.resourceshard.2.name=Pride Shard
-item.resourceshard.3.name=Lust Shard
-item.resourceshard.4.name=Sloth Shard
-item.resourceshard.5.name=Greed Shard
-item.gluttony_shard.name=Gluttony Shard
+item.resourceshard.0.name=Empowered Wrath Crystal
+item.resourceshard.1.name=Empowered Envy Crystal
+item.resourceshard.2.name=Empowered Pride Crystal
+item.resourceshard.3.name=Empowered Lust Crystal
+item.resourceshard.4.name=Empowered Sloth Crystal
+item.resourceshard.5.name=Empowered Greed Crystal
+item.gluttony_shard.name=Empowered Gluttony Crystal
 item.sword_dragon_slayer.name=Sword of the Dragonslayer
 
 #block
@@ -134,7 +134,7 @@ forbiddenmagic.research.lostmagic.title=Forbidden Knowledge
 forbiddenmagic.research.lostmagic.text=Some avenues of research don't seem to fit neatly into other established categories. Sometimes they're too weird, too forbidden, too spooky, or just too taboo for the average Thaumaturge to touch.<BR>I can probably just stick any type of research that don't fit into other categories within this section of my Thaumonomicon.<PAGE><IMG>forbiddenmagicre:textures/misc/sigiloss2.png:0:0:128:128:.75</IMG>
 
 forbiddenmagic.research.sevensins.title=The Seven Deadly Sins
-forbiddenmagic.research.sevensins.text=Strange energies swirl through the Nether. On occasion, they have been known to solidify into corrupt shards when certain sympathetic events occur.<PAGE>These shards are imbued with different vices and have many uses for more unscrupulous Thaumaturges.<BR>There are seven documented types of these shards, each attuned to a different "deadly sin".<BR><IMG>forbiddenmagicre:textures/misc/research.png:0:0:111:16:1</IMG><PAGE>Wrath Shards crystallize around acts of violence. The more excessive the physical force used, the more likely it is for a Wrath Shard to appear.<BR>Envy Shards are taken from those who have them by those that covet them.<BR>Gluttony Shards crystallize when someone feasts excessively.<BR>Pride Shards materialize when a creature of truly great power is cut down to size.<BR>Lust Shards pop up when a maniac hits stuff around with a riding crop.<BR>Sloth Shards congeal when proxies and accidents are used to collect resources without effort.<BR>Greed Shards appear when enchantment is used to turn a profit.
+forbiddenmagic.research.sevensins.text=Strange energies swirl through the Nether. On occasion, they have been known to solidify into specialized crystals when certain sympathetic events occur.<PAGE>These crystals are imbued with different vices and have many uses for more unscrupulous Thaumaturges.<BR>There are seven documented types of these crystals, each attuned to a different "deadly sin".<BR><IMG>forbiddenmagicre:textures/misc/research.png:0:0:111:16:1</IMG><PAGE>Wrath crystallizes around acts of violence. The more excessive the physical force used, the more likely it is for the crystal to appear.<BR>Envy is taken from those who have it by those that covet it.<BR>Gluttony crystallizes when someone feasts excessively.<BR>Pride materializes when a creature of truly great power is cut down to size.<BR>Lust pops up when a maniac hits stuff around with a riding crop.<BR>Sloth congeals when proxies and accidents are used to collect resources without effort.<BR>Greed appears when enchantments are used to turn a profit.
 
 forbiddenmagic.research.pureshovel.title=Shovel of the Purifier
 forbiddenmagic.research.pureshovel.text=I have in fact underestimated the dangerous capabilities of Flux and what sort of consequences it would cause into the environment by releasing too much of it into the local aura.<BR>Some of the more physical symptoms of Flux (or Taint), seem to be highly resistant to standard methods of removal. The average tool has almost no effect against this strange substance not even the elemental tools I have recently created, I would need to somehow acquire a special tool that would particularly be effective against it. 
