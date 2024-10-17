@@ -26,6 +26,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import thaumcraft.Thaumcraft;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
@@ -72,7 +73,7 @@ public class ReForbiddenMagic {
      */
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        ResearchCategories.registerCategory("APOCRYPHA", "FIRSTSTEPS", new AspectList().add(Aspect.LIGHT, 5).add(Aspect.ELDRITCH, 5).add(Aspect.AURA, 5).add(Aspect.MAGIC, 5).add(Aspect.DARKNESS, 5).add(Aspect.FLUX, 3).add(Aspect.MIND, 5), new ResourceLocation(Reference.MOD_ID, "textures/misc/forbidden.png"), new ResourceLocation(Reference.MOD_ID, "textures/misc/runecircle2.png"));
+        ResearchCategories.registerCategory("APOCRYPHA", "FIRSTSTEPS", new AspectList().add(Aspect.LIGHT, 5).add(Aspect.ELDRITCH, 5).add(Aspect.AURA, 5).add(Aspect.MAGIC, 5).add(Aspect.DARKNESS, 5).add(Aspect.FLUX, 3).add(Aspect.MIND, 5), new ResourceLocation(Reference.MOD_ID, "textures/misc/forbidden.png"), new ResourceLocation(Reference.MOD_ID, "textures/misc/runecircle2.png"), new ResourceLocation(Thaumcraft.MODID, "textures/gui/gui_research_back_over.png"));
 
         InitRecipes.initRecipes();
         InitResearch.registerResearch();
