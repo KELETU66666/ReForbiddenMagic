@@ -300,16 +300,19 @@ public class LivingEvent {
     public void onItemUseFinish(LivingEntityUseItemEvent.Finish event) {
         if (event.getEntityLiving() instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.getEntityLiving();
+
             if (event.getItem().getItem() instanceof ItemFood) {
                 if (player instanceof EntityPlayerMP) {
                     ItemFood food = (ItemFood) event.getItem().getItem();
                     IPlayerKnowledge knowledge = ThaumcraftCapabilities.getKnowledge(player);
+
                     if (!knowledge.isResearchComplete("RINGNUTRITION") && knowledge.isResearchKnown("RINGNUTRITION@1")) {
                         if (!knowledge.isResearchKnown("f_badfood") && (food.getSaturationModifier(event.getItem()) * food.getHealAmount(event.getItem()) * 2.0f) < 0.5f) {
                             knowledge.addResearch("f_badfood");
                             knowledge.sync((EntityPlayerMP) player);
                             player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE + I18n.translateToLocal("got.lm_badfood")), true);
                         }
+
                         if (!knowledge.isResearchKnown("f_goodfood") && (food.getSaturationModifier(event.getItem()) * food.getHealAmount(event.getItem()) * 2.0f) > 7.0f) {
                             knowledge.addResearch("f_goodfood");
                             knowledge.sync((EntityPlayerMP) player);

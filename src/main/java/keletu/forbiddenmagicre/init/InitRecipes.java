@@ -1,7 +1,9 @@
 package keletu.forbiddenmagicre.init;
 
 import keletu.forbiddenmagicre.LogHandler;
+
 import static keletu.forbiddenmagicre.compat.Compat.getItem;
+
 import keletu.forbiddenmagicre.enchantments.inchantment.EnumInfusionEnchantmentFM;
 import keletu.forbiddenmagicre.enchantments.inchantment.InfusionEnchantmentRecipeFM;
 import keletu.forbiddenmagicre.items.tools.ItemDragonslayer;
@@ -229,9 +231,12 @@ public class InitRecipes {
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "PureShovel"), new InfusionRecipe(
                 "PURESHOVEL",
                 new ItemStack(ModItems.shovelPurifier),
-                2, new AspectList().add(Aspect.LIGHT, 60).add(Aspect.TOOL, 30), new ItemStack(ItemsTC.thaumiumShovel, 1, 32767), ThaumcraftApiHelper.makeCrystal(Aspect.AURA, 1), ThaumcraftApiHelper.makeCrystal(Aspect.AURA, 1), new ItemStack(ItemsTC.quicksilver), new ItemStack(BlocksTC.logSilverwood)));
+                2, new AspectList().add(Aspect.LIFE, 40).add(Aspect.LIGHT, 40).add(Aspect.TOOL, 40), new ItemStack(ItemsTC.thaumiumShovel, 1, 32767), ThaumcraftApiHelper.makeCrystal(Aspect.AURA, 1), ThaumcraftApiHelper.makeCrystal(Aspect.AURA, 1), new ItemStack(ItemsTC.quicksilver), new ItemStack(ItemsTC.nuggets, 1, 10), new ItemStack(BlocksTC.logSilverwood)));
 
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "RingNutrition"), new InfusionRecipe("RINGNUTRITION", new ItemStack(ModItems.ringNutrition), 1, (new AspectList()).add(Aspect.LIFE, 30).add(Aspect.ALCHEMY, 30).add(Aspect.ENERGY, 30), new ItemStack(ItemsTC.baubles, 1, 5), ThaumcraftApiHelper.makeCrystal(Aspect.ALCHEMY, 1), new ItemStack(Items.GOLDEN_APPLE), new ItemStack(Items.GOLDEN_CARROT)));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "RingNutrition"), new InfusionRecipe(
+                "RINGNUTRITION",
+                new ItemStack(ModItems.ringNutrition),
+                1, (new AspectList()).add(RegistryHandler.GLUTTONY, 20).add(Aspect.ALCHEMY, 20).add(Aspect.ENERGY, 20), new ItemStack(ItemsTC.baubles, 1, 5), new ItemStack(ModItems.GluttonyShard), bew ItemStack(ModItems.GluttonyShard), ItemStack(ModItems.GluttonyShard)));
 
         try {
 

@@ -27,15 +27,15 @@ item.resourcefm.0.name=Emerald Fragment
 item.resourcefm.1.name=Umbral Dye
 item.resourcefm.2.name=Taint Blood Shard
 item.diabolist_fork.name=Diabolist Fork
-item.mobcrystalempty.name=Empty Imprinting Crystals
-item.mobcrystal.name=%s Imprinting Crystals
-item.resourceshard.0.name=Wrath Shard
-item.resourceshard.1.name=Envy Shard
-item.resourceshard.2.name=Pride Shard
-item.resourceshard.3.name=Lust Shard
-item.resourceshard.4.name=Sloth Shard
-item.resourceshard.5.name=Greed Shard
-item.gluttony_shard.name=Gluttony Shard
+item.mobcrystalempty.name=Empty Imprinting Crystal
+item.mobcrystal.name=%s Imprinting Crystal
+item.resourceshard.0.name=Empowered Wrath Crystal
+item.resourceshard.1.name=Empowered Envy Crystal
+item.resourceshard.2.name=Empowered Pride Crystal
+item.resourceshard.3.name=Empowered Lust Crystal
+item.resourceshard.4.name=Empowered Sloth Crystal
+item.resourceshard.5.name=Empowered Greed Crystal
+item.gluttony_shard.name=Empowered Gluttony Crystal
 item.sword_dragon_slayer.name=Sword of the Dragonslayer
 
 #block
@@ -60,8 +60,8 @@ tile.botania:flower.tainthistle.name=Tainthistle
 forbidden.lexicon.tainthistle=Tainthistle
 forbidden.lexicon.tainthistle.0=The disgusting &1Tainthistle&0 derives sustenance from the tainted runoff of magical experiments. It'll suck up any such substance it can find and try to turn it into mana. Since Botany is an environmentally friendly practice, there doesn't seem to be much point to it. &oMore intrusive than a Spirit Vine&r
 
-tile.botania:flower.bloodthorn.name=BloodThorn
-forbidden.lexicon.bloodthorn=BloodThorn
+tile.botania:flower.bloodthorn.name=Bloodthorn
+forbidden.lexicon.bloodthorn=Bloodthorn
 forbidden.lexicon.bloodthorn.0=The results of some sick, twisted Blood Mage's experiments, the &1Bloodthorn&0 is a red mystical flower that has been steeped in blood until it developed a taste for the life force of all things. It uses mana to inflict an extreme level of Weakness on surrounding creatures that is unmatched by any conventional alchemy. &oYakone's legacy&r
 
 tile.botania:flower.euclidaisy.name=Euclidaisy
@@ -130,21 +130,27 @@ enchantment.forbiddenmagic.wrath.desc=Increases the damage of the item. Compatib
 
 #Research ForbiddenMagic
 
-forbiddenmagic.research.lostmagic.title=ReForbidden Magic
-forbiddenmagic.research.lostmagic.text=Some avenues of research don't seem to fit neatly into established categories. Sometimes they're too weird, too forbidden, too spooky, or just too sinful for this sweet earth.<BR>I can probably just stick any researches that don't fit into other categories into this section of my Thaumonomicon.<PAGE><PAGE> <IMG>forbiddenmagicre:textures/misc/sigiloss2.png:0:0:128:128:.75</IMG> §oSome kind of magical sigil§r
+forbiddenmagic.research.lostmagic.title=Forbidden Knowledge
+forbiddenmagic.research.lostmagic.text=Some avenues of research don't seem to fit neatly into other established categories. Sometimes they're too weird, too forbidden, too spooky, or just too taboo for the average Thaumaturge to touch.<BR>I can probably just stick any type of research that don't fit into other categories within this section of my Thaumonomicon.<PAGE><IMG>forbiddenmagicre:textures/misc/sigiloss2.png:0:0:128:128:.75</IMG>
+
+forbiddenmagic.research.sevensins.title=The Seven Deadly Sins
+forbiddenmagic.research.sevensins.text=Strange energies swirl through the Nether. On occasion, they have been known to solidify into specialized crystals when certain sympathetic events occur.<PAGE>These crystals are imbued with different vices and have many uses for more unscrupulous Thaumaturges.<BR>There are seven documented types of these crystals, each attuned to a different "deadly sin".<BR><IMG>forbiddenmagicre:textures/misc/research.png:0:0:111:16:1</IMG><PAGE>Wrath crystallizes around acts of violence. The more excessive the physical force used, the more likely it is for the crystal to appear.<BR>Envy is taken from those who have it by those that covet it.<BR>Gluttony crystallizes when someone feasts excessively.<BR>Pride materializes when a creature of truly great power is cut down to size.<BR>Lust pops up when a maniac hits stuff around with a riding crop.<BR>Sloth congeals when proxies and accidents are used to collect resources without effort.<BR>Greed appears when enchantments are used to turn a profit.
+
+forbiddenmagic.research.ridingcrop.title=Riding Crop
+forbiddenmagic.research.ridingcrop.text=A riding crop is, as the name suggests, a tool used to motivate mounts to move faster. Right-clicking with it while riding a horse or any other mount will give it a small speed boost for a little while.<BR>I could hit other creatures with the crop too as if it were a weapon, but what would possess me to do something like this?
 
 forbiddenmagic.research.pureshovel.title=Shovel of the Purifier
-forbiddenmagic.research.pureshovel.text=Releasing too much flux into the aura sure does make a mess sometimes. Some of the more physical symptoms seem resistant to standard methods of removal.<BR>Maybe I can infuse a thaumium tool with something to make it more effective.
-forbiddenmagic.research.pureshovel.complete.text=By combining silverwood, auram shards, and quicksilver with a thaumium shovel, I've designed a tool capable of digging up taint. It is even more effective against tainted blocks than it is against regular dirt. If you press right click with it, it will also vaporize any flux goo in a small radius.<BR>That'll show those stupid purple blocks who's boss!
+forbiddenmagic.research.pureshovel.text=I have in fact underestimated the dangerous capabilities of Flux and what sort of consequences it would cause into the environment by releasing too much of it into the local aura.<BR>Some of the more physical symptoms of Flux (or Taint), seem to be highly resistant to standard methods of removal. The average tool has almost no effect against this strange substance not even the elemental tools I have recently created, I would need to somehow acquire a special tool that would particularly be effective against it. 
+forbiddenmagic.research.pureshovel.complete.text.stage.1=By infusing Auram shards with a thaumium shovel, I've designed a tool capable of being effective against all kinds of Tainted blocks.<BR>If a situation ever happens again, I can simply right click on the ground and it will vaporize any nearby Flux goo within a small radius.<BR>At the cost of durability of course.
 
 forbiddenmagic.research.ringnutrition.title=Ring of Nutrition
-forbiddenmagic.research.ringnutrition.text=Eating food is such a scam! Why do I have to eat things just to eat more things later? And don't even get me started on having to eat §ogood§r things! Eating some melon slices I picked up off the ground is perfectly healthy!<BR>Perhaps I can find a way to improve my ability to derive sustenance through infusion.
-forbiddenmagic.research.ringnutrition.complete.text=At last! I've created a ring that will improve the nutritious value of most things I eat as long as I wear it! Some foods are a bit too exotic for the ring to process, and cake is just TOO worthless, but now even cookies and melon slices will be at least a little filling.
+forbiddenmagic.research.ringnutrition.text=I should focus on making a ring that will help me eat less than I normally would. That way I wouldn't have to forage as often whenever I run out of food.<BR>I should start by observing the quality of the food I consume.
+forbiddenmagic.research.ringnutrition.complete.text=At last! I have created a ring that will help enrich most food eaten by the wearer as long as it is continued to be worn.<BR>It will always provide the same hunger and saturation boost to the affected food regardless of the quality, this will be quite useful especially on less filling foods such as cookies or beetroots.
 
-forbiddenmagic.research.morph_tools.title=Multitools
+forbiddenmagic.research.morph_tools.title=Chameleon Tools
 forbiddenmagic.research.morph_tools.text=As a person who tends to use my tools for nearly everything, it would be nice to have more inventory space that's not cluttered with my multiple tools. Unfortunately, I can't just add multiple of these enchantments to the same tool... or can I? Something worth experimenting is the idea of perhaps having a tool in which I can switch out enchantments without having to disenchant it and re-enchant it. Thankfully, I might have something that could mimic the idea rather well.
 forbiddenmagic.research.morph_tools.complete.text=Before I pay myself on the back, I should note that this idea wasn't without its downsides. The tools I've created can only go up to 3 different mirrors of itself and each different mirror cannot support any conflicting enchantments. With that being said, I came up with the idea of the Chameleon tools while observing wildlife in the swamp. The chameleon was something that fascinated me with its color-changing abilities, and its unusual nature to seem completely different with each iteration it comes around with. Reflecting upon the way these creatures work, I made a decision to copy the idea of the chameleon to base these tools onto it. Allow me to explain this in a further, more sensical manner. The Chameleon Tools have 3 different mirrors to their design, allowing them to have 3 different sets of enchantments with each mirror that they have. If I wanted to have Silk Touch and Fortune on the same pickaxe, I could do so by simply switching the head of the pickaxe to a different mirror, allowing me to access that specific pickaxe mirror and giving me the ability to silk touch an ore, and also gain extra items with a different mirror containing Fortune. I can have Sharpness, Bane of Arthropods, and Smite on the same sword with different mirrors on the sword. To switch between mirrors, I simply need to crouch and right click with a mirror that's been enchanted. Note, the tool needs to be enchanted in order for the tool to be able to switch.
-forbiddenmagic.research.morph_tools.void=§oVoidtouched§r<DIV>Weapons, tools, and armors enchanted with this enchantment will repair themselves using vis. However with the use of Void Metal, it does warp my mind when holding it in my hands too.<DIV>§oRanks:§r none<BR>§oTarget:§r tools, weapons, armor
+forbiddenmagic.research.morph_tools.void=§oVoidtouched§r<DIV>Weapons, tools, and armors enchanted with this enchantment will repair themselves using Vis. However with the use of Void Metal, it does warp my mind when holding it in my hands too.<DIV>§oRanks:§r none<BR>§oTarget:§r tools, weapons, armor
 
 forbiddenmagic.research.distortionpick.title=Pickaxe of Distortion
 forbiddenmagic.research.distortionpick.text=Obsidian is a hassle to mine, and unfortunately efficiency isn't cutting it anymore, I need something to bring about a faster way of breaking this sturdy block. Perhaps I should observe the atomic structure of Obsidian, maybe I'll yield some results from it.
@@ -162,7 +168,7 @@ forbiddenmagic.research.blackrose.title=Victorian
 forbiddenmagic.research.blackrose.text.stage.1=As much as I don't mind a bit of calamari, my massacre of squids has made me wonder if it's worth it all. It makes me wonder if there's a less... psychotic way of getting the ink I need to refill my illustrious Scribing Tools. I've heard of ways to replicate ink using flowers... it may seem worth a shot to study the matter of plant life and ink.
 forbiddenmagic.research.blackrose.text.stage.2=Black as night and gothic as the Victorian, I've created a rosebush that will bud with pitch black roses! In order to obtain these beautifully black flowers, simply sprinkle bonemeal onto the roots of the flower, and it will launch its rapidly growing seeds to nearby grass blocks!<BR>§oA note to add onto this, this flower seems to also flourish on Podzol, Coarse Dirt, and regular Dirt as well, further experimentation may be necessary.§r
 
-forbiddenmagic.research.skullaxe.title=Thaumic Revolution
+forbiddenmagic.research.skullaxe.title=Axe of the Skulltaker
 forbiddenmagic.research.skullaxe.text.stage.1=Recent issues arise with the matter of obtaining skulls. While I don't have quite a clear theory as to how this would go about and work, I do have something to look at when it comes to obtaining the Wither Skeleton Skulls. An observation I've noticed with it is that it tends to be a rather steady process of gathering their skulls. Smashing nearly tens of thousands of wither skeletons to obtain their darkened and sooty skulls, perhaps smashing them to bits won't help me all that much.
 forbiddenmagic.research.skullaxe.text.stage.2=Results have yielded that this tool certainly beats the norm when it comes to obtaining skulls. I've designed this axe to be a true killing tool, being capable of doing the same damage as my Sword of the Zephyr. However, unlike the Sword of the Zephyr and some of the other swords around its power level, this fabled axe has the capacity of extracting the heads of enemies I decapitate, ranging from undead to even players!<BR>However when trying to use this axe against trees, it seems to leave not even a dent despite being indisputably sharp, perhaps the sheer ire of the axe has made it dullen when put against trees? Nevertheless, it serves its intended purpose of being a decapitating weapon.<BR>§oSide-Note: Enchanting this weapon with looting will increase the chance of obtaining a skull from a monster.§r
 
@@ -223,7 +229,7 @@ itemGroup.fm_crystal=Mob Crystal
 
 # Misc
 tc.research_category.APOCRYPHA=Apocrypha
-got.lm_badfood=You have eaten garbage.
+got.lm_badfood=You have eaten some junk food.
 got.lm_goodfood=You have eaten something nourishing.
 research.f_badfood.text=Eat some junk food.
 research.f_goodfood.text=Eat something nourishing.
