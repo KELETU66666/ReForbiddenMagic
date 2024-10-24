@@ -192,7 +192,7 @@ public class InitRecipes {
                 "FM_ARCANECAKE",
                 new ItemStack(ModBlocks.BLOCK_ARCANE_CAKE),
                 3,
-                new AspectList().add(Aspect.DESIRE, 30).add(GLUTTONY, 20).add(Aspect.CRAFT, 45),
+                new AspectList().add(Aspect.DESIRE, 30).add(GLUTTONY, 30).add(SLOTH, 30).add(Aspect.CRAFT, 45),
                 new ItemStack(Items.CAKE),
                 new ItemStack(ItemsTC.salisMundus),
                 new ItemStack(Items.EGG),
@@ -204,7 +204,7 @@ public class InitRecipes {
                 "WRATH_CAGE",
                 new ItemStack(ModBlocks.WRATH_CAGE),
                 10,
-                new AspectList().add(RegistryHandler.WRATH, 125).add(Aspect.MAGIC, 125).add(Aspect.BEAST, 125).add(Aspect.MECHANISM, 75),
+                new AspectList().add(RegistryHandler.WRATH, 125).add(Aspect.MAGIC, 125).add(Aspect.BEAST, 125).add(Aspect.MECHANISM, 75).add(SLOTH, 75),
                 new ItemStack(BlocksTC.metalBlockThaumium),
                 new ItemStack(Items.DIAMOND),
                 new ItemStack(ModItems.ResourceNS, 1, 0),
@@ -255,29 +255,29 @@ public class InitRecipes {
                     "DRAGONSLAYER",
                     new ItemStack(ModItems.DRAGONSLAYER, 1),
                     6,
-                    new AspectList().add(Aspect.LIGHT, 60).add(Aspect.ORDER, 30).add(Aspect.MAN, 60).add(Aspect.METAL, 100),
+                    new AspectList().add(Aspect.LIGHT, 60).add(Aspect.ORDER, 60).add(Aspect.MAN, 60).add(PRIDE, 40).add(Aspect.METAL, 100),
                     new ItemStack(sword),
                     new ItemStack(Items.NETHER_STAR, 1),
                     new ItemStack(Items.GOLDEN_HELMET, 1, 0),
                     new ItemStack(Items.WRITABLE_BOOK, 1),
-                    new ItemStack(Items.ENDER_PEARL, 1)));
+                    new ItemStack(ModItems.ResourceNS, 1, 2)));
         } catch (Exception e) {
             LogHandler.log(Level.INFO, e, "Forbidden Magic wasn't unbalanced enough for Draconic Evolution.");
         }
 
         ItemStack greedy = new ItemStack(Items.GOLDEN_SWORD);
         EnumInfusionEnchantmentFM.addInfusionEnchantment(greedy, EnumInfusionEnchantmentFM.GREEDY, 1);
-        InfusionEnchantmentRecipeFM IEGREEDY = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.GREEDY, (new AspectList()).add(Aspect.EARTH, 20).add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 50), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), new ItemStack(BlocksTC.hungryChest), new ItemStack(Items.EMERALD));
+        InfusionEnchantmentRecipeFM IEGREEDY = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.GREEDY, (new AspectList()).add(Aspect.EARTH, 20).add(Aspect.ORDER, 20).add(Aspect.DESIRE, 50), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), new ItemStack(BlocksTC.hungryChest), new ItemStack(Items.EMERALD), new ItemStack(ModItems.ResourceNS, 1, 5), new ItemStack(ModItems.ResourceNS, 1, 5));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IEGREEDY"), IEGREEDY);
         ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IEGREEDYFAKE"), new InfusionEnchantmentRecipeFM(IEGREEDY, greedy));
 
         ItemStack consuming = new ItemStack(Items.GOLDEN_PICKAXE);
         EnumInfusionEnchantmentFM.addInfusionEnchantment(consuming, EnumInfusionEnchantmentFM.CONSUMING, 1);
-        InfusionEnchantmentRecipeFM IECONSUMING = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.CONSUMING, (new AspectList()).add(Aspect.FIRE, 40).add(Aspect.TOOL, 40).add(Aspect.VOID, 40), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), new ItemStack(Items.IRON_PICKAXE), new ItemStack(Items.LAVA_BUCKET));
+        InfusionEnchantmentRecipeFM IECONSUMING = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.CONSUMING, (new AspectList()).add(Aspect.FIRE, 40).add(SLOTH, 40).add(Aspect.VOID, 40), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), new ItemStack(Items.IRON_PICKAXE), new ItemStack(Items.LAVA_BUCKET), new ItemStack(ModItems.ResourceNS, 1, 4), new ItemStack(ModItems.ResourceNS, 1, 4));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECONSUMING"), IECONSUMING);
         ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECONSUMINGFAKE"), new InfusionEnchantmentRecipeFM(IECONSUMING, consuming));
 
-        ItemStack educational = new ItemStack(ItemsTC.voidSword);
+        ItemStack educational = new ItemStack(Items.DIAMOND_SWORD);
         EnumInfusionEnchantmentFM.addInfusionEnchantment(educational, EnumInfusionEnchantmentFM.EDUCATIONAL, 1);
         InfusionEnchantmentRecipeFM IECEDU = new InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM.EDUCATIONAL, (new AspectList()).add(Aspect.MIND, 30).add(Aspect.MAGIC, 20).add(Aspect.AVERSION, 20), new IngredientNBTTC(new ItemStack(Items.ENCHANTED_BOOK)), new ItemStack(ItemsTC.brain));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("forbiddenmagicre:IECEDU"), IECEDU);
