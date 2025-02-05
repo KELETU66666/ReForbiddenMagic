@@ -17,7 +17,7 @@ public class SubTileAstralBloom extends SubTileFunctional {
 
     private BlockPos pos;
 
-    private static final int cost = 50000;
+    private static final int cost = 5000;
 
     @Override
     public int getColor(){
