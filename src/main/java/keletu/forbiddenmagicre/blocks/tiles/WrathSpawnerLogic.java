@@ -4,7 +4,6 @@ package keletu.forbiddenmagicre.blocks.tiles;
 import keletu.forbiddenmagicre.ConfigFM;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -13,8 +12,10 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.storage.AnvilChunkLoader;
+import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.registries.GameData;
 import thaumcraft.api.aspects.Aspect;
 
 public class WrathSpawnerLogic {
@@ -61,10 +62,22 @@ public class WrathSpawnerLogic {
         return aspect;
     }
 
+    public static Class <? extends Entity > getClassFromID(int entityID)
+    {
+        EntityEntry entry = GameData.getEntityRegistry().getValue(entityID);
+        return entry == null ? null : entry.getEntityClass();
+    }
+
+    public static Entity createEntityByID(int entityID, World worldIn)
+    {
+        EntityEntry entry = GameData.getEntityRegistry().getValue(entityID);
+        return entry == null ? null : entry.newInstance(worldIn);
+    }
+
     public void setMobID(int par1Str) {
         this.mobID = par1Str;
-        if (ConfigFM.spawnerMobs.containsKey(EntityList.getClassFromID(mobID)))
-            aspect = Aspect.getAspect(ConfigFM.spawnerMobs.get(EntityList.getClassFromID(mobID)));
+        if (ConfigFM.spawnerMobs.containsKey(getClassFromID(mobID)))
+            aspect = Aspect.getAspect(ConfigFM.spawnerMobs.get(getClassFromID(mobID)));
         else
             aspect = Aspect.DESIRE;
     }
@@ -152,7 +165,7 @@ public class WrathSpawnerLogic {
             }
 
             for (int i = 0; i < this.spawnCount && (fuel > 0 || ConfigFM.wrathCost <= 0); ++i) {
-                Entity entity = EntityList.createEntityByID(this.getEntityNameToSpawn(), this.getSpawnerWorld());
+                Entity entity = createEntityByID(this.getEntityNameToSpawn(), this.getSpawnerWorld());
 
                 if (entity == null) {
                     return;
@@ -216,8 +229,8 @@ public class WrathSpawnerLogic {
 
     public void readFromNBT(NBTTagCompound par1NBTTagCompound) {
         mobID = par1NBTTagCompound.getInteger("EntityId");
-        if (ConfigFM.spawnerMobs.containsKey(EntityList.getClassFromID(mobID)))
-            aspect = Aspect.getAspect(ConfigFM.spawnerMobs.get(EntityList.getClassFromID((mobID))));
+        if (ConfigFM.spawnerMobs.containsKey(getClassFromID(mobID)))
+            aspect = Aspect.getAspect(ConfigFM.spawnerMobs.get(getClassFromID((mobID))));
         else
             aspect = Aspect.DESIRE;
         mobSet = par1NBTTagCompound.getBoolean("MobSet");
@@ -285,7 +298,7 @@ public class WrathSpawnerLogic {
     @SideOnly(Side.CLIENT)
     public Entity getEntityForRender() {
         if (this.renderEntity == null) {
-            Entity entity = EntityList.createEntityByID(this.getEntityNameToSpawn(), null);
+            Entity entity = createEntityByID(this.getEntityNameToSpawn(), null);
             entity = this.spawnMob(entity);
             this.renderEntity = entity;
         }

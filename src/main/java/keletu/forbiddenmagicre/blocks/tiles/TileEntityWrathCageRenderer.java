@@ -3,7 +3,6 @@ package keletu.forbiddenmagicre.blocks.tiles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.monster.EntityGhast;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -26,7 +25,7 @@ public class TileEntityWrathCageRenderer extends TileEntitySpecialRenderer<TileE
         if (entity != null) {
             entity.setWorld(spawnLogic.getSpawnerWorld());
             float f1 = 0.4375F;
-            if (EntityList.getClassFromID(spawnLogic.getEntityNameToSpawn()).equals(EntityGhast.class))
+            if (WrathSpawnerLogic.getClassFromID(spawnLogic.getEntityNameToSpawn()).equals(EntityGhast.class))
                 f1 = 0.1F;
            //else if (spawnLogic.getEntityNameToSpawn().equals("Slime") || spawnLogic.getEntityNameToSpawn().equals("ThaumSlime"))
            //    f1 = 0.4F;
