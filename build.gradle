@@ -12,7 +12,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.wynprice.cursemaven'
 
-version = "1.12.2-v0.8.8"
+version = "1.12.2-v0.8.9"
 group = "com.keletu.forbiddenmagicre"
 archivesBaseName = "ReForbidden Magic"
 
