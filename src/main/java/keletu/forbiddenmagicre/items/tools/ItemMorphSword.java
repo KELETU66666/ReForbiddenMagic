@@ -1,10 +1,11 @@
 package keletu.forbiddenmagicre.items.tools;
 
 import keletu.forbiddenmagicre.ReForbiddenMagic;
-import keletu.forbiddenmagicre.enchantments.inchantment.EnumInfusionEnchantmentFM;
+import keletu.forbiddenmagicre.enchantments.EnchantmentsFM;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -94,18 +95,21 @@ public class ItemMorphSword extends ItemSword implements IHasModel {
     public boolean getIsRepairable(ItemStack stack, ItemStack stack2) {
         return stack2.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 0)) || super.getIsRepairable(stack, stack2);
     }
+
     @Override
     public EnumRarity getRarity(ItemStack itemstack) {
         return EnumRarity.EPIC;
     }
+
     @Override
     public void registerModels() {
         ReForbiddenMagic.proxy.registerItemRenderer(this, 0, "inventory");
     }
+
     public void onUpdate(ItemStack stack, World world, Entity entity, int fuckObfuscation, boolean fuckObfuscation2) {
         super.onUpdate(stack, world, entity, fuckObfuscation, fuckObfuscation2);
-        if(EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(stack, EnumInfusionEnchantmentFM.VOIDTOUCHED) > 0 && stack.isItemDamaged() && entity != null && entity.ticksExisted % 10 == 0 && entity instanceof EntityLivingBase) {
-            stack.damageItem(-1, (EntityLivingBase)entity);
+        if (EnchantmentHelper.getEnchantmentLevel(EnchantmentsFM.void_touched, stack) > 0 && stack.isItemDamaged() && entity != null && entity.ticksExisted % 10 == 0 && entity instanceof EntityLivingBase) {
+            stack.damageItem(-1, (EntityLivingBase) entity);
         }
 
     }

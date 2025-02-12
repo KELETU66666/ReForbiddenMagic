@@ -1,17 +1,9 @@
 package keletu.forbiddenmagicre.enchantments.inchantment;
 
-
-import com.google.common.collect.Multimap;
-import keletu.forbiddenmagicre.items.tools.ItemMorphAxe;
-import keletu.forbiddenmagicre.items.tools.ItemMorphPick;
-import keletu.forbiddenmagicre.items.tools.ItemMorphShovel;
-import keletu.forbiddenmagicre.items.tools.ItemMorphSword;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.NBTTagByte;
 import net.minecraft.world.World;
@@ -22,19 +14,19 @@ import thaumcraft.api.capabilities.ThaumcraftCapabilities;
 import thaumcraft.api.crafting.InfusionRecipe;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 
 public class InfusionEnchantmentRecipeFM extends InfusionRecipe {
-    EnumInfusionEnchantmentFM enchantment;
+    Enchantment enchantment;
 
-    public InfusionEnchantmentRecipeFM(EnumInfusionEnchantmentFM ench, AspectList as, Object... components) {
-        super(ench.research, null, 4, as, Ingredient.EMPTY, components);
+    public InfusionEnchantmentRecipeFM(Enchantment ench, AspectList as, Object... components) {
+        super("INFUSIONENCHANTMENTFM", null, 4, as, Ingredient.EMPTY, components);
         this.enchantment = ench;
     }
 
     public InfusionEnchantmentRecipeFM(InfusionEnchantmentRecipeFM recipe, ItemStack in) {
-        super(recipe.enchantment.research, null, recipe.instability, recipe.aspects, in, recipe.components.toArray());
+        super("INFUSIONENCHANTMENTFM", null, recipe.instability, recipe.aspects, in, recipe.components.toArray());
         this.enchantment = recipe.enchantment;
     }
 
@@ -43,32 +35,11 @@ public class InfusionEnchantmentRecipeFM extends InfusionRecipe {
         if (central == null || central.isEmpty() || !ThaumcraftCapabilities.knowsResearch(player, this.research)) {
             return false;
         }
-        if (EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(central, this.enchantment) >= this.enchantment.maxLevel) {
+        if (EnchantmentHelper.getEnchantmentLevel(this.enchantment, central) >= this.enchantment.getMaxLevel()) {
             return false;
         }
-        if (!this.enchantment.toolClasses.contains("all")) {
-            String at;
-            Multimap<String, AttributeModifier> itemMods = central.getAttributeModifiers(EntityEquipmentSlot.MAINHAND);
-            boolean cool = itemMods.containsKey(SharedMonsterAttributes.ATTACK_DAMAGE.getName()) && this.enchantment.toolClasses.contains("weapon");
-            if (!cool && central.getItem() instanceof ItemTool) {
-                Set<String> tcs = central.getItem().getToolClasses(central);
-                for (String tc : tcs) {
-                    if (!this.enchantment.toolClasses.contains(tc))
-                        continue;
-                    cool = true;
-                    break;
-                }
-            }
-            if (!cool && central.getItem() instanceof ItemMorphPick || central.getItem() instanceof ItemMorphAxe || central.getItem() instanceof ItemMorphSword || central.getItem() instanceof ItemMorphShovel) {
-                at = "morph_tools";
-                if (this.enchantment.toolClasses.contains(at)) {
-                    cool = true;
-                }
-            }
-            if (!cool) {
-                return false;
-            }
-        }
+        if (!enchantment.canApply(central))
+            return false;
         return (this.getRecipeInput() == Ingredient.EMPTY || this.getRecipeInput().apply(central)) && RecipeMatcher.findMatches(input, this.getComponents()) != null;
     }
 
@@ -77,10 +48,10 @@ public class InfusionEnchantmentRecipeFM extends InfusionRecipe {
         if (input == null)
             return null;
         ItemStack out = input.copy();
-        int cl = EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(out, this.enchantment);
-        if (cl >= this.enchantment.maxLevel)
+        int cl = EnchantmentHelper.getEnchantmentLevel(this.enchantment, out);
+        if (cl >= this.enchantment.getMaxLevel())
             return null;
-        List<EnumInfusionEnchantmentFM> el = EnumInfusionEnchantmentFM.getInfusionEnchantments(input);
+        Map<Enchantment, Integer> el = EnchantmentHelper.getEnchantments(input);
         Random rand = new Random(System.nanoTime());
         if (rand.nextInt(10) < el.size()) {
             int base = 1;
@@ -95,21 +66,15 @@ public class InfusionEnchantmentRecipeFM extends InfusionRecipe {
     }
 
     @Override
-    public Aspects getAspects(EntityPlayer player, ItemStack input, List<ItemStack> comps) {
-        Aspects out = new Aspects();
+    public AspectList getAspects(EntityPlayer player, ItemStack input, List<ItemStack> comps) {
+        AspectList out = new AspectList();
         if (input == null || input.isEmpty())
             return out;
-        int cl = EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(input, this.enchantment) + 1;
-        if (cl > this.enchantment.maxLevel)
+        int cl = EnchantmentHelper.getEnchantmentLevel(this.enchantment, input) + 1;
+        if (cl > this.enchantment.getMaxLevel())
             return out;
-        List<EnumInfusionEnchantmentFM> el = EnumInfusionEnchantmentFM.getInfusionEnchantments(input);
-        int otherEnchantments = el.size();
-        if (el.contains(this.enchantment)) {
-            --otherEnchantments;
-        }
-        float modifier = cl + otherEnchantments * 0.33f;
         for (Aspect a : this.getAspects().getAspects()) {
-            out.add(a, (int) (this.getAspects().getAmount(a) * modifier));
+            out.add(a, (int) (this.getAspects().getAmount(a) * (float) cl));
         }
         return out;
     }

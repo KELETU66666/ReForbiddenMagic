@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 import keletu.forbiddenmagicre.ConfigFM;
 import keletu.forbiddenmagicre.LogHandler;
 import keletu.forbiddenmagicre.XPReflectionHelper;
-import keletu.forbiddenmagicre.enchantments.inchantment.EnumInfusionEnchantmentFM;
+import keletu.forbiddenmagicre.enchantments.EnchantmentsFM;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.items.tools.ItemDistortionPick;
 import keletu.forbiddenmagicre.util.Reference;
@@ -13,7 +13,6 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.boss.EntityDragon;
-import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.*;
@@ -29,7 +28,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
@@ -41,13 +39,10 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.Level;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
@@ -88,7 +83,7 @@ public class LivingEvent {
         if (player != null) {
             player.inventory.getCurrentItem();
             ItemStack equip = player.inventory.getCurrentItem();
-            if (EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.CONSUMING) > 0) {
+            if (EnchantmentHelper.getEnchantmentLevel(EnchantmentsFM.consuming, equip) > 0) {
                 for (int x = 0; x < event.getDrops().size(); x++) {
                     ItemStack drop = event.getDrops().get(x);
                     if (drop != null && isGarbage(drop))
@@ -125,7 +120,7 @@ public class LivingEvent {
         if ((event.getEntityLiving() instanceof EntityVillager || event.getEntityLiving() instanceof IMob) && event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
             ItemStack equip = player.getHeldItem(EnumHand.MAIN_HAND);
-            if (!equip.isEmpty() && EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.GREEDY) > 0 && event.getLootingLevel() <= 0) {
+            if (!equip.isEmpty() && EnchantmentHelper.getEnchantmentLevel(EnchantmentsFM.greedy, equip) > 0 && event.getLootingLevel() <= 0) {
                 if (event.getEntityLiving() instanceof EntityVillager) {
                     addDrop(event, new ItemStack(Items.EMERALD, 1, 0));
                 } else if (rand.nextInt(35) < 3)
@@ -211,7 +206,7 @@ public class LivingEvent {
                 if (!weap.isEmpty() && weap.getItem() == ModItems.SkullAxe && rand.nextInt(11) <= (1 + EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, weap))) {
                     ItemStack head = new ItemStack(Items.SKULL, 1, 3);
                     NBTTagCompound nametag = new NBTTagCompound();
-                    nametag.setString("SkullOwner", ((EntityPlayer) event.getEntityLiving()).getName());
+                    nametag.setString("SkullOwner", event.getEntityLiving().getName());
                     head.setTagCompound(nametag);
                     addDrop(event, head);
                 }
@@ -259,7 +254,7 @@ public class LivingEvent {
                         addDrop(event, new ItemStack(ModItems.ResourceNS, 1, 0));
                     }
 
-                    if (event.getEntityLiving() instanceof EntityWither) {
+                    if (!event.getEntityLiving().isNonBoss()) {
                         addDrop(event, new ItemStack(ModItems.ResourceNS, 2 + randy.nextInt(1 + event.getLootingLevel()), 2));
                     }
 
@@ -273,25 +268,6 @@ public class LivingEvent {
                         addDrop(event, new ItemStack(ModItems.ResourceNS, 1, 1));
                     }
                 }
-            }
-        }
-    }
-
-    @SideOnly(value = Side.CLIENT)
-    @SubscribeEvent
-    public void tooltipEvent(ItemTooltipEvent event) {
-        NBTTagList nbttaglist = EnumInfusionEnchantmentFM.getInfusionEnchantmentTagList(event.getItemStack());
-        if (nbttaglist != null) {
-            for (int j = 0; j < nbttaglist.tagCount(); ++j) {
-                short k = nbttaglist.getCompoundTagAt(j).getShort("id");
-                short l = nbttaglist.getCompoundTagAt(j).getShort("lvl");
-                if (k < 0 || k >= EnumInfusionEnchantmentFM.values().length)
-                    continue;
-                String s = TextFormatting.GOLD + I18n.translateToLocal("enchantment.infusion." + EnumInfusionEnchantmentFM.values()[k].toString());
-                if (EnumInfusionEnchantmentFM.values()[k].maxLevel > 1) {
-                    s = s + " " + I18n.translateToLocal("enchantment.level." + l);
-                }
-                event.getToolTip().add(1, s);
             }
         }
     }
@@ -365,9 +341,9 @@ public class LivingEvent {
                     imprintCrystal((EntityPlayer) (event.getSource().getTrueSource()), name);
             }
 
-            if (EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.EDUCATIONAL) > 0 && event.getEntityLiving() instanceof EntityLiving && EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, equip) == 0) {
+            if (EnchantmentHelper.getEnchantmentLevel(EnchantmentsFM.educational, equip) > 0 && event.getEntityLiving() instanceof EntityLiving && EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, equip) == 0) {
                 try {
-                    int learning = 3 * XPReflectionHelper.getXP(((EntityLiving) event.getEntityLiving())) * EnumInfusionEnchantmentFM.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentFM.EDUCATIONAL);
+                    int learning = 3 * XPReflectionHelper.getXP(((EntityLiving) event.getEntityLiving())) * EnchantmentHelper.getEnchantmentLevel(EnchantmentsFM.educational, equip);
                     while (learning > 0) {
                         int xp = EntityXPOrb.getXPSplit(learning);
                         learning -= xp;

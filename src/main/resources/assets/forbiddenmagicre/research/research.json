@@ -142,6 +142,7 @@
       "name": "forbiddenmagic.research.infusionenchantmentfm.title",
       "category": "APOCRYPHA",
       "icons": [
+        "forbiddenmagicre:textures/wrath.png",
         "forbiddenmagicre:textures/greedy.png",
         "forbiddenmagicre:textures/educational.png",
         "forbiddenmagicre:textures/consuming.png"
@@ -158,15 +159,13 @@
         {
           "text": "forbiddenmagic.research.infusionenchantmentfm.text",
           "required_knowledge": [
-            "THEORY;INFUSION;1"
-          ],
-          "required_item": [
-            "minecraft:obsidian"
+            "THEORY;INFUSION;2"
           ]
         },
         {
           "text": "forbiddenmagic.research.infusionenchantmentfm.complete.text",
           "recipes": [
+            "forbiddenmagicre:IEWRATHFAKE",
             "forbiddenmagicre:IEGREEDYFAKE",
             "forbiddenmagicre:IECONSUMINGFAKE",
             "forbiddenmagicre:IECEDUFAKE"

@@ -121,10 +121,10 @@ psi.piecegroup.botany.desc=With a bit of improvisation, your CAD appears to be c
 
 #Enchantment
 enchantment.wrath=Wrath
-enchantment.infusion.GREEDY=Greedy
-enchantment.infusion.EDUCATIONAL=Educational
-enchantment.infusion.CONSUMING=Consuming
-enchantment.infusion.VOIDTOUCHED=Void Touched
+enchantment.greedy=Greedy
+enchantment.educational=Educational
+enchantment.consuming=Consuming
+enchantment.voidtouched=Void Touched
 
 enchantment.forbiddenmagic.wrath.desc=Increases the damage of the item. Compatible with other damage increasing enchantments like Sharpness.
 
