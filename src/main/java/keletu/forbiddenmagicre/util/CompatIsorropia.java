@@ -14,12 +14,12 @@ public class CompatIsorropia {
     public static final Aspect WRATH;
 
     static {
-    WRATH = IsorropiaAPI.WRATH;
-    ENVY = IsorropiaAPI.ENVY;
-    GLUTTONY = IsorropiaAPI.GLUTTONY;
-    LUST = IsorropiaAPI.LUST;
-    NETHER = IsorropiaAPI.NETHER;
-    PRIDE = IsorropiaAPI.PRIDE;
-    SLOTH = IsorropiaAPI.SLOTH;
+        WRATH = IsorropiaAPI.WRATH;
+        ENVY = IsorropiaAPI.ENVY;
+        GLUTTONY = IsorropiaAPI.GLUTTONY;
+        LUST = IsorropiaAPI.LUST;
+        NETHER = IsorropiaAPI.NETHER;
+        PRIDE = IsorropiaAPI.PRIDE;
+        SLOTH = IsorropiaAPI.SLOTH;
     }
 }

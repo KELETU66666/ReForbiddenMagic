@@ -6,7 +6,7 @@ import keletu.forbiddenmagicre.compat.bloodmagic.ItemDivineOrb;
 import keletu.forbiddenmagicre.compat.bloodmagic.ItemScribeBlood;
 import keletu.forbiddenmagicre.compat.psi.ItemAmuletPsi;
 import keletu.forbiddenmagicre.compat.psi.ItemExtraColorizer;
-import keletu.forbiddenmagicre.enchantments.EnchantmentsFM;
+import keletu.forbiddenmagicre.enchantments.EnchantmentWrath;
 import keletu.forbiddenmagicre.init.ModBlocks;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.potions.PotionBloodSeal;
@@ -143,12 +143,11 @@ public class RegistryHandler {
         proxy.registerObjectTag(new ItemStack(Blocks.QUARTZ_ORE), AspectHelper.getObjectAspects(new ItemStack(Blocks.QUARTZ_ORE)).add(NETHER, 5));
         proxy.registerObjectTag(new ItemStack(Items.NETHER_WART), AspectHelper.getObjectAspects(new ItemStack(Items.NETHER_WART)).add(NETHER, 2));
         proxy.registerObjectTag(new ItemStack(Items.SKULL, 1, 1), AspectHelper.getObjectAspects(new ItemStack(Items.SKULL, 1, 1)).add(NETHER, 10));
-
     }
 
     @SubscribeEvent
     public static void onEnchantmentRegister(RegistryEvent.Register<Enchantment> event) {
-        event.getRegistry().registerAll(EnchantmentsFM.ENCHANTNENTS.toArray(new Enchantment[0]));
+        event.getRegistry().register(new EnchantmentWrath());
     }
 
     @SubscribeEvent

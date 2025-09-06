@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 import keletu.forbiddenmagicre.ConfigFM;
 import keletu.forbiddenmagicre.LogHandler;
 import keletu.forbiddenmagicre.XPReflectionHelper;
-import keletu.forbiddenmagicre.enchantments.EnchantmentsFM;
+import keletu.forbiddenmagicre.enchantments.FMEnchantments;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.items.tools.ItemDistortionPick;
 import keletu.forbiddenmagicre.util.Reference;
@@ -47,6 +47,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.Level;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
 import thaumcraft.api.capabilities.ThaumcraftCapabilities;
+import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 import java.util.Collection;
 import java.util.Random;
@@ -83,7 +84,7 @@ public class LivingEvent {
         if (player != null) {
             player.inventory.getCurrentItem();
             ItemStack equip = player.inventory.getCurrentItem();
-            if (EnchantmentHelper.getEnchantmentLevel(EnchantmentsFM.consuming, equip) > 0) {
+            if (EnumInfusionEnchantment.getInfusionEnchantmentLevel(equip, FMEnchantments.CONSUMING) > 0) {
                 for (int x = 0; x < event.getDrops().size(); x++) {
                     ItemStack drop = event.getDrops().get(x);
                     if (drop != null && isGarbage(drop))
@@ -120,7 +121,7 @@ public class LivingEvent {
         if ((event.getEntityLiving() instanceof EntityVillager || event.getEntityLiving() instanceof IMob) && event.isRecentlyHit() && event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
             ItemStack equip = player.getHeldItem(EnumHand.MAIN_HAND);
-            if (!equip.isEmpty() && EnchantmentHelper.getEnchantmentLevel(EnchantmentsFM.greedy, equip) > 0 && event.getLootingLevel() <= 0) {
+            if (!equip.isEmpty() && EnumInfusionEnchantment.getInfusionEnchantmentLevel(equip, FMEnchantments.GREEDY) > 0 && event.getLootingLevel() <= 0) {
                 if (event.getEntityLiving() instanceof EntityVillager) {
                     addDrop(event, new ItemStack(Items.EMERALD, 1, 0));
                 } else if (rand.nextInt(35) < 3)
@@ -311,9 +312,9 @@ public class LivingEvent {
                     imprintCrystal((EntityPlayer) (event.getSource().getTrueSource()), name);
             }
 
-            if (EnchantmentHelper.getEnchantmentLevel(EnchantmentsFM.educational, equip) > 0 && event.getEntityLiving() instanceof EntityLiving && EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, equip) == 0) {
+            if (EnumInfusionEnchantment.getInfusionEnchantmentLevel(equip, FMEnchantments.EDUCATIONAL) > 0/* && event.getEntityLiving() instanceof EntityLiving && EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, equip) == 0*/) {
                 try {
-                    int learning = 3 * XPReflectionHelper.getXP(((EntityLiving) event.getEntityLiving())) * EnchantmentHelper.getEnchantmentLevel(EnchantmentsFM.educational, equip);
+                    int learning = 3 * XPReflectionHelper.getXP(((EntityLiving) event.getEntityLiving())) * EnumInfusionEnchantment.getInfusionEnchantmentLevel(equip, FMEnchantments.EDUCATIONAL);
                     while (learning > 0) {
                         int xp = EntityXPOrb.getXPSplit(learning);
                         learning -= xp;

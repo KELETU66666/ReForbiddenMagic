@@ -1,11 +1,10 @@
 package keletu.forbiddenmagicre.items.tools;
 
 import keletu.forbiddenmagicre.ReForbiddenMagic;
-import keletu.forbiddenmagicre.enchantments.EnchantmentsFM;
+import keletu.forbiddenmagicre.enchantments.FMEnchantments;
 import keletu.forbiddenmagicre.init.ModItems;
 import keletu.forbiddenmagicre.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -18,10 +17,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.items.ItemsTC;
+import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 import javax.annotation.Nullable;
 
-public class ItemMorphShovel extends ItemSpade implements IHasModel {
+public class ItemMorphShovel extends ItemSpade implements IHasModel, IMorph {
 
     public ItemMorphShovel(String name, CreativeTabs tab, Item.ToolMaterial material) {
 
@@ -105,7 +105,7 @@ public class ItemMorphShovel extends ItemSpade implements IHasModel {
 
     public void onUpdate(ItemStack stack, World world, Entity entity, int fuckObfuscation, boolean fuckObfuscation2) {
         super.onUpdate(stack, world, entity, fuckObfuscation, fuckObfuscation2);
-        if (EnchantmentHelper.getEnchantmentLevel(EnchantmentsFM.void_touched, stack) > 0 && stack.isItemDamaged() && entity != null && entity.ticksExisted % 10 == 0 && entity instanceof EntityLivingBase) {
+        if (EnumInfusionEnchantment.getInfusionEnchantmentLevel(stack, FMEnchantments.VOID_TOUCHED) > 0 && stack.isItemDamaged() && entity != null && entity.ticksExisted % 10 == 0 && entity instanceof EntityLivingBase) {
             stack.damageItem(-1, (EntityLivingBase) entity);
         }
 

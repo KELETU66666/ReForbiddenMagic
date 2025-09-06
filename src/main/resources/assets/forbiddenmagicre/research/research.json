@@ -30,7 +30,8 @@
         "forbiddenmagicre:crystal_scribing_tools"
       ],
       "category": "APOCRYPHA",
-      "location": [ 0,
+      "location": [
+        0,
         -2
       ],
       "parents": [
@@ -142,7 +143,6 @@
       "name": "forbiddenmagic.research.infusionenchantmentfm.title",
       "category": "APOCRYPHA",
       "icons": [
-        "forbiddenmagicre:textures/wrath.png",
         "forbiddenmagicre:textures/greedy.png",
         "forbiddenmagicre:textures/educational.png",
         "forbiddenmagicre:textures/consuming.png"
@@ -165,7 +165,6 @@
         {
           "text": "forbiddenmagic.research.infusionenchantmentfm.complete.text",
           "recipes": [
-            "forbiddenmagicre:IEWRATHFAKE",
             "forbiddenmagicre:IEGREEDYFAKE",
             "forbiddenmagicre:IECONSUMINGFAKE",
             "forbiddenmagicre:IECEDUFAKE"

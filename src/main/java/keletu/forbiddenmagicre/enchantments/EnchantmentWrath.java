@@ -15,8 +15,6 @@ public class EnchantmentWrath extends Enchantment {
         super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
         this.setRegistryName(Reference.MOD_ID, "wrath");
         this.setName("wrath");
-
-        EnchantmentsFM.ENCHANTNENTS.add(this);
     }
 
     public int getMinEnchantability(int level) {

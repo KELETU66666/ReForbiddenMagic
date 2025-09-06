@@ -120,11 +120,11 @@ psi.piecegroup.botany=Botany
 psi.piecegroup.botany.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Botany.<BR>The red piece of this group, "Trick: Generate Mana", allows you to generate mana at a targetted Mind Lotus flower. Higher Stability increases the cost of the spell, but lower Stability induces more stress in the flower, hastening its decay.
 
 #Enchantment
-enchantment.wrath=Wrath
-enchantment.greedy=Greedy
-enchantment.educational=Educational
-enchantment.consuming=Consuming
-enchantment.voidtouched=Void Touched
+enchantment.WRATH=Wrath
+enchantment.infusion.GREEDY=Greedy
+enchantment.infusion.EDUCATIONAL=Educational
+enchantment.infusion.CONSUMING=Consuming
+enchantment.infusion.VOID_TOUCHED=Void Touched
 
 enchantment.forbiddenmagic.wrath.desc=Increases the damage of the item. Compatible with other damage increasing enchantments like Sharpness.
 
