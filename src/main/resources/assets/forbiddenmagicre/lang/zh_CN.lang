@@ -121,13 +121,12 @@ psi.piecegroup.botany.desc=这个组的红色部分，“启动式: 草本产魔
 
 #附魔
 enchantment.wrath=暴怒
-enchantment.greedy=剥削
-enchantment.educational=教育
-enchantment.consuming=挥霍
-enchantment.voidtouched=虚空之触
+enchantment.infusion.GREEDY=剥削
+enchantment.infusion.EDUCATIONAL=教育
+enchantment.infusion.CONSUMING=挥霍
+enchantment.infusion.VOID_TOUCHED=虚空之触
 
 enchantment.forbiddenmagic.wrath.desc=Increases the damage of the item. Compatible with other damage increasing enchantments like Sharpness.
-
 #禁忌魔法-研究
 
 forbiddenmagic.research.lostmagic.title=禁秘魔法

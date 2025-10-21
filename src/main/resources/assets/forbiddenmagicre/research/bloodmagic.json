@@ -1,59 +1,105 @@
 {
   "entries": [
-    { "key": "BLOOD_RAPIER",
+    {
+      "key": "BLOOD_RAPIER",
       "name": "forbiddenmagic.research.blood_rapier.title",
-      "icons": ["forbiddenmagicre:blood_rapier"],
+      "icons": [
+        "forbiddenmagicre:blood_rapier"
+      ],
       "category": "APOCRYPHA",
-      "location": [-1, 4],
-      "parents": ["BLOODSCRIBE", "BASEELDRITCH"],
+      "location": [
+        -1,
+        4
+      ],
+      "parents": [
+        "BLOODSCRIBE",
+        "BASEELDRITCH"
+      ],
       "stages": [
         {
           "text": "forbiddenmagic.research.blood_rapier.text",
-          "required_knowledge":["OBSERVATION;INFUSION;1", "THEORY;INFUSION;1"],
-          "required_item": ["thaumcraft:ingot;1;1"],
+          "required_knowledge": [
+            "OBSERVATION;INFUSION;1",
+            "THEORY;INFUSION;1"
+          ],
+          "required_item": [
+            "thaumcraft:ingot;1;1"
+          ],
           "warp": 2
         },
         {
           "text": "forbiddenmagic.research.blood_rapier.complete.text",
-          "recipes": ["forbiddenmagicre:fm_blood_rapier"]
+          "recipes": [
+            "forbiddenmagicre:fm_blood_rapier"
+          ]
         }
       ]
     },
-    { "key": "DIVINE_ORB",
+    {
+      "key": "DIVINE_ORB",
       "name": "forbiddenmagic.research.divine_orb.title",
-      "icons": ["forbiddenmagicre:eldritch_orb"],
+      "icons": [
+        "bloodmagic:blood_orb;1;0;{orb:\"forbiddenmagicre:divine\"}"
+      ],
       "category": "APOCRYPHA",
-      "location": [-3, 4],
-      "parents": ["BLOODSCRIBE", "BASEELDRITCH"],
+      "location": [
+        -3,
+        4
+      ],
+      "parents": [
+        "BLOODSCRIBE",
+        "BASEELDRITCH"
+      ],
       "stages": [
         {
           "text": "forbiddenmagic.research.divine_orb.text",
-          "required_knowledge":["THEORY;ELDRITCH;1", "THEORY;INFUSION;1"],
+          "required_knowledge": [
+            "THEORY;ELDRITCH;1",
+            "THEORY;INFUSION;1"
+          ],
           "warp": 3
         },
         {
           "text": "forbiddenmagic.research.divine_orb.complete.text",
-          "recipes": ["forbiddenmagicre:fm_divine_orb"]
+          "recipes": [
+            "forbiddenmagicre:fm_divine_orb"
+          ]
         }
       ]
     },
     {
       "key": "BLOODSCRIBE",
       "name": "forbiddenmagic.research.bloodscribe.title",
-      "icons": ["forbiddenmagicre:scribe_blood"],
+      "icons": [
+        "forbiddenmagicre:scribe_blood"
+      ],
       "category": "APOCRYPHA",
-      "location": [-2, 2],
-      "parents": ["LOSTMAGIC", "THEORYRESEARCH"],
+      "location": [
+        -2,
+        2
+      ],
+      "parents": [
+        "LOSTMAGIC",
+        "THEORYRESEARCH"
+      ],
       "stages": [
         {
           "text": "forbiddenmagic.research.bloodscribe.text",
-          "required_craft":["bloodmagic:sacrificial_dagger"],
-          "required_item":["bloodmagic:monster_soul"],
-          "required_knowledge":["OBSERVATION;BASICS;1"]
+          "required_craft": [
+            "bloodmagic:sacrificial_dagger"
+          ],
+          "required_item": [
+            "bloodmagic:monster_soul"
+          ],
+          "required_knowledge": [
+            "OBSERVATION;BASICS;1"
+          ]
         },
         {
           "text": "forbiddenmagic.research.bloodscribe.complete.text",
-          "recipes": ["forbiddenmagicre:BloodScribe"],
+          "recipes": [
+            "forbiddenmagicre:BloodScribe"
+          ],
           "warp": 1
         }
       ]

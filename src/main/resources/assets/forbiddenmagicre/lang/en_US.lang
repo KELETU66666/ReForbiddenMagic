@@ -89,7 +89,7 @@ item.amuletmentalagony.name=Amulet of Mental Anguish
 #BloodMagic
 item.scribe_blood.name=Bloody Scrivener's Tools
 item.blood_rapier.name=Rapier of the Strix
-item.eldritch_orb.name=Eldritch Blood Orb
+item.bloodmagic.orb.eldritch.name=Eldritch Blood Orb
 
 ritual.reforbiddenmagic.pealOfDelayedInsanity=Plea of Delayed Insanity
 soultick.ritual_sanity=Ritual Sanity upkeep cost
@@ -120,7 +120,7 @@ psi.piecegroup.botany=Botany
 psi.piecegroup.botany.desc=With a bit of improvisation, your CAD appears to be capable of reproducing and manipulating various phenomena normally associated with more archaic schools of magic such as Botany.<BR>The red piece of this group, "Trick: Generate Mana", allows you to generate mana at a targetted Mind Lotus flower. Higher Stability increases the cost of the spell, but lower Stability induces more stress in the flower, hastening its decay.
 
 #Enchantment
-enchantment.WRATH=Wrath
+enchantment.wrath=Wrath
 enchantment.infusion.GREEDY=Greedy
 enchantment.infusion.EDUCATIONAL=Educational
 enchantment.infusion.CONSUMING=Consuming

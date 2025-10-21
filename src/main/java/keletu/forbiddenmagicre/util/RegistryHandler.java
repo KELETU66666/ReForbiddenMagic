@@ -2,7 +2,6 @@ package keletu.forbiddenmagicre.util;
 
 import keletu.forbiddenmagicre.blocks.tiles.TileEntityWrathCage;
 import keletu.forbiddenmagicre.compat.bloodmagic.ItemBloodRapier;
-import keletu.forbiddenmagicre.compat.bloodmagic.ItemDivineOrb;
 import keletu.forbiddenmagicre.compat.bloodmagic.ItemScribeBlood;
 import keletu.forbiddenmagicre.compat.psi.ItemAmuletPsi;
 import keletu.forbiddenmagicre.compat.psi.ItemExtraColorizer;
@@ -46,7 +45,6 @@ public class RegistryHandler {
             event.getRegistry().registerAll(new ItemAmuletPsi());
         }
         if (Loader.isModLoaded("bloodmagic")) {
-            event.getRegistry().registerAll(new ItemDivineOrb());
             event.getRegistry().registerAll(new ItemBloodRapier());
             event.getRegistry().registerAll(new ItemScribeBlood());
         }
